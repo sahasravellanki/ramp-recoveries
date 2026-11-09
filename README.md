@@ -18,8 +18,8 @@ Everything in the app shell is a static mockup except Recoveries, which fully wo
 ```
 backend/    FastAPI app (app/), tariff detection pipeline (pipeline/), eval.py
 frontend/   Next.js App Router + TypeScript + Tailwind + shadcn/ui
-data/       Generated invoices, contracts, and labels
-scripts/    Synthetic data generator
+data/       Generated invoices, contracts, labels, ground truth, Ramp-shaped bills/vendors
+scripts/    make_sample_data.py (synthetic data generator)
 ```
 
 ## Stack
@@ -30,6 +30,16 @@ scripts/    Synthetic data generator
 - AI: Anthropic SDK. Tier 1 (`RECOVERIES_MODEL_TIER1`) = Claude Haiku for line labeling; tier 2 (`RECOVERIES_MODEL_TIER2`) = Claude Sonnet for letter drafting. Both read from env vars.
 - Math: pandas
 - PDF parsing: pdfplumber
+
+## Sample data
+
+All companies, addresses, and prices are fictional. The buyer is Sunbird Cafe Group (Berkeley, CA); six suppliers each exercise a different detection case (explicit IEEPA surcharge, embedded price increase, renamed surcharge, non-refundable Section 301, domestic control with a decoy fee, and importer-of-record customs duty). Regenerate with:
+
+```bash
+python scripts/make_sample_data.py
+```
+
+It is seeded, so output is byte-identical every run. It writes `data/invoices/*.pdf` (72 invoices + 1 credit memo, 3 rendered as scans, 1 two-pager), `data/contracts/*.pdf`, `data/labels.csv`, `data/ground_truth.json`, `data/bills.json`, `data/vendors.json`, and `data/vendor_credits.json`, then prints the expected claim totals.
 
 ## Running locally
 
