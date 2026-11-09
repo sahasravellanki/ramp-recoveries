@@ -243,10 +243,14 @@ SUPPLIERS: dict[str, Supplier] = {
         country_of_origin="IT",
         contract_file="harbor-and-pine-equipment-and-service-agreement.pdf",
         catalog=[
-            CatalogItem("HP-BURR64", "64 mm flat burr set, titanium-coated (Italy)", D("189.00"), True),
-            CatalogItem("HP-PF58", "58 mm bottomless portafilter, walnut handle (Italy)", D("142.00"), True),
-            CatalogItem("HP-GSK", "Group head gasket 8.5 mm, pack of 10 (Italy)", D("36.00"), True),
-            CatalogItem("HP-SHWR", "Precision shower screen, 200 micron (Italy)", D("48.50"), True),
+            CatalogItem("HP-GRP61", "E61 group head assembly, chrome (Italy)", D("1250.00"), True),
+            CatalogItem("HP-PUMP", "Rotary vane pump 100 L/h with motor (Italy)", D("610.00"), True),
+            CatalogItem("HP-BURR64", "64 mm flat burr set, titanium-coated (Italy)", D("485.00"), True),
+            CatalogItem("HP-HEAT", "Steam boiler heating element 2.8 kW (Italy)", D("395.00"), True),
+            CatalogItem("HP-PF58", "58 mm bottomless portafilter, walnut handle (Italy)", D("265.00"), True),
+            CatalogItem("HP-FLOW", "Volumetric flow meter kit, 2-group (Italy)", D("210.00"), True),
+            CatalogItem("HP-SHWR", "Precision shower screen, 200 micron (Italy)", D("89.00"), True),
+            CatalogItem("HP-GSK", "Group head gasket 8.5 mm, pack of 10 (Italy)", D("68.00"), True),
             CatalogItem("HP-TAMP", "Calibrated tamper 58.4 mm (made in USA)", D("95.00"), False),
             CatalogItem("HP-PITCH", "Steaming pitcher 20 oz, stainless (USA)", D("28.00"), False),
             CatalogItem("HP-SVC", "On-site espresso machine service, per hour", D("125.00"), False),
@@ -370,6 +374,9 @@ class Generator:
     def __init__(self, seed: int):
         self.rng = random.Random(seed)
         self.np_rng = np.random.default_rng(seed)
+        # One stream per supplier so tuning one supplier's quantities never
+        # shifts another supplier's draws.
+        self.supplier_rng = {key: random.Random(f"{seed}:{key}") for key in SUPPLIERS}
         self.counters: dict[str, int] = {}
         self.invoices: list[Invoice] = []
         self.credit_memos: list[Invoice] = []
@@ -386,8 +393,9 @@ class Generator:
         return f"{supplier.prefix}{infix}-{issued:%Y%m}-{self.counters[key]:03d}"
 
     def pick_items(self, supplier: Supplier, k_min: int, k_max: int) -> list[CatalogItem]:
-        k = self.rng.randint(k_min, min(k_max, len(supplier.catalog)))
-        return self.rng.sample(supplier.catalog, k)
+        rng = self.supplier_rng[supplier.key]
+        k = rng.randint(k_min, min(k_max, len(supplier.catalog)))
+        return rng.sample(supplier.catalog, k)
 
     def add(self, inv: Invoice):
         inv.id = self.ramp_id("bill")
@@ -397,23 +405,24 @@ class Generator:
     # -- 1. Northwind -------------------------------------------------------- #
     def northwind(self):
         s = SUPPLIERS["northwind"]
+        rng = self.supplier_rng["northwind"]
         for year, month in month_range(*INVOICE_RANGE):
             issued = date(year, month, 10)
             lines: list[Line] = []
             if (year, month) == (2025, 11):
                 for sku, desc, price in NORTHWIND_HOLIDAY_LINES:
-                    qty = Decimal(self.rng.randint(1, 6))
+                    qty = Decimal(rng.randint(2, 10))
                     lines.append(Line(sku, desc, qty, price, PRODUCT))
             else:
-                for item in self.pick_items(s, 3, 5):
-                    qty = Decimal(self.rng.randint(2, 12))
+                for item in self.pick_items(s, 4, 6):
+                    qty = Decimal(rng.randint(5, 21))
                     lines.append(Line(item.sku, item.description, qty, item.base_price, PRODUCT))
             product_subtotal = sum((l.amount for l in lines), Decimal("0"))
             if date(2025, 4, 1) <= issued <= TARIFF_WINDOW_END:
                 lines.append(
                     Line("SURCHG", "Tariff Surcharge (12%)", Decimal("1"), money(product_subtotal * D("0.12")), TARIFF_IEEPA)
                 )
-            lines.append(Line("FREIGHT", "Freight - LTL ground", Decimal("1"), money(self.rng.uniform(85, 180)), FREIGHT))
+            lines.append(Line("FREIGHT", "Freight - LTL ground", Decimal("1"), money(rng.uniform(85, 180)), FREIGHT))
             self.add(Invoice(s, self.next_number(s, issued), issued, lines))
 
         # Credit memo, Mar 2026, partial credit against tariff surcharges.
@@ -433,57 +442,66 @@ class Generator:
     # -- 2. Harbor & Pine ------------------------------------------------------ #
     def harborpine(self):
         s = SUPPLIERS["harborpine"]
+        rng = self.supplier_rng["harborpine"]
         inflated_from, inflated_to = date(2025, 3, 1), date(2026, 2, 28)
         for year, month in month_range((2024, 7), INVOICE_RANGE[1], step=2):
             issued = date(year, month, 15)
             lines: list[Line] = []
-            items = self.pick_items(s, 3, 5)
+            items = self.pick_items(s, 5, 7)
             if not any(i.imported for i in items):
                 items.append(s.catalog[0])
             for item in items:
-                qty = Decimal(self.rng.randint(1, 6)) if item.sku != "HP-SVC" else Decimal(self.rng.randint(2, 8))
+                if item.sku == "HP-SVC":
+                    qty = Decimal(rng.randint(4, 12))
+                elif item.base_price >= D("500"):
+                    qty = Decimal(rng.randint(1, 5))  # big-ticket parts, a few per order
+                else:
+                    qty = Decimal(rng.randint(3, 12))
                 if item.imported and inflated_from <= issued <= inflated_to:
                     price = money(item.base_price * D("1.16"))
                     lines.append(Line(item.sku, item.description, qty, price, PRODUCT, baseline_unit_price=item.base_price))
                 else:
                     lines.append(Line(item.sku, item.description, qty, item.base_price, PRODUCT))
-            lines.append(Line("FREIGHT", "Shipping & handling", Decimal("1"), money(self.rng.uniform(35, 90)), FREIGHT))
+            lines.append(Line("FREIGHT", "Shipping & handling", Decimal("1"), money(rng.uniform(35, 90)), FREIGHT))
             self.add(Invoice(s, self.next_number(s, issued), issued, lines))
 
     # -- 3. Altamesa ----------------------------------------------------------- #
     def altamesa(self):
         s = SUPPLIERS["altamesa"]
+        rng = self.supplier_rng["altamesa"]
         for year, month in month_range((2024, 8), INVOICE_RANGE[1], step=2):
             issued = date(year, month, 12)
             lines: list[Line] = []
-            for item in self.pick_items(s, 2, 4):
-                qty = Decimal(self.rng.randint(1, 8))
+            for item in self.pick_items(s, 3, 5):
+                qty = Decimal(rng.randint(2, 13))
                 lines.append(Line(item.sku, item.description, qty, item.base_price, PRODUCT))
             product_subtotal = sum((l.amount for l in lines), Decimal("0"))
             if date(2025, 3, 1) <= issued <= TARIFF_WINDOW_END:
                 label = "IEEPA Adj." if issued >= date(2025, 9, 1) else "Import Cost Recovery"
                 lines.append(Line("ADJ", label, Decimal("1"), money(product_subtotal * D("0.20")), TARIFF_IEEPA))
-            lines.append(Line("SHIP", "Ground shipping", Decimal("1"), money(self.rng.uniform(18, 60)), FREIGHT))
+            lines.append(Line("SHIP", "Ground shipping", Decimal("1"), money(rng.uniform(18, 60)), FREIGHT))
             self.add(Invoice(s, self.next_number(s, issued), issued, lines))
 
     # -- 4. Kestrel ------------------------------------------------------------ #
     def kestrel(self):
         s = SUPPLIERS["kestrel"]
+        rng = self.supplier_rng["kestrel"]
         for year, month in month_range((2024, 7), INVOICE_RANGE[1], step=3):
             issued = date(year, month, 5)
             lines: list[Line] = []
             for item in self.pick_items(s, 2, 4):
-                qty = Decimal(self.rng.randint(6, 40))
+                qty = Decimal(rng.randint(6, 40))
                 lines.append(Line(item.sku, item.description, qty, item.base_price, PRODUCT))
             product_subtotal = sum((l.amount for l in lines), Decimal("0"))
             if issued >= date(2025, 5, 1):
                 lines.append(Line("S301", "Section 301 adjustment", Decimal("1"), money(product_subtotal * D("0.075")), TARIFF_OTHER))
-            lines.append(Line("FREIGHT", "Freight", Decimal("1"), money(self.rng.uniform(40, 110)), FREIGHT))
+            lines.append(Line("FREIGHT", "Freight", Decimal("1"), money(rng.uniform(40, 110)), FREIGHT))
             self.add(Invoice(s, self.next_number(s, issued), issued, lines))
 
     # -- 5. Brightline --------------------------------------------------------- #
     def brightline(self):
         s = SUPPLIERS["brightline"]
+        rng = self.supplier_rng["brightline"]
         start = date(2024, 7, 20)
         for year, month in month_range(*INVOICE_RANGE):
             issued = date(year, month, 20)
@@ -491,7 +509,7 @@ class Generator:
             drift = Decimal("1") + D("0.02") * years
             lines: list[Line] = []
             for item in self.pick_items(s, 3, 5):
-                qty = Decimal(self.rng.randint(1, 10))
+                qty = Decimal(rng.randint(1, 10))
                 lines.append(Line(item.sku, item.description, qty, money(item.base_price * drift), PRODUCT))
             lines.append(Line("FUEL", "Fuel surcharge", Decimal("1"), D("6.50"), OTHER_FEE))
             self.add(Invoice(s, self.next_number(s, issued), issued, lines))
@@ -500,8 +518,8 @@ class Generator:
     def pacific(self):
         s = SUPPLIERS["pacific"]
         shipments = [
-            (date(2025, 4, 18), "PFF-SH-88213", "231-4471022-5", D("2850.00"), D("4312.40")),
-            (date(2025, 10, 7), "PFF-SH-91077", "231-4518860-1", D("3120.00"), D("6874.15")),
+            (date(2025, 4, 18), "PFF-SH-88213", "231-4471022-5", D("2850.00"), D("1184.60")),
+            (date(2025, 10, 7), "PFF-SH-91077", "231-4518860-1", D("3120.00"), D("1412.95")),
         ]
         for issued, bol, entry, freight, duty in shipments:
             lines = [
