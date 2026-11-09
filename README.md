@@ -1,10 +1,10 @@
-# Clawback
+# Ramp Recoveries
 
-Hackathon prototype for the BBS x Ramp Hackathon. Clawback is a feature inside a Ramp-style spend management app that recovers IEEPA tariff pass-through costs from suppliers.
+Hackathon prototype for the BBS x Ramp Hackathon. Ramp Recoveries is a feature inside a Ramp-style spend management app that recovers IEEPA tariff pass-through costs from suppliers.
 
-In 2025, suppliers passed IEEPA tariff costs on to business customers through invoice surcharges and price increases. In February 2026 the Supreme Court struck those tariffs down and importers are receiving refunds, but the businesses that actually paid the higher prices get nothing unless they ask. Clawback scans a company's paid bills, finds tariff pass-throughs, totals what each supplier may owe, drafts a claim letter for a human to approve, and, once the supplier agrees, creates a vendor credit in Bill Pay that applies to the next bill.
+In 2025, suppliers passed IEEPA tariff costs on to business customers through invoice surcharges and price increases. In February 2026 the Supreme Court struck those tariffs down and importers are receiving refunds, but the businesses that actually paid the higher prices get nothing unless they ask. Ramp Recoveries scans a company's paid bills, finds tariff pass-throughs, totals what each supplier may owe, drafts a claim letter for a human to approve, and, once the supplier agrees, creates a vendor credit in Bill Pay that applies to the next bill.
 
-Everything in the app shell is a static mockup except Clawback, which fully works.
+Everything in the app shell is a static mockup except Recoveries, which fully works.
 
 ## Design rules
 
@@ -27,7 +27,7 @@ scripts/    Synthetic data generator
 - Frontend: Next.js (App Router), TypeScript, Tailwind CSS, shadcn/ui
 - Backend: FastAPI, Python 3.11+
 - Database: SQLite via SQLModel
-- AI: Anthropic SDK. Tier 1 (`CLAWBACK_MODEL_TIER1`) = Claude Haiku for line labeling; tier 2 (`CLAWBACK_MODEL_TIER2`) = Claude Sonnet for letter drafting. Both read from env vars.
+- AI: Anthropic SDK. Tier 1 (`RECOVERIES_MODEL_TIER1`) = Claude Haiku for line labeling; tier 2 (`RECOVERIES_MODEL_TIER2`) = Claude Sonnet for letter drafting. Both read from env vars.
 - Math: pandas
 - PDF parsing: pdfplumber
 

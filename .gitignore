@@ -95,7 +95,7 @@ coverage/
 logs/
 *.log
 
-# Clawback local state
+# Ramp Recoveries local state
 backend/*.db
 backend/*.sqlite
 backend/*.sqlite3
