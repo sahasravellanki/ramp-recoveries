@@ -17,8 +17,8 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
+backend/lib/
+backend/lib64/
 parts/
 sdist/
 var/
@@ -94,6 +94,11 @@ coverage/
 # Logs
 logs/
 *.log
+
+# Clawback local state
+backend/*.db
+backend/*.sqlite
+backend/*.sqlite3
 
 # OS / editors
 .DS_Store
