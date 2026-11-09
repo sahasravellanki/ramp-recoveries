@@ -198,7 +198,7 @@
     "payment_terms": "NET_30",
     "primary_country_of_origin": "US",
     "bill_count": 4,
-    "total_paid": 1782.86,
+    "total_paid": 2862.42,
     "first_bill_at": "2024-09-01",
     "last_bill_at": "2025-11-20",
     "contract": null
@@ -251,8 +251,8 @@
     },
     "payment_terms": "NET_30",
     "primary_country_of_origin": "VN",
-    "bill_count": 5,
-    "total_paid": 2519.63,
+    "bill_count": 6,
+    "total_paid": 3016.5,
     "first_bill_at": "2024-09-01",
     "last_bill_at": "2026-03-15",
     "contract": null
@@ -273,6 +273,42 @@
     "total_paid": 3432.5,
     "first_bill_at": "2024-09-20",
     "last_bill_at": "2026-03-20",
+    "contract": null
+  },
+  {
+    "id": "ven_ad4265714e5c0c18",
+    "name": "Clearpour Glass",
+    "contact_email": "ap@clearpourglass.example",
+    "phone": "(707) 555-0148",
+    "address": {
+      "line1": "14 Vine Street",
+      "line2": "Napa, CA 94559",
+      "country": "US"
+    },
+    "payment_terms": "NET_30",
+    "primary_country_of_origin": "IT",
+    "bill_count": 5,
+    "total_paid": 2402.78,
+    "first_bill_at": "2024-10-01",
+    "last_bill_at": "2025-12-15",
+    "contract": null
+  },
+  {
+    "id": "ven_9274e8eb0e7641a2",
+    "name": "Orchard Copper",
+    "contact_email": "billing@orchardcopper.example",
+    "phone": "(707) 555-0194",
+    "address": {
+      "line1": "300 River Street",
+      "line2": "Santa Rosa, CA 95401",
+      "country": "US"
+    },
+    "payment_terms": "NET_30",
+    "primary_country_of_origin": "VN",
+    "bill_count": 4,
+    "total_paid": 1916.92,
+    "first_bill_at": "2024-11-01",
+    "last_bill_at": "2025-12-10",
     "contract": null
   }
 ]

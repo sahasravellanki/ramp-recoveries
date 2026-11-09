@@ -127,7 +127,13 @@ def _claim(name, vendor, items, prices, contract) -> VendorClaim:
     clause = bool(contract and contract.refund_or_credit_clause)
     price_findings = [finding for finding in prices.findings if finding.vendor_name == name]
     inferred_only = excess > 0 and ieepa <= 0 and all(finding.origin_inferred for finding in price_findings)
+    review_only = any(sku.needs_review for sku in prices.skus if sku.vendor_name == name)
     tier, reasons = _tier(explicit, clause, excess > 0, inferred_only)
+    if tier is None and review_only and excess <= 0 and ieepa <= 0:
+        reasons = [
+            "The price increase lines up with an IEEPA rate increase, but there is no control group to compare it with.",
+            "It needs a person to review it, so nothing is claimed yet.",
+        ]
     low, expected, high = _price_range(price_findings) if excess > 0 else (None, None, None)
     address = []
     if vendor and vendor.address:
@@ -157,6 +163,7 @@ def _claim(name, vendor, items, prices, contract) -> VendorClaim:
         claim_expected=expected,
         claim_high=high,
         origin_inferred_only=inferred_only,
+        needs_review=review_only and excess <= 0 and ieepa <= 0 and non_refundable <= 0,
     )
 
 

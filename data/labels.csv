@@ -64,8 +64,9 @@ BOS-202408-002,4,"Copy paper 20 lb, case of 10 reams",product,312.54
 BOS-202408-002,5,Fuel surcharge,other_fee,6.50
 BOS-202408-002,6,Sales tax (10.25%),tax,147.38
 HMK-202409-001,0,"Stoneware mug, made in USA",product,360.00
-HMK-202409-001,1,Freight,freight,25.00
-HMK-202409-001,2,Sales tax (10.25%),tax,36.90
+HMK-202409-001,1,"Glass carafe, made in USA",product,240.00
+HMK-202409-001,2,Freight,freight,25.00
+HMK-202409-001,3,Sales tax (10.25%),tax,61.50
 MKT-202409-001,0,Stoneware cup (Vietnam),product,320.00
 MKT-202409-001,1,"Bar towel, made in USA",product,108.00
 MKT-202409-001,2,Freight,freight,25.00
@@ -100,6 +101,9 @@ GWG-202409-001,0,"Espresso group head, origin not printed",product,400.00
 GWG-202409-001,1,"Calibrated tamper, made in USA",product,192.00
 GWG-202409-001,2,Freight,freight,25.00
 GWG-202409-001,3,Sales tax (10.25%),tax,60.68
+CPG-202410-001,0,"Glass carafe, Italy",product,400.00
+CPG-202410-001,1,Freight,freight,25.00
+CPG-202410-001,2,Sales tax (10.25%),tax,41.00
 KST-202410-002,0,"Canvas barista apron, charcoal",product,672.00
 KST-202410-002,1,"Staff tee, embroidered logo",product,162.25
 KST-202410-002,2,"Linen table runner, natural",product,1088.00
@@ -132,6 +136,9 @@ LVP-202411-002,0,"Dispenser napkin, 1-ply (case of 6000)",product,400.00
 LVP-202411-002,1,"Bar towel, domestic (dozen)",product,150.00
 LVP-202411-002,2,Freight,freight,25.00
 LVP-202411-002,3,Sales tax (10.25%),tax,56.38
+ORC-202411-001,0,"Copper saucepan, Vietnam",product,400.00
+ORC-202411-001,1,Freight,freight,25.00
+ORC-202411-001,2,Sales tax (10.25%),tax,41.00
 CIM-202411-002,0,"Group head gasket, pack of 10 (Italy)",product,600.00
 CIM-202411-002,1,"Tamper, made in USA",product,160.00
 CIM-202411-002,2,Freight,freight,25.00
@@ -194,6 +201,9 @@ KST-202501-003,2,"Dad cap, embroidered logo",product,425.60
 KST-202501-003,3,"Linen table runner, natural",product,576.00
 KST-202501-003,4,Freight,freight,50.42
 KST-202501-003,5,Sales tax (10.25%),tax,213.52
+CPG-202501-002,0,"Glass carafe, Italy",product,400.00
+CPG-202501-002,1,Freight,freight,25.00
+CPG-202501-002,2,Sales tax (10.25%),tax,41.00
 LVP-202501-003,0,"Dispenser napkin, 1-ply (case of 6000)",product,400.00
 LVP-202501-003,1,"Bar towel, domestic (dozen)",product,150.00
 LVP-202501-003,2,Freight,freight,25.00
@@ -206,8 +216,9 @@ NWP-202501-007,4,Paper straws 7.75 in (case of 2400),product,268.80
 NWP-202501-007,5,Freight - LTL ground,freight,169.72
 NWP-202501-007,6,Sales tax (10.25%),tax,205.05
 HMK-202501-002,0,"Stoneware mug, made in USA",product,360.00
-HMK-202501-002,1,Freight,freight,25.00
-HMK-202501-002,2,Sales tax (10.25%),tax,36.90
+HMK-202501-002,1,"Glass carafe, made in USA",product,240.00
+HMK-202501-002,2,Freight,freight,25.00
+HMK-202501-002,3,Sales tax (10.25%),tax,61.50
 HPC-202501-004,0,"E61 group head assembly, chrome (Italy)",product,3750.00
 HPC-202501-004,1,Rotary vane pump 100 L/h with motor (Italy),product,1220.00
 HPC-202501-004,2,"64 mm flat burr set, titanium-coated (Italy)",product,2910.00
@@ -290,6 +301,9 @@ BOS-202503-009,2,Nitrile gloves M (case of 1000),product,411.39
 BOS-202503-009,3,"Surface cleaner, 1 gal",product,123.41
 BOS-202503-009,4,Fuel surcharge,other_fee,6.50
 BOS-202503-009,5,Sales tax (10.25%),tax,169.27
+ORC-202504-002,0,"Copper saucepan, Vietnam",product,400.00
+ORC-202504-002,1,Freight,freight,25.00
+ORC-202504-002,2,Sales tax (10.25%),tax,41.00
 KST-202504-004,0,"Canvas barista apron, charcoal",product,144.00
 KST-202504-004,1,"Staff tee, embroidered logo",product,590.00
 KST-202504-004,2,Freight,freight,96.73
@@ -348,17 +362,21 @@ BOS-202505-011,1,"Gel pens, black (box of 12)",product,48.80
 BOS-202505-011,2,"Toner cartridge, black",product,240.96
 BOS-202505-011,3,Fuel surcharge,other_fee,6.50
 BOS-202505-011,4,Sales tax (10.25%),tax,78.47
+CPG-202505-003,0,"Glass carafe, Italy",product,422.00
+CPG-202505-003,1,Freight,freight,25.00
+CPG-202505-003,2,Sales tax (10.25%),tax,43.26
 GWG-202505-003,0,"Espresso group head, origin not printed",product,420.00
 GWG-202505-003,1,"Calibrated tamper, made in USA",product,192.00
 GWG-202505-003,2,Freight,freight,25.00
 GWG-202505-003,3,Sales tax (10.25%),tax,62.73
 HMK-202505-003,0,"Stoneware mug, made in USA",product,403.20
-HMK-202505-003,1,Freight,freight,25.00
-HMK-202505-003,2,Sales tax (10.25%),tax,41.33
-MKT-202506-003,0,Stoneware cup (Vietnam),product,336.00
+HMK-202505-003,1,"Glass carafe, made in USA",product,249.60
+HMK-202505-003,2,Freight,freight,25.00
+HMK-202505-003,3,Sales tax (10.25%),tax,66.91
+MKT-202506-003,0,Stoneware cup (Vietnam),product,320.00
 MKT-202506-003,1,"Bar towel, made in USA",product,108.00
 MKT-202506-003,2,Freight,freight,25.00
-MKT-202506-003,3,Sales tax (10.25%),tax,45.51
+MKT-202506-003,3,Sales tax (10.25%),tax,43.87
 MLA-202506-001,0,"Hot-rolled steel sheet, 4 x 8 ft",product,720.00
 MLA-202506-001,1,Section 232 steel and aluminum surcharge,tariff_other,640.00
 MLA-202506-001,2,Freight,freight,25.00
@@ -446,6 +464,10 @@ BOS-202508-014,2,"Toner cartridge, black",product,807.10
 BOS-202508-014,3,"Gel pens, black (box of 12)",product,88.29
 BOS-202508-014,4,Fuel surcharge,other_fee,6.50
 BOS-202508-014,5,Sales tax (10.25%),tax,117.21
+MKT-202509-004,0,Stoneware cup (Vietnam),product,336.00
+MKT-202509-004,1,"Bar towel, made in USA",product,108.00
+MKT-202509-004,2,Freight,freight,25.00
+MKT-202509-004,3,Sales tax (10.25%),tax,45.51
 NWP-202509-015,0,"Corrugated cup sleeve, printed (case of 1000)",product,661.30
 NWP-202509-015,1,"Dispenser napkins, 1-ply (case of 6000)",product,573.30
 NWP-202509-015,2,Paper straws 7.75 in (case of 2400),product,672.00
@@ -453,6 +475,9 @@ NWP-202509-015,3,Kraft takeout bag #4 (bundle of 500),product,535.50
 NWP-202509-015,4,Tariff Surcharge (12%),tariff_ieepa,293.05
 NWP-202509-015,5,Freight - LTL ground,freight,168.01
 NWP-202509-015,6,Sales tax (10.25%),tax,250.32
+ORC-202509-003,0,"Copper saucepan, Vietnam",product,424.00
+ORC-202509-003,1,Freight,freight,25.00
+ORC-202509-003,2,Sales tax (10.25%),tax,43.46
 HPC-202509-008,0,"E61 group head assembly, chrome (Italy)",product,5250.00
 HPC-202509-008,1,Rotary vane pump 100 L/h with motor (Italy),product,2562.00
 HPC-202509-008,2,"64 mm flat burr set, titanium-coated (Italy)",product,2037.00
@@ -477,10 +502,9 @@ BOS-202509-015,3,Receipt roll 3 1/8 in (case of 50),product,293.72
 BOS-202509-015,4,"Surface cleaner, 1 gal",product,160.29
 BOS-202509-015,5,Fuel surcharge,other_fee,6.50
 BOS-202509-015,6,Sales tax (10.25%),tax,159.73
-MKT-202510-004,0,Stoneware cup (Vietnam),product,336.00
-MKT-202510-004,1,"Bar towel, made in USA",product,108.00
-MKT-202510-004,2,Freight,freight,25.00
-MKT-202510-004,3,Sales tax (10.25%),tax,45.51
+CPG-202509-004,0,"Glass carafe, Italy",product,422.00
+CPG-202509-004,1,Freight,freight,25.00
+CPG-202509-004,2,Sales tax (10.25%),tax,43.26
 KST-202510-006,0,"Staff tee, embroidered logo",product,383.50
 KST-202510-006,1,"Dad cap, embroidered logo",product,156.80
 KST-202510-006,2,"Canvas barista apron, charcoal",product,288.00
@@ -570,8 +594,13 @@ BOS-202511-017,2,Receipt roll 3 1/8 in (case of 50),product,336.80
 BOS-202511-017,3,Fuel surcharge,other_fee,6.50
 BOS-202511-017,4,Sales tax (10.25%),tax,58.01
 HMK-202511-004,0,"Stoneware mug, made in USA",product,403.20
-HMK-202511-004,1,Freight,freight,25.00
-HMK-202511-004,2,Sales tax (10.25%),tax,41.33
+HMK-202511-004,1,"Glass carafe, made in USA",product,249.60
+HMK-202511-004,2,Freight,freight,25.00
+HMK-202511-004,3,Sales tax (10.25%),tax,66.91
+MKT-202512-005,0,Stoneware cup (Vietnam),product,336.00
+MKT-202512-005,1,"Bar towel, made in USA",product,108.00
+MKT-202512-005,2,Freight,freight,25.00
+MKT-202512-005,3,Sales tax (10.25%),tax,45.51
 NWP-202512-018,0,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,338.00
 NWP-202512-018,1,"16 oz double-wall hot cup, kraft (case of 500)",product,816.00
 NWP-202512-018,2,Paper straws 7.75 in (case of 2400),product,268.80
@@ -580,6 +609,9 @@ NWP-202512-018,4,"12 oz double-wall hot cup, kraft (case of 500)",product,307.50
 NWP-202512-018,5,Tariff Surcharge (12%),tariff_ieepa,297.60
 NWP-202512-018,6,Freight - LTL ground,freight,118.81
 NWP-202512-018,7,Sales tax (10.25%),tax,254.20
+ORC-202512-004,0,"Copper saucepan, Vietnam",product,424.00
+ORC-202512-004,1,Freight,freight,25.00
+ORC-202512-004,2,Sales tax (10.25%),tax,43.46
 ALT-202512-009,0,"Thermal receipt printer, USB/Ethernet",product,492.00
 ALT-202512-009,1,Replacement 24 V power supply,product,302.50
 ALT-202512-009,2,"2D barcode scanner, wired",product,792.00
@@ -587,6 +619,9 @@ ALT-202512-009,3,USB-C cable 2 m (pack of 10),product,186.00
 ALT-202512-009,4,IEEPA Adj.,tariff_ieepa,354.50
 ALT-202512-009,5,Ground shipping,freight,55.77
 ALT-202512-009,6,Sales tax (10.25%),tax,181.68
+CPG-202512-005,0,"Glass carafe, Italy",product,422.00
+CPG-202512-005,1,Freight,freight,25.00
+CPG-202512-005,2,Sales tax (10.25%),tax,43.26
 LUM-202512-004,0,"12 oz hot cup, white (case of 500)",product,400.00
 LUM-202512-004,1,Global sourcing fee,tariff_ieepa,275.00
 LUM-202512-004,2,Freight,freight,25.00
@@ -673,10 +708,10 @@ HPC-202603-011,9,"Steaming pitcher 20 oz, stainless (USA)",product,224.00
 HPC-202603-011,10,"On-site espresso machine service, per hour",product,1125.00
 HPC-202603-011,11,Shipping & handling,freight,68.92
 HPC-202603-011,12,Sales tax (10.25%),tax,1873.50
-MKT-202603-005,0,Stoneware cup (Vietnam),product,320.00
-MKT-202603-005,1,"Bar towel, made in USA",product,108.00
-MKT-202603-005,2,Freight,freight,25.00
-MKT-202603-005,3,Sales tax (10.25%),tax,43.87
+MKT-202603-006,0,Stoneware cup (Vietnam),product,320.00
+MKT-202603-006,1,"Bar towel, made in USA",product,108.00
+MKT-202603-006,2,Freight,freight,25.00
+MKT-202603-006,3,Sales tax (10.25%),tax,43.87
 BOS-202603-021,0,"Gel pens, black (box of 12)",product,89.28
 BOS-202603-021,1,"Copy paper 20 lb, case of 10 reams",product,268.65
 BOS-202603-021,2,Nitrile gloves M (case of 1000),product,419.51

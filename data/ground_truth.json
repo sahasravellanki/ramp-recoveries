@@ -294,7 +294,7 @@
       "invoice_count": 4,
       "invoices_affected": [],
       "contract": null,
-      "notes": "Made in the USA. A May 2025 increase does not count."
+      "notes": "Made in the USA. A May 2025 mug increase does not count. The glass carafe rises 4% and is the category control for Clearpour Glass."
     },
     "Level Pantry": {
       "vendor_id": "ven_dabd8aa47a209b4c",
@@ -360,7 +360,7 @@
       "claim_high": 32.0,
       "embedded_price_increase_total": 32.0,
       "decoy_fee_total": 0.0,
-      "invoice_count": 5,
+      "invoice_count": 6,
       "invoices_affected": [
         {
           "basis": "embedded_price_increase",
@@ -368,7 +368,7 @@
         }
       ],
       "contract": null,
-      "notes": "Vietnamese goods jump June 1, 2025, 57 days after the April 5 reciprocal tariff, and revert in March 2026. Price-only. Counts."
+      "notes": "Vietnamese goods stay flat through June 2025, then jump September 1, 25 days after the August 7 country rate. April 5 is outside the 90-day window. Price-only. Counts."
     },
     "Guesswork Goods": {
       "vendor_id": "ven_7f17caa623e09003",
@@ -397,6 +397,52 @@
       ],
       "contract": null,
       "notes": "Espresso group head with no country on the invoice. Origin is inferred, so the claim counts and strength is Low."
+    },
+    "Clearpour Glass": {
+      "vendor_id": "ven_ad4265714e5c0c18",
+      "refundable_claim_total": 0.0,
+      "demo_refundable_claim_total": 0.0,
+      "credits_already_received": 0.0,
+      "net_claim_total": 0.0,
+      "demo_net_claim_total": 0.0,
+      "non_refundable_total": 0.0,
+      "basis": "none",
+      "explicit_surcharge_total": 0.0,
+      "keyword_hidden_ieepa": 0.0,
+      "raw_price_increase": 0.0,
+      "conservative_claim": 0.0,
+      "claim_low": 0.0,
+      "claim_expected": 0.0,
+      "claim_high": 0.0,
+      "embedded_price_increase_total": 0.0,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 5,
+      "invoices_affected": [],
+      "contract": null,
+      "notes": "Only an imported Italian carafe, so there is no in-house control. Homestead's US carafe, same category, rose 4% on the same day. This carafe rose 5.5%. The gap is 1.5 points, so it does not count."
+    },
+    "Orchard Copper": {
+      "vendor_id": "ven_9274e8eb0e7641a2",
+      "refundable_claim_total": 0.0,
+      "demo_refundable_claim_total": 0.0,
+      "credits_already_received": 0.0,
+      "net_claim_total": 0.0,
+      "demo_net_claim_total": 0.0,
+      "non_refundable_total": 0.0,
+      "basis": "none",
+      "explicit_surcharge_total": 0.0,
+      "keyword_hidden_ieepa": 0.0,
+      "raw_price_increase": 0.0,
+      "conservative_claim": 0.0,
+      "claim_low": 0.0,
+      "claim_expected": 0.0,
+      "claim_high": 0.0,
+      "embedded_price_increase_total": 0.0,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 4,
+      "invoices_affected": [],
+      "contract": null,
+      "notes": "Vietnamese copper saucepan jumps September 10, 2025, 34 days after Vietnam's August 7 rate. No other supplier sells this category. Needs review. Not claimed."
     }
   },
   "price_items": [
@@ -538,6 +584,20 @@
       "id": "inferred_origin",
       "vendor": "Guesswork Goods",
       "should_count": true,
+      "demo_keywords_catch": true
+    },
+    {
+      "id": "peer_control",
+      "vendor": "Clearpour Glass",
+      "should_count": false,
+      "needs_review": false,
+      "demo_keywords_catch": true
+    },
+    {
+      "id": "no_control",
+      "vendor": "Orchard Copper",
+      "should_count": false,
+      "needs_review": true,
       "demo_keywords_catch": true
     }
   ],

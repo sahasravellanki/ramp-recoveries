@@ -61,7 +61,7 @@ def test_scan_totals_match_ground_truth(client: TestClient):
     assert body["importer_of_record"]["total"] == pytest.approx(TOTALS["importer_of_record_duty_total"], abs=0.05)
     assert body["importer_of_record"]["count"] == 2
     assert body["credits_already_received"] == pytest.approx(500, abs=0.05)
-    assert body["needs_review_count"] == 0
+    assert body["needs_review_count"] == 1
 
     by_name = {claim["vendor"]: claim for claim in body["claims"]}
     assert by_name["Northwind Packaging Co."]["strength"] == "High"
@@ -74,7 +74,19 @@ def test_scan_totals_match_ground_truth(client: TestClient):
     assert harbor["claim_expected"] == pytest.approx(harbor["conservative_price_increase"], abs=0.05)
     required = [test for sku in harbor["price_history"] for test in sku["tests"] if test["required"]]
     assert required and all(test["passed"] for test in required)
+    harbor_timing = next(test for test in harbor["price_history"][0]["tests"] if test["id"] == "timing")
+    assert "2025-04-05" in (harbor_timing.get("matched_action") or harbor_timing["detail"])
     assert by_name["Mekong Tabletop"]["strength"] == "Low"
+    mekong = client.get(f"/api/recoveries/{by_name['Mekong Tabletop']['vendor_id']}").json()
+    mekong_timing = next(test for sku in mekong["price_history"] for test in sku["tests"] if test["id"] == "timing")
+    assert "2025-08-07" in (mekong_timing.get("matched_action") or "")
+    orchard = by_name["Orchard Copper"]
+    assert orchard["status"] == "Needs review"
+    assert orchard["refundable"] == pytest.approx(0, abs=0.01)
+    orchard_detail = client.get(f"/api/recoveries/{orchard['vendor_id']}").json()
+    orchard_control = next(test for sku in orchard_detail["price_history"] for test in sku["tests"] if test["id"] == "control")
+    assert orchard_control["status"] == "needs_review"
+    assert "Clearpour Glass" not in by_name
     assert by_name["Guesswork Goods"]["strength"] == "Low"
     guess = client.get(f"/api/recoveries/{by_name['Guesswork Goods']['vendor_id']}").json()
     assert guess["evidence_tier"] == "price_only"
@@ -87,6 +99,7 @@ def test_scan_totals_match_ground_truth(client: TestClient):
         "Homestead Kiln",
         "Level Pantry",
         "Calendar Imports",
+        "Clearpour Glass",
         "Brightline Office Supply",
         "Pacific Freight Forwarding",
     ):
@@ -101,6 +114,25 @@ def test_scan_totals_match_ground_truth(client: TestClient):
     assert by_name["Kestrel Textiles"]["strength"] == "Tracked"
     assert "Brightline Office Supply" not in by_name
     assert "Pacific Freight Forwarding" not in by_name
+
+    original = harbor["refundable"]
+    lowered = client.put(
+        f"/api/recoveries/{by_name['Harbor & Pine Coffee Equipment']['vendor_id']}/import-cost-share",
+        json={"import_cost_share": 0.4},
+    )
+    assert lowered.status_code == 200, lowered.text
+    assert lowered.json()["refundable"] == pytest.approx(0, abs=0.01)
+    lowered_size = next(test for sku in lowered.json()["price_history"] for test in sku["tests"] if test["id"] == "size")
+    assert lowered_size["passed"] is False
+    assert "40%" in lowered_size["detail"]
+    restored = client.put(
+        f"/api/recoveries/{by_name['Harbor & Pine Coffee Equipment']['vendor_id']}/import-cost-share",
+        json={"import_cost_share": 0.6},
+    )
+    assert restored.status_code == 200, restored.text
+    assert restored.json()["refundable"] == pytest.approx(original, abs=0.05)
+    restored_size = next(test for sku in restored.json()["price_history"] for test in sku["tests"] if test["id"] == "size")
+    assert restored_size["passed"] is True
 
     replay = _finish(client)
     assert replay["cached"] is True

@@ -33,7 +33,7 @@ scripts/    make_sample_data.py (synthetic data generator)
 
 ## Sample data
 
-All companies, addresses, and prices are fictional. The buyer is Sunbird Cafe Group (Berkeley, CA). The original six suppliers cover an explicit IEEPA surcharge, a price increase with a contract, a renamed surcharge, a Section 301 line, a domestic control, and importer-of-record duty. Eight more are adversarial cases with known answers: surcharge wording the keyword rules miss, a Section 232 surcharge, a price jump from before February 2025, a domestic price jump, a supplier-wide inflation increase, a jump timed to the wrong country's tariff date, a jump timed to a later country's date, and an item whose origin is inferred. Regenerate with:
+All companies, addresses, and prices are fictional. The buyer is Sunbird Cafe Group (Berkeley, CA). The original six suppliers cover an explicit IEEPA surcharge, a price increase with a contract, a renamed surcharge, a Section 301 line, a domestic control, and importer-of-record duty. Ten more are adversarial cases with known answers: surcharge wording the keyword rules miss, a Section 232 surcharge, a price jump from before February 2025, a domestic price jump, a supplier-wide inflation increase, a jump timed to the wrong country's tariff date, a jump timed to a later country's rate increase, an item whose origin is inferred, an imported item whose only control is the same category at another supplier, and an imported item with no control group at all. Regenerate with:
 
 ```bash
 python scripts/make_sample_data.py
@@ -93,7 +93,7 @@ Refundable rates live in `backend/pipeline/tariffs.py`. A price claim uses the r
 
 Canada and Mexico use the non-USMCA rate. USMCA-qualifying goods, and the 10% rates on energy and potash, are not modeled. Goods already subject to Section 232 are exempt from the reciprocal tariff; that exemption is not applied SKU by SKU. Rates changed again after the August 7 notice. This table stops at the last rate cited above.
 
-A price increase counts only when the origin had an IEEPA tariff on the invoice date, the jump started 0 to 90 days after that country's first IEEPA date, the per-unit jump is no larger than the rate times a 0.6 import-cost share, and the supplier's domestic or unaffected goods did not rise by a similar amount. The claim is the gap versus that control group. Low is half of it. High is the raw jump. A later price drop is recorded and is not required. An origin the invoice does not state is marked inferred, and a claim built only on that inference is Low strength.
+A price increase counts only when the origin had an IEEPA tariff on the invoice date, the jump started 0 to 90 days after any IEEPA rate increase for that country, the per-unit jump is no larger than the rate times the import-cost share, and unaffected goods did not rise by a similar amount. The checklist names the rate increase the jump matched. The control group is the supplier's own domestic or unaffected items. If that supplier has none, the same product category from other suppliers is the control. If no control exists, the item is marked Needs review and is not claimed. The review sheet states the assumption, "import cost is about 60% of price," and editing that percent recalculates which increases still qualify. The claim is the gap versus the control group. Low is half of it. High is the raw jump. A later price drop is recorded and is not required. An origin the invoice does not state is marked inferred, and a claim built only on that inference is Low strength.
 
 ## Pipeline
 

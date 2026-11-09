@@ -391,6 +391,7 @@ SUPPLIERS: dict[str, Supplier] = {
         country_of_origin="US",
         catalog=[
             CatalogItem("HMK-MUG", "Stoneware mug, made in USA", D("30.00"), False, country="US", hts="69"),
+            CatalogItem("HMK-CAR", "Glass carafe, made in USA", D("40.00"), False, country="US", hts="70"),
         ],
     ),
     "level": Supplier(
@@ -451,6 +452,34 @@ SUPPLIERS: dict[str, Supplier] = {
         catalog=[
             CatalogItem("GWG-HEAD", "Espresso group head, origin not printed", D("200.00"), True, omit_origin=True, omit_hts=True),
             CatalogItem("GWG-TAMP", "Calibrated tamper, made in USA", D("48.00"), False, country="US", hts="82"),
+        ],
+    ),
+    "clearpour": Supplier(
+        key="clearpour",
+        name="Clearpour Glass",
+        prefix="CPG",
+        address=["14 Vine Street", "Napa, CA 94559"],
+        email="ap@clearpourglass.example",
+        phone="(707) 555-0148",
+        layout="classic",
+        terms_days=30,
+        country_of_origin="IT",
+        catalog=[
+            CatalogItem("CPG-CAR", "Glass carafe, Italy", D("80.00"), True, country="IT", hts="70"),
+        ],
+    ),
+    "orchard": Supplier(
+        key="orchard",
+        name="Orchard Copper",
+        prefix="ORC",
+        address=["300 River Street", "Santa Rosa, CA 95401"],
+        email="billing@orchardcopper.example",
+        phone="(707) 555-0194",
+        layout="classic",
+        terms_days=30,
+        country_of_origin="VN",
+        catalog=[
+            CatalogItem("ORC-PAN", "Copper saucepan, Vietnam", D("100.00"), True, country="VN", hts="74"),
         ],
     ),
 }
@@ -729,10 +758,11 @@ class Generator:
         self.scripted("early", date(2025, 5, 10), [("ERP-CUP", "10", "44.00"), ("ERP-DOM", "8", "12.00")])
 
     def homestead(self):
-        self.scripted("homestead", date(2024, 9, 1), [("HMK-MUG", "12", "30.00")])
-        self.scripted("homestead", date(2025, 1, 15), [("HMK-MUG", "12", "30.00")])
-        self.scripted("homestead", date(2025, 5, 20), [("HMK-MUG", "12", "33.60")])
-        self.scripted("homestead", date(2025, 11, 20), [("HMK-MUG", "12", "33.60")])
+        # The carafe is domestic and rises 4% on May 20. It is the category control for Clearpour.
+        self.scripted("homestead", date(2024, 9, 1), [("HMK-MUG", "12", "30.00"), ("HMK-CAR", "6", "40.00")])
+        self.scripted("homestead", date(2025, 1, 15), [("HMK-MUG", "12", "30.00"), ("HMK-CAR", "6", "40.00")])
+        self.scripted("homestead", date(2025, 5, 20), [("HMK-MUG", "12", "33.60"), ("HMK-CAR", "6", "41.60")])
+        self.scripted("homestead", date(2025, 11, 20), [("HMK-MUG", "12", "33.60"), ("HMK-CAR", "6", "41.60")])
 
     def level(self):
         # Both the imported napkin and the domestic towel rise 4% on March 15, 2025.
@@ -754,14 +784,38 @@ class Generator:
         self.scripted("calendar", date(2025, 7, 4), up)
 
     def mekong(self):
-        # Vietnam's reciprocal tariff starts April 5. The jump starts June 1, then reverts.
+        # Vietnam's country rate starts August 7, 2025 at 20%. The jump starts September 1,
+        # 25 days later. April 5 is outside the 90-day window, so this counts only because
+        # a later rate increase qualifies. The US towel stays flat.
         base = [("MKT-CUP", "8", "40.00"), ("MKT-TWL", "6", "18.00")]
         up = [("MKT-CUP", "8", "42.00"), ("MKT-TWL", "6", "18.00")]
         self.scripted("mekong", date(2024, 9, 1), base)
         self.scripted("mekong", date(2025, 1, 15), base)
-        self.scripted("mekong", date(2025, 6, 1), up)
-        self.scripted("mekong", date(2025, 10, 1), up)
+        self.scripted("mekong", date(2025, 6, 1), base)
+        self.scripted("mekong", date(2025, 9, 1), up)
+        self.scripted("mekong", date(2025, 12, 1), up)
         self.scripted("mekong", date(2026, 3, 15), base)
+
+    def clearpour(self):
+        # No domestic SKU. Homestead's US carafe, same category, rises 4% on the same day.
+        # This carafe rises 5.5%. The gap is 1.5 points, inside the 2-point band, so it does not count.
+        base = [("CPG-CAR", "5", "80.00")]
+        up = [("CPG-CAR", "5", "84.40")]
+        self.scripted("clearpour", date(2024, 10, 1), base)
+        self.scripted("clearpour", date(2025, 1, 10), base)
+        self.scripted("clearpour", date(2025, 5, 20), up)
+        self.scripted("clearpour", date(2025, 9, 20), up)
+        self.scripted("clearpour", date(2025, 12, 15), up)
+
+    def orchard(self):
+        # Vietnam's August 7 rate. The jump is September 10, 34 days later. Nothing else
+        # in the dataset is copper cookware, so there is no control group.
+        base = [("ORC-PAN", "4", "100.00")]
+        up = [("ORC-PAN", "4", "106.00")]
+        self.scripted("orchard", date(2024, 11, 1), base)
+        self.scripted("orchard", date(2025, 4, 1), base)
+        self.scripted("orchard", date(2025, 9, 10), up)
+        self.scripted("orchard", date(2025, 12, 10), up)
 
     def guesswork(self):
         # Origin is not on the invoice. The suggestion is inferred, so strength stays Low.
@@ -788,6 +842,8 @@ class Generator:
         self.calendar()
         self.mekong()
         self.guesswork()
+        self.clearpour()
+        self.orchard()
         self.invoices.sort(key=lambda i: (i.issued, i.number))
 
 
@@ -1365,11 +1421,13 @@ SUPPLIER_NOTES = {
     "lumen": "Documented in the answer key, missed by demo keywords: 'Q3 landed cost adjustment', 'Supplier cost pass-through', 'Global sourcing fee'.",
     "mill": "Section 232 steel and aluminum surcharge. Not IEEPA, not refundable.",
     "early": "China origin, but the price jumped in November 2024, before the February 4, 2025 tariff. Does not count.",
-    "homestead": "Made in the USA. A May 2025 increase does not count.",
+    "homestead": "Made in the USA. A May 2025 mug increase does not count. The glass carafe rises 4% and is the category control for Clearpour Glass.",
     "level": "Imported and domestic goods both rise 4% on March 15, 2025. The control group moved with the item. Does not count.",
     "calendar": "Italian goods jump on March 4, 2025, the Canada and Mexico date, before Italy's April 5 date. Does not count.",
-    "mekong": "Vietnamese goods jump June 1, 2025, 57 days after the April 5 reciprocal tariff, and revert in March 2026. Price-only. Counts.",
+    "mekong": "Vietnamese goods stay flat through June 2025, then jump September 1, 25 days after the August 7 country rate. April 5 is outside the 90-day window. Price-only. Counts.",
     "guesswork": "Espresso group head with no country on the invoice. Origin is inferred, so the claim counts and strength is Low.",
+    "clearpour": "Only an imported Italian carafe, so there is no in-house control. Homestead's US carafe, same category, rose 4% on the same day. This carafe rose 5.5%. The gap is 1.5 points, so it does not count.",
+    "orchard": "Vietnamese copper saucepan jumps September 10, 2025, 34 days after Vietnam's August 7 rate. No other supplier sells this category. Needs review. Not claimed.",
 }
 
 BENCHMARK_CASES = [
@@ -1381,6 +1439,8 @@ BENCHMARK_CASES = [
     {"id": "wrong_date", "vendor": "Calendar Imports", "should_count": False, "demo_keywords_catch": True},
     {"id": "later_date", "vendor": "Mekong Tabletop", "should_count": True, "demo_keywords_catch": True},
     {"id": "inferred_origin", "vendor": "Guesswork Goods", "should_count": True, "demo_keywords_catch": True},
+    {"id": "peer_control", "vendor": "Clearpour Glass", "should_count": False, "needs_review": False, "demo_keywords_catch": True},
+    {"id": "no_control", "vendor": "Orchard Copper", "should_count": False, "needs_review": True, "demo_keywords_catch": True},
 ]
 
 

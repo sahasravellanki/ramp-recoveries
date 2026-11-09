@@ -74,13 +74,22 @@ def _report(settings, mode: str) -> None:
         answer = _dollars(truth["suppliers"][case["vendor"]]["refundable_claim_total"])
         false_positive = got if not case["should_count"] else Decimal("0")
         missed = answer - got if case["should_count"] and got + EXACT < answer else Decimal("0")
-        mark = "ok"
+        expect_review = bool(case.get("needs_review"))
+        got_review = bool(claim and claim.needs_review)
         if false_positive > EXACT:
             mark = "FALSE POSITIVE"
+        elif expect_review and not got_review:
+            mark = "MISSING needs review"
+        elif not expect_review and got_review:
+            mark = "WRONG needs review"
         elif missed > EXACT:
             mark = "missed"
         elif case["should_count"] and abs(got - answer) > EXACT:
             mark = "dollar mismatch"
+        elif expect_review:
+            mark = "needs review"
+        else:
+            mark = "ok"
         print(
             f"  {case['id']:16} {case['vendor']:24} pipeline ${got:,.2f}  "
             f"answer ${answer:,.2f}  false positive ${false_positive:,.2f}  {mark}"

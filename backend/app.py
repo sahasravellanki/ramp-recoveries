@@ -248,6 +248,10 @@ class LetterUpdate(BaseModel):
     body: str
 
 
+class ShareUpdate(BaseModel):
+    import_cost_share: float
+
+
 def _engine(url: str):
     engine = create_engine_checked(url)
 
@@ -437,6 +441,52 @@ def create_app(database_url: str | None = None) -> FastAPI:
         vendor = session.get(Vendor, vendor_id)
         if vendor is None:
             raise HTTPException(status_code=404, detail="Vendor not found.")
+        return _detail(session, vendor, claim)
+
+    @app.put("/api/recoveries/{vendor_id}/import-cost-share")
+    def update_import_share(vendor_id: str, update: ShareUpdate, session: SessionDep) -> dict:
+        if not 0.01 <= update.import_cost_share <= 1:
+            raise HTTPException(status_code=400, detail="Import cost share has to be between 1% and 100%.")
+        claim = _claim_for(session, vendor_id)
+        if claim.status in {"Sent", "Credited"}:
+            raise HTTPException(status_code=409, detail="This claim was already sent.")
+        vendor = session.get(Vendor, vendor_id)
+        if vendor is None:
+            raise HTTPException(status_code=404, detail="Vendor not found.")
+        history = _loads(claim.price_history_json, {})
+        if not history.get("math"):
+            raise HTTPException(status_code=400, detail="This claim has no price assumption to edit.")
+        from pipeline.prices import recalculate_share
+
+        share = Decimal(str(update.import_cost_share))
+        contract = _loads(claim.contract_json, {})
+        result = recalculate_share(
+            history,
+            share,
+            ieepa=cents(claim.ieepa_surcharge_total),
+            credits=cents(claim.credits_applied),
+            non_refundable=cents(claim.non_refundable_total),
+            clause=bool(contract.get("refund_or_credit_clause")),
+        )
+        claim.price_history_json = json.dumps(result["history"])
+        claim.price_excess_total = money_f(result["price_excess"])
+        claim.raw_price_increase = money_f(result["raw"])
+        claim.gross_refundable = money_f(result["gross"])
+        claim.refundable_total = money_f(result["refundable"])
+        claim.price_reverted = result["reverted"]
+        claim.strength = result["strength"].value if result["strength"] else None
+        _replace_price_evidence(session, claim.id, result["lines"])
+        session.flush()
+        letter = session.exec(select(Letter).where(Letter.claim_id == claim.id)).first()
+        if letter is not None and letter.body == letter.original_body and letter.status != "sent":
+            rebuilt = _letter_from_claim(session, vendor, claim, contract)
+            letter.body = rebuilt
+            letter.original_body = rebuilt
+            letter.word_count = _word_count(rebuilt)
+            session.add(letter)
+        session.add(claim)
+        session.commit()
+        session.refresh(claim)
         return _detail(session, vendor, claim)
 
     @app.put("/api/recoveries/{vendor_id}/letter")
@@ -830,7 +880,7 @@ def _persist(session: Session, output, bills: list[PBill]) -> int:
     contracts = output.contracts
     kept: set[str] = set()
     for claim in output.claims:
-        if claim.strength is None:
+        if claim.strength is None and not claim.needs_review:
             continue
         history = _price_history(claim, bills, output.prices)
         contract = contracts.get(claim.vendor_name)
@@ -839,7 +889,7 @@ def _persist(session: Session, output, bills: list[PBill]) -> int:
         if fresh:
             row = Claim(id=f"clm_{claim.vendor_id}", vendor_id=claim.vendor_id)
         locked = row.status in {"Sent", "Credited"}
-        row.strength = claim.strength.value
+        row.strength = claim.strength.value if claim.strength else None
         row.refundable_total = money_f(claim.refundable_total)
         row.gross_refundable = money_f(claim.gross_refundable)
         row.non_refundable_total = money_f(claim.non_refundable_total)
@@ -849,16 +899,28 @@ def _persist(session: Session, output, bills: list[PBill]) -> int:
         row.raw_price_increase = history["raw_price_increase"]
         row.subtitle = _subtitle(claim)
         row.bill_count = len({item.invoice_number for item in claim.evidence if item.type != "vendor_credit" and item.amount > 0})
+        if row.bill_count == 0:
+            during = {
+                point["invoice_number"]
+                for sku in history.get("skus", [])
+                for point in sku.get("points", [])
+                if point.get("period") == "during"
+            }
+            row.bill_count = len(during)
         row.price_reverted = claim.price_jump_reverted
         row.contract_json = json.dumps(_contract_finding(claim, contract))
         row.price_history_json = json.dumps(history)
         if not locked:
-            drafted = letters.get(claim.vendor_name) is not None
-            row.status = "Drafted" if drafted else "Found"
-            stamp = _stamp()
-            history_rows = [{"status": "Found", "at": stamp}]
-            if drafted:
-                history_rows.append({"status": "Drafted", "at": stamp})
+            if claim.needs_review and claim.strength is None:
+                row.status = "Needs review"
+                history_rows = [{"status": "Needs review", "at": _stamp()}]
+            else:
+                drafted = letters.get(claim.vendor_name) is not None
+                row.status = "Drafted" if drafted else "Found"
+                stamp = _stamp()
+                history_rows = [{"status": "Found", "at": stamp}]
+                if drafted:
+                    history_rows.append({"status": "Drafted", "at": stamp})
             row.status_history_json = json.dumps(history_rows)
         session.add(row)
         session.flush()
@@ -872,6 +934,7 @@ def _persist(session: Session, output, bills: list[PBill]) -> int:
         _delete_claim(session, old)
     review = sum(1 for label in output.labels if label.decision is Decision.needs_review)
     review += sum(1 for bill in session.exec(select(Bill)).all() if bill.needs_review)
+    review += sum(1 for sku in output.prices.skus if sku.needs_review)
     return review
 
 
@@ -953,6 +1016,8 @@ def _subtitle(claim) -> str:
     for item in claim.evidence:
         if item.type == "tariff_other":
             return item.description
+    if claim.needs_review:
+        return "Needs review"
     return ""
 
 
@@ -961,21 +1026,26 @@ def _price_history(claim, bills: list[PBill], prices) -> dict:
     by_sku: dict[str, list] = {}
     for finding in findings:
         by_sku.setdefault(finding.sku, []).append(finding)
-    summaries = {(sku.vendor_name, sku.sku): sku for sku in prices.skus}
+    shown = [sku for sku in prices.skus if sku.vendor_name == claim.vendor_name and _show_sku(sku)]
     skus = []
+    math_rows = []
     raw_total = Decimal("0")
     conservative_total = Decimal("0")
-    for sku, flags in sorted(by_sku.items()):
+    share = None
+    for summary in sorted(shown, key=lambda sku: sku.sku):
+        flags = by_sku.get(summary.sku, [])
         flagged = {(finding.invoice_number, finding.line_index): finding for finding in flags}
-        summary = summaries.get((claim.vendor_name, sku))
         points = []
+        lines = []
         raw = Decimal("0")
+        description = flags[-1].description if flags else summary.sku
         for bill in bills:
             if bill.vendor.name != claim.vendor_name:
                 continue
             for line in bill.line_items:
-                if line.sku != sku:
+                if line.sku != summary.sku:
                     continue
+                description = line.description
                 if bill.issued_at < WINDOW_START:
                     period = "before"
                 elif bill.issued_at > WINDOW_END:
@@ -992,39 +1062,69 @@ def _price_history(claim, bills: list[PBill], prices) -> dict:
                         "expected_price": money_f(finding.expected) if finding else None,
                     }
                 )
-                if finding is not None:
-                    raw += (line.unit_price - finding.baseline) * line.quantity
+                if finding is not None and summary.baseline is not None:
+                    raw += (line.unit_price - summary.baseline) * line.quantity
+                if _claim_line(summary, bill.issued_at, line.unit_price):
+                    lines.append(
+                        {
+                            "quantity": format(line.quantity, "f"),
+                            "unit_price": f"{money(line.unit_price):.2f}",
+                            "invoice_number": bill.invoice_number,
+                            "line_index": line.line_index,
+                            "date": bill.issued_at.isoformat(),
+                            "description": line.description,
+                            "labeled_by": summary.labeled_by,
+                        }
+                    )
         raw = money(raw)
         conservative = money(sum((finding.amount for finding in flags), Decimal("0")))
         raw_total += raw
         conservative_total += conservative
-        latest = flags[-1]
         points.sort(key=lambda point: (point["date"], point["invoice_number"]))
+        reference = _reference_price(summary, flags)
+        if share is None:
+            share = summary.import_cost_share
         skus.append(
             {
-                "sku": sku,
-                "description": latest.description,
-                "baseline": money_f(latest.baseline),
-                "expected_price": money_f(latest.expected),
-                "benchmark_price": money_f(summary.benchmark_price) if summary and summary.benchmark_price is not None else None,
+                "sku": summary.sku,
+                "description": description,
+                "baseline": money_f(summary.baseline) if summary.baseline is not None else 0,
+                "expected_price": money_f(reference),
+                "benchmark_price": money_f(summary.benchmark_price) if summary.benchmark_price is not None else None,
                 "benchmark_is_mock": True,
                 "benchmark_source": "ramp_network_benchmark",
-                "fell_back": summary.fell_back_after_window if summary else None,
+                "fell_back": summary.fell_back_after_window,
                 "raw_increase": money_f(raw),
                 "conservative_increase": money_f(conservative),
                 "points": points,
-                "tests": [test.model_dump() for test in summary.tests] if summary else [],
-                "country": summary.country if summary else latest.country,
-                "hts_chapter": summary.hts_chapter if summary else latest.hts_chapter,
-                "origin_inferred": summary.origin_inferred if summary else latest.origin_inferred,
-                "tariff_rate": money_f(summary.tariff_rate) if summary and summary.tariff_rate is not None else None,
-                "claim_low": money_f(summary.claim_low) if summary else None,
-                "claim_expected": money_f(summary.claim_expected) if summary else None,
-                "claim_high": money_f(summary.claim_high) if summary else None,
+                "tests": [test.model_dump() for test in summary.tests],
+                "country": summary.country,
+                "hts_chapter": summary.hts_chapter,
+                "origin_inferred": summary.origin_inferred,
+                "tariff_rate": money_f(summary.tariff_rate) if summary.tariff_rate is not None else None,
+                "claim_low": money_f(summary.claim_low),
+                "claim_expected": money_f(summary.claim_expected),
+                "claim_high": money_f(summary.claim_high),
+            }
+        )
+        math_rows.append(
+            {
+                "sku": summary.sku,
+                "description": description,
+                "baseline": f"{summary.baseline:.2f}" if summary.baseline is not None else None,
+                "tariff_rate": format(summary.tariff_rate, "f") if summary.tariff_rate is not None else None,
+                "max_unit_jump": format(summary.max_unit_jump, "f"),
+                "control_percent": format(summary.control_percent, "f") if summary.control_percent is not None else None,
+                "origin_inferred": summary.origin_inferred,
+                "fell_back": summary.fell_back_after_window,
+                "tests": [test.model_dump() for test in summary.tests],
+                "lines": lines,
             }
         )
     return {
         "skus": skus,
+        "math": math_rows,
+        "import_cost_share": money_f(share) if share is not None else 0.6,
         "raw_price_increase": money_f(raw_total),
         "conservative_price_increase": money_f(conservative_total),
         "evidence_tier": claim.evidence_tier,
@@ -1034,6 +1134,86 @@ def _price_history(claim, bills: list[PBill], prices) -> dict:
         "claim_high": money_f(claim.claim_high) if claim.claim_high is not None else None,
         "origin_inferred_only": claim.origin_inferred_only,
     }
+
+
+def _show_sku(summary) -> bool:
+    if summary.qualified or summary.needs_review:
+        return True
+    size = next((test for test in summary.tests if test.id == "size"), None)
+    others = [test for test in summary.tests if test.required and test.id != "size"]
+    return bool(size and size.status != "pass" and others and all(test.status == "pass" for test in others))
+
+
+def _claim_line(summary, issued, unit_price) -> bool:
+    if summary.baseline is None or summary.jump_on is None:
+        return False
+    return WINDOW_START <= issued <= WINDOW_END and issued >= summary.jump_on and unit_price > summary.baseline
+
+
+def _reference_price(summary, flags):
+    if flags:
+        return flags[-1].expected
+    if summary.baseline is None:
+        return Decimal("0")
+    if summary.control_percent is not None:
+        return summary.baseline * (1 + summary.control_percent)
+    return summary.baseline
+
+
+def _replace_price_evidence(session: Session, claim_id: str, lines: list[dict]) -> None:
+    for old in session.exec(select(Evidence).where(Evidence.claim_id == claim_id, Evidence.type == "price_excess")).all():
+        session.delete(old)
+    session.flush()
+    for line in lines:
+        session.add(
+            Evidence(
+                claim_id=claim_id,
+                invoice_number=line["invoice_number"],
+                line_index=int(line["line_index"]),
+                evidence_date=date.fromisoformat(line["date"]),
+                description=line["description"],
+                amount=money_f(line["amount"]),
+                type="price_excess",
+                labeled_by=line.get("labeled_by") or "price",
+            )
+        )
+
+
+def _letter_from_claim(session: Session, vendor: Vendor, claim: Claim, contract: dict) -> str:
+    from pipeline.config import BUYER_NAME, SIGN_OFF
+    from pipeline.letters import _template
+    from pipeline.models import LetterFacts
+
+    items = session.exec(select(Evidence).where(Evidence.claim_id == claim.id)).all()
+    items.sort(key=lambda item: (item.evidence_date, item.invoice_number, item.line_index))
+    invoices: list[str] = []
+    credits = []
+    for item in items:
+        if item.type == "vendor_credit":
+            credits.append(item)
+        elif item.amount > 0 and item.type != "tariff_other" and item.invoice_number not in invoices:
+            invoices.append(item.invoice_number)
+    stored = _loads(vendor.address_json, {})
+    address = [line for line in (stored.get("line1"), stored.get("line2")) if line]
+    clause = bool(contract.get("refund_or_credit_clause"))
+    facts = LetterFacts(
+        vendor_name=vendor.name,
+        vendor_address=address,
+        buyer_name=BUYER_NAME,
+        window_start=WINDOW_START,
+        window_end=WINDOW_END,
+        refundable_total=cents(claim.refundable_total),
+        credits_already_received=cents(claim.credits_applied),
+        credit_memos=[
+            f"{item.invoice_number} on {item.evidence_date.isoformat()} for ${cents(-Decimal(str(item.amount))):,.2f}"
+            for item in credits
+        ],
+        invoice_numbers=invoices,
+        contract_clause_number=contract.get("clause_number") if clause else None,
+        contract_clause_text=contract.get("clause_text") if clause else None,
+        signoff=SIGN_OFF,
+    )
+    return _template(facts, date.today())
 
 
 def _contract_finding(claim, contract) -> dict:
@@ -1110,6 +1290,7 @@ def _detail(session: Session, vendor: Vendor, claim: Claim) -> dict:
         "claim_expected": history.get("claim_expected"),
         "claim_high": history.get("claim_high"),
         "origin_inferred_only": bool(history.get("origin_inferred_only")),
+        "import_cost_share": history.get("import_cost_share", 0.6),
         "evidence": [
             {
                 "invoice_number": item.invoice_number,

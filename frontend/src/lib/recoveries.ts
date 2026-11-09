@@ -66,6 +66,8 @@ export type PriceTest = {
   passed: boolean;
   required: boolean;
   detail: string;
+  status?: "pass" | "fail" | "needs_review";
+  matched_action?: string | null;
 };
 
 export type SkuHistory = {
@@ -107,6 +109,7 @@ export type ClaimDetail = {
   claim_expected?: number | null;
   claim_high?: number | null;
   origin_inferred_only?: boolean;
+  import_cost_share?: number | null;
   evidence: EvidenceItem[];
   price_history: SkuHistory[];
   contract: {
@@ -143,6 +146,14 @@ export function startScan() {
 
 export function getScan(scanId: string) {
   return read<ScanStatus>(`/api/recoveries/scan/${scanId}`);
+}
+
+export function updateImportShare(vendorId: string, importCostShare: number) {
+  return read<ClaimDetail>(`/api/recoveries/${vendorId}/import-cost-share`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ import_cost_share: importCostShare }),
+  });
 }
 
 export function saveLetter(vendorId: string, body: string) {

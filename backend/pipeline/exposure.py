@@ -38,6 +38,8 @@ CATEGORIES: list[ProductCategory] = [
     ProductCategory(id="staff_apparel", name="Staff apparel", imported_likely=True, ieepa_rate=Decimal("0.25"), examples="aprons, tees, caps"),
     ProductCategory(id="cafe_linens", name="Cafe linens", imported_likely=True, ieepa_rate=Decimal("0.20"), examples="bar towels, table runners"),
     ProductCategory(id="office_supplies", name="Office supplies", imported_likely=False, ieepa_rate=Decimal("0.00"), examples="paper, toner, pens, gloves, cleaner"),
+    ProductCategory(id="glass_carafes", name="Glass carafes", imported_likely=True, ieepa_rate=Decimal("0.10"), examples="glass carafes"),
+    ProductCategory(id="copper_cookware", name="Copper cookware", imported_likely=True, ieepa_rate=Decimal("0.20"), examples="copper saucepans"),
     ProductCategory(id="freight_and_fees", name="Freight and fees", imported_likely=False, ieepa_rate=Decimal("0.00"), examples="shipping, surcharges, tax, duty lines"),
 ]
 
@@ -82,6 +84,9 @@ _SKU_PREFIXES: list[tuple[str, str]] = sorted(
         ("KST-TWL", "cafe_linens"),
         ("KST-TBL", "cafe_linens"),
         ("BOS-", "office_supplies"),
+        ("HMK-CAR", "glass_carafes"),
+        ("CPG-", "glass_carafes"),
+        ("ORC-", "copper_cookware"),
     ],
     key=lambda pair: len(pair[0]),
     reverse=True,
@@ -119,6 +124,8 @@ _DESCRIPTION_RULES: list[tuple[str, str]] = [
     ("paper", "office_supplies"),
     ("toner", "office_supplies"),
     ("glove", "office_supplies"),
+    ("carafe", "glass_carafes"),
+    ("saucepan", "copper_cookware"),
 ]
 
 

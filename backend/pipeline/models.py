@@ -201,13 +201,19 @@ class SkuTag(BaseModel):
 
 
 class PriceTest(BaseModel):
-    """One pass/fail check for a price-only or contract-plus-price claim."""
+    """One check for a price-only or contract-plus-price claim.
+
+    status is pass, fail, or needs_review. needs_review is neither a pass nor a
+    fail: the test could not be run, and the item is not claimed.
+    """
 
     id: str
     name: str
     passed: bool
     required: bool
     detail: str
+    status: Literal["pass", "fail", "needs_review"] = "fail"
+    matched_action: str | None = None
 
 
 class PriceFinding(BaseModel):
@@ -252,9 +258,16 @@ class SkuPriceSummary(BaseModel):
     origin_inferred: bool = False
     tariff_rate: Decimal | None = None
     qualified: bool = False
+    needs_review: bool = False
     claim_low: Decimal = Decimal("0.00")
     claim_expected: Decimal = Decimal("0.00")
     claim_high: Decimal = Decimal("0.00")
+    import_cost_share: Decimal = Decimal("0.60")
+    max_unit_jump: Decimal = Decimal("0.00")
+    control_percent: Decimal | None = None
+    jump_on: date | None = None
+    matched_action: str | None = None
+    labeled_by: str = ""
 
 
 class PriceAnalysis(BaseModel):
@@ -320,6 +333,7 @@ class VendorClaim(BaseModel):
     claim_expected: Decimal | None = None
     claim_high: Decimal | None = None
     origin_inferred_only: bool = False
+    needs_review: bool = False
 
     @property
     def invoice_numbers(self) -> list[str]:

@@ -133,17 +133,31 @@ export function RecoveriesView() {
     load().catch(() => undefined);
   }
 
+  function setRefundable(vendorId: string, refundable: number, strength: string | null) {
+    setSummary((current) => {
+      if (!current) return current;
+      const claims = current.claims.map((claim) =>
+        claim.vendor_id === vendorId ? { ...claim, refundable, strength } : claim,
+      );
+      return {
+        ...current,
+        claims,
+        net_refundable: claims.reduce((sum, claim) => sum + claim.refundable, 0),
+      };
+    });
+  }
+
   const claims = summary?.claims ?? [];
   const counts = {
     all: claims.length,
-    review: claims.filter((claim) => claim.status === "Drafted" || claim.status === "Found").length,
+    review: claims.filter((claim) => claim.status === "Drafted" || claim.status === "Found" || claim.status === "Needs review").length,
     sent: claims.filter((claim) => claim.status === "Sent").length,
     credited: claims.filter((claim) => claim.status === "Credited").length,
   };
   const visible = useMemo(() => {
     const needle = query.trim().toLowerCase();
     return claims.filter((claim) => {
-      if (tab === "review" && claim.status !== "Drafted" && claim.status !== "Found") return false;
+      if (tab === "review" && claim.status !== "Drafted" && claim.status !== "Found" && claim.status !== "Needs review") return false;
       if (tab === "sent" && claim.status !== "Sent") return false;
       if (tab === "credited" && claim.status !== "Credited") return false;
       if (!needle) return true;
@@ -318,6 +332,7 @@ export function RecoveriesView() {
           if (!open) setReviewId(null);
         }}
         onStatus={setStatus}
+        onRefundable={setRefundable}
       />
     </TooltipProvider>
   );

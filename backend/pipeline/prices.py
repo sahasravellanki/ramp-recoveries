@@ -3,9 +3,13 @@
 A price increase counts only when every required test passes:
 
 - origin: the item is imported from a country with an IEEPA tariff on the invoice
-- timing: the jump starts 0 to 90 days after that country's tariff date, not before
+- timing: the jump starts 0 to 90 days after any IEEPA rate increase for that country
 - size: the per-unit jump is no larger than tariff rate times import cost
-- control: the supplier's domestic or unaffected goods did not rise by a similar amount
+- control: unaffected goods did not rise by a similar amount
+
+The control group is the same supplier's domestic or unaffected items. If that
+supplier has none, it is the same category from other suppliers. If no control
+exists, the test is Needs review and the item is not claimed.
 
 A price that falls back after February 20, 2026 is recorded and is not required.
 The claimed amount is the difference-in-differences excess. Low is half of that.
@@ -16,12 +20,30 @@ from __future__ import annotations
 
 from collections import defaultdict
 from dataclasses import dataclass
-from datetime import date, timedelta
+from datetime import date
 from decimal import Decimal
 
+from .claims import _strength, _tier
 from .config import WINDOW_END, WINDOW_START
-from .models import Bill, LineCategory, LineLabel, PriceAnalysis, PriceFinding, PriceTest, SkuPriceSummary, SkuTag, money
-from .tariffs import DEFAULT_IMPORT_SHARE, first_ieepa_date, ieepa_rate, rate_label
+from .models import (
+    LineCategory,
+    LineLabel,
+    PriceAnalysis,
+    PriceFinding,
+    PriceTest,
+    SkuPriceSummary,
+    SkuTag,
+    money,
+)
+from .tariffs import (
+    DEFAULT_IMPORT_SHARE,
+    first_ieepa_date,
+    ieepa_rate,
+    increase_label,
+    match_increase,
+    rate_increases,
+    rate_label,
+)
 
 # Ignore a move smaller than this when deciding that a jump started.
 _JUMP = Decimal("0.005")
@@ -33,6 +55,7 @@ _HALF = Decimal("0.5")
 BENCHMARK_FACTOR = Decimal("0.99")
 # Hours and freight are not a control for a goods price.
 _NOT_A_CONTROL = {"equipment_service", "freight_and_fees"}
+_SIZE_NAME = "Jump no larger than the tariff on import cost"
 
 
 @dataclass
@@ -53,8 +76,29 @@ class Observation:
     labeled_by: str
 
 
+@dataclass
+class _ControlMatch:
+    percent: Decimal | None
+    source: str
+    vendors: list[str]
+
+
+@dataclass
+class _Assessment:
+    tests: list[PriceTest]
+    rate: Decimal | None
+    claimable: bool
+    baseline: Decimal | None
+    jump: date | None
+    control: Decimal | None
+    share: Decimal
+    max_jump: Decimal
+    needs_review: bool
+    matched_action: str | None
+
+
 def analyze(
-    bills: list[Bill],
+    bills: list,
     labels: list[LineLabel],
     tags: dict[tuple[str, str], SkuTag],
 ) -> PriceAnalysis:
@@ -96,25 +140,20 @@ def qualify(rows: list[Observation]) -> PriceAnalysis:
     skus: list[SkuPriceSummary] = []
     for key in sorted(grouped):
         series = sorted(grouped[key], key=lambda row: (row.issued, row.invoice_number, row.line_index))
-        tests, rate, claimable = _assess(series, grouped)
-        sku_findings = _findings(series, grouped, rate) if claimable else []
+        assessment = _assess(series, grouped)
+        sku_findings = _findings(series, assessment) if assessment.claimable else []
         findings.extend(sku_findings)
-        skus.append(_summary(series, sku_findings, tests, rate))
+        skus.append(_summary(series, sku_findings, assessment))
     return PriceAnalysis(findings=findings, skus=skus)
 
 
-def _summary(
-    series: list[Observation],
-    sku_findings: list[PriceFinding],
-    tests: list[PriceTest],
-    rate: Decimal | None,
-) -> SkuPriceSummary:
+def _summary(series: list[Observation], sku_findings: list[PriceFinding], assessment: _Assessment) -> SkuPriceSummary:
     head = series[0]
-    baseline = _baseline_price(series, first_ieepa_date(head.country))
+    baseline = assessment.baseline
     flagged = money(sum((item.amount for item in sku_findings), Decimal("0")))
     low = money(sum((item.low_amount for item in sku_findings), Decimal("0")))
     high = money(sum((item.high_amount for item in sku_findings), Decimal("0")))
-    revert = next((test for test in tests if test.id == "revert"), None)
+    revert = next((test for test in assessment.tests if test.id == "revert"), None)
     fell_back = None if revert is None or "No invoice after" in revert.detail else revert.passed
     return SkuPriceSummary(
         vendor_name=head.vendor,
@@ -122,28 +161,32 @@ def _summary(
         baseline=baseline,
         observations=len(series),
         benchmark_price=money(baseline * BENCHMARK_FACTOR) if baseline is not None else None,
-        fell_back_after_window=fell_back if sku_findings else None,
+        fell_back_after_window=fell_back,
         flagged_amount=flagged,
-        tests=tests,
+        tests=assessment.tests,
         country=head.country,
         hts_chapter=head.hts,
         origin_inferred=head.origin_inferred,
-        tariff_rate=rate,
+        tariff_rate=assessment.rate,
         qualified=bool(sku_findings),
+        needs_review=assessment.needs_review,
         claim_low=low,
         claim_expected=flagged,
         claim_high=high,
+        import_cost_share=assessment.share,
+        max_unit_jump=assessment.max_jump,
+        control_percent=assessment.control,
+        jump_on=assessment.jump,
+        matched_action=assessment.matched_action,
+        labeled_by=head.labeled_by,
     )
 
 
-def _findings(
-    series: list[Observation], grouped: dict[tuple[str, str], list[Observation]], rate: Decimal | None
-) -> list[PriceFinding]:
-    head = series[0]
-    tariff_on = first_ieepa_date(head.country)
-    baseline = _baseline_price(series, tariff_on)
-    jump = _jump_date(series, baseline)
-    control = _control_percent(head, series, grouped)
+def _findings(series: list[Observation], assessment: _Assessment) -> list[PriceFinding]:
+    baseline = assessment.baseline
+    jump = assessment.jump
+    control = assessment.control
+    rate = assessment.rate
     if baseline is None or jump is None or control is None:
         return []
     out: list[PriceFinding] = []
@@ -183,9 +226,7 @@ def _findings(
     return out
 
 
-def _assess(
-    series: list[Observation], grouped: dict[tuple[str, str], list[Observation]]
-) -> tuple[list[PriceTest], Decimal | None, bool]:
+def _assess(series: list[Observation], grouped: dict[tuple[str, str], list[Observation]]) -> _Assessment:
     head = series[0]
     country = head.country
     tariff_on = first_ieepa_date(country)
@@ -193,6 +234,8 @@ def _assess(
     jump = _jump_date(series, baseline) if baseline is not None else None
     rate = ieepa_rate(country, jump) if jump is not None else Decimal("0")
     share = head.import_cost_share or DEFAULT_IMPORT_SHARE
+    matched = match_increase(country, jump, window_days=_TIMING_DAYS) if jump is not None and country else None
+    matched_action = increase_label(matched) if matched is not None else None
 
     origin_ok = bool(country) and country != "US" and jump is not None and rate > 0 and _lines_have_a_tariff(series, jump)
     if not country or country == "US":
@@ -206,43 +249,73 @@ def _assess(
         if head.origin_inferred:
             origin_detail += " Origin was inferred, not printed on the invoice."
 
-    if tariff_on is None or jump is None:
+    if jump is None or not country or country == "US":
         timing_ok = False
-        timing_detail = "No tariff date, or no price jump, so timing cannot pass."
-    else:
-        last = tariff_on + timedelta(days=_TIMING_DAYS)
-        timing_ok = tariff_on <= jump <= last
-        gap = (jump - tariff_on).days
-        if jump < tariff_on:
-            timing_detail = f"The price moved on {jump.isoformat()}, before {country}'s tariff date {tariff_on.isoformat()}."
-        elif jump > last:
-            timing_detail = f"The price moved on {jump.isoformat()}, {gap} days after {tariff_on.isoformat()}. The window is 0 to {_TIMING_DAYS} days."
+        timing_detail = "No price jump, or no foreign origin, so timing cannot pass."
+    elif matched is None:
+        timing_ok = False
+        known = rate_increases(country)
+        if not known:
+            timing_detail = f"{country} has no IEEPA rate increase to time the jump against."
+        elif jump < known[0].effective:
+            timing_detail = (
+                f"The price moved on {jump.isoformat()}, before {country}'s first IEEPA rate increase "
+                f"on {known[0].effective.isoformat()}."
+            )
         else:
-            timing_detail = f"The price moved on {jump.isoformat()}, {gap} days after {country}'s tariff date {tariff_on.isoformat()}."
-
-    if baseline is None or jump is None or rate <= 0:
-        size_ok = False
-        size_detail = "No baseline and in-force tariff rate to compare the jump with."
+            timing_detail = (
+                f"The price moved on {jump.isoformat()}, which is not within 0 to {_TIMING_DAYS} days after an IEEPA "
+                f"rate increase for {country}. The latest increase is {increase_label(known[-1])}."
+            )
     else:
-        biggest = _max_jump(series, baseline, jump)
-        cap = rate * share * baseline
-        size_ok = biggest <= cap + Decimal("0.005")
-        size_detail = (
-            f"Largest per-unit jump is ${biggest:,.2f}. The cap is {rate * 100:.0f}% × {share * 100:.0f}% import share × ${baseline:,.2f} = ${cap:,.2f}."
-        )
+        timing_ok = True
+        gap = (jump - matched.effective).days
+        timing_detail = f"The price moved on {jump.isoformat()}, {gap} days after {matched_action}."
 
-    control = _control_percent(head, series, grouped)
-    item_pct = ((series_price_on(series, jump) - baseline) / baseline) if baseline and jump else None
-    if control is None or item_pct is None:
-        control_ok = False
-        control_detail = "No domestic or unaffected item from this supplier to compare against."
+    biggest = _max_jump(series, baseline, jump) if baseline is not None and jump is not None else Decimal("0")
+    size = size_test(baseline, rate if rate > 0 else None, biggest, share)
+
+    imported_jump = bool(country) and country != "US" and jump is not None and rate > 0
+    if not imported_jump:
+        control_match = _ControlMatch(None, "skipped", [])
+        if jump is None:
+            control_detail = "The unit price never moved off its earlier price, so there is no increase to compare."
+        else:
+            control_detail = "This is not an imported item with an IEEPA tariff in effect, so the control test does not apply."
+        control_status = "fail"
+        control = None
     else:
-        gap = item_pct - control
-        control_ok = gap > _SIMILAR
-        control_detail = (
-            f"This item rose {item_pct * 100:.1f}%. The supplier's other unaffected goods rose {control * 100:.1f}% in the same period. "
-            f"The difference is {gap * 100:.1f} points."
-        )
+        control_match = _control_match(head, grouped, tariff_on, jump)
+        control = control_match.percent
+        item_pct = ((series_price_on(series, jump) - baseline) / baseline) if baseline and jump else None
+        if control_match.source in {"none", "uncategorized"} or control is None or item_pct is None:
+            control_status = "needs_review"
+            control = None
+            if control_match.source == "uncategorized":
+                control_detail = (
+                    "This supplier has no domestic or unaffected item, and this item has no category to compare "
+                    "across suppliers. Needs review."
+                )
+            else:
+                control_detail = (
+                    "This supplier has no domestic or unaffected item, and no other supplier has an unaffected item "
+                    "in this category. Needs review."
+                )
+        else:
+            gap = item_pct - control
+            control_status = "pass" if gap > _SIMILAR else "fail"
+            movement = (
+                f"This item rose {_pct(item_pct)}. The comparison group rose {_pct(control)} in the same period. "
+                f"The difference is {gap * 100:.1f} points."
+            )
+            if control_match.source == "supplier":
+                control_detail = f"{movement} The comparison is this supplier's other unaffected goods."
+            else:
+                names = _name_list(control_match.vendors)
+                control_detail = (
+                    "This supplier has no domestic or unaffected item. Unaffected goods in the same category from "
+                    f"other suppliers ({names}) are the comparison. {movement}"
+                )
 
     fell = _fell_back(series, baseline) if baseline is not None else None
     if fell is None:
@@ -256,14 +329,76 @@ def _assess(
         revert_ok = False
 
     tests = [
-        PriceTest(id="origin", name="Imported, tariff in effect", passed=origin_ok, required=True, detail=origin_detail),
-        PriceTest(id="timing", name="Jump within 90 days of the tariff date", passed=timing_ok, required=True, detail=timing_detail),
-        PriceTest(id="size", name="Jump no larger than the tariff on import cost", passed=size_ok, required=True, detail=size_detail),
-        PriceTest(id="control", name="Not matched by unaffected goods", passed=control_ok, required=True, detail=control_detail),
-        PriceTest(id="revert", name="Price fell back after the window", passed=revert_ok, required=False, detail=revert_detail),
+        PriceTest(
+            id="origin",
+            name="Imported, tariff in effect",
+            passed=origin_ok,
+            required=True,
+            detail=origin_detail,
+            status="pass" if origin_ok else "fail",
+        ),
+        PriceTest(
+            id="timing",
+            name="Jump within 90 days of a rate increase",
+            passed=timing_ok,
+            required=True,
+            detail=timing_detail,
+            status="pass" if timing_ok else "fail",
+            matched_action=matched_action,
+        ),
+        size,
+        PriceTest(
+            id="control",
+            name="Not matched by unaffected goods",
+            passed=control_status == "pass",
+            required=True,
+            detail=control_detail,
+            status=control_status,
+        ),
+        PriceTest(
+            id="revert",
+            name="Price fell back after the window",
+            passed=revert_ok,
+            required=False,
+            detail=revert_detail,
+            status="pass" if revert_ok else "fail",
+        ),
     ]
-    required_ok = all(test.passed for test in tests if test.required)
-    return tests, rate if rate > 0 else None, required_ok and bool(claim_lines_exist(series, baseline, jump, control))
+    required_ok = all(test.status == "pass" for test in tests if test.required)
+    others_ok = all(test.status == "pass" for test in tests if test.required and test.id != "control")
+    needs_review = control_status == "needs_review" and others_ok
+    claimable = required_ok and claim_lines_exist(series, baseline, jump, control)
+    return _Assessment(
+        tests=tests,
+        rate=rate if rate > 0 else None,
+        claimable=claimable,
+        baseline=baseline,
+        jump=jump,
+        control=control,
+        share=share,
+        max_jump=biggest,
+        needs_review=needs_review,
+        matched_action=matched_action,
+    )
+
+
+def size_test(baseline: Decimal | None, rate: Decimal | None, biggest: Decimal, share: Decimal) -> PriceTest:
+    if baseline is None or rate is None or rate <= 0:
+        return PriceTest(
+            id="size",
+            name=_SIZE_NAME,
+            passed=False,
+            required=True,
+            detail="No baseline and in-force tariff rate to compare the jump with.",
+            status="fail",
+        )
+    cap = rate * share * baseline
+    ok = biggest <= cap + Decimal("0.005")
+    detail = (
+        f"Largest per-unit jump is ${biggest:,.2f}. Assumes import cost is {_pct(share)} of price. "
+        f"The cap is {rate * 100:.0f}% × {_pct(share)} × ${baseline:,.2f} = ${cap:,.2f}."
+    )
+    return PriceTest(id="size", name=_SIZE_NAME, passed=ok, required=True, detail=detail, status="pass" if ok else "fail")
 
 
 def claim_lines_exist(series, baseline, jump, control) -> bool:
@@ -331,20 +466,43 @@ def _lines_have_a_tariff(series: list[Observation], jump: date) -> bool:
     )
 
 
-def _control_percent(
-    head: Observation, series: list[Observation], grouped: dict[tuple[str, str], list[Observation]]
-) -> Decimal | None:
-    tariff_on = first_ieepa_date(head.country)
-    baseline = _baseline_price(series, tariff_on)
-    jump = _jump_date(series, baseline) if baseline is not None else None
-    if jump is None:
-        return None
-    percents: list[Decimal] = []
+def _control_match(
+    head: Observation,
+    grouped: dict[tuple[str, str], list[Observation]],
+    tariff_on: date | None,
+    jump: date,
+) -> _ControlMatch:
+    own = _peer_changes(head, grouped, tariff_on, jump, same_vendor=True)
+    if own:
+        return _ControlMatch(_median([pct for _, pct in own]), "supplier", _unique([vendor for vendor, _ in own]))
+    if not head.category_id or head.category_id in _NOT_A_CONTROL:
+        return _ControlMatch(None, "uncategorized", [])
+    peers = _peer_changes(head, grouped, tariff_on, jump, same_vendor=False)
+    if not peers:
+        return _ControlMatch(None, "none", [])
+    return _ControlMatch(_median([pct for _, pct in peers]), "category", _unique([vendor for vendor, _ in peers]))
+
+
+def _peer_changes(
+    head: Observation,
+    grouped: dict[tuple[str, str], list[Observation]],
+    tariff_on: date | None,
+    jump: date,
+    *,
+    same_vendor: bool,
+) -> list[tuple[str, Decimal]]:
+    found: list[tuple[str, Decimal]] = []
     for (vendor, sku), other in grouped.items():
-        if vendor != head.vendor or sku == head.sku:
+        if vendor == head.vendor and sku == head.sku:
+            continue
+        if same_vendor and vendor != head.vendor:
+            continue
+        if not same_vendor and vendor == head.vendor:
             continue
         sample = other[0]
         if sample.category_id in _NOT_A_CONTROL:
+            continue
+        if not same_vendor and sample.category_id != head.category_id:
             continue
         if not _unaffected(sample.country, jump):
             continue
@@ -353,10 +511,8 @@ def _control_percent(
         during = [row.unit_price for row in ordered if jump <= row.issued <= WINDOW_END]
         if base is None or base <= 0 or not during:
             continue
-        percents.append((_median(during) - base) / base)
-    if not percents:
-        return None
-    return _median(percents)
+        found.append((vendor, (_median(during) - base) / base))
+    return found
 
 
 def _unaffected(country: str | None, day: date) -> bool:
@@ -382,3 +538,150 @@ def _median(values: list[Decimal]) -> Decimal:
     if len(ordered) % 2:
         return ordered[mid]
     return (ordered[mid - 1] + ordered[mid]) / 2
+
+
+def _pct(value: Decimal) -> str:
+    points = value * 100
+    if points == points.to_integral_value():
+        return f"{points:.0f}%"
+    return f"{points:.1f}%"
+
+
+def _unique(names: list[str]) -> list[str]:
+    seen: list[str] = []
+    for name in names:
+        if name not in seen:
+            seen.append(name)
+    return seen
+
+
+def _name_list(names: list[str]) -> str:
+    shown = names[:4]
+    extra = len(names) - len(shown)
+    text = ", ".join(shown)
+    if extra > 0:
+        text += f", and {extra} more"
+    return text or "other suppliers"
+
+
+def recalculate_share(
+    history: dict,
+    share: Decimal,
+    *,
+    ieepa: Decimal,
+    credits: Decimal,
+    non_refundable: Decimal,
+    clause: bool,
+) -> dict:
+    """Re-run the size test at a new import-cost share and rebuild the claim dollars.
+
+    Origin, timing, and control stay as they were. Only the size gate moves.
+    """
+    share = Decimal(share)
+    math_rows = history.get("math") or []
+    display = {sku["sku"]: dict(sku) for sku in history.get("skus") or []}
+    price_low = Decimal("0")
+    price_expected = Decimal("0")
+    price_high = Decimal("0")
+    lines: list[dict] = []
+    reverted_known: list[bool] = []
+    qualified_inferred: list[bool] = []
+    updated_skus: list[dict] = []
+    review_blocked = False
+
+    for row in math_rows:
+        tests, low, expected, high, row_lines, qualified = _reprice_sku(row, share)
+        sku = display.get(row["sku"], {"sku": row["sku"], "description": row.get("description", "")})
+        sku["tests"] = tests
+        sku["claim_low"] = _num(low)
+        sku["claim_expected"] = _num(expected)
+        sku["claim_high"] = _num(high)
+        sku["conservative_increase"] = _num(expected)
+        sku["raw_increase"] = _num(high)
+        updated_skus.append(sku)
+        if qualified:
+            price_low += low
+            price_expected += expected
+            price_high += high
+            lines.extend(row_lines)
+            qualified_inferred.append(bool(row.get("origin_inferred")))
+            if row.get("fell_back") is not None:
+                reverted_known.append(bool(row["fell_back"]))
+        control = next((test for test in tests if test["id"] == "control"), None)
+        others = [test for test in tests if test.get("required") and test["id"] != "control"]
+        if control and control["status"] == "needs_review" and all(test["status"] == "pass" for test in others):
+            review_blocked = True
+
+    price_low, price_expected, price_high = money(price_low), money(price_expected), money(price_high)
+    gross = money(ieepa + price_expected)
+    refundable = money(gross - credits)
+    explicit = ieepa > 0
+    has_price = price_expected > 0
+    inferred_only = has_price and ieepa <= 0 and bool(qualified_inferred) and all(qualified_inferred)
+    tier, reasons = _tier(explicit, clause, has_price, inferred_only)
+    if tier is None and review_blocked:
+        reasons = [
+            "The price increase lines up with an IEEPA rate increase, but there is no control group to compare it with.",
+            "It needs a person to review it, so nothing is claimed yet.",
+        ]
+    elif tier is None and math_rows and not explicit:
+        reasons = [
+            "At this import-cost share, the price increase is larger than the tariff on the import cost, so it is not claimed."
+        ]
+    reverted = all(reverted_known) if reverted_known else None
+    strength = _strength(gross, non_refundable, tier, clause, reverted, inferred_only)
+    next_history = dict(history)
+    next_history["skus"] = updated_skus
+    next_history["import_cost_share"] = float(share)
+    next_history["claim_low"] = _num(price_low) if has_price else None
+    next_history["claim_expected"] = _num(price_expected) if has_price else None
+    next_history["claim_high"] = _num(price_high) if has_price else None
+    next_history["raw_price_increase"] = _num(price_high)
+    next_history["conservative_price_increase"] = _num(price_expected)
+    next_history["evidence_tier"] = tier
+    next_history["tier_reasons"] = reasons
+    next_history["origin_inferred_only"] = inferred_only
+    return {
+        "history": next_history,
+        "price_excess": price_expected,
+        "raw": price_high,
+        "gross": gross,
+        "refundable": refundable,
+        "lines": lines,
+        "reverted": reverted,
+        "tier": tier,
+        "reasons": reasons,
+        "inferred_only": inferred_only,
+        "strength": strength,
+    }
+
+
+def _reprice_sku(row: dict, share: Decimal):
+    baseline = Decimal(str(row["baseline"])) if row.get("baseline") is not None else None
+    rate = Decimal(str(row["tariff_rate"])) if row.get("tariff_rate") not in (None, "") else None
+    biggest = Decimal(str(row.get("max_unit_jump") or "0"))
+    control = Decimal(str(row["control_percent"])) if row.get("control_percent") not in (None, "") else None
+    fresh = size_test(baseline, rate, biggest, share).model_dump()
+    tests = [fresh if test["id"] == "size" else test for test in row.get("tests") or []]
+    if not any(test["id"] == "size" for test in tests):
+        tests.append(fresh)
+    required_ok = all(test["status"] == "pass" for test in tests if test.get("required"))
+    low = expected = high = Decimal("0")
+    lines: list[dict] = []
+    if required_ok and baseline is not None and control is not None:
+        for line in row.get("lines") or []:
+            qty = Decimal(str(line["quantity"]))
+            unit = Decimal(str(line["unit_price"]))
+            lo, ex, hi, _, _ = _line_amounts(baseline, unit, control, qty)
+            if ex <= 0:
+                continue
+            low += lo
+            expected += ex
+            high += hi
+            lines.append({**line, "amount": ex})
+        low, expected, high = money(low), money(expected), money(high)
+    return tests, low, expected, high, lines, bool(lines)
+
+
+def _num(value: Decimal) -> float:
+    return float(money(value))

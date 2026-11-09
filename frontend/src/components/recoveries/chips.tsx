@@ -40,6 +40,7 @@ const STATUS_TONE = {
   Sent: "blue",
   Credited: "green",
   Found: "gray",
+  "Needs review": "yellow",
 } as const;
 
 export function StatusDot({ status }: { status: string }) {

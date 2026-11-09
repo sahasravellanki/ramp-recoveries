@@ -13,8 +13,9 @@ an EU good, which is the extra duty when Column 1 is zero).
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, timedelta
 from decimal import Decimal
+from functools import lru_cache
 
 # Share of the unit price treated as import cost when a SKU does not say.
 DEFAULT_IMPORT_SHARE = Decimal("0.6")
@@ -29,6 +30,17 @@ _EO_14298 = "https://www.whitehouse.gov/presidential-actions/2025/05/modifying-r
 _CSMS_65573545 = "https://content.govdelivery.com/accounts/USDHSCBP/bulletins/3e892a9"
 _EO_14326 = "https://www.whitehouse.gov/presidential-actions/2025/07/further-modifying-the-reciprocal-tariff-rates/"
 _CSMS_65829726 = "https://content.govdelivery.com/accounts/USDHSCBP/bulletins/3ec7b5e"
+
+
+@dataclass(frozen=True)
+class RateIncrease:
+    """One day the stacked IEEPA rate for a country went up."""
+
+    country: str
+    effective: date
+    rate_before: Decimal
+    rate_after: Decimal
+    actions: tuple[TariffAction, ...]
 
 
 @dataclass(frozen=True)
@@ -166,7 +178,7 @@ def _reciprocal_action(country: str, day: date) -> TariffAction | None:
                     _EO_14326, "The order sets the extra duty so Column 1 plus the reciprocal duty equals 15%, and sets the extra duty to zero when Column 1 is already 15% or more. This table uses 15%, the extra duty when Column 1 is zero.")
     rate = _ANNEX_I_AUG7.get(country, "0.10")
     if country in _ANNEX_I_AUG7:
-        return _row(f"annex-{country.lower()}", country, f"{country} reciprocal tariff", rate, date(2025, 8, 7), None,
+        return _row(f"annex-{country.lower()}", country, f"{_place(country)} reciprocal tariff", rate, date(2025, 8, 7), None,
                     "EO 14326 (July 31, 2025), Annex I, goods entered on or after August 7, 2025",
                     _EO_14326, "Replaces the 10% baseline for this country.")
     return _row("reciprocal-10-continuing", "OTHER", "Reciprocal baseline", "0.10", date(2025, 8, 7), None,
@@ -200,14 +212,78 @@ def ieepa_rate(country: str | None, day: date) -> Decimal:
 
 
 def first_ieepa_date(country: str | None) -> date | None:
+    increases = rate_increases(country)
+    return increases[0].effective if increases else None
+
+
+def _change_dates(country: str) -> list[date]:
+    dates: set[date] = set()
+    for action in _border_actions(country):
+        dates.add(action.effective)
+        if action.ends is not None:
+            dates.add(action.ends)
+    if country not in {"CA", "MX"}:
+        dates.add(date(2025, 4, 5))
+        if country == "CN":
+            dates.update({date(2025, 4, 9), date(2025, 4, 10), date(2025, 5, 14)})
+        else:
+            dates.add(date(2025, 8, 7))
+    return sorted(dates)
+
+
+@lru_cache(maxsize=256)
+def rate_increases(country: str | None) -> tuple[RateIncrease, ...]:
+    """Days the stacked IEEPA rate went up. A later cut, such as China on May 14, is not one."""
     code = normalize_country(country)
     if code is None or code == "US":
+        return ()
+    found: list[RateIncrease] = []
+    for day in _change_dates(code):
+        before = ieepa_rate(code, day - timedelta(days=1))
+        active = tuple(actions_on(code, day))
+        after = sum((action.rate for action in active), Decimal("0"))
+        if after <= before:
+            continue
+        started = tuple(action for action in active if action.effective == day) or active
+        found.append(RateIncrease(code, day, before, after, started))
+    return tuple(found)
+
+
+def match_increase(country: str | None, jump: date, *, window_days: int = 90) -> RateIncrease | None:
+    """The latest IEEPA rate increase whose 0-to-window_days window covers the jump."""
+    covers = [
+        inc
+        for inc in rate_increases(country)
+        if inc.effective <= jump <= inc.effective + timedelta(days=window_days)
+    ]
+    if not covers:
         return None
-    dates = [action.effective for action in _border_actions(code)]
-    # Every non-US country other than Canada and Mexico picks up the baseline on April 5.
-    if code not in {"CA", "MX"}:
-        dates.append(date(2025, 4, 5))
-    return min(dates) if dates else None
+    return max(covers, key=lambda inc: inc.effective)
+
+
+def increase_label(inc: RateIncrease) -> str:
+    names = " and ".join(action.name for action in inc.actions) or "IEEPA tariff"
+    before = f"{inc.rate_before * 100:.0f}%"
+    after = f"{inc.rate_after * 100:.0f}%"
+    return f"{names}, effective {inc.effective.isoformat()} (total rate {before} to {after})"
+
+
+def _place(country: str) -> str:
+    return {
+        "VN": "Vietnam",
+        "JP": "Japan",
+        "KR": "South Korea",
+        "TW": "Taiwan",
+        "IN": "India",
+        "GB": "United Kingdom",
+        "DE": "Germany",
+        "FR": "France",
+        "TH": "Thailand",
+        "ID": "Indonesia",
+        "MY": "Malaysia",
+        "BR": "Brazil",
+        "CH": "Switzerland",
+    }.get(country, country)
 
 
 def rate_label(country: str | None, day: date) -> str:

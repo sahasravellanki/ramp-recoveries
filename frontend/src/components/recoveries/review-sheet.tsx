@@ -2,10 +2,11 @@
 
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { PriceChart } from "@/components/recoveries/price-chart";
 import { PrimaryButton, SecondaryButton } from "@/components/ramp/buttons";
+import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -14,9 +15,11 @@ import {
   getClaim,
   saveLetter,
   simulateAgree,
+  updateImportShare,
   usd,
   type ClaimDetail,
   type EvidenceItem,
+  type PriceTest,
   type SkuHistory,
 } from "@/lib/recoveries";
 import { StrengthChip, StatusDot } from "@/components/recoveries/chips";
@@ -26,11 +29,13 @@ export function ReviewSheet({
   open,
   onOpenChange,
   onStatus,
+  onRefundable,
 }: {
   vendorId: string | null;
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onStatus: (vendorId: string, status: string) => void;
+  onRefundable?: (vendorId: string, refundable: number, strength: string | null) => void;
 }) {
   const [detail, setDetail] = useState<ClaimDetail | null>(null);
   const [body, setBody] = useState("");
@@ -128,6 +133,19 @@ export function ReviewSheet({
     }
   }
 
+  const applyShare = useCallback(
+    async (share: number) => {
+      if (!detail) return;
+      const next = await updateImportShare(detail.vendor_id, share);
+      setDetail(next);
+      const letter = next.letter?.body ?? "";
+      setBody(letter);
+      setSaved(letter);
+      onRefundable?.(next.vendor_id, next.refundable, next.strength);
+    },
+    [detail, onRefundable],
+  );
+
   const tier1 = detail?.evidence.filter((item) => item.labeled_by.endsWith("tier1")).length ?? 0;
   const tier2 = detail?.evidence.filter((item) => item.labeled_by.endsWith("tier2")).length ?? 0;
   const drafted = detail?.status === "Drafted";
@@ -176,16 +194,23 @@ export function ReviewSheet({
               <section className="min-w-0">
                 <h3 className="text-[13px] font-medium text-[#1c1c1c]">Why we flagged this</h3>
                 {detail.price_history.length > 0 ? (
-                  <PriceCharts
-                    skus={detail.price_history}
-                    raw={detail.raw_price_increase}
-                    claimed={detail.conservative_price_increase}
-                    low={detail.claim_low}
-                    expected={detail.claim_expected}
-                    high={detail.claim_high}
-                    showAll={showAllCharts}
-                    onShowAll={() => setShowAllCharts(true)}
-                  />
+                  <>
+                    <ImportShare
+                      share={detail.import_cost_share ?? 0.6}
+                      locked={detail.status === "Sent" || detail.status === "Credited"}
+                      onCommit={applyShare}
+                    />
+                    <PriceCharts
+                      skus={detail.price_history}
+                      raw={detail.raw_price_increase}
+                      claimed={detail.conservative_price_increase}
+                      low={detail.claim_low}
+                      expected={detail.claim_expected}
+                      high={detail.claim_high}
+                      showAll={showAllCharts}
+                      onShowAll={() => setShowAllCharts(true)}
+                    />
+                  </>
                 ) : null}
                 <EvidenceGroups items={detail.evidence} />
               </section>
@@ -235,7 +260,11 @@ export function ReviewSheet({
                   />
                 </section>
               ) : (
-                <p className="text-[13px] text-[#6f6c66]">No letter. Nothing here is refundable from the supplier.</p>
+                <p className="text-[13px] text-[#6f6c66]">
+                  {detail.status === "Needs review"
+                    ? "No letter yet. This price increase needs a control group before it can be claimed."
+                    : "No letter. Nothing here is refundable from the supplier."}
+                </p>
               )}
 
             </div>
@@ -279,13 +308,16 @@ function PriceCharts({
 }) {
   const ranked = [...skus].sort((a, b) => b.conservative_increase - a.conservative_increase);
   const visible = showAll ? ranked : ranked.slice(0, 3);
-  const ranged = low != null && expected != null && high != null;
+  const ranged = low != null && expected != null && high != null && (expected ?? 0) > 0;
+  const needsReview = skus.some((sku) => sku.tests?.some((test) => test.id === "control" && testStatus(test) === "needs_review"));
   return (
     <div className="mt-3 space-y-3">
       <p className="text-[13px] text-[#3f3f3f]">
-        {ranged
-          ? `Low ${usd(low ?? 0)} (half the pass-through) · Expected ${usd(expected ?? 0)} · High ${usd(high ?? 0)} (raw increase). We claim the expected amount.`
-          : `Raw increase ${usd(raw)} · We claim ${usd(claimed)}`}
+        {needsReview && !ranged
+          ? "Not claimed. There is no control group, so this price increase needs review."
+          : ranged
+            ? `Low ${usd(low ?? 0)} (half the pass-through) · Expected ${usd(expected ?? 0)} · High ${usd(high ?? 0)} (raw increase). We claim the expected amount.`
+            : `Raw increase ${usd(raw)} · We claim ${usd(claimed)}`}
       </p>
       {visible.map((sku) => (
         <div key={sku.sku}>
@@ -398,6 +430,65 @@ function TierChip({ tier }: { tier: string }) {
   );
 }
 
+function ImportShare({
+  share,
+  locked,
+  onCommit,
+}: {
+  share: number;
+  locked: boolean;
+  onCommit: (share: number) => Promise<void>;
+}) {
+  const [percent, setPercent] = useState(String(Math.round(share * 100)));
+  const [saving, setSaving] = useState(false);
+  useEffect(() => {
+    setPercent(String(Math.round(share * 100)));
+  }, [share]);
+  useEffect(() => {
+    if (locked) return;
+    const next = Number(percent);
+    if (!Number.isInteger(next) || next < 1 || next > 100) return;
+    const asShare = next / 100;
+    if (Math.abs(asShare - share) < 0.001) return;
+    const timer = window.setTimeout(() => {
+      setSaving(true);
+      onCommit(asShare)
+        .catch((error: Error) => toast.error(error.message))
+        .finally(() => setSaving(false));
+    }, 400);
+    return () => window.clearTimeout(timer);
+  }, [percent, share, locked, onCommit]);
+  return (
+    <div className="mt-3">
+      <label className="flex flex-wrap items-center gap-2 text-[13px] text-[#1c1c1c]" htmlFor="import-cost-share">
+        Assumes import cost is about
+        <Input
+          id="import-cost-share"
+          type="number"
+          min={1}
+          max={100}
+          step={1}
+          inputMode="numeric"
+          disabled={locked || saving}
+          value={percent}
+          onChange={(event) => setPercent(event.target.value)}
+          className="h-8 w-16 rounded-md border-[#e3e1db] px-2 text-center text-[13px] shadow-none"
+          aria-label="Import cost as a percent of price"
+        />
+        % of price.
+      </label>
+      <p className="mt-1 text-[12px] text-[#6f6c66]">
+        {saving ? "Recalculating the claim…" : "Changing this recalculates which price increases still fit under the tariff."}
+        {locked ? " This claim was already sent." : ""}
+      </p>
+    </div>
+  );
+}
+
+function testStatus(test: PriceTest) {
+  return test.status ?? (test.passed ? "pass" : "fail");
+}
+
 function PriceChecklist({ sku }: { sku: SkuHistory }) {
   if (!sku.tests?.length) return null;
   const origin = sku.origin_inferred ? "Origin inferred" : sku.country || "Origin not stated";
@@ -409,15 +500,21 @@ function PriceChecklist({ sku }: { sku: SkuHistory }) {
         {hts ? ` · ${hts}` : ""}
       </p>
       <ul className="mt-1 space-y-1">
-        {sku.tests.map((test) => (
-          <li key={test.id} className="text-[12px] leading-5 text-[#3f3f3f]">
-            <span className={test.passed ? "text-[#1f8a4c]" : "text-[#9a3412]"}>{test.passed ? "Pass" : "Fail"}</span>
-            {" · "}
-            {test.name}
-            {test.required ? "" : " (not required)"}
-            <span className="block text-[#6f6c66]">{test.detail}</span>
-          </li>
-        ))}
+        {sku.tests.map((test) => {
+          const status = testStatus(test);
+          const label = status === "needs_review" ? "Needs review" : status === "pass" ? "Pass" : "Fail";
+          const tone =
+            status === "pass" ? "text-[#1f8a4c]" : status === "needs_review" ? "text-[#8a6a00]" : "text-[#9a3412]";
+          return (
+            <li key={test.id} className="text-[12px] leading-5 text-[#3f3f3f]">
+              <span className={tone}>{label}</span>
+              {" · "}
+              {test.name}
+              {test.required ? "" : " (not required)"}
+              <span className="block text-[#6f6c66]">{test.detail}</span>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
