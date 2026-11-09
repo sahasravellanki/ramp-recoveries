@@ -16,7 +16,7 @@ Everything in the app shell is a static mockup except Recoveries, which fully wo
 ## Repo layout
 
 ```
-backend/    FastAPI app (app/), tariff detection pipeline (pipeline/), eval.py
+backend/    FastAPI app (app.py), tariff detection pipeline (pipeline/), eval.py
 frontend/   Next.js App Router + TypeScript + Tailwind + shadcn/ui
 data/       Generated invoices, contracts, labels, ground truth, Ramp-shaped bills/vendors
 scripts/    make_sample_data.py (synthetic data generator)
@@ -50,7 +50,14 @@ cd backend
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
-uvicorn app.main:app --reload --port 8471
+uvicorn app:app --reload --port 8471
+```
+
+On startup the API loads `data/` into `recoveries.db` when that database is empty, including one unpaid upcoming bill for each vendor that has a claim. `POST /api/recoveries/scan` runs the pipeline in the background. The first scan does the work; a replay uses the cached result and still walks the progress steps. `DEMO_MODE=1` (or no API key) keeps labeling on the keyword rules.
+
+```bash
+cd backend
+python -m pytest tests -q
 ```
 
 Frontend:
@@ -77,4 +84,4 @@ It reads `data/bills.json`, prints a claim per vendor, drafts the letters (nothi
 
 ## Status
 
-Sample data and the pipeline are in place. The API and the UI are not built yet.
+Sample data, the pipeline, and the Recoveries API are in place. The UI is not built yet.

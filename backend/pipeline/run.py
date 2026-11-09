@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import csv
 import json
+from dataclasses import dataclass
 from decimal import Decimal
 
 from .claims import build as build_claims
@@ -39,16 +40,20 @@ Strength, first match wins:
 """.strip()
 
 
-def main() -> None:
-    settings = get_settings()
+@dataclass
+class PipelineOutput:
+    labels: list
+    claims: list
+    letters: list
+    importer_cases: list
+    prices: object
+    contracts: dict
+    usage: Usage
+
+
+def run_pipeline(settings, bills, vendors, credits, data_dir) -> PipelineOutput:
+    """Label, price, and draft. Callers own persistence. Demo mode makes no network calls."""
     usage = Usage()
-    data_dir = settings.resolved_data_dir()
-    source = MockBillPaySource(data_dir)
-
-    bills = source.get_bills()
-    vendors = source.get_vendors()
-    credits = source.get_vendor_credits()
-
     labels = classify_bills(bills, settings, usage)
     tags = tag_skus(bills, settings, usage)
     prices = analyze_prices(bills, labels, tags)
@@ -56,10 +61,21 @@ def main() -> None:
     contracts = analyze_contracts(vendors, data_dir, settings, usage)
     claims = build_claims(bills, vendors, labels, prices, credits, contracts, importer_cases)
     letters = draft_all(claims, settings, usage)
+    return PipelineOutput(labels, claims, letters, importer_cases, prices, contracts, usage)
 
+
+def main() -> None:
+    settings = get_settings()
+    data_dir = settings.resolved_data_dir()
+    source = MockBillPaySource(data_dir)
+    bills = source.get_bills()
+    result = run_pipeline(settings, bills, source.get_vendors(), source.get_vendor_credits(), data_dir)
     ground_truth = json.loads((data_dir / "ground_truth.json").read_text())
-    _print_report(settings, data_dir, bills, labels, prices, importer_cases, claims, letters, usage, ground_truth)
-    _check(claims, importer_cases, ground_truth, strict=settings.use_demo)
+    _print_report(
+        settings, data_dir, bills, result.labels, result.prices,
+        result.importer_cases, result.claims, result.letters, result.usage, ground_truth,
+    )
+    _check(result.claims, result.importer_cases, ground_truth, strict=settings.use_demo)
 
 
 def _print_report(settings, data_dir, bills, labels, prices, importer_cases, claims, letters, usage, ground_truth) -> None:
