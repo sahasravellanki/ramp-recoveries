@@ -31,11 +31,16 @@ RATES = {
 }
 
 SCORING_RULES = """
-Strength, first match wins:
-  High     a refund or pass-through clause, AND (an explicit IEEPA surcharge OR a price increase that reverted after the window)
-  Medium   an explicit IEEPA surcharge, OR a reverted price increase, with no clause
-  Low      the only evidence is a price increase that did not revert, or that no later invoice could confirm
-  Tracked  nothing refundable, but non-refundable tariff lines worth watching (Section 301)
+Evidence tier:
+  Documented       an invoice line names a tariff, duty, or IEEPA
+  Contract + price a pass-through clause, and a price increase that passed every required test
+  Price-only       no document; the price increase passed every required test
+
+Strength:
+  High     Documented with a refund clause, or Contract + price that also reverted
+  Medium   Documented without a clause, or Contract + price that did not revert
+  Low      Price-only, or a price claim whose origin was inferred
+  Tracked  nothing refundable, but a Section 232 or 301 line
   -        nothing to claim or track
 """.strip()
 
@@ -101,8 +106,8 @@ def _print_report(settings, data_dir, bills, labels, prices, importer_cases, cla
         )
     print()
     print("Ground truth comparison")
-    print("Expected = explicit IEEPA surcharges + conservative price claim (3%/yr allowance, flag only above 5%, cap at the category rate).")
-    print("Raw price increase is the full embedded jump, shown for context. It is not the target.")
+    print("Demo mode is scored against demo_refundable, which leaves out surcharge wording the keyword rules miss.")
+    print("The full answer, including those lines, is refundable_claim_total. Price claims use the expected difference-in-differences amount.")
     comp = f"{'Vendor':34} {'Our gross':>12} {'Expected':>12} {'Delta':>10} {'Raw price':>12} {'Our nonref':>11} {'GT nonref':>10}"
     print(comp)
     print("-" * len(comp))
@@ -233,12 +238,13 @@ def _model_cost(model: str, usage: Usage) -> Decimal:
 
 
 def _check(claims: list[VendorClaim], importer_cases, ground_truth, strict: bool) -> None:
-    """Expected claim is the conservative number. Demo mode fails the process when it misses."""
+    """Demo mode is scored on the keyword-visible total. A live run is scored on the full answer."""
     by_name = {claim.vendor_name: claim for claim in claims}
     problems = []
     for name, truth in ground_truth["suppliers"].items():
         claim = by_name[name]
-        expected = _dollars(truth["refundable_claim_total"])
+        key = "demo_refundable_claim_total" if strict and "demo_refundable_claim_total" in truth else "refundable_claim_total"
+        expected = _dollars(truth[key])
         gt_non = _dollars(truth["non_refundable_total"])
         if abs(claim.gross_refundable - expected) > EXACT:
             problems.append(f"{name} gross {claim.gross_refundable} vs expected {expected}")

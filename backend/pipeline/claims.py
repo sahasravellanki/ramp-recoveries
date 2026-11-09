@@ -1,17 +1,22 @@
 """Roll labeled lines and price findings up into one claim per vendor.
 
 All of the arithmetic is here. Refundable dollars are pre-tax IEEPA surcharges
-inside the window, plus capped price excess, minus vendor credits already on
-the account. Section 301 and other non-IEEPA tariffs are tracked, not claimed.
+inside the window, plus the expected price claim, minus vendor credits already
+on the account. Section 232 and Section 301 are tracked, not claimed.
 Importer-of-record duty is excluded; it belongs to CBP.
 
-Strength, applied in order:
-- High: a refund or pass-through clause, plus either an explicit IEEPA surcharge
-  or a price increase that reverted after the tariff window.
-- Medium: an explicit IEEPA surcharge, or a reverted price increase, with no clause.
-- Low: the only evidence is a price increase that did not revert, or that could
-  not be checked against a later invoice.
-- Tracked: nothing refundable, but non-refundable tariff lines worth watching.
+Evidence tier, strongest first:
+- Documented: an invoice line names a tariff, a duty, or IEEPA.
+- Contract + price: a contract allows duty pass-through or refund sharing, and
+  a price increase passed every required test.
+- Price-only: no document. The price increase passed every required test.
+
+Strength:
+- High: Documented with a refund clause, or Contract + price that also reverted.
+- Medium: Documented without a clause, or Contract + price that did not revert.
+- Low: Price-only, or any price claim whose refundable dollars rest only on an
+  inferred country of origin.
+- Tracked: nothing refundable, but a non-refundable tariff line.
 """
 
 from __future__ import annotations
@@ -120,6 +125,10 @@ def _claim(name, vendor, items, prices, contract) -> VendorClaim:
     explicit = ieepa > 0
     mentions = bool(contract and contract.mentions_tariffs)
     clause = bool(contract and contract.refund_or_credit_clause)
+    price_findings = [finding for finding in prices.findings if finding.vendor_name == name]
+    inferred_only = excess > 0 and ieepa <= 0 and all(finding.origin_inferred for finding in price_findings)
+    tier, reasons = _tier(explicit, clause, excess > 0, inferred_only)
+    low, expected, high = _price_range(price_findings) if excess > 0 else (None, None, None)
     address = []
     if vendor and vendor.address:
         address = [line for line in (vendor.address.line1, vendor.address.line2) if line]
@@ -128,7 +137,7 @@ def _claim(name, vendor, items, prices, contract) -> VendorClaim:
         vendor_name=name,
         contact_email=vendor.contact_email if vendor else None,
         address_lines=address,
-        strength=_strength(gross, non_refundable, explicit, reverted, clause),
+        strength=_strength(gross, non_refundable, tier, clause, reverted, inferred_only),
         refundable_total=refundable,
         gross_refundable=gross,
         ieepa_surcharge_total=ieepa,
@@ -142,16 +151,59 @@ def _claim(name, vendor, items, prices, contract) -> VendorClaim:
         clause_number=contract.clause_number if contract else None,
         clause_text=contract.clause_text if contract else None,
         evidence=items,
+        evidence_tier=tier,
+        tier_reasons=reasons,
+        claim_low=low,
+        claim_expected=expected,
+        claim_high=high,
+        origin_inferred_only=inferred_only,
     )
 
 
-def _strength(gross, non_refundable, explicit, reverted, clause) -> ClaimStrength | None:
+def _tier(explicit: bool, clause: bool, price: bool, inferred_only: bool) -> tuple[str | None, list[str]]:
+    if explicit:
+        reasons = ["An invoice line or supplier notice names a tariff, a duty, or IEEPA."]
+        if clause:
+            reasons.append("The contract also allows a duty pass-through or a shared refund.")
+        return "documented", reasons
+    if price and clause:
+        reasons = [
+            "The contract allows a duty pass-through or a shared refund.",
+            "A price increase passed every required test.",
+        ]
+        if inferred_only:
+            reasons.append("Country of origin was inferred, not printed on the invoice, so strength is capped at Low.")
+        return "contract_price", reasons
+    if price:
+        reasons = [
+            "No invoice line or contract names the tariff.",
+            "The price increase passed every required test, so the claim rests on the price alone.",
+        ]
+        if inferred_only:
+            reasons.append("Country of origin was inferred, not printed on the invoice, so strength is capped at Low.")
+        return "price_only", reasons
+    return None, []
+
+
+def _price_range(findings) -> tuple[Decimal, Decimal, Decimal]:
+    low = money(sum((finding.low_amount for finding in findings), Decimal("0")))
+    expected = money(sum((finding.amount for finding in findings), Decimal("0")))
+    high = money(sum((finding.high_amount for finding in findings), Decimal("0")))
+    return low, expected, high
+
+
+def _strength(gross, non_refundable, tier, clause, reverted, inferred_only) -> ClaimStrength | None:
     if gross <= 0:
         return ClaimStrength.tracked if non_refundable > 0 else None
-    # A clause plus either kind of corroborated pass-through is the strong case.
-    if clause and (explicit or reverted):
+    if inferred_only:
+        return ClaimStrength.low
+    if tier == "documented" and clause:
         return ClaimStrength.high
-    if explicit or reverted:
+    if tier == "documented":
+        return ClaimStrength.medium
+    if tier == "contract_price" and clause and reverted:
+        return ClaimStrength.high
+    if tier == "contract_price":
         return ClaimStrength.medium
     return ClaimStrength.low
 

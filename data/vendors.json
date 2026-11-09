@@ -36,7 +36,7 @@
     "payment_terms": "NET_45",
     "primary_country_of_origin": "IT",
     "bill_count": 11,
-    "total_paid": 134905.92,
+    "total_paid": 244355.6,
     "first_bill_at": "2024-07-15",
     "last_bill_at": "2026-03-15",
     "contract": {
@@ -129,6 +129,150 @@
     "total_paid": 8937.55,
     "first_bill_at": "2025-04-18",
     "last_bill_at": "2025-10-07",
+    "contract": null
+  },
+  {
+    "id": "ven_fbbcb703c45caeea",
+    "name": "Lumen Sourcing Co.",
+    "contact_email": "ap@lumensourcing.example",
+    "phone": "(415) 555-0174",
+    "address": {
+      "line1": "88 Battery Street",
+      "line2": "San Francisco, CA 94111",
+      "country": "US"
+    },
+    "payment_terms": "NET_30",
+    "primary_country_of_origin": "CN",
+    "bill_count": 4,
+    "total_paid": 2869.0,
+    "first_bill_at": "2024-11-10",
+    "last_bill_at": "2025-12-15",
+    "contract": null
+  },
+  {
+    "id": "ven_1173d4c35ffc5caa",
+    "name": "Mill & Alloy",
+    "contact_email": "billing@millandalloy.example",
+    "phone": "(909) 555-0133",
+    "address": {
+      "line1": "410 Foundry Road",
+      "line2": "Fontana, CA 92335",
+      "country": "US"
+    },
+    "payment_terms": "NET_30",
+    "primary_country_of_origin": "CN",
+    "bill_count": 1,
+    "total_paid": 1458.8,
+    "first_bill_at": "2025-06-01",
+    "last_bill_at": "2025-06-01",
+    "contract": null
+  },
+  {
+    "id": "ven_4e36f0458e442294",
+    "name": "Early Rise Paper",
+    "contact_email": "ar@earlyrisepaper.example",
+    "phone": "(209) 555-0166",
+    "address": {
+      "line1": "12 Canal Street",
+      "line2": "Stockton, CA 95202",
+      "country": "US"
+    },
+    "payment_terms": "NET_30",
+    "primary_country_of_origin": "CN",
+    "bill_count": 4,
+    "total_paid": 2375.56,
+    "first_bill_at": "2024-08-10",
+    "last_bill_at": "2025-05-10",
+    "contract": null
+  },
+  {
+    "id": "ven_893210896f142b3b",
+    "name": "Homestead Kiln",
+    "contact_email": "accounts@homesteadkiln.example",
+    "phone": "(559) 555-0104",
+    "address": {
+      "line1": "640 Clay Avenue",
+      "line2": "Fresno, CA 93706",
+      "country": "US"
+    },
+    "payment_terms": "NET_30",
+    "primary_country_of_origin": "US",
+    "bill_count": 4,
+    "total_paid": 1782.86,
+    "first_bill_at": "2024-09-01",
+    "last_bill_at": "2025-11-20",
+    "contract": null
+  },
+  {
+    "id": "ven_dabd8aa47a209b4c",
+    "name": "Level Pantry",
+    "contact_email": "ap@levelpantry.example",
+    "phone": "(510) 555-0181",
+    "address": {
+      "line1": "220 Market Street",
+      "line2": "Oakland, CA 94607",
+      "country": "US"
+    },
+    "payment_terms": "NET_30",
+    "primary_country_of_origin": "CN",
+    "bill_count": 5,
+    "total_paid": 3205.4,
+    "first_bill_at": "2024-08-01",
+    "last_bill_at": "2025-10-12",
+    "contract": null
+  },
+  {
+    "id": "ven_7151bd103bd3ef24",
+    "name": "Calendar Imports",
+    "contact_email": "billing@calendarimports.example",
+    "phone": "(510) 555-0144",
+    "address": {
+      "line1": "9 Wharf Lane",
+      "line2": "Alameda, CA 94501",
+      "country": "US"
+    },
+    "payment_terms": "NET_30",
+    "primary_country_of_origin": "IT",
+    "bill_count": 4,
+    "total_paid": 3517.76,
+    "first_bill_at": "2024-08-04",
+    "last_bill_at": "2025-07-04",
+    "contract": null
+  },
+  {
+    "id": "ven_0412534c8dfa3e66",
+    "name": "Mekong Tabletop",
+    "contact_email": "ar@mekongtabletop.example",
+    "phone": "(510) 555-0190",
+    "address": {
+      "line1": "501 International Blvd",
+      "line2": "Oakland, CA 94606",
+      "country": "US"
+    },
+    "payment_terms": "NET_30",
+    "primary_country_of_origin": "VN",
+    "bill_count": 5,
+    "total_paid": 2519.63,
+    "first_bill_at": "2024-09-01",
+    "last_bill_at": "2026-03-15",
+    "contract": null
+  },
+  {
+    "id": "ven_7f17caa623e09003",
+    "name": "Guesswork Goods",
+    "contact_email": "ap@guessworkgoods.example",
+    "phone": "(510) 555-0128",
+    "address": {
+      "line1": "77 Broadway",
+      "line2": "Oakland, CA 94607",
+      "country": "US"
+    },
+    "payment_terms": "NET_30",
+    "primary_country_of_origin": "IT",
+    "bill_count": 5,
+    "total_paid": 3432.5,
+    "first_bill_at": "2024-09-20",
+    "last_bill_at": "2026-03-20",
     "contract": null
   }
 ]

@@ -56,7 +56,7 @@ def test_scan_totals_match_ground_truth(client: TestClient):
     assert first["cached"] is False
 
     body = client.get("/api/recoveries").json()
-    assert body["net_refundable"] == pytest.approx(TOTALS["net_claim_total_after_credits"], abs=0.05)
+    assert body["net_refundable"] == pytest.approx(TOTALS["demo_net_claim_total_after_credits"], abs=0.05)
     assert body["non_refundable"] == pytest.approx(TOTALS["non_refundable_total"], abs=0.05)
     assert body["importer_of_record"]["total"] == pytest.approx(TOTALS["importer_of_record_duty_total"], abs=0.05)
     assert body["importer_of_record"]["count"] == 2
@@ -69,6 +69,28 @@ def test_scan_totals_match_ground_truth(client: TestClient):
     assert by_name["Harbor & Pine Coffee Equipment"]["strength"] == "High"
     assert by_name["Harbor & Pine Coffee Equipment"]["subtitle"] == "Price increase"
     harbor = client.get(f"/api/recoveries/{by_name['Harbor & Pine Coffee Equipment']['vendor_id']}").json()
+    assert harbor["evidence_tier"] == "contract_price"
+    assert harbor["claim_low"] < harbor["claim_expected"] < harbor["claim_high"]
+    assert harbor["claim_expected"] == pytest.approx(harbor["conservative_price_increase"], abs=0.05)
+    required = [test for sku in harbor["price_history"] for test in sku["tests"] if test["required"]]
+    assert required and all(test["passed"] for test in required)
+    assert by_name["Mekong Tabletop"]["strength"] == "Low"
+    assert by_name["Guesswork Goods"]["strength"] == "Low"
+    guess = client.get(f"/api/recoveries/{by_name['Guesswork Goods']['vendor_id']}").json()
+    assert guess["evidence_tier"] == "price_only"
+    assert guess["origin_inferred_only"] is True
+    assert by_name["Mill & Alloy"]["strength"] == "Tracked"
+    assert by_name["Mill & Alloy"]["refundable"] == pytest.approx(0, abs=0.01)
+    for absent in (
+        "Lumen Sourcing Co.",
+        "Early Rise Paper",
+        "Homestead Kiln",
+        "Level Pantry",
+        "Calendar Imports",
+        "Brightline Office Supply",
+        "Pacific Freight Forwarding",
+    ):
+        assert absent not in by_name
     letter = harbor["letter"]["body"]
     assert letter.startswith("Harbor & Pine Coffee Equipment")
     assert "Were you the importer of record on these shipments?" in letter

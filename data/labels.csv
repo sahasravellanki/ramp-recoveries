@@ -12,14 +12,19 @@ NWP-202407-001,4,Paper straws 7.75 in (case of 2400),product,672.00
 NWP-202407-001,5,"Dispenser napkins, 1-ply (case of 6000)",product,837.90
 NWP-202407-001,6,Freight - LTL ground,freight,179.42
 NWP-202407-001,7,Sales tax (10.25%),tax,376.32
-HPC-202407-001,0,"E61 group head assembly, chrome (Italy)",product,6250.00
-HPC-202407-001,1,Steam boiler heating element 2.8 kW (Italy),product,4740.00
-HPC-202407-001,2,"Volumetric flow meter kit, 2-group (Italy)",product,2100.00
-HPC-202407-001,3,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,408.00
-HPC-202407-001,4,Rotary vane pump 100 L/h with motor (Italy),product,1220.00
-HPC-202407-001,5,Calibrated tamper 58.4 mm (made in USA),product,1140.00
-HPC-202407-001,6,Shipping & handling,freight,37.47
-HPC-202407-001,7,Sales tax (10.25%),tax,1625.45
+HPC-202407-001,0,"E61 group head assembly, chrome (Italy)",product,5000.00
+HPC-202407-001,1,Rotary vane pump 100 L/h with motor (Italy),product,610.00
+HPC-202407-001,2,"64 mm flat burr set, titanium-coated (Italy)",product,2910.00
+HPC-202407-001,3,Steam boiler heating element 2.8 kW (Italy),product,3160.00
+HPC-202407-001,4,"58 mm bottomless portafilter, walnut handle (Italy)",product,2650.00
+HPC-202407-001,5,"Volumetric flow meter kit, 2-group (Italy)",product,1050.00
+HPC-202407-001,6,"Precision shower screen, 200 micron (Italy)",product,1068.00
+HPC-202407-001,7,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,816.00
+HPC-202407-001,8,Calibrated tamper 58.4 mm (made in USA),product,950.00
+HPC-202407-001,9,"Steaming pitcher 20 oz, stainless (USA)",product,168.00
+HPC-202407-001,10,"On-site espresso machine service, per hour",product,875.00
+HPC-202407-001,11,Shipping & handling,freight,80.69
+HPC-202407-001,12,Sales tax (10.25%),tax,1973.84
 BOS-202407-001,0,"Gel pens, black (box of 12)",product,96.00
 BOS-202407-001,1,"Copy paper 20 lb, case of 10 reams",product,260.00
 BOS-202407-001,2,Nitrile gloves M (case of 1000),product,406.00
@@ -27,6 +32,18 @@ BOS-202407-001,3,"Surface cleaner, 1 gal",product,34.80
 BOS-202407-001,4,Receipt roll 3 1/8 in (case of 50),product,369.00
 BOS-202407-001,5,Fuel surcharge,other_fee,6.50
 BOS-202407-001,6,Sales tax (10.25%),tax,119.49
+LVP-202408-001,0,"Dispenser napkin, 1-ply (case of 6000)",product,400.00
+LVP-202408-001,1,"Bar towel, domestic (dozen)",product,150.00
+LVP-202408-001,2,Freight,freight,25.00
+LVP-202408-001,3,Sales tax (10.25%),tax,56.38
+CIM-202408-001,0,"Group head gasket, pack of 10 (Italy)",product,600.00
+CIM-202408-001,1,"Tamper, made in USA",product,160.00
+CIM-202408-001,2,Freight,freight,25.00
+CIM-202408-001,3,Sales tax (10.25%),tax,77.90
+ERP-202408-001,0,"12 oz hot cup, kraft (case of 500)",product,400.00
+ERP-202408-001,1,"Kraft napkin, made in USA (case of 4000)",product,96.00
+ERP-202408-001,2,Freight,freight,25.00
+ERP-202408-001,3,Sales tax (10.25%),tax,50.84
 NWP-202408-002,0,"Dispenser napkins, 1-ply (case of 6000)",product,926.10
 NWP-202408-002,1,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,422.50
 NWP-202408-002,2,"12 oz double-wall hot cup, kraft (case of 500)",product,369.00
@@ -46,6 +63,13 @@ BOS-202408-002,3,"Surface cleaner, 1 gal",product,87.15
 BOS-202408-002,4,"Copy paper 20 lb, case of 10 reams",product,312.54
 BOS-202408-002,5,Fuel surcharge,other_fee,6.50
 BOS-202408-002,6,Sales tax (10.25%),tax,147.38
+HMK-202409-001,0,"Stoneware mug, made in USA",product,360.00
+HMK-202409-001,1,Freight,freight,25.00
+HMK-202409-001,2,Sales tax (10.25%),tax,36.90
+MKT-202409-001,0,Stoneware cup (Vietnam),product,320.00
+MKT-202409-001,1,"Bar towel, made in USA",product,108.00
+MKT-202409-001,2,Freight,freight,25.00
+MKT-202409-001,3,Sales tax (10.25%),tax,43.87
 NWP-202409-003,0,Paper straws 7.75 in (case of 2400),product,436.80
 NWP-202409-003,1,"Dispenser napkins, 1-ply (case of 6000)",product,485.10
 NWP-202409-003,2,"Corrugated cup sleeve, printed (case of 1000)",product,311.20
@@ -53,26 +77,39 @@ NWP-202409-003,3,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,
 NWP-202409-003,4,Kraft takeout bag #4 (bundle of 500),product,416.50
 NWP-202409-003,5,Freight - LTL ground,freight,99.22
 NWP-202409-003,6,Sales tax (10.25%),tax,255.70
-HPC-202409-002,0,"On-site espresso machine service, per hour",product,1250.00
-HPC-202409-002,1,"64 mm flat burr set, titanium-coated (Italy)",product,3880.00
-HPC-202409-002,2,Rotary vane pump 100 L/h with motor (Italy),product,1830.00
-HPC-202409-002,3,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,680.00
-HPC-202409-002,4,"Steaming pitcher 20 oz, stainless (USA)",product,224.00
-HPC-202409-002,5,Calibrated tamper 58.4 mm (made in USA),product,285.00
-HPC-202409-002,6,Shipping & handling,freight,45.31
-HPC-202409-002,7,Sales tax (10.25%),tax,835.27
+HPC-202409-002,0,"E61 group head assembly, chrome (Italy)",product,6250.00
+HPC-202409-002,1,Rotary vane pump 100 L/h with motor (Italy),product,610.00
+HPC-202409-002,2,"64 mm flat burr set, titanium-coated (Italy)",product,5820.00
+HPC-202409-002,3,Steam boiler heating element 2.8 kW (Italy),product,3555.00
+HPC-202409-002,4,"58 mm bottomless portafilter, walnut handle (Italy)",product,1325.00
+HPC-202409-002,5,"Volumetric flow meter kit, 2-group (Italy)",product,840.00
+HPC-202409-002,6,"Precision shower screen, 200 micron (Italy)",product,890.00
+HPC-202409-002,7,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,476.00
+HPC-202409-002,8,Calibrated tamper 58.4 mm (made in USA),product,475.00
+HPC-202409-002,9,"Steaming pitcher 20 oz, stainless (USA)",product,252.00
+HPC-202409-002,10,"On-site espresso machine service, per hour",product,1125.00
+HPC-202409-002,11,Shipping & handling,freight,86.56
+HPC-202409-002,12,Sales tax (10.25%),tax,2215.85
 BOS-202409-003,0,"Copy paper 20 lb, case of 10 reams",product,104.36
 BOS-202409-003,1,"Toner cartridge, black",product,396.35
 BOS-202409-003,2,Receipt roll 3 1/8 in (case of 50),product,411.40
 BOS-202409-003,3,Nitrile gloves M (case of 1000),product,232.80
 BOS-202409-003,4,Fuel surcharge,other_fee,6.50
 BOS-202409-003,5,Sales tax (10.25%),tax,117.35
+GWG-202409-001,0,"Espresso group head, origin not printed",product,400.00
+GWG-202409-001,1,"Calibrated tamper, made in USA",product,192.00
+GWG-202409-001,2,Freight,freight,25.00
+GWG-202409-001,3,Sales tax (10.25%),tax,60.68
 KST-202410-002,0,"Canvas barista apron, charcoal",product,672.00
 KST-202410-002,1,"Staff tee, embroidered logo",product,162.25
 KST-202410-002,2,"Linen table runner, natural",product,1088.00
 KST-202410-002,3,"Dad cap, embroidered logo",product,358.40
 KST-202410-002,4,Freight,freight,71.94
 KST-202410-002,5,Sales tax (10.25%),tax,233.77
+ERP-202410-002,0,"12 oz hot cup, kraft (case of 500)",product,400.00
+ERP-202410-002,1,"Kraft napkin, made in USA (case of 4000)",product,96.00
+ERP-202410-002,2,Freight,freight,25.00
+ERP-202410-002,3,Sales tax (10.25%),tax,50.84
 NWP-202410-004,0,"Dispenser napkins, 1-ply (case of 6000)",product,220.50
 NWP-202410-004,1,"12 oz double-wall hot cup, kraft (case of 500)",product,984.00
 NWP-202410-004,2,Kraft takeout bag #4 (bundle of 500),product,535.50
@@ -91,20 +128,40 @@ BOS-202410-004,1,"Gel pens, black (box of 12)",product,38.60
 BOS-202410-004,2,Nitrile gloves M (case of 1000),product,233.16
 BOS-202410-004,3,Fuel surcharge,other_fee,6.50
 BOS-202410-004,4,Sales tax (10.25%),tax,48.98
+LVP-202411-002,0,"Dispenser napkin, 1-ply (case of 6000)",product,400.00
+LVP-202411-002,1,"Bar towel, domestic (dozen)",product,150.00
+LVP-202411-002,2,Freight,freight,25.00
+LVP-202411-002,3,Sales tax (10.25%),tax,56.38
+CIM-202411-002,0,"Group head gasket, pack of 10 (Italy)",product,600.00
+CIM-202411-002,1,"Tamper, made in USA",product,160.00
+CIM-202411-002,2,Freight,freight,25.00
+CIM-202411-002,3,Sales tax (10.25%),tax,77.90
+LUM-202411-001,0,"12 oz hot cup, white (case of 500)",product,400.00
+LUM-202411-001,1,Freight,freight,25.00
+LUM-202411-001,2,Sales tax (10.25%),tax,41.00
 NWP-202411-005,0,"Dispenser napkins, 1-ply (case of 6000)",product,573.30
 NWP-202411-005,1,"16 oz double-wall hot cup, kraft (case of 500)",product,340.00
 NWP-202411-005,2,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,211.25
 NWP-202411-005,3,Kraft takeout bag #4 (bundle of 500),product,416.50
 NWP-202411-005,4,Freight - LTL ground,freight,142.43
 NWP-202411-005,5,Sales tax (10.25%),tax,157.96
-HPC-202411-003,0,Calibrated tamper 58.4 mm (made in USA),product,570.00
-HPC-202411-003,1,Steam boiler heating element 2.8 kW (Italy),product,2370.00
-HPC-202411-003,2,"On-site espresso machine service, per hour",product,750.00
-HPC-202411-003,3,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,476.00
-HPC-202411-003,4,"E61 group head assembly, chrome (Italy)",product,5000.00
-HPC-202411-003,5,"64 mm flat burr set, titanium-coated (Italy)",product,2910.00
-HPC-202411-003,6,Shipping & handling,freight,38.95
-HPC-202411-003,7,Sales tax (10.25%),tax,1237.79
+ERP-202411-003,0,"12 oz hot cup, kraft (case of 500)",product,440.00
+ERP-202411-003,1,"Kraft napkin, made in USA (case of 4000)",product,96.00
+ERP-202411-003,2,Freight,freight,25.00
+ERP-202411-003,3,Sales tax (10.25%),tax,54.94
+HPC-202411-003,0,"E61 group head assembly, chrome (Italy)",product,5000.00
+HPC-202411-003,1,Rotary vane pump 100 L/h with motor (Italy),product,1830.00
+HPC-202411-003,2,"64 mm flat burr set, titanium-coated (Italy)",product,1455.00
+HPC-202411-003,3,Steam boiler heating element 2.8 kW (Italy),product,1975.00
+HPC-202411-003,4,"58 mm bottomless portafilter, walnut handle (Italy)",product,3180.00
+HPC-202411-003,5,"Volumetric flow meter kit, 2-group (Italy)",product,2100.00
+HPC-202411-003,6,"Precision shower screen, 200 micron (Italy)",product,979.00
+HPC-202411-003,7,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,408.00
+HPC-202411-003,8,Calibrated tamper 58.4 mm (made in USA),product,1045.00
+HPC-202411-003,9,"Steaming pitcher 20 oz, stainless (USA)",product,280.00
+HPC-202411-003,10,"On-site espresso machine service, per hour",product,625.00
+HPC-202411-003,11,Shipping & handling,freight,88.06
+HPC-202411-003,12,Sales tax (10.25%),tax,1934.89
 BOS-202411-005,0,"Copy paper 20 lb, case of 10 reams",product,157.05
 BOS-202411-005,1,"Surface cleaner, 1 gal",product,105.12
 BOS-202411-005,2,"Toner cartridge, black",product,238.59
@@ -137,6 +194,10 @@ KST-202501-003,2,"Dad cap, embroidered logo",product,425.60
 KST-202501-003,3,"Linen table runner, natural",product,576.00
 KST-202501-003,4,Freight,freight,50.42
 KST-202501-003,5,Sales tax (10.25%),tax,213.52
+LVP-202501-003,0,"Dispenser napkin, 1-ply (case of 6000)",product,400.00
+LVP-202501-003,1,"Bar towel, domestic (dozen)",product,150.00
+LVP-202501-003,2,Freight,freight,25.00
+LVP-202501-003,3,Sales tax (10.25%),tax,56.38
 NWP-202501-007,0,Kraft takeout bag #4 (bundle of 500),product,416.50
 NWP-202501-007,1,"Corrugated cup sleeve, printed (case of 1000)",product,622.40
 NWP-202501-007,2,"16 oz double-wall hot cup, kraft (case of 500)",product,340.00
@@ -144,21 +205,36 @@ NWP-202501-007,3,"Dispenser napkins, 1-ply (case of 6000)",product,352.80
 NWP-202501-007,4,Paper straws 7.75 in (case of 2400),product,268.80
 NWP-202501-007,5,Freight - LTL ground,freight,169.72
 NWP-202501-007,6,Sales tax (10.25%),tax,205.05
-HPC-202501-004,0,Calibrated tamper 58.4 mm (made in USA),product,570.00
-HPC-202501-004,1,"64 mm flat burr set, titanium-coated (Italy)",product,2910.00
-HPC-202501-004,2,"58 mm bottomless portafilter, walnut handle (Italy)",product,2120.00
-HPC-202501-004,3,"Steaming pitcher 20 oz, stainless (USA)",product,336.00
-HPC-202501-004,4,"On-site espresso machine service, per hour",product,625.00
-HPC-202501-004,5,"Precision shower screen, 200 micron (Italy)",product,623.00
-HPC-202501-004,6,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,408.00
-HPC-202501-004,7,Shipping & handling,freight,78.59
-HPC-202501-004,8,Sales tax (10.25%),tax,778.18
+HMK-202501-002,0,"Stoneware mug, made in USA",product,360.00
+HMK-202501-002,1,Freight,freight,25.00
+HMK-202501-002,2,Sales tax (10.25%),tax,36.90
+HPC-202501-004,0,"E61 group head assembly, chrome (Italy)",product,3750.00
+HPC-202501-004,1,Rotary vane pump 100 L/h with motor (Italy),product,1220.00
+HPC-202501-004,2,"64 mm flat burr set, titanium-coated (Italy)",product,2910.00
+HPC-202501-004,3,Steam boiler heating element 2.8 kW (Italy),product,1975.00
+HPC-202501-004,4,"58 mm bottomless portafilter, walnut handle (Italy)",product,1855.00
+HPC-202501-004,5,"Volumetric flow meter kit, 2-group (Italy)",product,2100.00
+HPC-202501-004,6,"Precision shower screen, 200 micron (Italy)",product,534.00
+HPC-202501-004,7,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,272.00
+HPC-202501-004,8,Calibrated tamper 58.4 mm (made in USA),product,855.00
+HPC-202501-004,9,"Steaming pitcher 20 oz, stainless (USA)",product,336.00
+HPC-202501-004,10,"On-site espresso machine service, per hour",product,1500.00
+HPC-202501-004,11,Shipping & handling,freight,44.04
+HPC-202501-004,12,Sales tax (10.25%),tax,1773.97
+MKT-202501-002,0,Stoneware cup (Vietnam),product,320.00
+MKT-202501-002,1,"Bar towel, made in USA",product,108.00
+MKT-202501-002,2,Freight,freight,25.00
+MKT-202501-002,3,Sales tax (10.25%),tax,43.87
 BOS-202501-007,0,Nitrile gloves M (case of 1000),product,117.16
 BOS-202501-007,1,"Copy paper 20 lb, case of 10 reams",product,420.16
 BOS-202501-007,2,"Surface cleaner, 1 gal",product,105.48
 BOS-202501-007,3,Receipt roll 3 1/8 in (case of 50),product,414.10
 BOS-202501-007,4,Fuel surcharge,other_fee,6.50
 BOS-202501-007,5,Sales tax (10.25%),tax,108.33
+GWG-202501-002,0,"Espresso group head, origin not printed",product,400.00
+GWG-202501-002,1,"Calibrated tamper, made in USA",product,192.00
+GWG-202501-002,2,Freight,freight,25.00
+GWG-202501-002,3,Sales tax (10.25%),tax,60.68
 NWP-202502-008,0,"Dispenser napkins, 1-ply (case of 6000)",product,749.70
 NWP-202502-008,1,Paper straws 7.75 in (case of 2400),product,537.60
 NWP-202502-008,2,"12 oz double-wall hot cup, kraft (case of 500)",product,676.50
@@ -180,6 +256,10 @@ BOS-202502-008,3,"Copy paper 20 lb, case of 10 reams",product,526.10
 BOS-202502-008,4,"Gel pens, black (box of 12)",product,67.97
 BOS-202502-008,5,Fuel surcharge,other_fee,6.50
 BOS-202502-008,6,Sales tax (10.25%),tax,128.50
+CIM-202503-003,0,"Group head gasket, pack of 10 (Italy)",product,630.00
+CIM-202503-003,1,"Tamper, made in USA",product,160.00
+CIM-202503-003,2,Freight,freight,25.00
+CIM-202503-003,3,Sales tax (10.25%),tax,80.98
 NWP-202503-009,0,"Corrugated cup sleeve, printed (case of 1000)",product,350.10
 NWP-202503-009,1,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,718.25
 NWP-202503-009,2,"16 oz double-wall hot cup, kraft (case of 500)",product,816.00
@@ -187,14 +267,23 @@ NWP-202503-009,3,"Dispenser napkins, 1-ply (case of 6000)",product,749.70
 NWP-202503-009,4,Paper straws 7.75 in (case of 2400),product,638.40
 NWP-202503-009,5,Freight - LTL ground,freight,114.11
 NWP-202503-009,6,Sales tax (10.25%),tax,335.43
-HPC-202503-005,0,Calibrated tamper 58.4 mm (made in USA),product,1045.00
-HPC-202503-005,1,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,788.80
-HPC-202503-005,2,"58 mm bottomless portafilter, walnut handle (Italy)",product,1229.60
-HPC-202503-005,3,"Precision shower screen, 200 micron (Italy)",product,619.44
-HPC-202503-005,4,"Steaming pitcher 20 oz, stainless (USA)",product,308.00
-HPC-202503-005,5,"Volumetric flow meter kit, 2-group (Italy)",product,2192.40
-HPC-202503-005,6,Shipping & handling,freight,81.44
-HPC-202503-005,7,Sales tax (10.25%),tax,633.78
+HPC-202503-005,0,"E61 group head assembly, chrome (Italy)",product,2500.00
+HPC-202503-005,1,Rotary vane pump 100 L/h with motor (Italy),product,3050.00
+HPC-202503-005,2,"64 mm flat burr set, titanium-coated (Italy)",product,5335.00
+HPC-202503-005,3,Steam boiler heating element 2.8 kW (Italy),product,2765.00
+HPC-202503-005,4,"58 mm bottomless portafilter, walnut handle (Italy)",product,1590.00
+HPC-202503-005,5,"Volumetric flow meter kit, 2-group (Italy)",product,1260.00
+HPC-202503-005,6,"Precision shower screen, 200 micron (Italy)",product,712.00
+HPC-202503-005,7,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,816.00
+HPC-202503-005,8,Calibrated tamper 58.4 mm (made in USA),product,380.00
+HPC-202503-005,9,"Steaming pitcher 20 oz, stainless (USA)",product,196.00
+HPC-202503-005,10,"On-site espresso machine service, per hour",product,875.00
+HPC-202503-005,11,Shipping & handling,freight,78.59
+HPC-202503-005,12,Sales tax (10.25%),tax,1996.60
+LVP-202503-004,0,"Dispenser napkin, 1-ply (case of 6000)",product,416.00
+LVP-202503-004,1,"Bar towel, domestic (dozen)",product,156.00
+LVP-202503-004,2,Freight,freight,25.00
+LVP-202503-004,3,Sales tax (10.25%),tax,58.63
 BOS-202503-009,0,"Copy paper 20 lb, case of 10 reams",product,316.14
 BOS-202503-009,1,"Toner cartridge, black",product,800.50
 BOS-202503-009,2,Nitrile gloves M (case of 1000),product,411.39
@@ -230,6 +319,10 @@ BOS-202504-010,3,"Gel pens, black (box of 12)",product,58.44
 BOS-202504-010,4,"Surface cleaner, 1 gal",product,17.66
 BOS-202504-010,5,Fuel surcharge,other_fee,6.50
 BOS-202504-010,6,Sales tax (10.25%),tax,122.45
+ERP-202505-004,0,"12 oz hot cup, kraft (case of 500)",product,440.00
+ERP-202505-004,1,"Kraft napkin, made in USA (case of 4000)",product,96.00
+ERP-202505-004,2,Freight,freight,25.00
+ERP-202505-004,3,Sales tax (10.25%),tax,54.94
 NWP-202505-011,0,Paper straws 7.75 in (case of 2400),product,672.00
 NWP-202505-011,1,"16 oz double-wall hot cup, kraft (case of 500)",product,1360.00
 NWP-202505-011,2,"12 oz double-wall hot cup, kraft (case of 500)",product,307.50
@@ -237,20 +330,39 @@ NWP-202505-011,3,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,
 NWP-202505-011,4,Tariff Surcharge (12%),tariff_ieepa,372.00
 NWP-202505-011,5,Freight - LTL ground,freight,100.94
 NWP-202505-011,6,Sales tax (10.25%),tax,317.75
-HPC-202505-006,0,"Volumetric flow meter kit, 2-group (Italy)",product,2192.40
-HPC-202505-006,1,"Precision shower screen, 200 micron (Italy)",product,619.44
-HPC-202505-006,2,"On-site espresso machine service, per hour",product,1125.00
-HPC-202505-006,3,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,394.40
-HPC-202505-006,4,"58 mm bottomless portafilter, walnut handle (Italy)",product,3688.80
-HPC-202505-006,5,Calibrated tamper 58.4 mm (made in USA),product,950.00
-HPC-202505-006,6,"E61 group head assembly, chrome (Italy)",product,5800.00
-HPC-202505-006,7,Shipping & handling,freight,39.03
-HPC-202505-006,8,Sales tax (10.25%),tax,1513.93
+HPC-202505-006,0,"E61 group head assembly, chrome (Italy)",product,5250.00
+HPC-202505-006,1,Rotary vane pump 100 L/h with motor (Italy),product,3202.50
+HPC-202505-006,2,"64 mm flat burr set, titanium-coated (Italy)",product,5092.50
+HPC-202505-006,3,Steam boiler heating element 2.8 kW (Italy),product,2903.25
+HPC-202505-006,4,"58 mm bottomless portafilter, walnut handle (Italy)",product,2504.25
+HPC-202505-006,5,"Volumetric flow meter kit, 2-group (Italy)",product,2425.50
+HPC-202505-006,6,"Precision shower screen, 200 micron (Italy)",product,934.50
+HPC-202505-006,7,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,285.60
+HPC-202505-006,8,Calibrated tamper 58.4 mm (made in USA),product,575.70
+HPC-202505-006,9,"Steaming pitcher 20 oz, stainless (USA)",product,311.08
+HPC-202505-006,10,"On-site espresso machine service, per hour",product,1250.00
+HPC-202505-006,11,Shipping & handling,freight,81.44
+HPC-202505-006,12,Sales tax (10.25%),tax,2535.33
 BOS-202505-011,0,"Copy paper 20 lb, case of 10 reams",product,475.83
 BOS-202505-011,1,"Gel pens, black (box of 12)",product,48.80
 BOS-202505-011,2,"Toner cartridge, black",product,240.96
 BOS-202505-011,3,Fuel surcharge,other_fee,6.50
 BOS-202505-011,4,Sales tax (10.25%),tax,78.47
+GWG-202505-003,0,"Espresso group head, origin not printed",product,420.00
+GWG-202505-003,1,"Calibrated tamper, made in USA",product,192.00
+GWG-202505-003,2,Freight,freight,25.00
+GWG-202505-003,3,Sales tax (10.25%),tax,62.73
+HMK-202505-003,0,"Stoneware mug, made in USA",product,403.20
+HMK-202505-003,1,Freight,freight,25.00
+HMK-202505-003,2,Sales tax (10.25%),tax,41.33
+MKT-202506-003,0,Stoneware cup (Vietnam),product,336.00
+MKT-202506-003,1,"Bar towel, made in USA",product,108.00
+MKT-202506-003,2,Freight,freight,25.00
+MKT-202506-003,3,Sales tax (10.25%),tax,45.51
+MLA-202506-001,0,"Hot-rolled steel sheet, 4 x 8 ft",product,720.00
+MLA-202506-001,1,Section 232 steel and aluminum surcharge,tariff_other,640.00
+MLA-202506-001,2,Freight,freight,25.00
+MLA-202506-001,3,Sales tax (10.25%),tax,73.80
 NWP-202506-012,0,"12 oz double-wall hot cup, kraft (case of 500)",product,984.00
 NWP-202506-012,1,"16 oz double-wall hot cup, kraft (case of 500)",product,408.00
 NWP-202506-012,2,Kraft takeout bag #4 (bundle of 500),product,565.25
@@ -267,6 +379,10 @@ ALT-202506-006,4,"Cash drawer 16 in, 5 bill / 8 coin",product,1456.00
 ALT-202506-006,5,Import Cost Recovery,tariff_ieepa,792.30
 ALT-202506-006,6,Ground shipping,freight,35.06
 ALT-202506-006,7,Sales tax (10.25%),tax,406.05
+LUM-202506-002,0,"12 oz hot cup, white (case of 500)",product,400.00
+LUM-202506-002,1,Q3 landed cost adjustment,tariff_ieepa,420.00
+LUM-202506-002,2,Freight,freight,25.00
+LUM-202506-002,3,Sales tax (10.25%),tax,41.00
 BOS-202506-012,0,"Surface cleaner, 1 gal",product,35.44
 BOS-202506-012,1,"Toner cartridge, black",product,804.50
 BOS-202506-012,2,"Copy paper 20 lb, case of 10 reams",product,370.65
@@ -274,6 +390,10 @@ BOS-202506-012,3,Nitrile gloves M (case of 1000),product,177.18
 BOS-202506-012,4,Receipt roll 3 1/8 in (case of 50),product,208.75
 BOS-202506-012,5,Fuel surcharge,other_fee,6.50
 BOS-202506-012,6,Sales tax (10.25%),tax,163.64
+CIM-202507-004,0,"Group head gasket, pack of 10 (Italy)",product,630.00
+CIM-202507-004,1,"Tamper, made in USA",product,160.00
+CIM-202507-004,2,Freight,freight,25.00
+CIM-202507-004,3,Sales tax (10.25%),tax,80.98
 KST-202507-005,0,"Canvas barista apron, charcoal",product,144.00
 KST-202507-005,1,"Staff tee, embroidered logo",product,486.75
 KST-202507-005,2,Bar towel 16 x 19 in (dozen),product,518.00
@@ -288,14 +408,19 @@ NWP-202507-013,3,"Corrugated cup sleeve, printed (case of 1000)",product,622.40
 NWP-202507-013,4,Tariff Surcharge (12%),tariff_ieepa,256.64
 NWP-202507-013,5,Freight - LTL ground,freight,90.05
 NWP-202507-013,6,Sales tax (10.25%),tax,219.21
-HPC-202507-007,0,Steam boiler heating element 2.8 kW (Italy),product,3207.40
-HPC-202507-007,1,"On-site espresso machine service, per hour",product,1000.00
-HPC-202507-007,2,"Steaming pitcher 20 oz, stainless (USA)",product,308.00
-HPC-202507-007,3,Calibrated tamper 58.4 mm (made in USA),product,475.00
-HPC-202507-007,4,Rotary vane pump 100 L/h with motor (Italy),product,2830.40
-HPC-202507-007,5,"Volumetric flow meter kit, 2-group (Italy)",product,1461.60
-HPC-202507-007,6,Shipping & handling,freight,38.82
-HPC-202507-007,7,Sales tax (10.25%),tax,951.45
+HPC-202507-007,0,"E61 group head assembly, chrome (Italy)",product,6562.50
+HPC-202507-007,1,Rotary vane pump 100 L/h with motor (Italy),product,1921.50
+HPC-202507-007,2,"64 mm flat burr set, titanium-coated (Italy)",product,4583.25
+HPC-202507-007,3,Steam boiler heating element 2.8 kW (Italy),product,3318.00
+HPC-202507-007,4,"58 mm bottomless portafilter, walnut handle (Italy)",product,3060.75
+HPC-202507-007,5,"Volumetric flow meter kit, 2-group (Italy)",product,2205.00
+HPC-202507-007,6,"Precision shower screen, 200 micron (Italy)",product,1027.95
+HPC-202507-007,7,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,214.20
+HPC-202507-007,8,Calibrated tamper 58.4 mm (made in USA),product,863.55
+HPC-202507-007,9,"Steaming pitcher 20 oz, stainless (USA)",product,169.68
+HPC-202507-007,10,"On-site espresso machine service, per hour",product,1125.00
+HPC-202507-007,11,Shipping & handling,freight,42.20
+HPC-202507-007,12,Sales tax (10.25%),tax,2567.77
 BOS-202507-013,0,"Gel pens, black (box of 12)",product,29.37
 BOS-202507-013,1,"Copy paper 20 lb, case of 10 reams",product,53.04
 BOS-202507-013,2,"Toner cartridge, black",product,805.80
@@ -328,15 +453,23 @@ NWP-202509-015,3,Kraft takeout bag #4 (bundle of 500),product,535.50
 NWP-202509-015,4,Tariff Surcharge (12%),tariff_ieepa,293.05
 NWP-202509-015,5,Freight - LTL ground,freight,168.01
 NWP-202509-015,6,Sales tax (10.25%),tax,250.32
-HPC-202509-008,0,"On-site espresso machine service, per hour",product,750.00
-HPC-202509-008,1,Rotary vane pump 100 L/h with motor (Italy),product,707.60
-HPC-202509-008,2,"Steaming pitcher 20 oz, stainless (USA)",product,308.00
-HPC-202509-008,3,Calibrated tamper 58.4 mm (made in USA),product,1140.00
-HPC-202509-008,4,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,315.52
-HPC-202509-008,5,"Volumetric flow meter kit, 2-group (Italy)",product,2192.40
-HPC-202509-008,6,Steam boiler heating element 2.8 kW (Italy),product,3207.40
-HPC-202509-008,7,Shipping & handling,freight,82.36
-HPC-202509-008,8,Sales tax (10.25%),tax,883.64
+HPC-202509-008,0,"E61 group head assembly, chrome (Italy)",product,5250.00
+HPC-202509-008,1,Rotary vane pump 100 L/h with motor (Italy),product,2562.00
+HPC-202509-008,2,"64 mm flat burr set, titanium-coated (Italy)",product,2037.00
+HPC-202509-008,3,Steam boiler heating element 2.8 kW (Italy),product,3318.00
+HPC-202509-008,4,"58 mm bottomless portafilter, walnut handle (Italy)",product,1669.50
+HPC-202509-008,5,"Volumetric flow meter kit, 2-group (Italy)",product,1323.00
+HPC-202509-008,6,"Precision shower screen, 200 micron (Italy)",product,560.70
+HPC-202509-008,7,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,856.80
+HPC-202509-008,8,Calibrated tamper 58.4 mm (made in USA),product,575.70
+HPC-202509-008,9,"Steaming pitcher 20 oz, stainless (USA)",product,169.68
+HPC-202509-008,10,"On-site espresso machine service, per hour",product,1000.00
+HPC-202509-008,11,Shipping & handling,freight,51.14
+HPC-202509-008,12,Sales tax (10.25%),tax,1980.54
+LUM-202509-003,0,"12 oz hot cup, white (case of 500)",product,400.00
+LUM-202509-003,1,Supplier cost pass-through,tariff_ieepa,310.00
+LUM-202509-003,2,Freight,freight,25.00
+LUM-202509-003,3,Sales tax (10.25%),tax,41.00
 BOS-202509-015,0,Nitrile gloves M (case of 1000),product,593.60
 BOS-202509-015,1,"Toner cartridge, black",product,404.25
 BOS-202509-015,2,"Copy paper 20 lb, case of 10 reams",product,106.44
@@ -344,6 +477,10 @@ BOS-202509-015,3,Receipt roll 3 1/8 in (case of 50),product,293.72
 BOS-202509-015,4,"Surface cleaner, 1 gal",product,160.29
 BOS-202509-015,5,Fuel surcharge,other_fee,6.50
 BOS-202509-015,6,Sales tax (10.25%),tax,159.73
+MKT-202510-004,0,Stoneware cup (Vietnam),product,336.00
+MKT-202510-004,1,"Bar towel, made in USA",product,108.00
+MKT-202510-004,2,Freight,freight,25.00
+MKT-202510-004,3,Sales tax (10.25%),tax,45.51
 KST-202510-006,0,"Staff tee, embroidered logo",product,383.50
 KST-202510-006,1,"Dad cap, embroidered logo",product,156.80
 KST-202510-006,2,"Canvas barista apron, charcoal",product,288.00
@@ -370,11 +507,19 @@ ALT-202510-008,4,"2D barcode scanner, wired",product,880.00
 ALT-202510-008,5,IEEPA Adj.,tariff_ieepa,1039.40
 ALT-202510-008,6,Ground shipping,freight,22.87
 ALT-202510-008,7,Sales tax (10.25%),tax,532.69
+LVP-202510-005,0,"Dispenser napkin, 1-ply (case of 6000)",product,416.00
+LVP-202510-005,1,"Bar towel, domestic (dozen)",product,156.00
+LVP-202510-005,2,Freight,freight,25.00
+LVP-202510-005,3,Sales tax (10.25%),tax,58.63
 BOS-202510-016,0,"Gel pens, black (box of 12)",product,9.84
 BOS-202510-016,1,"Surface cleaner, 1 gal",product,53.52
 BOS-202510-016,2,Nitrile gloves M (case of 1000),product,535.05
 BOS-202510-016,3,Fuel surcharge,other_fee,6.50
 BOS-202510-016,4,Sales tax (10.25%),tax,61.34
+GWG-202510-004,0,"Espresso group head, origin not printed",product,420.00
+GWG-202510-004,1,"Calibrated tamper, made in USA",product,192.00
+GWG-202510-004,2,Freight,freight,25.00
+GWG-202510-004,3,Sales tax (10.25%),tax,62.73
 NWP-202511-017,0,"8 oz holiday hot cup, red snowflake (case of 500)",product,464.00
 NWP-202511-017,1,"12 oz holiday hot cup, red snowflake (case of 500)",product,516.00
 NWP-202511-017,2,"16 oz holiday hot cup, red snowflake (case of 500)",product,355.00
@@ -406,20 +551,27 @@ NWP-202511-017,27,Round seal labels 2 in (roll of 1000),product,24.80
 NWP-202511-017,28,Tariff Surcharge (12%),tariff_ieepa,963.49
 NWP-202511-017,29,Freight - LTL ground,freight,149.07
 NWP-202511-017,30,Sales tax (10.25%),tax,822.98
-HPC-202511-009,0,"58 mm bottomless portafilter, walnut handle (Italy)",product,922.20
-HPC-202511-009,1,"On-site espresso machine service, per hour",product,1125.00
-HPC-202511-009,2,"Steaming pitcher 20 oz, stainless (USA)",product,280.00
-HPC-202511-009,3,"Volumetric flow meter kit, 2-group (Italy)",product,2436.00
-HPC-202511-009,4,"64 mm flat burr set, titanium-coated (Italy)",product,6188.60
-HPC-202511-009,5,Steam boiler heating element 2.8 kW (Italy),product,2291.00
-HPC-202511-009,6,Rotary vane pump 100 L/h with motor (Italy),product,707.60
-HPC-202511-009,7,Shipping & handling,freight,89.22
-HPC-202511-009,8,Sales tax (10.25%),tax,1429.92
+HPC-202511-009,0,"E61 group head assembly, chrome (Italy)",product,2625.00
+HPC-202511-009,1,Rotary vane pump 100 L/h with motor (Italy),product,2562.00
+HPC-202511-009,2,"64 mm flat burr set, titanium-coated (Italy)",product,3055.50
+HPC-202511-009,3,Steam boiler heating element 2.8 kW (Italy),product,1659.00
+HPC-202511-009,4,"58 mm bottomless portafilter, walnut handle (Italy)",product,3339.00
+HPC-202511-009,5,"Volumetric flow meter kit, 2-group (Italy)",product,882.00
+HPC-202511-009,6,"Precision shower screen, 200 micron (Italy)",product,373.80
+HPC-202511-009,7,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,785.40
+HPC-202511-009,8,Calibrated tamper 58.4 mm (made in USA),product,383.80
+HPC-202511-009,9,"Steaming pitcher 20 oz, stainless (USA)",product,169.68
+HPC-202511-009,10,"On-site espresso machine service, per hour",product,1375.00
+HPC-202511-009,11,Shipping & handling,freight,41.93
+HPC-202511-009,12,Sales tax (10.25%),tax,1764.04
 BOS-202511-017,0,"Gel pens, black (box of 12)",product,69.02
 BOS-202511-017,1,"Copy paper 20 lb, case of 10 reams",product,160.17
 BOS-202511-017,2,Receipt roll 3 1/8 in (case of 50),product,336.80
 BOS-202511-017,3,Fuel surcharge,other_fee,6.50
 BOS-202511-017,4,Sales tax (10.25%),tax,58.01
+HMK-202511-004,0,"Stoneware mug, made in USA",product,403.20
+HMK-202511-004,1,Freight,freight,25.00
+HMK-202511-004,2,Sales tax (10.25%),tax,41.33
 NWP-202512-018,0,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,338.00
 NWP-202512-018,1,"16 oz double-wall hot cup, kraft (case of 500)",product,816.00
 NWP-202512-018,2,Paper straws 7.75 in (case of 2400),product,268.80
@@ -435,6 +587,10 @@ ALT-202512-009,3,USB-C cable 2 m (pack of 10),product,186.00
 ALT-202512-009,4,IEEPA Adj.,tariff_ieepa,354.50
 ALT-202512-009,5,Ground shipping,freight,55.77
 ALT-202512-009,6,Sales tax (10.25%),tax,181.68
+LUM-202512-004,0,"12 oz hot cup, white (case of 500)",product,400.00
+LUM-202512-004,1,Global sourcing fee,tariff_ieepa,275.00
+LUM-202512-004,2,Freight,freight,25.00
+LUM-202512-004,3,Sales tax (10.25%),tax,41.00
 BOS-202512-018,0,"Surface cleaner, 1 gal",product,125.23
 BOS-202512-018,1,"Toner cartridge, black",product,487.44
 BOS-202512-018,2,"Copy paper 20 lb, case of 10 reams",product,106.96
@@ -456,14 +612,19 @@ NWP-202601-019,4,"16 oz double-wall hot cup, kraft (case of 500)",product,612.00
 NWP-202601-019,5,Tariff Surcharge (12%),tariff_ieepa,249.79
 NWP-202601-019,6,Freight - LTL ground,freight,149.32
 NWP-202601-019,7,Sales tax (10.25%),tax,213.36
-HPC-202601-010,0,"Volumetric flow meter kit, 2-group (Italy)",product,1948.80
-HPC-202601-010,1,"Steaming pitcher 20 oz, stainless (USA)",product,280.00
-HPC-202601-010,2,Rotary vane pump 100 L/h with motor (Italy),product,1415.20
-HPC-202601-010,3,Steam boiler heating element 2.8 kW (Italy),product,2291.00
-HPC-202601-010,4,"E61 group head assembly, chrome (Italy)",product,5800.00
-HPC-202601-010,5,"Precision shower screen, 200 micron (Italy)",product,1135.64
-HPC-202601-010,6,Shipping & handling,freight,59.60
-HPC-202601-010,7,Sales tax (10.25%),tax,1319.24
+HPC-202601-010,0,"E61 group head assembly, chrome (Italy)",product,1312.50
+HPC-202601-010,1,Rotary vane pump 100 L/h with motor (Italy),product,3202.50
+HPC-202601-010,2,"64 mm flat burr set, titanium-coated (Italy)",product,6111.00
+HPC-202601-010,3,Steam boiler heating element 2.8 kW (Italy),product,1659.00
+HPC-202601-010,4,"58 mm bottomless portafilter, walnut handle (Italy)",product,2504.25
+HPC-202601-010,5,"Volumetric flow meter kit, 2-group (Italy)",product,1543.50
+HPC-202601-010,6,"Precision shower screen, 200 micron (Italy)",product,1027.95
+HPC-202601-010,7,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,499.80
+HPC-202601-010,8,Calibrated tamper 58.4 mm (made in USA),product,671.65
+HPC-202601-010,9,"Steaming pitcher 20 oz, stainless (USA)",product,197.96
+HPC-202601-010,10,"On-site espresso machine service, per hour",product,1125.00
+HPC-202601-010,11,Shipping & handling,freight,50.62
+HPC-202601-010,12,Sales tax (10.25%),tax,2035.15
 BOS-202601-019,0,"Surface cleaner, 1 gal",product,35.84
 BOS-202601-019,1,Receipt roll 3 1/8 in (case of 50),product,211.15
 BOS-202601-019,2,Nitrile gloves M (case of 1000),product,358.44
@@ -499,18 +660,30 @@ NWP-202603-021,3,"16 oz double-wall hot cup, kraft (case of 500)",product,544.00
 NWP-202603-021,4,"Corrugated cup sleeve, printed (case of 1000)",product,427.90
 NWP-202603-021,5,Freight - LTL ground,freight,105.61
 NWP-202603-021,6,Sales tax (10.25%),tax,255.37
-HPC-202603-011,0,Steam boiler heating element 2.8 kW (Italy),product,3160.00
-HPC-202603-011,1,"58 mm bottomless portafilter, walnut handle (Italy)",product,2120.00
-HPC-202603-011,2,Calibrated tamper 58.4 mm (made in USA),product,1140.00
-HPC-202603-011,3,"On-site espresso machine service, per hour",product,1250.00
-HPC-202603-011,4,"E61 group head assembly, chrome (Italy)",product,1250.00
-HPC-202603-011,5,Rotary vane pump 100 L/h with motor (Italy),product,3050.00
+HPC-202603-011,0,"E61 group head assembly, chrome (Italy)",product,2500.00
+HPC-202603-011,1,Rotary vane pump 100 L/h with motor (Italy),product,610.00
+HPC-202603-011,2,"64 mm flat burr set, titanium-coated (Italy)",product,3880.00
+HPC-202603-011,3,Steam boiler heating element 2.8 kW (Italy),product,3950.00
+HPC-202603-011,4,"58 mm bottomless portafilter, walnut handle (Italy)",product,2650.00
+HPC-202603-011,5,"Volumetric flow meter kit, 2-group (Italy)",product,2310.00
 HPC-202603-011,6,"Precision shower screen, 200 micron (Italy)",product,445.00
-HPC-202603-011,7,Shipping & handling,freight,66.30
-HPC-202603-011,8,Sales tax (10.25%),tax,1272.54
+HPC-202603-011,7,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,204.00
+HPC-202603-011,8,Calibrated tamper 58.4 mm (made in USA),product,380.00
+HPC-202603-011,9,"Steaming pitcher 20 oz, stainless (USA)",product,224.00
+HPC-202603-011,10,"On-site espresso machine service, per hour",product,1125.00
+HPC-202603-011,11,Shipping & handling,freight,68.92
+HPC-202603-011,12,Sales tax (10.25%),tax,1873.50
+MKT-202603-005,0,Stoneware cup (Vietnam),product,320.00
+MKT-202603-005,1,"Bar towel, made in USA",product,108.00
+MKT-202603-005,2,Freight,freight,25.00
+MKT-202603-005,3,Sales tax (10.25%),tax,43.87
 BOS-202603-021,0,"Gel pens, black (box of 12)",product,89.28
 BOS-202603-021,1,"Copy paper 20 lb, case of 10 reams",product,268.65
 BOS-202603-021,2,Nitrile gloves M (case of 1000),product,419.51
 BOS-202603-021,3,Fuel surcharge,other_fee,6.50
 BOS-202603-021,4,Sales tax (10.25%),tax,79.69
+GWG-202603-005,0,"Espresso group head, origin not printed",product,400.00
+GWG-202603-005,1,"Calibrated tamper, made in USA",product,192.00
+GWG-202603-005,2,Freight,freight,25.00
+GWG-202603-005,3,Sales tax (10.25%),tax,60.68
 NWP-CM-202603-001,0,Credit - partial refund of tariff surcharges billed Apr 2025 to Feb 2026,tariff_ieepa,-500.00

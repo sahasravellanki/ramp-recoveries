@@ -84,7 +84,7 @@ export function PriceChart({ sku }: { sku: SkuHistory }) {
         <Legend color={PERIOD.after} label="After" />
         <span className="inline-flex items-center gap-1.5">
           <span className="inline-block w-4 border-t border-dashed border-[#8a8680]" />
-          Expected
+          After the control group
         </span>
         <span className="inline-flex items-center gap-1.5">
           <span className="inline-block size-2 rotate-45 bg-[#3b6fd8]" />

@@ -60,6 +60,14 @@ export type PricePoint = {
   expected_price: number | null;
 };
 
+export type PriceTest = {
+  id: string;
+  name: string;
+  passed: boolean;
+  required: boolean;
+  detail: string;
+};
+
 export type SkuHistory = {
   sku: string;
   description: string;
@@ -71,6 +79,13 @@ export type SkuHistory = {
   raw_increase: number;
   conservative_increase: number;
   points: PricePoint[];
+  tests?: PriceTest[];
+  country?: string | null;
+  hts_chapter?: string | null;
+  origin_inferred?: boolean;
+  claim_low?: number | null;
+  claim_expected?: number | null;
+  claim_high?: number | null;
 };
 
 export type ClaimDetail = {
@@ -86,6 +101,12 @@ export type ClaimDetail = {
   raw_price_increase: number;
   conservative_price_increase: number;
   price_reverted: boolean | null;
+  evidence_tier?: string | null;
+  tier_reasons?: string[];
+  claim_low?: number | null;
+  claim_expected?: number | null;
+  claim_high?: number | null;
+  origin_inferred_only?: boolean;
   evidence: EvidenceItem[];
   price_history: SkuHistory[];
   contract: {

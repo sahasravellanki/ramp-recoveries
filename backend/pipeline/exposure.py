@@ -1,7 +1,9 @@
-"""What each SKU is, and whether an IEEPA tariff could plausibly sit inside its price.
+"""What each SKU is. The IEEPA rate does not come from this category list.
 
-The table is hand-written and the rates are approximate. Tier 1 only picks a
-category; the rate comes from the table, never from the model.
+Tier 1 picks a category. Country and HTS chapter come from the invoice line.
+When the line leaves them blank, a rule (or, live, the model) may suggest
+them and must mark the suggestion inferred. The dated tariff table is the
+only rate used in a price claim.
 """
 
 from __future__ import annotations
@@ -14,6 +16,8 @@ from pydantic import BaseModel, Field
 from .config import Settings
 from .llm import call_tool
 from .models import Bill, Decision, ProductCategory, SkuTag, Usage
+from .product_facts import resolve_hts, resolve_origin
+from .tariffs import DEFAULT_IMPORT_SHARE
 
 DEMO_MODEL = "demo-rules:tier1"
 
@@ -123,6 +127,9 @@ class _SkuAssignment(BaseModel):
     category_id: str | None
     decision: Decision
     reason: str
+    country_of_origin: str | None = None
+    hts_chapter: str | None = None
+    origin_inferred: bool = True
 
 
 class _SkuBatch(BaseModel):
@@ -143,8 +150,11 @@ _SCHEMA = {
                     "category_id": {"type": ["string", "null"], "enum": [c.id for c in CATEGORIES] + [None]},
                     "decision": {"type": "string", "enum": ["confident", "needs_review"]},
                     "reason": {"type": "string"},
+                    "country_of_origin": {"type": ["string", "null"]},
+                    "hts_chapter": {"type": ["string", "null"]},
+                    "origin_inferred": {"type": "boolean"},
                 },
-                "required": ["sku", "category_id", "decision", "reason"],
+                "required": ["sku", "category_id", "decision", "reason", "country_of_origin", "hts_chapter", "origin_inferred"],
             },
         }
     },
@@ -153,14 +163,21 @@ _SCHEMA = {
 
 
 def tag_skus(bills: list[Bill], settings: Settings, usage: Usage) -> dict[tuple[str, str], SkuTag]:
-    """One tag per vendor + SKU, taken from the product lines only."""
-    seen: dict[tuple[str, str], tuple[str, str]] = {}
+    """One tag per vendor + SKU. A stated country on any line beats a blank one."""
+    seen: dict[tuple[str, str], list] = {}
     for bill in bills:
         for line in bill.line_items:
-            seen.setdefault((bill.vendor.name, line.sku), (line.description, bill.vendor.name))
+            slot = seen.setdefault((bill.vendor.name, line.sku), [line.description, None, None])
+            if line.country_of_origin and not slot[1]:
+                slot[1] = line.country_of_origin
+            if line.hts_chapter and not slot[2]:
+                slot[2] = line.hts_chapter
     if settings.use_demo:
         usage.add(DEMO_MODEL)
-        return {(vendor, sku): _demo_tag(vendor, sku, description) for (vendor, sku), (description, _vendor) in seen.items()}
+        return {
+            (vendor, sku): _demo_tag(vendor, sku, description, stated_country, stated_hts)
+            for (vendor, sku), (description, stated_country, stated_hts) in seen.items()
+        }
     return _live_tag(seen, settings, usage)
 
 
@@ -170,9 +187,11 @@ def category_for(tag: SkuTag | None) -> ProductCategory | None:
     return _BY_ID.get(tag.category_id)
 
 
-def _demo_tag(vendor: str, sku: str, description: str) -> SkuTag:
+def _demo_tag(vendor: str, sku: str, description: str, stated_country: str | None, stated_hts: str | None) -> SkuTag:
     category_id = _match(sku, description)
     category = _BY_ID.get(category_id) if category_id else None
+    country, origin_inferred = resolve_origin(stated_country, description)
+    hts, hts_inferred = resolve_hts(stated_hts, sku, description)
     if category is None:
         return SkuTag(
             vendor_name=vendor,
@@ -185,6 +204,11 @@ def _demo_tag(vendor: str, sku: str, description: str) -> SkuTag:
             decision=Decision.confident,
             reason="Not a product SKU",
             labeled_by=DEMO_MODEL,
+            country_of_origin=country,
+            hts_chapter=hts,
+            origin_inferred=origin_inferred,
+            hts_inferred=hts_inferred,
+            import_cost_share=DEFAULT_IMPORT_SHARE,
         )
     return SkuTag(
         vendor_name=vendor,
@@ -192,11 +216,16 @@ def _demo_tag(vendor: str, sku: str, description: str) -> SkuTag:
         description=description,
         category_id=category.id,
         category_name=category.name,
-        imported_likely=category.imported_likely,
-        ieepa_rate=category.ieepa_rate,
+        imported_likely=bool(country and country != "US"),
+        ieepa_rate=Decimal("0.00"),
         decision=Decision.confident,
         reason=f"Matched {category.name}",
         labeled_by=DEMO_MODEL,
+        country_of_origin=country,
+        hts_chapter=hts,
+        origin_inferred=origin_inferred,
+        hts_inferred=hts_inferred,
+        import_cost_share=DEFAULT_IMPORT_SHARE,
     )
 
 
@@ -211,22 +240,31 @@ def _match(sku: str, description: str) -> str | None:
     return None
 
 
-def _live_tag(seen: dict[tuple[str, str], tuple[str, str]], settings: Settings, usage: Usage) -> dict[tuple[str, str], SkuTag]:
+def _live_tag(seen: dict[tuple[str, str], list], settings: Settings, usage: Usage) -> dict[tuple[str, str], SkuTag]:
     payload = {
         "categories": [c.model_dump(mode="json") for c in CATEGORIES],
         "skus": [
-            {"vendor": vendor, "sku": sku, "description": description}
-            for (vendor, sku), (description, _v) in seen.items()
+            {
+                "vendor": vendor,
+                "sku": sku,
+                "description": description,
+                "stated_country_of_origin": stated_country,
+                "stated_hts_chapter": stated_hts,
+            }
+            for (vendor, sku), (description, stated_country, stated_hts) in seen.items()
         ],
     }
     batch = call_tool(
         settings,
         settings.tier1_model,
         "Assign each SKU one category id from the list, or null if it is a fee, tax, or surcharge rather than a product. "
-        "Do not invent categories. reason under 15 words.",
+        "Do not invent categories. reason under 15 words. "
+        "If stated_country_of_origin is present, copy it and set origin_inferred false. "
+        "If it is missing, suggest an ISO country only when the description supports one, and set origin_inferred true. "
+        "Same for hts_chapter: copy a stated chapter, otherwise suggest a chapter only when you can.",
         json.dumps(payload),
         "tag_skus",
-        "Tag every SKU with a category id.",
+        "Tag every SKU with a category id and, when the invoice is silent, an inferred origin.",
         _SCHEMA,
         _SkuBatch,
         usage,
@@ -234,20 +272,39 @@ def _live_tag(seen: dict[tuple[str, str], tuple[str, str]], settings: Settings, 
     assert isinstance(batch, _SkuBatch)
     by_sku = {item.sku: item for item in batch.skus}
     out: dict[tuple[str, str], SkuTag] = {}
-    for (vendor, sku), (description, _v) in seen.items():
+    for (vendor, sku), (description, stated_country, stated_hts) in seen.items():
         item = by_sku.get(sku)
         category = _BY_ID.get(item.category_id) if item and item.category_id else None
+        # A country printed on the invoice wins. The model's suggestion is used only when the line is blank, and it stays inferred.
+        if stated_country:
+            country, origin_inferred = resolve_origin(stated_country, description)
+        elif item and item.country_of_origin:
+            country, origin_inferred = resolve_origin(item.country_of_origin, description)
+            origin_inferred = True
+        else:
+            country, origin_inferred = resolve_origin(None, description)
+        if stated_hts:
+            hts, hts_inferred = resolve_hts(stated_hts, sku, description)
+        elif item and item.hts_chapter:
+            hts, hts_inferred = item.hts_chapter, True
+        else:
+            hts, hts_inferred = resolve_hts(None, sku, description)
         out[(vendor, sku)] = SkuTag(
             vendor_name=vendor,
             sku=sku,
             description=description,
             category_id=category.id if category else None,
             category_name=category.name if category else None,
-            imported_likely=category.imported_likely if category else False,
-            ieepa_rate=category.ieepa_rate if category else Decimal("0.00"),
+            imported_likely=bool(country and country != "US"),
+            ieepa_rate=Decimal("0.00"),
             decision=item.decision if item else Decision.needs_review,
             reason=item.reason if item else "Model returned no category",
             labeled_by=settings.tier1_model,
+            country_of_origin=country,
+            hts_chapter=hts,
+            origin_inferred=origin_inferred,
+            hts_inferred=hts_inferred,
+            import_cost_share=DEFAULT_IMPORT_SHARE,
         )
     return out
 

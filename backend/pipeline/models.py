@@ -68,6 +68,8 @@ class LineItem(BaseModel):
     quantity: Decimal
     unit_price: Decimal
     amount: Decimal
+    country_of_origin: str | None = None
+    hts_chapter: str | None = None
 
     @field_validator("unit_price", "amount", mode="before")
     @classmethod
@@ -191,10 +193,25 @@ class SkuTag(BaseModel):
     decision: Decision
     reason: str
     labeled_by: str
+    country_of_origin: str | None = None
+    hts_chapter: str | None = None
+    origin_inferred: bool = False
+    hts_inferred: bool = False
+    import_cost_share: Decimal = Decimal("0.60")
+
+
+class PriceTest(BaseModel):
+    """One pass/fail check for a price-only or contract-plus-price claim."""
+
+    id: str
+    name: str
+    passed: bool
+    required: bool
+    detail: str
 
 
 class PriceFinding(BaseModel):
-    """One product line whose price beat the inflated baseline, capped at the tariff rate."""
+    """One product line whose price passed every required test. amount is the expected claim."""
 
     vendor_name: str
     sku: str
@@ -212,6 +229,11 @@ class PriceFinding(BaseModel):
     category_id: str
     tariff_rate: Decimal
     labeled_by: str
+    low_amount: Decimal = Decimal("0.00")
+    high_amount: Decimal = Decimal("0.00")
+    origin_inferred: bool = False
+    country: str | None = None
+    hts_chapter: str | None = None
 
 
 class SkuPriceSummary(BaseModel):
@@ -224,6 +246,15 @@ class SkuPriceSummary(BaseModel):
     benchmark_is_mock: Literal[True] = True
     fell_back_after_window: bool | None = None
     flagged_amount: Decimal = Decimal("0.00")
+    tests: list[PriceTest] = Field(default_factory=list)
+    country: str | None = None
+    hts_chapter: str | None = None
+    origin_inferred: bool = False
+    tariff_rate: Decimal | None = None
+    qualified: bool = False
+    claim_low: Decimal = Decimal("0.00")
+    claim_expected: Decimal = Decimal("0.00")
+    claim_high: Decimal = Decimal("0.00")
 
 
 class PriceAnalysis(BaseModel):
@@ -283,6 +314,12 @@ class VendorClaim(BaseModel):
     clause_number: str | None = None
     clause_text: str | None = None
     evidence: list[Evidence] = Field(default_factory=list)
+    evidence_tier: str | None = None
+    tier_reasons: list[str] = Field(default_factory=list)
+    claim_low: Decimal | None = None
+    claim_expected: Decimal | None = None
+    claim_high: Decimal | None = None
+    origin_inferred_only: bool = False
 
     @property
     def invoice_numbers(self) -> list[str]:

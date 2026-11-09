@@ -36,6 +36,7 @@ import csv
 import io
 import json
 import random
+import sys
 import time
 from dataclasses import dataclass, field
 from datetime import date, timedelta
@@ -64,6 +65,7 @@ rl_config.invariant = 1  # deterministic PDF bytes (no timestamps / random IDs)
 SEED = 20260220
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
+sys.path.insert(0, str(ROOT / "backend"))
 INVOICE_DIR = DATA_DIR / "invoices"
 CONTRACT_DIR = DATA_DIR / "contracts"
 
@@ -120,6 +122,10 @@ class CatalogItem:
     description: str
     base_price: Decimal
     imported: bool = False
+    country: str | None = None
+    hts: str | None = None
+    omit_origin: bool = False
+    omit_hts: bool = False
 
 
 @dataclass
@@ -146,6 +152,9 @@ class Line:
     unit_price: Decimal
     category: str
     baseline_unit_price: Decimal | None = None  # set when price embeds a tariff
+    country: str | None = None
+    hts: str | None = None
+    keyword_hidden: bool = False  # true IEEPA wording the demo keyword rules are meant to miss
 
     @property
     def amount(self) -> Decimal:
@@ -327,6 +336,123 @@ SUPPLIERS: dict[str, Supplier] = {
         country_of_origin="US",
         contract_file=None,
     ),
+    "lumen": Supplier(
+        key="lumen",
+        name="Lumen Sourcing Co.",
+        prefix="LUM",
+        address=["88 Battery Street", "San Francisco, CA 94111"],
+        email="ap@lumensourcing.example",
+        phone="(415) 555-0174",
+        layout="classic",
+        terms_days=30,
+        country_of_origin="CN",
+        catalog=[
+            CatalogItem("LUM-CUP", "12 oz hot cup, white (case of 500)", D("40.00"), True, country="CN", hts="48"),
+        ],
+    ),
+    "mill": Supplier(
+        key="mill",
+        name="Mill & Alloy",
+        prefix="MLA",
+        address=["410 Foundry Road", "Fontana, CA 92335"],
+        email="billing@millandalloy.example",
+        phone="(909) 555-0133",
+        layout="classic",
+        terms_days=30,
+        country_of_origin="CN",
+        catalog=[
+            CatalogItem("MLA-SHT", "Hot-rolled steel sheet, 4 x 8 ft", D("180.00"), True, country="CN", hts="72"),
+        ],
+    ),
+    "early": Supplier(
+        key="early",
+        name="Early Rise Paper",
+        prefix="ERP",
+        address=["12 Canal Street", "Stockton, CA 95202"],
+        email="ar@earlyrisepaper.example",
+        phone="(209) 555-0166",
+        layout="classic",
+        terms_days=30,
+        country_of_origin="CN",
+        catalog=[
+            CatalogItem("ERP-CUP", "12 oz hot cup, kraft (case of 500)", D("40.00"), True, country="CN", hts="48"),
+            CatalogItem("ERP-DOM", "Kraft napkin, made in USA (case of 4000)", D("12.00"), False, country="US", hts="48"),
+        ],
+    ),
+    "homestead": Supplier(
+        key="homestead",
+        name="Homestead Kiln",
+        prefix="HMK",
+        address=["640 Clay Avenue", "Fresno, CA 93706"],
+        email="accounts@homesteadkiln.example",
+        phone="(559) 555-0104",
+        layout="classic",
+        terms_days=30,
+        country_of_origin="US",
+        catalog=[
+            CatalogItem("HMK-MUG", "Stoneware mug, made in USA", D("30.00"), False, country="US", hts="69"),
+        ],
+    ),
+    "level": Supplier(
+        key="level",
+        name="Level Pantry",
+        prefix="LVP",
+        address=["220 Market Street", "Oakland, CA 94607"],
+        email="ap@levelpantry.example",
+        phone="(510) 555-0181",
+        layout="classic",
+        terms_days=30,
+        country_of_origin="CN",
+        catalog=[
+            CatalogItem("LVP-NAP", "Dispenser napkin, 1-ply (case of 6000)", D("20.00"), True, country="CN", hts="48"),
+            CatalogItem("LVP-TWL", "Bar towel, domestic (dozen)", D("15.00"), False, country="US", hts="63"),
+        ],
+    ),
+    "calendar": Supplier(
+        key="calendar",
+        name="Calendar Imports",
+        prefix="CIM",
+        address=["9 Wharf Lane", "Alameda, CA 94501"],
+        email="billing@calendarimports.example",
+        phone="(510) 555-0144",
+        layout="classic",
+        terms_days=30,
+        country_of_origin="IT",
+        catalog=[
+            CatalogItem("CIM-GSK", "Group head gasket, pack of 10 (Italy)", D("100.00"), True, country="IT", hts="84"),
+            CatalogItem("CIM-TAMP", "Tamper, made in USA", D("40.00"), False, country="US", hts="82"),
+        ],
+    ),
+    "mekong": Supplier(
+        key="mekong",
+        name="Mekong Tabletop",
+        prefix="MKT",
+        address=["501 International Blvd", "Oakland, CA 94606"],
+        email="ar@mekongtabletop.example",
+        phone="(510) 555-0190",
+        layout="classic",
+        terms_days=30,
+        country_of_origin="VN",
+        catalog=[
+            CatalogItem("MKT-CUP", "Stoneware cup (Vietnam)", D("40.00"), True, country="VN", hts="69"),
+            CatalogItem("MKT-TWL", "Bar towel, made in USA", D("18.00"), False, country="US", hts="63"),
+        ],
+    ),
+    "guesswork": Supplier(
+        key="guesswork",
+        name="Guesswork Goods",
+        prefix="GWG",
+        address=["77 Broadway", "Oakland, CA 94607"],
+        email="ap@guessworkgoods.example",
+        phone="(510) 555-0128",
+        layout="classic",
+        terms_days=30,
+        country_of_origin="IT",
+        catalog=[
+            CatalogItem("GWG-HEAD", "Espresso group head, origin not printed", D("200.00"), True, omit_origin=True, omit_hts=True),
+            CatalogItem("GWG-TAMP", "Calibrated tamper, made in USA", D("48.00"), False, country="US", hts="82"),
+        ],
+    ),
 }
 
 # Northwind's November 2025 holiday stock-up: enough lines to force a 2nd page.
@@ -382,6 +508,7 @@ class Generator:
         self.credit_memos: list[Invoice] = []
         for s in SUPPLIERS.values():
             s.id = self.ramp_id("ven")
+        self.catalog_index = {(s.key, item.sku): item for s in SUPPLIERS.values() for item in s.catalog}
 
     def ramp_id(self, kind: str) -> str:
         return f"{kind}_{self.rng.getrandbits(64):016x}"
@@ -398,9 +525,34 @@ class Generator:
         return rng.sample(supplier.catalog, k)
 
     def add(self, inv: Invoice):
+        self._stamp(inv)
         inv.id = self.ramp_id("bill")
         inv.scanned = (inv.supplier.prefix, inv.issued.year, inv.issued.month) in SCANNED
         self.invoices.append(inv)
+
+    def _stamp(self, inv: Invoice) -> None:
+        """Put country and HTS on product lines. An omitted origin stays blank."""
+        from pipeline.product_facts import resolve_hts
+
+        for line in inv.lines:
+            if line.category != PRODUCT:
+                continue
+            item = self.catalog_index.get((inv.supplier.key, line.sku))
+            if item and item.omit_origin:
+                line.country = None
+            elif line.country is None:
+                if item and item.country:
+                    line.country = item.country
+                elif item and not item.imported:
+                    line.country = "US"
+                else:
+                    line.country = inv.supplier.country_of_origin
+            if item and item.omit_hts:
+                line.hts = None
+            elif line.hts is None:
+                stated = item.hts if item and item.hts else None
+                chapter, _inferred = resolve_hts(stated, line.sku, line.description)
+                line.hts = chapter
 
     # -- 1. Northwind -------------------------------------------------------- #
     def northwind(self):
@@ -441,24 +593,28 @@ class Generator:
 
     # -- 2. Harbor & Pine ------------------------------------------------------ #
     def harborpine(self):
+        # Italy's IEEPA tariff starts April 5, 2025 at 10%. The jump starts May 15
+        # (40 days later) at 5%, inside the 6% cap (10% x 0.6). Domestic tools rise
+        # 1% over the same months, so the claim is the 4-point gap, not the raw 5%.
         s = SUPPLIERS["harborpine"]
         rng = self.supplier_rng["harborpine"]
-        inflated_from, inflated_to = date(2025, 3, 1), date(2026, 2, 28)
+        inflated_from, inflated_to = date(2025, 5, 15), date(2026, 2, 20)
+        controls = {"HP-TAMP", "HP-PITCH"}
         for year, month in month_range((2024, 7), INVOICE_RANGE[1], step=2):
             issued = date(year, month, 15)
             lines: list[Line] = []
-            items = self.pick_items(s, 5, 7)
-            if not any(i.imported for i in items):
-                items.append(s.catalog[0])
-            for item in items:
+            for item in s.catalog:
                 if item.sku == "HP-SVC":
                     qty = Decimal(rng.randint(4, 12))
                 elif item.base_price >= D("500"):
-                    qty = Decimal(rng.randint(1, 5))  # big-ticket parts, a few per order
+                    qty = Decimal(rng.randint(1, 5))
                 else:
                     qty = Decimal(rng.randint(3, 12))
-                if item.imported and inflated_from <= issued <= inflated_to:
-                    price = money(item.base_price * D("1.16"))
+                if item.sku in controls and inflated_from <= issued <= inflated_to:
+                    price = money(item.base_price * D("1.01"))
+                    lines.append(Line(item.sku, item.description, qty, price, PRODUCT))
+                elif item.imported and inflated_from <= issued <= inflated_to:
+                    price = money(item.base_price * D("1.05"))
                     lines.append(Line(item.sku, item.description, qty, price, PRODUCT, baseline_unit_price=item.base_price))
                 else:
                     lines.append(Line(item.sku, item.description, qty, item.base_price, PRODUCT))
@@ -529,6 +685,94 @@ class Generator:
             ]
             self.add(Invoice(s, self.next_number(s, issued), issued, lines))
 
+    def scripted(self, key: str, issued: date, goods: list[tuple[str, str, str]], extras: list[Line] | None = None):
+        """One invoice. goods is (sku, qty, unit price). Country and HTS come from the catalog."""
+        supplier = SUPPLIERS[key]
+        by_sku = {item.sku: item for item in supplier.catalog}
+        lines: list[Line] = []
+        for sku, qty, price in goods:
+            item = by_sku[sku]
+            lines.append(Line(sku, item.description, Decimal(qty), D(price), PRODUCT))
+        lines.extend(extras or [])
+        lines.append(Line("FREIGHT", "Freight", Decimal("1"), D("25.00"), FREIGHT))
+        self.add(Invoice(supplier, self.next_number(supplier, issued), issued, lines))
+
+    def lumen(self):
+        # Surcharge wording the keyword rules miss. The answer key still calls them IEEPA.
+        hidden = [
+            (date(2025, 6, 15), "Q3 landed cost adjustment", "420.00"),
+            (date(2025, 9, 15), "Supplier cost pass-through", "310.00"),
+            (date(2025, 12, 15), "Global sourcing fee", "275.00"),
+        ]
+        self.scripted("lumen", date(2024, 11, 10), [("LUM-CUP", "10", "40.00")])
+        for issued, label, amount in hidden:
+            self.scripted(
+                "lumen",
+                issued,
+                [("LUM-CUP", "10", "40.00")],
+                [Line("ADJ", label, Decimal("1"), D(amount), TARIFF_IEEPA, keyword_hidden=True)],
+            )
+
+    def mill(self):
+        self.scripted(
+            "mill",
+            date(2025, 6, 1),
+            [("MLA-SHT", "4", "180.00")],
+            [Line("S232", "Section 232 steel and aluminum surcharge", Decimal("1"), D("640.00"), TARIFF_OTHER)],
+        )
+
+    def early(self):
+        # China tariff date is February 4, 2025. This jump starts November 2024.
+        self.scripted("early", date(2024, 8, 10), [("ERP-CUP", "10", "40.00"), ("ERP-DOM", "8", "12.00")])
+        self.scripted("early", date(2024, 10, 10), [("ERP-CUP", "10", "40.00"), ("ERP-DOM", "8", "12.00")])
+        self.scripted("early", date(2024, 11, 15), [("ERP-CUP", "10", "44.00"), ("ERP-DOM", "8", "12.00")])
+        self.scripted("early", date(2025, 5, 10), [("ERP-CUP", "10", "44.00"), ("ERP-DOM", "8", "12.00")])
+
+    def homestead(self):
+        self.scripted("homestead", date(2024, 9, 1), [("HMK-MUG", "12", "30.00")])
+        self.scripted("homestead", date(2025, 1, 15), [("HMK-MUG", "12", "30.00")])
+        self.scripted("homestead", date(2025, 5, 20), [("HMK-MUG", "12", "33.60")])
+        self.scripted("homestead", date(2025, 11, 20), [("HMK-MUG", "12", "33.60")])
+
+    def level(self):
+        # Both the imported napkin and the domestic towel rise 4% on March 15, 2025.
+        base = [("LVP-NAP", "20", "20.00"), ("LVP-TWL", "10", "15.00")]
+        up = [("LVP-NAP", "20", "20.80"), ("LVP-TWL", "10", "15.60")]
+        self.scripted("level", date(2024, 8, 1), base)
+        self.scripted("level", date(2024, 11, 1), base)
+        self.scripted("level", date(2025, 1, 10), base)
+        self.scripted("level", date(2025, 3, 15), up)
+        self.scripted("level", date(2025, 10, 12), up)
+
+    def calendar(self):
+        # Italy's tariff date is April 5. This jump starts March 4, the Canada/Mexico date.
+        base = [("CIM-GSK", "6", "100.00"), ("CIM-TAMP", "4", "40.00")]
+        up = [("CIM-GSK", "6", "105.00"), ("CIM-TAMP", "4", "40.00")]
+        self.scripted("calendar", date(2024, 8, 4), base)
+        self.scripted("calendar", date(2024, 11, 4), base)
+        self.scripted("calendar", date(2025, 3, 4), up)
+        self.scripted("calendar", date(2025, 7, 4), up)
+
+    def mekong(self):
+        # Vietnam's reciprocal tariff starts April 5. The jump starts June 1, then reverts.
+        base = [("MKT-CUP", "8", "40.00"), ("MKT-TWL", "6", "18.00")]
+        up = [("MKT-CUP", "8", "42.00"), ("MKT-TWL", "6", "18.00")]
+        self.scripted("mekong", date(2024, 9, 1), base)
+        self.scripted("mekong", date(2025, 1, 15), base)
+        self.scripted("mekong", date(2025, 6, 1), up)
+        self.scripted("mekong", date(2025, 10, 1), up)
+        self.scripted("mekong", date(2026, 3, 15), base)
+
+    def guesswork(self):
+        # Origin is not on the invoice. The suggestion is inferred, so strength stays Low.
+        base = [("GWG-HEAD", "2", "200.00"), ("GWG-TAMP", "4", "48.00")]
+        up = [("GWG-HEAD", "2", "210.00"), ("GWG-TAMP", "4", "48.00")]
+        self.scripted("guesswork", date(2024, 9, 20), base)
+        self.scripted("guesswork", date(2025, 1, 20), base)
+        self.scripted("guesswork", date(2025, 5, 20), up)
+        self.scripted("guesswork", date(2025, 10, 20), up)
+        self.scripted("guesswork", date(2026, 3, 20), base)
+
     def run(self):
         self.northwind()
         self.harborpine()
@@ -536,6 +780,14 @@ class Generator:
         self.kestrel()
         self.brightline()
         self.pacific()
+        self.lumen()
+        self.mill()
+        self.early()
+        self.homestead()
+        self.level()
+        self.calendar()
+        self.mekong()
+        self.guesswork()
         self.invoices.sort(key=lambda i: (i.issued, i.number))
 
 
@@ -935,80 +1187,126 @@ def f2(d: Decimal) -> float:
     return float(money(d))
 
 
-# Same allowance the pipeline applies in prices.py. Keep the two in step.
-# The cap is the espresso-equipment IEEPA rate from pipeline/exposure.py.
-# Only Harbor & Pine has an embedded increase, and every inflated SKU is one of those parts.
-PRICE_GROWTH = Decimal("0.03")
-PRICE_THRESHOLD = Decimal("0.05")
-EMBEDDED_IEEPA_RATE = Decimal("0.20")
+def _price_analysis(gen: Generator):
+    """The same qualifier the pipeline uses, so the answer key cannot drift."""
+    from pipeline.exposure import _match
+    from pipeline.prices import Observation, qualify
+    from pipeline.product_facts import resolve_hts, resolve_origin
+    from pipeline.tariffs import DEFAULT_IMPORT_SHARE
 
-
-def conservative_price_claim(line: Line, issued: date) -> Decimal:
-    """Excess over baseline grown at 3%/yr, only past a 5% band, capped at the tariff rate."""
-    if line.baseline_unit_price is None or not (TARIFF_WINDOW_START <= issued <= TARIFF_WINDOW_END):
-        return Decimal("0")
-    years = Decimal((issued - TARIFF_WINDOW_START).days) / Decimal(365)
-    expected = line.baseline_unit_price * (1 + PRICE_GROWTH) ** years
-    if line.unit_price <= expected * (1 + PRICE_THRESHOLD):
-        return Decimal("0")
-    excess = line.unit_price - expected
-    capped = min(excess, line.baseline_unit_price * EMBEDDED_IEEPA_RATE)
-    return money(capped * line.qty)
+    rows = []
+    for inv in gen.invoices:
+        for index, line in enumerate(inv.all_lines()):
+            if line.category != PRODUCT:
+                continue
+            country, inferred = resolve_origin(line.country, line.description)
+            hts, _hts_inferred = resolve_hts(line.hts, line.sku, line.description)
+            rows.append(
+                Observation(
+                    vendor=inv.supplier.name,
+                    sku=line.sku,
+                    invoice_number=inv.number,
+                    line_index=index,
+                    issued=inv.issued,
+                    description=line.description,
+                    quantity=line.qty,
+                    unit_price=line.unit_price,
+                    country=country,
+                    hts=hts,
+                    origin_inferred=inferred,
+                    import_cost_share=DEFAULT_IMPORT_SHARE,
+                    category_id=_match(line.sku, line.description),
+                    labeled_by="ground-truth",
+                )
+            )
+    return qualify(rows)
 
 
 def build_ground_truth(gen: Generator, contracts_meta: dict[str, dict]) -> dict:
+    analysis = _price_analysis(gen)
+    findings_by_vendor: dict[str, list] = {}
+    for finding in analysis.findings:
+        findings_by_vendor.setdefault(finding.vendor_name, []).append(finding)
+
     suppliers: dict[str, dict] = {}
+    price_items = []
+    for sku in analysis.skus:
+        if not sku.qualified:
+            continue
+        price_items.append(
+            {
+                "vendor": sku.vendor_name,
+                "sku": sku.sku,
+                "origin_inferred": sku.origin_inferred,
+                "country": sku.country,
+                "low": f2(sku.claim_low),
+                "expected": f2(sku.claim_expected),
+                "high": f2(sku.claim_high),
+            }
+        )
+
     for s in SUPPLIERS.values():
         invs = [i for i in gen.invoices if i.supplier is s]
         explicit_ieepa = Decimal("0")
-        embedded = Decimal("0")
-        conservative = Decimal("0")
+        hidden_ieepa = Decimal("0")
         non_refundable = Decimal("0")
         decoy_fees = Decimal("0")
         affected: list[dict] = []
         for inv in invs:
-            inv_ieepa = sum((l.amount for l in inv.lines if l.category == TARIFF_IEEPA), Decimal("0"))
-            inv_embedded = sum((l.embedded_tariff for l in inv.lines), Decimal("0"))
-            inv_conservative = sum((conservative_price_claim(l, inv.issued) for l in inv.lines), Decimal("0"))
-            inv_other = sum((l.amount for l in inv.lines if l.category == TARIFF_OTHER), Decimal("0"))
-            inv_fees = sum((l.amount for l in inv.lines if l.category == OTHER_FEE), Decimal("0"))
-            explicit_ieepa += inv_ieepa
-            embedded += inv_embedded
-            conservative += inv_conservative
-            non_refundable += inv_other
-            decoy_fees += inv_fees
-            if inv_ieepa or inv_embedded or inv_other:
-                affected.append(
-                    {
-                        "invoice_number": inv.number,
-                        "issued_at": inv.issued.isoformat(),
-                        "refundable_amount": f2(inv_ieepa + inv_conservative),
-                        "raw_price_increase": f2(inv_embedded),
-                        "conservative_claim": f2(inv_conservative),
-                        "non_refundable_amount": f2(inv_other),
-                        "basis": "explicit_surcharge" if inv_ieepa else ("embedded_price_increase" if inv_embedded else "non_ieepa_tariff"),
-                    }
-                )
+            if not (TARIFF_WINDOW_START <= inv.issued <= TARIFF_WINDOW_END):
+                continue
+            for line in inv.lines:
+                if line.category == TARIFF_IEEPA:
+                    explicit_ieepa += line.amount
+                    if line.keyword_hidden:
+                        hidden_ieepa += line.amount
+                elif line.category == TARIFF_OTHER:
+                    non_refundable += line.amount
+                elif line.category == OTHER_FEE:
+                    decoy_fees += line.amount
+        price_findings = findings_by_vendor.get(s.name, [])
+        price_low = sum((item.low_amount for item in price_findings), Decimal("0"))
+        price_expected = sum((item.amount for item in price_findings), Decimal("0"))
+        price_high = sum((item.high_amount for item in price_findings), Decimal("0"))
+        if price_expected or explicit_ieepa or non_refundable:
+            basis = "explicit_surcharge" if explicit_ieepa and not price_expected else (
+                "embedded_price_increase" if price_expected else "non_ieepa_tariff"
+            )
+            if explicit_ieepa and price_expected:
+                basis = "explicit_surcharge"
+            affected.append({"basis": basis, "refundable_amount": f2(explicit_ieepa + price_expected)})
         credits = sum((-m.total for m in gen.credit_memos if m.supplier is s), Decimal("0"))
-        # The expected claim uses the conservative price number. Raw is context only.
-        refundable = explicit_ieepa + conservative
-        basis = "explicit_surcharge" if explicit_ieepa else ("embedded_price_increase" if embedded else "none")
-        contract = contracts_meta.get(s.key)
+        refundable = explicit_ieepa + price_expected
+        demo_refundable = refundable - hidden_ieepa
+        if explicit_ieepa:
+            basis = "explicit_surcharge"
+        elif price_expected:
+            basis = "embedded_price_increase"
+        elif non_refundable:
+            basis = "non_ieepa_tariff"
+        else:
+            basis = "none"
         suppliers[s.name] = {
             "vendor_id": s.id,
             "refundable_claim_total": f2(refundable),
+            "demo_refundable_claim_total": f2(demo_refundable),
             "credits_already_received": f2(credits),
             "net_claim_total": f2(refundable - credits),
+            "demo_net_claim_total": f2(demo_refundable - credits),
             "non_refundable_total": f2(non_refundable),
             "basis": basis,
             "explicit_surcharge_total": f2(explicit_ieepa),
-            "raw_price_increase": f2(embedded),
-            "conservative_claim": f2(conservative),
-            "embedded_price_increase_total": f2(embedded),
+            "keyword_hidden_ieepa": f2(hidden_ieepa),
+            "raw_price_increase": f2(price_high),
+            "conservative_claim": f2(price_expected),
+            "claim_low": f2(price_low),
+            "claim_expected": f2(price_expected),
+            "claim_high": f2(price_high),
+            "embedded_price_increase_total": f2(price_high),
             "decoy_fee_total": f2(decoy_fees),
             "invoice_count": len(invs),
             "invoices_affected": affected,
-            "contract": contract,
+            "contract": contracts_meta.get(s.key),
             "notes": SUPPLIER_NOTES[s.key],
         }
 
@@ -1030,36 +1328,60 @@ def build_ground_truth(gen: Generator, contracts_meta: dict[str, dict]) -> dict:
 
     totals = {
         "refundable_claim_total": f2(sum(Decimal(str(v["refundable_claim_total"])) for v in suppliers.values())),
+        "demo_refundable_claim_total": f2(sum(Decimal(str(v["demo_refundable_claim_total"])) for v in suppliers.values())),
         "raw_price_increase": f2(sum(Decimal(str(v["raw_price_increase"])) for v in suppliers.values())),
         "conservative_claim": f2(sum(Decimal(str(v["conservative_claim"])) for v in suppliers.values())),
         "net_claim_total_after_credits": f2(sum(Decimal(str(v["net_claim_total"])) for v in suppliers.values())),
+        "demo_net_claim_total_after_credits": f2(sum(Decimal(str(v["demo_net_claim_total"])) for v in suppliers.values())),
         "non_refundable_total": f2(sum(Decimal(str(v["non_refundable_total"])) for v in suppliers.values())),
         "importer_of_record_duty_total": f2(sum(Decimal(str(c["customs_duty_paid"])) for c in ior_cases)),
         "price_claim_method": {
-            "expected_claim": "explicit IEEPA surcharges plus conservative_claim",
-            "raw_price_increase": "full unit-price jump over the pre-window price",
-            "conservative_claim": "excess over baseline grown 3%/yr, flagged only above 5%, capped at the 20% espresso-equipment IEEPA rate",
+            "expected_claim": "explicit IEEPA lines plus the difference-in-differences price claim",
+            "low": "half the difference-in-differences excess, a 50% pass-through",
+            "high": "the raw unit-price jump over the pre-tariff price",
+            "demo": "demo_refundable excludes surcharge lines whose wording the keyword rules miss",
         },
     }
     return {
         "buyer": BUYER,
         "tariff_window": {"start": TARIFF_WINDOW_START.isoformat(), "end": TARIFF_WINDOW_END.isoformat()},
         "amounts_are_pre_sales_tax": True,
-        "price_claim_note": "refundable_claim_total uses conservative_claim for embedded price increases. raw_price_increase is the uncapped jump, reported for context.",
+        "price_claim_note": "refundable_claim_total is the full answer, including wording a keyword rule misses. demo_refundable_claim_total is what DEMO_MODE should recover. Price claims use the expected difference-in-differences amount. claim_low is half of that. claim_high is the raw jump.",
         "suppliers": suppliers,
+        "price_items": price_items,
+        "cases": BENCHMARK_CASES,
         "importer_of_record_cases": ior_cases,
         "totals": totals,
     }
 
 
 SUPPLIER_NOTES = {
-    "northwind": "Explicit 'Tariff Surcharge (12%)' line Apr 2025 to Feb 2026. Refundable IEEPA. Contract section 7 requires credit if duties are refunded. $500 credit memo already issued Mar 2026.",
-    "harborpine": "No surcharge line. Imported SKUs priced +16% Mar 2025 to Feb 2026, back to baseline Mar 2026. raw_price_increase is the full 16% jump. The expected claim is conservative_claim: excess over a 3%/yr allowance, flagged only above 5%, capped at 20%. Contract section 6 is a pro rata pass-through clause.",
-    "altamesa": "20% surcharge on products labeled 'Import Cost Recovery' (Mar to Aug 2025) then 'IEEPA Adj.' (Sep 2025 on). Refundable IEEPA. No contract on file.",
-    "kestrel": "'Section 301 adjustment' from May 2025. Section 301 tariffs were not struck down; not refundable. Contract has no tariff language.",
-    "brightline": "Domestic control. Prices drift ~2%/yr. 'Fuel surcharge' is a decoy, not a tariff. Expected claim: $0.",
-    "pacific": "Sunbird was importer of record for two shipments. 'Customs duty paid on entry' is owed back by CBP via the entry, not by this supplier. Expected supplier claim: $0.",
+    "northwind": "Documented. Explicit 'Tariff Surcharge (12%)' from Apr 2025 to Feb 2026. Contract section 7 requires a credit if duties are refunded. $500 credit memo already issued Mar 2026.",
+    "harborpine": "Contract + price. Italian parts rise 5% from May 15, 2025 (40 days after Italy's April 5 tariff) and revert in March 2026. Domestic tampers and pitchers rise 1% over the same months. The claim is the 4-point gap. Contract section 6 allows pass-through.",
+    "altamesa": "Documented. 20% surcharge labeled 'Import Cost Recovery' then 'IEEPA Adj.' No contract on file.",
+    "kestrel": "Section 301 adjustment from May 2025. Not IEEPA, not refundable.",
+    "brightline": "Domestic. Prices drift about 2% a year. Fuel surcharge is not a tariff. Claim $0.",
+    "pacific": "Sunbird was importer of record. Customs duty is owed by CBP, not this supplier. Claim $0.",
+    "lumen": "Documented in the answer key, missed by demo keywords: 'Q3 landed cost adjustment', 'Supplier cost pass-through', 'Global sourcing fee'.",
+    "mill": "Section 232 steel and aluminum surcharge. Not IEEPA, not refundable.",
+    "early": "China origin, but the price jumped in November 2024, before the February 4, 2025 tariff. Does not count.",
+    "homestead": "Made in the USA. A May 2025 increase does not count.",
+    "level": "Imported and domestic goods both rise 4% on March 15, 2025. The control group moved with the item. Does not count.",
+    "calendar": "Italian goods jump on March 4, 2025, the Canada and Mexico date, before Italy's April 5 date. Does not count.",
+    "mekong": "Vietnamese goods jump June 1, 2025, 57 days after the April 5 reciprocal tariff, and revert in March 2026. Price-only. Counts.",
+    "guesswork": "Espresso group head with no country on the invoice. Origin is inferred, so the claim counts and strength is Low.",
 }
+
+BENCHMARK_CASES = [
+    {"id": "wording", "vendor": "Lumen Sourcing Co.", "should_count": True, "demo_keywords_catch": False},
+    {"id": "section_232", "vendor": "Mill & Alloy", "should_count": False, "demo_keywords_catch": True},
+    {"id": "early_jump", "vendor": "Early Rise Paper", "should_count": False, "demo_keywords_catch": True},
+    {"id": "domestic", "vendor": "Homestead Kiln", "should_count": False, "demo_keywords_catch": True},
+    {"id": "inflation", "vendor": "Level Pantry", "should_count": False, "demo_keywords_catch": True},
+    {"id": "wrong_date", "vendor": "Calendar Imports", "should_count": False, "demo_keywords_catch": True},
+    {"id": "later_date", "vendor": "Mekong Tabletop", "should_count": True, "demo_keywords_catch": True},
+    {"id": "inferred_origin", "vendor": "Guesswork Goods", "should_count": True, "demo_keywords_catch": True},
+]
 
 
 def write_outputs(gen: Generator):
@@ -1119,6 +1441,8 @@ def write_outputs(gen: Generator):
                         "quantity": float(l.qty),
                         "unit_price": f2(l.unit_price),
                         "amount": f2(l.amount),
+                        "country_of_origin": l.country,
+                        "hts_chapter": l.hts,
                     }
                     for idx, l in enumerate(inv.all_lines())
                 ],
@@ -1198,11 +1522,13 @@ def main():
         )
     print()
     t = gt["totals"]
-    print(f"  expected claim (conservative): ${t['refundable_claim_total']:,.2f}")
+    print(f"  full answer:                   ${t['refundable_claim_total']:,.2f}")
+    print(f"  demo keywords should recover:  ${t['demo_refundable_claim_total']:,.2f}")
+    print(f"  price claim (expected):        ${t['conservative_claim']:,.2f}")
     print(f"  raw price increase:            ${t['raw_price_increase']:,.2f}")
-    print(f"  conservative price claim:      ${t['conservative_claim']:,.2f}")
-    print(f"  net after credits:             ${t['net_claim_total_after_credits']:,.2f}")
-    print(f"  non-refundable (Sec. 301): ${t['non_refundable_total']:,.2f}")
+    print(f"  net after credits (full):      ${t['net_claim_total_after_credits']:,.2f}")
+    print(f"  net after credits (demo):      ${t['demo_net_claim_total_after_credits']:,.2f}")
+    print(f"  non-refundable (232/301):  ${t['non_refundable_total']:,.2f}")
     print(f"  importer-of-record duty:   ${t['importer_of_record_duty_total']:,.2f} across {len(gt['importer_of_record_cases'])} entries (CBP, not supplier)")
     print()
     print(f"  wrote {DATA_DIR.relative_to(ROOT)}/{{invoices,contracts}}/*.pdf, labels.csv, ground_truth.json, bills.json, vendors.json, vendor_credits.json")

@@ -48,8 +48,8 @@ _LABEL_SCHEMA = {
 _SYSTEM = """You label invoice lines for a tariff-refund review. You do not do arithmetic.
 
 Categories:
-- tariff_ieepa: a surcharge or adjustment that passes an IEEPA tariff on to the buyer (names like "tariff surcharge", "IEEPA adjustment", "import cost recovery").
-- tariff_other: a surcharge under a tariff that was NOT struck down, such as Section 301, 232, or 122.
+- tariff_ieepa: a surcharge or adjustment that passes an IEEPA tariff on to the buyer. That includes "tariff surcharge", "IEEPA adjustment", and "import cost recovery". It also includes wording that never says tariff when the line is still a duty pass-through, such as "landed cost adjustment", "supplier cost pass-through", and "global sourcing fee".
+- tariff_other: a surcharge under a tariff that was NOT struck down, such as Section 301, Section 232 steel or aluminum, or Section 122. These are not refundable.
 - customs_duty_paid_by_buyer: the buyer was the importer of record. The line bills them for duty the forwarder paid at entry. This is not a supplier surcharge.
 - freight: shipping, freight, handling.
 - tax: sales tax.

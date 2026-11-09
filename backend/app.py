@@ -721,8 +721,24 @@ def _mark_cached(app: FastAPI, scan_id: str, cached: bool) -> None:
         session.commit()
 
 
+def _line_facts() -> dict[tuple[str, int], tuple[str | None, str | None]]:
+    """Country and HTS from the sample file. The bill table has no columns for them."""
+    path = get_settings().resolved_data_dir() / "bills.json"
+    facts: dict[tuple[str, int], tuple[str | None, str | None]] = {}
+    if not path.exists():
+        return facts
+    for bill in json.loads(path.read_text()):
+        for line in bill.get("line_items") or []:
+            facts[(bill["invoice_number"], int(line["line_index"]))] = (
+                line.get("country_of_origin"),
+                line.get("hts_chapter"),
+            )
+    return facts
+
+
 def _pipeline_inputs(session: Session) -> tuple[list[PBill], list[PVendor], list[PVendorCredit], tuple]:
     vendors = {vendor.id: vendor for vendor in session.exec(select(Vendor)).all()}
+    facts = _line_facts()
     pbills: list[PBill] = []
     key: list[tuple] = []
     for bill in session.exec(select(Bill).where(Bill.status != "UNPAID")).all():
@@ -730,7 +746,7 @@ def _pipeline_inputs(session: Session) -> tuple[list[PBill], list[PVendor], list
         if bill.status == "UPLOADED" and not lines:
             continue
         vendor = vendors[bill.vendor_id]
-        pbills.append(check_math(_to_pbill(bill, lines, vendor)))
+        pbills.append(check_math(_to_pbill(bill, lines, vendor, facts)))
         key.append((bill.id, bill.invoice_number, money_f(bill.amount), len(lines)))
     pvendors = [_to_pvendor(vendor) for vendor in vendors.values()]
     credits = [
@@ -742,7 +758,12 @@ def _pipeline_inputs(session: Session) -> tuple[list[PBill], list[PVendor], list
     return pbills, pvendors, credits, tuple(sorted(key))
 
 
-def _to_pbill(bill: Bill, lines: list[BillLine], vendor: Vendor) -> PBill:
+def _to_pbill(
+    bill: Bill,
+    lines: list[BillLine],
+    vendor: Vendor,
+    facts: dict[tuple[str, int], tuple[str | None, str | None]] | None = None,
+) -> PBill:
     return PBill(
         id=bill.id,
         vendor=VendorRef(id=vendor.id, name=vendor.name),
@@ -761,6 +782,8 @@ def _to_pbill(bill: Bill, lines: list[BillLine], vendor: Vendor) -> PBill:
                 quantity=cents(line.quantity) if line.sku == "TAX" else Decimal(str(line.quantity)),
                 unit_price=cents(line.unit_price),
                 amount=cents(line.amount),
+                country_of_origin=(facts or {}).get((bill.invoice_number, line.line_index), (None, None))[0],
+                hts_chapter=(facts or {}).get((bill.invoice_number, line.line_index), (None, None))[1],
             )
             for line in lines
         ],
@@ -990,12 +1013,26 @@ def _price_history(claim, bills: list[PBill], prices) -> dict:
                 "raw_increase": money_f(raw),
                 "conservative_increase": money_f(conservative),
                 "points": points,
+                "tests": [test.model_dump() for test in summary.tests] if summary else [],
+                "country": summary.country if summary else latest.country,
+                "hts_chapter": summary.hts_chapter if summary else latest.hts_chapter,
+                "origin_inferred": summary.origin_inferred if summary else latest.origin_inferred,
+                "tariff_rate": money_f(summary.tariff_rate) if summary and summary.tariff_rate is not None else None,
+                "claim_low": money_f(summary.claim_low) if summary else None,
+                "claim_expected": money_f(summary.claim_expected) if summary else None,
+                "claim_high": money_f(summary.claim_high) if summary else None,
             }
         )
     return {
         "skus": skus,
         "raw_price_increase": money_f(raw_total),
         "conservative_price_increase": money_f(conservative_total),
+        "evidence_tier": claim.evidence_tier,
+        "tier_reasons": claim.tier_reasons,
+        "claim_low": money_f(claim.claim_low) if claim.claim_low is not None else None,
+        "claim_expected": money_f(claim.claim_expected) if claim.claim_expected is not None else None,
+        "claim_high": money_f(claim.claim_high) if claim.claim_high is not None else None,
+        "origin_inferred_only": claim.origin_inferred_only,
     }
 
 
@@ -1067,6 +1104,12 @@ def _detail(session: Session, vendor: Vendor, claim: Claim) -> dict:
         "raw_price_increase": money_f(claim.raw_price_increase),
         "conservative_price_increase": money_f(claim.price_excess_total),
         "price_reverted": claim.price_reverted,
+        "evidence_tier": history.get("evidence_tier"),
+        "tier_reasons": history.get("tier_reasons") or [],
+        "claim_low": history.get("claim_low"),
+        "claim_expected": history.get("claim_expected"),
+        "claim_high": history.get("claim_high"),
+        "origin_inferred_only": bool(history.get("origin_inferred_only")),
         "evidence": [
             {
                 "invoice_number": item.invoice_number,

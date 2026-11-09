@@ -10,120 +10,31 @@
     "end": "2026-02-20"
   },
   "amounts_are_pre_sales_tax": true,
-  "price_claim_note": "refundable_claim_total uses conservative_claim for embedded price increases. raw_price_increase is the uncapped jump, reported for context.",
+  "price_claim_note": "refundable_claim_total is the full answer, including wording a keyword rule misses. demo_refundable_claim_total is what DEMO_MODE should recover. Price claims use the expected difference-in-differences amount. claim_low is half of that. claim_high is the raw jump.",
   "suppliers": {
     "Northwind Packaging Co.": {
       "vendor_id": "ven_2c00c154e5422775",
       "refundable_claim_total": 4606.4,
+      "demo_refundable_claim_total": 4606.4,
       "credits_already_received": 500.0,
       "net_claim_total": 4106.4,
+      "demo_net_claim_total": 4106.4,
       "non_refundable_total": 0.0,
       "basis": "explicit_surcharge",
       "explicit_surcharge_total": 4606.4,
+      "keyword_hidden_ieepa": 0.0,
       "raw_price_increase": 0.0,
       "conservative_claim": 0.0,
+      "claim_low": 0.0,
+      "claim_expected": 0.0,
+      "claim_high": 0.0,
       "embedded_price_increase_total": 0.0,
       "decoy_fee_total": 0.0,
       "invoice_count": 21,
       "invoices_affected": [
         {
-          "invoice_number": "NWP-202504-010",
-          "issued_at": "2025-04-10",
-          "refundable_amount": 475.06,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "NWP-202505-011",
-          "issued_at": "2025-05-10",
-          "refundable_amount": 372.0,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "NWP-202506-012",
-          "issued_at": "2025-06-10",
-          "refundable_amount": 376.35,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "NWP-202507-013",
-          "issued_at": "2025-07-10",
-          "refundable_amount": 256.64,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "NWP-202508-014",
-          "issued_at": "2025-08-10",
-          "refundable_amount": 334.11,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "NWP-202509-015",
-          "issued_at": "2025-09-10",
-          "refundable_amount": 293.05,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "NWP-202510-016",
-          "issued_at": "2025-10-10",
-          "refundable_amount": 413.02,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "NWP-202511-017",
-          "issued_at": "2025-11-10",
-          "refundable_amount": 963.49,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "NWP-202512-018",
-          "issued_at": "2025-12-10",
-          "refundable_amount": 297.6,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "NWP-202601-019",
-          "issued_at": "2026-01-10",
-          "refundable_amount": 249.79,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "NWP-202602-020",
-          "issued_at": "2026-02-10",
-          "refundable_amount": 575.29,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
+          "basis": "explicit_surcharge",
+          "refundable_amount": 4606.4
         }
       ],
       "contract": {
@@ -133,75 +44,31 @@
         "tariff_clause_section": "7. Duties, Tariffs and Surcharges",
         "document_url": "data/contracts/northwind-packaging-supply-agreement.pdf"
       },
-      "notes": "Explicit 'Tariff Surcharge (12%)' line Apr 2025 to Feb 2026. Refundable IEEPA. Contract section 7 requires credit if duties are refunded. $500 credit memo already issued Mar 2026."
+      "notes": "Documented. Explicit 'Tariff Surcharge (12%)' from Apr 2025 to Feb 2026. Contract section 7 requires a credit if duties are refunded. $500 credit memo already issued Mar 2026."
     },
     "Harbor & Pine Coffee Equipment": {
       "vendor_id": "ven_8f4488933181a528",
-      "refundable_claim_total": 6957.56,
+      "refundable_claim_total": 3665.16,
+      "demo_refundable_claim_total": 3665.16,
       "credits_already_received": 0.0,
-      "net_claim_total": 6957.56,
+      "net_claim_total": 3665.16,
+      "demo_net_claim_total": 3665.16,
       "non_refundable_total": 0.0,
       "basis": "embedded_price_increase",
       "explicit_surcharge_total": 0.0,
-      "raw_price_increase": 7804.64,
-      "conservative_claim": 6957.56,
-      "embedded_price_increase_total": 7804.64,
+      "keyword_hidden_ieepa": 0.0,
+      "raw_price_increase": 4581.45,
+      "conservative_claim": 3665.16,
+      "claim_low": 1832.58,
+      "claim_expected": 3665.16,
+      "claim_high": 4581.45,
+      "embedded_price_increase_total": 4581.45,
       "decoy_fee_total": 0.0,
       "invoice_count": 11,
       "invoices_affected": [
         {
-          "invoice_number": "HPC-202503-005",
-          "issued_at": "2025-03-15",
-          "refundable_amount": 653.07,
-          "raw_price_increase": 666.24,
-          "conservative_claim": 653.07,
-          "non_refundable_amount": 0.0,
-          "basis": "embedded_price_increase"
-        },
-        {
-          "invoice_number": "HPC-202505-006",
-          "issued_at": "2025-05-15",
-          "refundable_amount": 1662.05,
-          "raw_price_increase": 1751.04,
-          "conservative_claim": 1662.05,
-          "non_refundable_amount": 0.0,
-          "basis": "embedded_price_increase"
-        },
-        {
-          "invoice_number": "HPC-202507-007",
-          "issued_at": "2025-07-15",
-          "refundable_amount": 949.55,
-          "raw_price_increase": 1034.4,
-          "conservative_claim": 949.55,
-          "non_refundable_amount": 0.0,
-          "basis": "embedded_price_increase"
-        },
-        {
-          "invoice_number": "HPC-202509-008",
-          "issued_at": "2025-09-15",
-          "refundable_amount": 785.01,
-          "raw_price_increase": 885.92,
-          "conservative_claim": 785.01,
-          "non_refundable_amount": 0.0,
-          "basis": "embedded_price_increase"
-        },
-        {
-          "invoice_number": "HPC-202511-009",
-          "issued_at": "2025-11-15",
-          "refundable_amount": 1478.78,
-          "raw_price_increase": 1730.4,
-          "conservative_claim": 1478.78,
-          "non_refundable_amount": 0.0,
-          "basis": "embedded_price_increase"
-        },
-        {
-          "invoice_number": "HPC-202601-010",
-          "issued_at": "2026-01-15",
-          "refundable_amount": 1429.1,
-          "raw_price_increase": 1736.64,
-          "conservative_claim": 1429.1,
-          "non_refundable_amount": 0.0,
-          "basis": "embedded_price_increase"
+          "basis": "embedded_price_increase",
+          "refundable_amount": 3665.16
         }
       ],
       "contract": {
@@ -211,120 +78,59 @@
         "tariff_clause_section": "6. Pricing; Import Duties",
         "document_url": "data/contracts/harbor-and-pine-equipment-and-service-agreement.pdf"
       },
-      "notes": "No surcharge line. Imported SKUs priced +16% Mar 2025 to Feb 2026, back to baseline Mar 2026. raw_price_increase is the full 16% jump. The expected claim is conservative_claim: excess over a 3%/yr allowance, flagged only above 5%, capped at 20%. Contract section 6 is a pro rata pass-through clause."
+      "notes": "Contract + price. Italian parts rise 5% from May 15, 2025 (40 days after Italy's April 5 tariff) and revert in March 2026. Domestic tampers and pitchers rise 1% over the same months. The claim is the 4-point gap. Contract section 6 allows pass-through."
     },
     "Altamesa Electronics Supply": {
       "vendor_id": "ven_cd11abb151796ea3",
       "refundable_claim_total": 3841.3,
+      "demo_refundable_claim_total": 3841.3,
       "credits_already_received": 0.0,
       "net_claim_total": 3841.3,
+      "demo_net_claim_total": 3841.3,
       "non_refundable_total": 0.0,
       "basis": "explicit_surcharge",
       "explicit_surcharge_total": 3841.3,
+      "keyword_hidden_ieepa": 0.0,
       "raw_price_increase": 0.0,
       "conservative_claim": 0.0,
+      "claim_low": 0.0,
+      "claim_expected": 0.0,
+      "claim_high": 0.0,
       "embedded_price_increase_total": 0.0,
       "decoy_fee_total": 0.0,
       "invoice_count": 10,
       "invoices_affected": [
         {
-          "invoice_number": "ALT-202504-005",
-          "issued_at": "2025-04-12",
-          "refundable_amount": 472.6,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "ALT-202506-006",
-          "issued_at": "2025-06-12",
-          "refundable_amount": 792.3,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "ALT-202508-007",
-          "issued_at": "2025-08-12",
-          "refundable_amount": 625.5,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "ALT-202510-008",
-          "issued_at": "2025-10-12",
-          "refundable_amount": 1039.4,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "ALT-202512-009",
-          "issued_at": "2025-12-12",
-          "refundable_amount": 354.5,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
-        },
-        {
-          "invoice_number": "ALT-202602-010",
-          "issued_at": "2026-02-12",
-          "refundable_amount": 557.0,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 0.0,
-          "basis": "explicit_surcharge"
+          "basis": "explicit_surcharge",
+          "refundable_amount": 3841.3
         }
       ],
       "contract": null,
-      "notes": "20% surcharge on products labeled 'Import Cost Recovery' (Mar to Aug 2025) then 'IEEPA Adj.' (Sep 2025 on). Refundable IEEPA. No contract on file."
+      "notes": "Documented. 20% surcharge labeled 'Import Cost Recovery' then 'IEEPA Adj.' No contract on file."
     },
     "Kestrel Textiles": {
       "vendor_id": "ven_477720b9f509a868",
       "refundable_claim_total": 0.0,
+      "demo_refundable_claim_total": 0.0,
       "credits_already_received": 0.0,
       "net_claim_total": 0.0,
+      "demo_net_claim_total": 0.0,
       "non_refundable_total": 248.41,
-      "basis": "none",
+      "basis": "non_ieepa_tariff",
       "explicit_surcharge_total": 0.0,
+      "keyword_hidden_ieepa": 0.0,
       "raw_price_increase": 0.0,
       "conservative_claim": 0.0,
+      "claim_low": 0.0,
+      "claim_expected": 0.0,
+      "claim_high": 0.0,
       "embedded_price_increase_total": 0.0,
       "decoy_fee_total": 0.0,
       "invoice_count": 7,
       "invoices_affected": [
         {
-          "invoice_number": "KST-202507-005",
-          "issued_at": "2025-07-05",
-          "refundable_amount": 0.0,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 100.56,
-          "basis": "non_ieepa_tariff"
-        },
-        {
-          "invoice_number": "KST-202510-006",
-          "issued_at": "2025-10-05",
-          "refundable_amount": 0.0,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 62.12,
-          "basis": "non_ieepa_tariff"
-        },
-        {
-          "invoice_number": "KST-202601-007",
-          "issued_at": "2026-01-05",
-          "refundable_amount": 0.0,
-          "raw_price_increase": 0.0,
-          "conservative_claim": 0.0,
-          "non_refundable_amount": 85.73,
-          "basis": "non_ieepa_tariff"
+          "basis": "non_ieepa_tariff",
+          "refundable_amount": 0.0
         }
       ],
       "contract": {
@@ -334,20 +140,26 @@
         "tariff_clause_section": null,
         "document_url": "data/contracts/kestrel-textiles-master-supply-agreement.pdf"
       },
-      "notes": "'Section 301 adjustment' from May 2025. Section 301 tariffs were not struck down; not refundable. Contract has no tariff language."
+      "notes": "Section 301 adjustment from May 2025. Not IEEPA, not refundable."
     },
     "Brightline Office Supply": {
       "vendor_id": "ven_be599f66c310d1ff",
       "refundable_claim_total": 0.0,
+      "demo_refundable_claim_total": 0.0,
       "credits_already_received": 0.0,
       "net_claim_total": 0.0,
+      "demo_net_claim_total": 0.0,
       "non_refundable_total": 0.0,
       "basis": "none",
       "explicit_surcharge_total": 0.0,
+      "keyword_hidden_ieepa": 0.0,
       "raw_price_increase": 0.0,
       "conservative_claim": 0.0,
+      "claim_low": 0.0,
+      "claim_expected": 0.0,
+      "claim_high": 0.0,
       "embedded_price_increase_total": 0.0,
-      "decoy_fee_total": 136.5,
+      "decoy_fee_total": 84.5,
       "invoice_count": 21,
       "invoices_affected": [],
       "contract": {
@@ -357,26 +169,378 @@
         "tariff_clause_section": null,
         "document_url": "data/contracts/brightline-office-supply-agreement.pdf"
       },
-      "notes": "Domestic control. Prices drift ~2%/yr. 'Fuel surcharge' is a decoy, not a tariff. Expected claim: $0."
+      "notes": "Domestic. Prices drift about 2% a year. Fuel surcharge is not a tariff. Claim $0."
     },
     "Pacific Freight Forwarding": {
       "vendor_id": "ven_3610a006fa4ff3ac",
       "refundable_claim_total": 0.0,
+      "demo_refundable_claim_total": 0.0,
       "credits_already_received": 0.0,
       "net_claim_total": 0.0,
+      "demo_net_claim_total": 0.0,
       "non_refundable_total": 0.0,
       "basis": "none",
       "explicit_surcharge_total": 0.0,
+      "keyword_hidden_ieepa": 0.0,
       "raw_price_increase": 0.0,
       "conservative_claim": 0.0,
+      "claim_low": 0.0,
+      "claim_expected": 0.0,
+      "claim_high": 0.0,
       "embedded_price_increase_total": 0.0,
       "decoy_fee_total": 370.0,
       "invoice_count": 2,
       "invoices_affected": [],
       "contract": null,
-      "notes": "Sunbird was importer of record for two shipments. 'Customs duty paid on entry' is owed back by CBP via the entry, not by this supplier. Expected supplier claim: $0."
+      "notes": "Sunbird was importer of record. Customs duty is owed by CBP, not this supplier. Claim $0."
+    },
+    "Lumen Sourcing Co.": {
+      "vendor_id": "ven_fbbcb703c45caeea",
+      "refundable_claim_total": 1005.0,
+      "demo_refundable_claim_total": 0.0,
+      "credits_already_received": 0.0,
+      "net_claim_total": 1005.0,
+      "demo_net_claim_total": 0.0,
+      "non_refundable_total": 0.0,
+      "basis": "explicit_surcharge",
+      "explicit_surcharge_total": 1005.0,
+      "keyword_hidden_ieepa": 1005.0,
+      "raw_price_increase": 0.0,
+      "conservative_claim": 0.0,
+      "claim_low": 0.0,
+      "claim_expected": 0.0,
+      "claim_high": 0.0,
+      "embedded_price_increase_total": 0.0,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 4,
+      "invoices_affected": [
+        {
+          "basis": "explicit_surcharge",
+          "refundable_amount": 1005.0
+        }
+      ],
+      "contract": null,
+      "notes": "Documented in the answer key, missed by demo keywords: 'Q3 landed cost adjustment', 'Supplier cost pass-through', 'Global sourcing fee'."
+    },
+    "Mill & Alloy": {
+      "vendor_id": "ven_1173d4c35ffc5caa",
+      "refundable_claim_total": 0.0,
+      "demo_refundable_claim_total": 0.0,
+      "credits_already_received": 0.0,
+      "net_claim_total": 0.0,
+      "demo_net_claim_total": 0.0,
+      "non_refundable_total": 640.0,
+      "basis": "non_ieepa_tariff",
+      "explicit_surcharge_total": 0.0,
+      "keyword_hidden_ieepa": 0.0,
+      "raw_price_increase": 0.0,
+      "conservative_claim": 0.0,
+      "claim_low": 0.0,
+      "claim_expected": 0.0,
+      "claim_high": 0.0,
+      "embedded_price_increase_total": 0.0,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 1,
+      "invoices_affected": [
+        {
+          "basis": "non_ieepa_tariff",
+          "refundable_amount": 0.0
+        }
+      ],
+      "contract": null,
+      "notes": "Section 232 steel and aluminum surcharge. Not IEEPA, not refundable."
+    },
+    "Early Rise Paper": {
+      "vendor_id": "ven_4e36f0458e442294",
+      "refundable_claim_total": 0.0,
+      "demo_refundable_claim_total": 0.0,
+      "credits_already_received": 0.0,
+      "net_claim_total": 0.0,
+      "demo_net_claim_total": 0.0,
+      "non_refundable_total": 0.0,
+      "basis": "none",
+      "explicit_surcharge_total": 0.0,
+      "keyword_hidden_ieepa": 0.0,
+      "raw_price_increase": 0.0,
+      "conservative_claim": 0.0,
+      "claim_low": 0.0,
+      "claim_expected": 0.0,
+      "claim_high": 0.0,
+      "embedded_price_increase_total": 0.0,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 4,
+      "invoices_affected": [],
+      "contract": null,
+      "notes": "China origin, but the price jumped in November 2024, before the February 4, 2025 tariff. Does not count."
+    },
+    "Homestead Kiln": {
+      "vendor_id": "ven_893210896f142b3b",
+      "refundable_claim_total": 0.0,
+      "demo_refundable_claim_total": 0.0,
+      "credits_already_received": 0.0,
+      "net_claim_total": 0.0,
+      "demo_net_claim_total": 0.0,
+      "non_refundable_total": 0.0,
+      "basis": "none",
+      "explicit_surcharge_total": 0.0,
+      "keyword_hidden_ieepa": 0.0,
+      "raw_price_increase": 0.0,
+      "conservative_claim": 0.0,
+      "claim_low": 0.0,
+      "claim_expected": 0.0,
+      "claim_high": 0.0,
+      "embedded_price_increase_total": 0.0,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 4,
+      "invoices_affected": [],
+      "contract": null,
+      "notes": "Made in the USA. A May 2025 increase does not count."
+    },
+    "Level Pantry": {
+      "vendor_id": "ven_dabd8aa47a209b4c",
+      "refundable_claim_total": 0.0,
+      "demo_refundable_claim_total": 0.0,
+      "credits_already_received": 0.0,
+      "net_claim_total": 0.0,
+      "demo_net_claim_total": 0.0,
+      "non_refundable_total": 0.0,
+      "basis": "none",
+      "explicit_surcharge_total": 0.0,
+      "keyword_hidden_ieepa": 0.0,
+      "raw_price_increase": 0.0,
+      "conservative_claim": 0.0,
+      "claim_low": 0.0,
+      "claim_expected": 0.0,
+      "claim_high": 0.0,
+      "embedded_price_increase_total": 0.0,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 5,
+      "invoices_affected": [],
+      "contract": null,
+      "notes": "Imported and domestic goods both rise 4% on March 15, 2025. The control group moved with the item. Does not count."
+    },
+    "Calendar Imports": {
+      "vendor_id": "ven_7151bd103bd3ef24",
+      "refundable_claim_total": 0.0,
+      "demo_refundable_claim_total": 0.0,
+      "credits_already_received": 0.0,
+      "net_claim_total": 0.0,
+      "demo_net_claim_total": 0.0,
+      "non_refundable_total": 0.0,
+      "basis": "none",
+      "explicit_surcharge_total": 0.0,
+      "keyword_hidden_ieepa": 0.0,
+      "raw_price_increase": 0.0,
+      "conservative_claim": 0.0,
+      "claim_low": 0.0,
+      "claim_expected": 0.0,
+      "claim_high": 0.0,
+      "embedded_price_increase_total": 0.0,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 4,
+      "invoices_affected": [],
+      "contract": null,
+      "notes": "Italian goods jump on March 4, 2025, the Canada and Mexico date, before Italy's April 5 date. Does not count."
+    },
+    "Mekong Tabletop": {
+      "vendor_id": "ven_0412534c8dfa3e66",
+      "refundable_claim_total": 32.0,
+      "demo_refundable_claim_total": 32.0,
+      "credits_already_received": 0.0,
+      "net_claim_total": 32.0,
+      "demo_net_claim_total": 32.0,
+      "non_refundable_total": 0.0,
+      "basis": "embedded_price_increase",
+      "explicit_surcharge_total": 0.0,
+      "keyword_hidden_ieepa": 0.0,
+      "raw_price_increase": 32.0,
+      "conservative_claim": 32.0,
+      "claim_low": 16.0,
+      "claim_expected": 32.0,
+      "claim_high": 32.0,
+      "embedded_price_increase_total": 32.0,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 5,
+      "invoices_affected": [
+        {
+          "basis": "embedded_price_increase",
+          "refundable_amount": 32.0
+        }
+      ],
+      "contract": null,
+      "notes": "Vietnamese goods jump June 1, 2025, 57 days after the April 5 reciprocal tariff, and revert in March 2026. Price-only. Counts."
+    },
+    "Guesswork Goods": {
+      "vendor_id": "ven_7f17caa623e09003",
+      "refundable_claim_total": 40.0,
+      "demo_refundable_claim_total": 40.0,
+      "credits_already_received": 0.0,
+      "net_claim_total": 40.0,
+      "demo_net_claim_total": 40.0,
+      "non_refundable_total": 0.0,
+      "basis": "embedded_price_increase",
+      "explicit_surcharge_total": 0.0,
+      "keyword_hidden_ieepa": 0.0,
+      "raw_price_increase": 40.0,
+      "conservative_claim": 40.0,
+      "claim_low": 20.0,
+      "claim_expected": 40.0,
+      "claim_high": 40.0,
+      "embedded_price_increase_total": 40.0,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 5,
+      "invoices_affected": [
+        {
+          "basis": "embedded_price_increase",
+          "refundable_amount": 40.0
+        }
+      ],
+      "contract": null,
+      "notes": "Espresso group head with no country on the invoice. Origin is inferred, so the claim counts and strength is Low."
     }
   },
+  "price_items": [
+    {
+      "vendor": "Guesswork Goods",
+      "sku": "GWG-HEAD",
+      "origin_inferred": true,
+      "country": "IT",
+      "low": 20.0,
+      "expected": 40.0,
+      "high": 40.0
+    },
+    {
+      "vendor": "Harbor & Pine Coffee Equipment",
+      "sku": "HP-BURR64",
+      "origin_inferred": false,
+      "country": "IT",
+      "low": 397.7,
+      "expected": 795.4,
+      "high": 994.25
+    },
+    {
+      "vendor": "Harbor & Pine Coffee Equipment",
+      "sku": "HP-FLOW",
+      "origin_inferred": false,
+      "country": "IT",
+      "low": 159.6,
+      "expected": 319.2,
+      "high": 399.0
+    },
+    {
+      "vendor": "Harbor & Pine Coffee Equipment",
+      "sku": "HP-GRP61",
+      "origin_inferred": false,
+      "country": "IT",
+      "low": 400.0,
+      "expected": 800.0,
+      "high": 1000.0
+    },
+    {
+      "vendor": "Harbor & Pine Coffee Equipment",
+      "sku": "HP-GSK",
+      "origin_inferred": false,
+      "country": "IT",
+      "low": 50.32,
+      "expected": 100.64,
+      "high": 125.8
+    },
+    {
+      "vendor": "Harbor & Pine Coffee Equipment",
+      "sku": "HP-HEAT",
+      "origin_inferred": false,
+      "country": "IT",
+      "low": 244.9,
+      "expected": 489.8,
+      "high": 612.25
+    },
+    {
+      "vendor": "Harbor & Pine Coffee Equipment",
+      "sku": "HP-PF58",
+      "origin_inferred": false,
+      "country": "IT",
+      "low": 249.1,
+      "expected": 498.2,
+      "high": 622.75
+    },
+    {
+      "vendor": "Harbor & Pine Coffee Equipment",
+      "sku": "HP-PUMP",
+      "origin_inferred": false,
+      "country": "IT",
+      "low": 256.2,
+      "expected": 512.4,
+      "high": 640.5
+    },
+    {
+      "vendor": "Harbor & Pine Coffee Equipment",
+      "sku": "HP-SHWR",
+      "origin_inferred": false,
+      "country": "IT",
+      "low": 74.76,
+      "expected": 149.52,
+      "high": 186.9
+    },
+    {
+      "vendor": "Mekong Tabletop",
+      "sku": "MKT-CUP",
+      "origin_inferred": false,
+      "country": "VN",
+      "low": 16.0,
+      "expected": 32.0,
+      "high": 32.0
+    }
+  ],
+  "cases": [
+    {
+      "id": "wording",
+      "vendor": "Lumen Sourcing Co.",
+      "should_count": true,
+      "demo_keywords_catch": false
+    },
+    {
+      "id": "section_232",
+      "vendor": "Mill & Alloy",
+      "should_count": false,
+      "demo_keywords_catch": true
+    },
+    {
+      "id": "early_jump",
+      "vendor": "Early Rise Paper",
+      "should_count": false,
+      "demo_keywords_catch": true
+    },
+    {
+      "id": "domestic",
+      "vendor": "Homestead Kiln",
+      "should_count": false,
+      "demo_keywords_catch": true
+    },
+    {
+      "id": "inflation",
+      "vendor": "Level Pantry",
+      "should_count": false,
+      "demo_keywords_catch": true
+    },
+    {
+      "id": "wrong_date",
+      "vendor": "Calendar Imports",
+      "should_count": false,
+      "demo_keywords_catch": true
+    },
+    {
+      "id": "later_date",
+      "vendor": "Mekong Tabletop",
+      "should_count": true,
+      "demo_keywords_catch": true
+    },
+    {
+      "id": "inferred_origin",
+      "vendor": "Guesswork Goods",
+      "should_count": true,
+      "demo_keywords_catch": true
+    }
+  ],
   "importer_of_record_cases": [
     {
       "invoice_number": "PFF-202504-001",
@@ -396,16 +560,19 @@
     }
   ],
   "totals": {
-    "refundable_claim_total": 15405.26,
-    "raw_price_increase": 7804.64,
-    "conservative_claim": 6957.56,
-    "net_claim_total_after_credits": 14905.26,
-    "non_refundable_total": 248.41,
+    "refundable_claim_total": 13189.86,
+    "demo_refundable_claim_total": 12184.86,
+    "raw_price_increase": 4653.45,
+    "conservative_claim": 3737.16,
+    "net_claim_total_after_credits": 12689.86,
+    "demo_net_claim_total_after_credits": 11684.86,
+    "non_refundable_total": 888.41,
     "importer_of_record_duty_total": 2597.55,
     "price_claim_method": {
-      "expected_claim": "explicit IEEPA surcharges plus conservative_claim",
-      "raw_price_increase": "full unit-price jump over the pre-window price",
-      "conservative_claim": "excess over baseline grown 3%/yr, flagged only above 5%, capped at the 20% espresso-equipment IEEPA rate"
+      "expected_claim": "explicit IEEPA lines plus the difference-in-differences price claim",
+      "low": "half the difference-in-differences excess, a 50% pass-through",
+      "high": "the raw unit-price jump over the pre-tariff price",
+      "demo": "demo_refundable excludes surcharge lines whose wording the keyword rules miss"
     }
   }
 }

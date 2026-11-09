@@ -151,6 +151,7 @@ export function ReviewSheet({
                   <p className="mt-1 text-[20px] tabular-nums text-[#1c1c1c]">{usd(detail.refundable)}</p>
                 </div>
                 <div className="flex items-center gap-2">
+                  {detail.evidence_tier ? <TierChip tier={detail.evidence_tier} /> : null}
                   {detail.strength ? <StrengthChip strength={detail.strength} /> : null}
                   <StatusDot status={detail.status} />
                 </div>
@@ -179,6 +180,9 @@ export function ReviewSheet({
                     skus={detail.price_history}
                     raw={detail.raw_price_increase}
                     claimed={detail.conservative_price_increase}
+                    low={detail.claim_low}
+                    expected={detail.claim_expected}
+                    high={detail.claim_high}
                     showAll={showAllCharts}
                     onShowAll={() => setShowAllCharts(true)}
                   />
@@ -258,24 +262,36 @@ function PriceCharts({
   skus,
   raw,
   claimed,
+  low,
+  expected,
+  high,
   showAll,
   onShowAll,
 }: {
   skus: SkuHistory[];
   raw: number;
   claimed: number;
+  low?: number | null;
+  expected?: number | null;
+  high?: number | null;
   showAll: boolean;
   onShowAll: () => void;
 }) {
   const ranked = [...skus].sort((a, b) => b.conservative_increase - a.conservative_increase);
   const visible = showAll ? ranked : ranked.slice(0, 3);
+  const ranged = low != null && expected != null && high != null;
   return (
     <div className="mt-3 space-y-3">
       <p className="text-[13px] text-[#3f3f3f]">
-        Raw increase {usd(raw)} · We claim {usd(claimed)} after normal price growth
+        {ranged
+          ? `Low ${usd(low ?? 0)} (half the pass-through) · Expected ${usd(expected ?? 0)} · High ${usd(high ?? 0)} (raw increase). We claim the expected amount.`
+          : `Raw increase ${usd(raw)} · We claim ${usd(claimed)}`}
       </p>
       {visible.map((sku) => (
-        <PriceChart key={sku.sku} sku={sku} />
+        <div key={sku.sku}>
+          <PriceChart sku={sku} />
+          <PriceChecklist sku={sku} />
+        </div>
       ))}
       {!showAll && ranked.length > 3 ? (
         <button
@@ -370,7 +386,45 @@ function groupEvidence(items: EvidenceItem[]) {
     .sort((a, b) => b.total - a.total || a.name.localeCompare(b.name));
 }
 
+const TIER_LABEL: Record<string, string> = {
+  documented: "Documented",
+  contract_price: "Contract + price",
+  price_only: "Price-only",
+};
+
+function TierChip({ tier }: { tier: string }) {
+  return (
+    <span className="rounded-full bg-[#f4f1ea] px-2 py-0.5 text-[12px] text-[#3f3f3f]">{TIER_LABEL[tier] ?? tier}</span>
+  );
+}
+
+function PriceChecklist({ sku }: { sku: SkuHistory }) {
+  if (!sku.tests?.length) return null;
+  const origin = sku.origin_inferred ? "Origin inferred" : sku.country || "Origin not stated";
+  const hts = sku.hts_chapter ? `HTS ch. ${sku.hts_chapter}` : null;
+  return (
+    <div className="mt-2 mb-1">
+      <p className="text-[12px] text-[#6f6c66]">
+        {origin}
+        {hts ? ` · ${hts}` : ""}
+      </p>
+      <ul className="mt-1 space-y-1">
+        {sku.tests.map((test) => (
+          <li key={test.id} className="text-[12px] leading-5 text-[#3f3f3f]">
+            <span className={test.passed ? "text-[#1f8a4c]" : "text-[#9a3412]"}>{test.passed ? "Pass" : "Fail"}</span>
+            {" · "}
+            {test.name}
+            {test.required ? "" : " (not required)"}
+            <span className="block text-[#6f6c66]">{test.detail}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function reasons(detail: ClaimDetail) {
+  if (detail.tier_reasons && detail.tier_reasons.length > 0) return detail.tier_reasons;
   const lines: string[] = [];
   const surcharge = detail.evidence.some((item) => item.type === "tariff_ieepa_surcharge");
   const price = detail.evidence.some((item) => item.type === "price_excess");
