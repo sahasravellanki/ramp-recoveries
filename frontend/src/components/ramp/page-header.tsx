@@ -3,10 +3,12 @@ import type { ReactNode } from "react";
 
 export function PageHeader({
   title,
+  subtitle,
   breadcrumb,
   actions,
 }: {
   title: string;
+  subtitle?: string;
   breadcrumb?: { label: string; href: string };
   actions?: ReactNode;
 }) {
@@ -24,6 +26,7 @@ export function PageHeader({
         <h1 className="text-[44px] font-normal leading-none tracking-[-0.03em] text-[#161616]">
           {title}
         </h1>
+        {subtitle ? <p className="mt-2 text-[14px] text-[#6f6c66]">{subtitle}</p> : null}
       </div>
       {actions ? <div className="flex items-center gap-2">{actions}</div> : null}
     </div>

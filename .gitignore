@@ -97,6 +97,7 @@ logs/
 
 # Ramp Recoveries local state
 backend/*.db
+backend/*.db-*
 backend/*.sqlite
 backend/*.sqlite3
 backend/uploads/

@@ -1,0 +1,295 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
+import { PriceChart } from "@/components/recoveries/price-chart";
+import { PrimaryButton, SecondaryButton } from "@/components/ramp/buttons";
+import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  approveLetter,
+  billDocumentUrl,
+  getClaim,
+  saveLetter,
+  simulateAgree,
+  usd,
+  type ClaimDetail,
+} from "@/lib/recoveries";
+import { StrengthChip, StatusDot } from "@/components/recoveries/chips";
+
+export function ReviewSheet({
+  vendorId,
+  open,
+  onOpenChange,
+  onStatus,
+}: {
+  vendorId: string | null;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  onStatus: (vendorId: string, status: string) => void;
+}) {
+  const [detail, setDetail] = useState<ClaimDetail | null>(null);
+  const [body, setBody] = useState("");
+  const [saved, setSaved] = useState("");
+  const [saving, setSaving] = useState(false);
+  const [busy, setBusy] = useState(false);
+
+  useEffect(() => {
+    if (!open || !vendorId) return;
+    let cancelled = false;
+    setDetail(null);
+    getClaim(vendorId)
+      .then((next) => {
+        if (cancelled) return;
+        setDetail(next);
+        const letter = next.letter?.body ?? "";
+        setBody(letter);
+        setSaved(letter);
+      })
+      .catch((error: Error) => toast.error(error.message));
+    return () => {
+      cancelled = true;
+    };
+  }, [open, vendorId]);
+
+  useEffect(() => {
+    if (!detail?.letter || body === saved) return;
+    const timer = window.setTimeout(() => {
+      void persist(false);
+    }, 700);
+    return () => window.clearTimeout(timer);
+    // persist reads the latest body via the closure of this effect.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [body, saved, detail?.vendor_id]);
+
+  async function persist(manual: boolean) {
+    if (!detail) return false;
+    const next = body;
+    setSaving(true);
+    try {
+      await saveLetter(detail.vendor_id, next);
+      setSaved(next);
+      if (manual) toast.success("Draft saved");
+      return true;
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Couldn't save the letter");
+      return false;
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  async function approve() {
+    if (!detail) return;
+    setBusy(true);
+    try {
+      if (body !== saved) {
+        const ok = await persist(false);
+        if (!ok) return;
+      }
+      const result = await approveLetter(detail.vendor_id);
+      setDetail({ ...detail, status: result.status, letter: detail.letter ? { ...detail.letter, status: "sent" } : null });
+      onStatus(detail.vendor_id, result.status);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Couldn't send the letter");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function agree() {
+    if (!detail) return;
+    setBusy(true);
+    try {
+      const result = await simulateAgree(detail.vendor_id);
+      setDetail({ ...detail, status: result.status });
+      onStatus(detail.vendor_id, result.status);
+      toast.success(`Vendor credit of ${usd(result.amount)} added to Bill Pay`, {
+        action: result.applied_to_bill_id
+          ? {
+              label: "View bill",
+              onClick: () => window.open(billDocumentUrl(result.applied_to_bill_id as string), "_blank", "noopener"),
+            }
+          : undefined,
+      });
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "The supplier didn't agree");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  const tier1 = detail?.evidence.filter((item) => item.labeled_by.endsWith("tier1")).length ?? 0;
+  const tier2 = detail?.evidence.filter((item) => item.labeled_by.endsWith("tier2")).length ?? 0;
+  const drafted = detail?.status === "Drafted";
+
+  return (
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent
+        side="right"
+        className="flex !w-full flex-col gap-0 p-0 data-[side=right]:!w-[560px] data-[side=right]:!max-w-[560px]"
+        showCloseButton
+      >
+        <SheetTitle className="sr-only">{detail?.vendor ?? "Claim"}</SheetTitle>
+        {!detail ? (
+          <div className="p-6 text-[14px] text-[#6f6c66]">Loading the claim…</div>
+        ) : (
+          <>
+            <div className="border-b border-[#eeeae4] px-6 py-5 pr-12">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <h2 className="text-[22px] font-normal tracking-[-0.02em] text-[#1c1c1c]">{detail.vendor}</h2>
+                  <p className="mt-1 text-[20px] tabular-nums text-[#1c1c1c]">{usd(detail.refundable)}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  {detail.strength ? <StrengthChip strength={detail.strength} /> : null}
+                  <StatusDot status={detail.status} />
+                </div>
+              </div>
+              <ul className="mt-3 list-disc space-y-1 pl-4 text-[13px] text-[#3f3f3f]">
+                {reasons(detail).map((reason) => (
+                  <li key={reason}>{reason}</li>
+                ))}
+              </ul>
+              {detail.status === "Sent" ? (
+                <button
+                  type="button"
+                  onClick={agree}
+                  disabled={busy}
+                  className="mt-3 text-[13px] text-[#1c1c1c] underline decoration-[#d5d1c8] underline-offset-2"
+                >
+                  Demo: simulate supplier agrees
+                </button>
+              ) : null}
+            </div>
+            <div className="min-h-0 flex-1 space-y-6 overflow-y-auto px-6 py-5">
+              <section>
+                <h3 className="text-[13px] font-medium text-[#1c1c1c]">Why we flagged this</h3>
+                <ul className="mt-2 divide-y divide-[#f1efe9]">
+                  {detail.evidence.map((item) => (
+                    <li key={`${item.invoice_number}-${item.line_index}-${item.type}`} className="flex items-start justify-between gap-3 py-2.5">
+                      <div className="min-w-0">
+                        <p className="text-[13px] text-[#1c1c1c]">{item.description}</p>
+                        <p className="mt-0.5 text-[12px] text-[#8a8680]">
+                          {item.date}
+                          {" · "}
+                          {item.bill_id ? (
+                            <a
+                              href={billDocumentUrl(item.bill_id)}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="underline decoration-[#d5d1c8] underline-offset-2 hover:decoration-[#1c1c1c]"
+                            >
+                              {item.invoice_number}
+                            </a>
+                          ) : (
+                            item.invoice_number
+                          )}
+                        </p>
+                      </div>
+                      <span className="shrink-0 text-[13px] tabular-nums text-[#1c1c1c]">{usd(item.amount)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              {detail.price_history.length > 0 ? (
+                <section className="space-y-3">
+                  <h3 className="text-[13px] font-medium text-[#1c1c1c]">Price history</h3>
+                  <p className="text-[13px] text-[#3f3f3f]">
+                    Raw increase {usd(detail.raw_price_increase)} · We claim {usd(detail.conservative_price_increase)} after normal price growth
+                  </p>
+                  {detail.price_history.map((sku) => (
+                    <PriceChart key={sku.sku} sku={sku} />
+                  ))}
+                </section>
+              ) : null}
+
+              {detail.contract?.clause_text ? (
+                <section>
+                  <h3 className="text-[13px] font-medium text-[#1c1c1c]">Contract</h3>
+                  <blockquote className="mt-2 border-l-2 border-[#e4f222] bg-[#fafaf8] px-4 py-3">
+                    {detail.contract.clause_number ? (
+                      <p className="mb-1 text-[12px] font-medium text-[#6f6c66]">Clause {detail.contract.clause_number}</p>
+                    ) : null}
+                    <p className="text-[13.5px] leading-6 text-[#1c1c1c]">{detail.contract.clause_text}</p>
+                  </blockquote>
+                </section>
+              ) : null}
+
+              {detail.credits_already_received.length > 0 ? (
+                <section>
+                  <h3 className="text-[13px] font-medium text-[#1c1c1c]">Credits already received</h3>
+                  <ul className="mt-2 space-y-2">
+                    {detail.credits_already_received.map((credit) => (
+                      <li key={credit.credit_memo_number} className="text-[13px] text-[#3f3f3f]">
+                        <span className="font-medium text-[#1c1c1c]">{usd(credit.amount)}</span>
+                        {" · "}
+                        {credit.credit_memo_number}
+                        {credit.memo ? ` · ${credit.memo}` : ""}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ) : null}
+
+              <p className="text-[12px] text-[#8a8680]">
+                {tier1} lines labeled by tier 1 · {tier2} lines labeled by tier 2
+              </p>
+
+              {detail.letter ? (
+                <section>
+                  <div className="mb-2 flex items-center justify-between">
+                    <h3 className="text-[13px] font-medium text-[#1c1c1c]">Letter</h3>
+                    <span className="text-[12px] text-[#8a8680]">{saving ? "Saving…" : body === saved ? "Saved" : "Unsaved"}</span>
+                  </div>
+                  <Textarea
+                    value={body}
+                    onChange={(event) => setBody(event.target.value)}
+                    className="min-h-[280px] rounded-md border-[#e3e1db] text-[13.5px] leading-6 shadow-none focus-visible:ring-0"
+                  />
+                </section>
+              ) : (
+                <p className="text-[13px] text-[#6f6c66]">No letter. Nothing here is refundable from the supplier.</p>
+              )}
+
+            </div>
+            {detail.letter && (drafted || detail.status === "Found") ? (
+              <div className="flex items-center justify-end gap-2 border-t border-[#eeeae4] px-6 py-4">
+                <SecondaryButton disabled={saving || busy} onClick={() => persist(true)}>
+                  Save draft
+                </SecondaryButton>
+                {drafted ? (
+                  <PrimaryButton disabled={busy || saving} onClick={approve}>
+                    Approve and send
+                  </PrimaryButton>
+                ) : null}
+              </div>
+            ) : null}
+          </>
+        )}
+      </SheetContent>
+    </Sheet>
+  );
+}
+
+function reasons(detail: ClaimDetail) {
+  const lines: string[] = [];
+  const surcharge = detail.evidence.some((item) => item.type === "tariff_ieepa_surcharge");
+  const price = detail.evidence.some((item) => item.type === "price_excess");
+  if (surcharge) lines.push("An explicit IEEPA surcharge is on the invoice.");
+  if (price && detail.price_reverted === true) lines.push("The price increase reverted after the tariff window.");
+  if (price && detail.price_reverted === false) lines.push("The price increase did not revert after the window.");
+  if (price && detail.price_reverted == null) lines.push("No later invoice confirmed that the price came back down.");
+  if (detail.contract?.refund_or_credit_clause) {
+    lines.push(
+      detail.contract.clause_number
+        ? `Clause ${detail.contract.clause_number} requires a credit if the tariff is refunded.`
+        : "The contract requires a credit if the tariff is refunded.",
+    );
+  }
+  if (detail.strength === "Tracked") lines.push("Section 301 charges are tracked, not claimed from the supplier.");
+  if (detail.strength === "Low" && !lines.length) lines.push("The only evidence is a price increase.");
+  if (!lines.length) lines.push(detail.subtitle || "Flagged from the paid bills.");
+  return lines;
+}

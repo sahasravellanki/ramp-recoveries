@@ -69,7 +69,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-The frontend runs on http://localhost:4817 and expects the backend at `NEXT_PUBLIC_API_URL` (http://localhost:8471). The shell matches the Ramp app: Home loads its task feed from `GET /api/home`, and the avatar menu resets the demo.
+The frontend runs on http://localhost:4817 and expects the backend at `NEXT_PUBLIC_API_URL` (http://localhost:8471). The shell matches the Ramp app: Home loads its task feed from `GET /api/home`, and the avatar menu resets the demo. Bill Pay → Recoveries is at `/bill-pay/recoveries`.
 
 ## Pipeline
 
@@ -84,4 +84,4 @@ It reads `data/bills.json`, prints a claim per vendor, drafts the letters (nothi
 
 ## Status
 
-Sample data, the pipeline, the Recoveries API, and the Ramp-style app shell are in place. Recoveries itself is not a working screen yet.
+Sample data, the pipeline, the Recoveries API, the app shell, and the Recoveries screen are in place. Open `/bill-pay/recoveries`, scan the paid bills, review a claim, approve the letter, and simulate the supplier agreeing.
