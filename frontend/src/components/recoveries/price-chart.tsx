@@ -42,7 +42,7 @@ export function PriceChart({ sku }: { sku: SkuHistory }) {
         <span className="text-[13px] font-medium text-[#1c1c1c]">{sku.sku}</span>
         <span className="truncate text-[12px] text-[#8a8680]">{sku.description}</span>
       </figcaption>
-      <svg viewBox={`0 0 ${width} ${height}`} className="h-[156px] w-full" role="img" aria-label={`${sku.sku} price history`}>
+      <svg viewBox={`0 0 ${width} ${height}`} className="h-[120px] w-full" role="img" aria-label={`${sku.sku} price history`}>
         {ticks.map((tick) => (
           <g key={tick}>
             <line x1={left} x2={width - right} y1={yOf(tick)} y2={yOf(tick)} stroke="#f1efe9" />

@@ -13,8 +13,8 @@ export function PageHeader({
   actions?: ReactNode;
 }) {
   return (
-    <div className="flex flex-wrap items-end justify-between gap-4">
-      <div>
+    <div className="flex w-full min-w-0 flex-wrap items-end justify-between gap-4">
+      <div className="min-w-0">
         {breadcrumb ? (
           <Link
             href={breadcrumb.href}
@@ -28,7 +28,7 @@ export function PageHeader({
         </h1>
         {subtitle ? <p className="mt-2 text-[14px] text-[#6f6c66]">{subtitle}</p> : null}
       </div>
-      {actions ? <div className="flex items-center gap-2">{actions}</div> : null}
+      {actions ? <div className="flex shrink-0 items-center gap-2">{actions}</div> : null}
     </div>
   );
 }

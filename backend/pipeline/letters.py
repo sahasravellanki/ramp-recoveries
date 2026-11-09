@@ -27,11 +27,12 @@ _SYSTEM = f"""Write a short business letter from the facts JSON and nothing else
 
 Rules:
 - Use only numbers, dates, invoice numbers, and clause text that appear in the JSON. Do not invent any.
+- Put the vendor address and the date at the top. Put the request at the end.
 - Ask whether the supplier was the importer of record.
 - Cite the invoice numbers.
 - Quote contract_clause_text only when it is present, and quote it exactly.
 - Mention credits_already_received when it is above zero, including the memo numbers.
-- Ask for a vendor credit of exactly refundable_total. No legal threats, no demands, no mention of lawyers or liability.
+- The request is soft, in this spirit: "If you've received a refund for these duties, we'd appreciate a credit for our share." Ask for a vendor credit of exactly refundable_total. No legal threats, no demands, no mention of lawyers or liability.
 - Under {WORD_LIMIT} words.
 - End with exactly this line: {SIGN_OFF}"""
 
@@ -109,11 +110,11 @@ def _template(facts: LetterFacts, today: date) -> str:
         "",
         (
             f"The IEEPA tariffs were struck down in February 2026, and importers are now being refunded. "
-            f"Between {facts.window_start:%B %-d, %Y} and {facts.window_end:%B %-d, %Y} those costs were "
-            f"passed through to us on your invoices. We are asking you to credit us for the amount below."
+            f"Between {facts.window_start:%B %-d, %Y} and {facts.window_end:%B %-d, %Y}, some of those costs "
+            f"showed up on your invoices to us."
         ),
         "",
-        "Were you the importer of record on these shipments? If the duties come back to you, that refund belongs with us.",
+        "Were you the importer of record on these shipments?",
         "",
         f"The invoices are {invoices}.",
     ]
@@ -124,7 +125,10 @@ def _template(facts: LetterFacts, today: date) -> str:
         paragraphs += ["", f'Section {facts.contract_clause_number} of our agreement says: "{_quote(facts.contract_clause_text)}"']
     paragraphs += [
         "",
-        f"Please issue a vendor credit of ${facts.refundable_total:,.2f} to apply to our next bill.",
+        (
+            f"If you've received a refund for these duties, we'd appreciate a credit for our share, "
+            f"${facts.refundable_total:,.2f}, applied to our next bill."
+        ),
         "",
         "Thank you,",
         facts.signoff,

@@ -192,7 +192,7 @@ export function RecoveriesView() {
 
   return (
     <TooltipProvider>
-      <div className="flex min-h-full flex-col px-8 pt-1 pb-10">
+      <div className="flex min-h-full w-full min-w-0 flex-col px-6 pt-1 pb-10 lg:px-8">
         <PageHeader
           title="Recoveries"
           subtitle="Tariff costs suppliers may owe you"
@@ -222,7 +222,7 @@ export function RecoveriesView() {
 
         {summary && claims.length > 0 && !scanning ? (
           <div className="mt-6 space-y-5">
-            <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+            <div className="grid w-full grid-cols-2 gap-3 min-[1100px]:grid-cols-4">
               <Stat label="Refundable" value={usd(summary.net_refundable)} />
               <Stat label="Not refundable" value={usd(summary.non_refundable)} />
               <Stat label="Needs review" value={String(counts.review)} />
@@ -334,7 +334,7 @@ function TabButton({ value, label, count }: { value: string; label: string; coun
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-lg border border-[#eeeae4] bg-white px-4 py-3">
+    <div className="min-w-0 rounded-lg border border-[#eeeae4] bg-white px-4 py-3">
       <p className="text-[12px] text-[#8a8680]">{label}</p>
       <p className="mt-1 text-[22px] font-normal tracking-[-0.02em] text-[#1c1c1c] tabular-nums">{value}</p>
     </div>

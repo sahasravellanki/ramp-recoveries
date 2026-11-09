@@ -156,6 +156,50 @@ export function billDocumentUrl(billId: string) {
   return `${API_URL}/api/bills/${billId}/document`;
 }
 
+export type BillLine = {
+  line_index: number;
+  sku: string | null;
+  description: string;
+  quantity: number;
+  unit_price: number;
+  amount: number;
+};
+
+export type AppliedCredit = {
+  id: string;
+  amount: number;
+  memo: string | null;
+  credit_memo_number: string;
+  source: string;
+};
+
+export type BillSummary = {
+  id: string;
+  vendor_id: string;
+  vendor: string;
+  invoice_number: string;
+  issued_at: string;
+  due_at: string | null;
+  amount: number;
+  status: string;
+  balance_due: number;
+};
+
+export type BillDetail = BillSummary & {
+  line_items: BillLine[];
+  applied_credits: AppliedCredit[];
+  document_url: string | null;
+};
+
+export function getBills(status?: string) {
+  const query = status ? `?status=${encodeURIComponent(status)}` : "";
+  return read<BillSummary[]>(`/api/bills${query}`);
+}
+
+export function getBill(billId: string) {
+  return read<BillDetail>(`/api/bills/${billId}`);
+}
+
 export function usd(value: number) {
   return value.toLocaleString("en-US", { style: "currency", currency: "USD" });
 }

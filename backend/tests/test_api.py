@@ -68,6 +68,13 @@ def test_scan_totals_match_ground_truth(client: TestClient):
     assert by_name["Northwind Packaging Co."]["subtitle"] == "Tariff Surcharge (12%)"
     assert by_name["Harbor & Pine Coffee Equipment"]["strength"] == "High"
     assert by_name["Harbor & Pine Coffee Equipment"]["subtitle"] == "Price increase"
+    harbor = client.get(f"/api/recoveries/{by_name['Harbor & Pine Coffee Equipment']['vendor_id']}").json()
+    letter = harbor["letter"]["body"]
+    assert letter.startswith("Harbor & Pine Coffee Equipment")
+    assert "Were you the importer of record on these shipments?" in letter
+    assert "If you've received a refund for these duties, we'd appreciate a credit for our share" in letter
+    assert letter.rstrip().endswith("Accounts Payable, Sunbird Cafe Group")
+    assert "belongs with us" not in letter
     assert by_name["Altamesa Electronics Supply"]["strength"] == "Medium"
     assert by_name["Kestrel Textiles"]["strength"] == "Tracked"
     assert "Brightline Office Supply" not in by_name

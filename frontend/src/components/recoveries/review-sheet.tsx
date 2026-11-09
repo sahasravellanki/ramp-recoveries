@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { ChevronDown, ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { PriceChart } from "@/components/recoveries/price-chart";
 import { PrimaryButton, SecondaryButton } from "@/components/ramp/buttons";
@@ -14,6 +16,8 @@ import {
   simulateAgree,
   usd,
   type ClaimDetail,
+  type EvidenceItem,
+  type SkuHistory,
 } from "@/lib/recoveries";
 import { StrengthChip, StatusDot } from "@/components/recoveries/chips";
 
@@ -33,11 +37,14 @@ export function ReviewSheet({
   const [saved, setSaved] = useState("");
   const [saving, setSaving] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [showAllCharts, setShowAllCharts] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (!open || !vendorId) return;
     let cancelled = false;
     setDetail(null);
+    setShowAllCharts(false);
     getClaim(vendorId)
       .then((next) => {
         if (cancelled) return;
@@ -104,11 +111,13 @@ export function ReviewSheet({
       const result = await simulateAgree(detail.vendor_id);
       setDetail({ ...detail, status: result.status });
       onStatus(detail.vendor_id, result.status);
+      const billId = result.applied_to_bill_id;
       toast.success(`Vendor credit of ${usd(result.amount)} added to Bill Pay`, {
-        action: result.applied_to_bill_id
+        duration: 12000,
+        action: billId
           ? {
               label: "View bill",
-              onClick: () => window.open(billDocumentUrl(result.applied_to_bill_id as string), "_blank", "noopener"),
+              onClick: () => router.push(`/bill-pay/bills/${billId}`),
             }
           : undefined,
       });
@@ -127,7 +136,7 @@ export function ReviewSheet({
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent
         side="right"
-        className="flex !w-full flex-col gap-0 p-0 data-[side=right]:!w-[560px] data-[side=right]:!max-w-[560px]"
+        className="flex w-full min-w-0 max-w-[100vw] flex-col gap-0 overflow-hidden p-0 data-[side=right]:!w-[min(100vw,560px)] data-[side=right]:!max-w-[min(100vw,560px)] data-[side=right]:sm:!max-w-[min(100vw,560px)]"
         showCloseButton
       >
         <SheetTitle className="sr-only">{detail?.vendor ?? "Claim"}</SheetTitle>
@@ -158,52 +167,24 @@ export function ReviewSheet({
                   disabled={busy}
                   className="mt-3 text-[13px] text-[#1c1c1c] underline decoration-[#d5d1c8] underline-offset-2"
                 >
-                  Demo: simulate supplier agrees
+                  Simulate supplier agrees
                 </button>
               ) : null}
             </div>
-            <div className="min-h-0 flex-1 space-y-6 overflow-y-auto px-6 py-5">
-              <section>
+            <div data-sheet-body className="min-h-0 min-w-0 flex-1 space-y-6 overflow-y-auto overflow-x-hidden px-6 py-5">
+              <section className="min-w-0">
                 <h3 className="text-[13px] font-medium text-[#1c1c1c]">Why we flagged this</h3>
-                <ul className="mt-2 divide-y divide-[#f1efe9]">
-                  {detail.evidence.map((item) => (
-                    <li key={`${item.invoice_number}-${item.line_index}-${item.type}`} className="flex items-start justify-between gap-3 py-2.5">
-                      <div className="min-w-0">
-                        <p className="text-[13px] text-[#1c1c1c]">{item.description}</p>
-                        <p className="mt-0.5 text-[12px] text-[#8a8680]">
-                          {item.date}
-                          {" · "}
-                          {item.bill_id ? (
-                            <a
-                              href={billDocumentUrl(item.bill_id)}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="underline decoration-[#d5d1c8] underline-offset-2 hover:decoration-[#1c1c1c]"
-                            >
-                              {item.invoice_number}
-                            </a>
-                          ) : (
-                            item.invoice_number
-                          )}
-                        </p>
-                      </div>
-                      <span className="shrink-0 text-[13px] tabular-nums text-[#1c1c1c]">{usd(item.amount)}</span>
-                    </li>
-                  ))}
-                </ul>
+                {detail.price_history.length > 0 ? (
+                  <PriceCharts
+                    skus={detail.price_history}
+                    raw={detail.raw_price_increase}
+                    claimed={detail.conservative_price_increase}
+                    showAll={showAllCharts}
+                    onShowAll={() => setShowAllCharts(true)}
+                  />
+                ) : null}
+                <EvidenceGroups items={detail.evidence} />
               </section>
-
-              {detail.price_history.length > 0 ? (
-                <section className="space-y-3">
-                  <h3 className="text-[13px] font-medium text-[#1c1c1c]">Price history</h3>
-                  <p className="text-[13px] text-[#3f3f3f]">
-                    Raw increase {usd(detail.raw_price_increase)} · We claim {usd(detail.conservative_price_increase)} after normal price growth
-                  </p>
-                  {detail.price_history.map((sku) => (
-                    <PriceChart key={sku.sku} sku={sku} />
-                  ))}
-                </section>
-              ) : null}
 
               {detail.contract?.clause_text ? (
                 <section>
@@ -271,6 +252,122 @@ export function ReviewSheet({
       </SheetContent>
     </Sheet>
   );
+}
+
+function PriceCharts({
+  skus,
+  raw,
+  claimed,
+  showAll,
+  onShowAll,
+}: {
+  skus: SkuHistory[];
+  raw: number;
+  claimed: number;
+  showAll: boolean;
+  onShowAll: () => void;
+}) {
+  const ranked = [...skus].sort((a, b) => b.conservative_increase - a.conservative_increase);
+  const visible = showAll ? ranked : ranked.slice(0, 3);
+  return (
+    <div className="mt-3 space-y-3">
+      <p className="text-[13px] text-[#3f3f3f]">
+        Raw increase {usd(raw)} · We claim {usd(claimed)} after normal price growth
+      </p>
+      {visible.map((sku) => (
+        <PriceChart key={sku.sku} sku={sku} />
+      ))}
+      {!showAll && ranked.length > 3 ? (
+        <button
+          type="button"
+          onClick={onShowAll}
+          className="text-[13px] text-[#1c1c1c] underline decoration-[#d5d1c8] underline-offset-2"
+        >
+          Show all {ranked.length}
+        </button>
+      ) : null}
+    </div>
+  );
+}
+
+function EvidenceGroups({ items }: { items: EvidenceItem[] }) {
+  const groups = useMemo(() => groupEvidence(items), [items]);
+  const [open, setOpen] = useState<string | null>(groups[0]?.name ?? null);
+  return (
+    <ul className="mt-4 divide-y divide-[#f1efe9] border-t border-[#f1efe9]">
+      {groups.map((group) => {
+        const expanded = open === group.name;
+        return (
+          <li key={group.name}>
+            <button
+              type="button"
+              onClick={() => setOpen(expanded ? null : group.name)}
+              className="flex w-full items-start gap-2 py-2.5 text-left"
+              aria-expanded={expanded}
+            >
+              {expanded ? (
+                <ChevronDown className="mt-0.5 size-4 shrink-0 text-[#8a8680]" />
+              ) : (
+                <ChevronRight className="mt-0.5 size-4 shrink-0 text-[#8a8680]" />
+              )}
+              <span className="min-w-0 flex-1">
+                <span className="block text-[13px] text-[#1c1c1c]">{group.name}</span>
+                <span className="mt-0.5 block text-[12px] text-[#8a8680]">
+                  {group.invoices} {group.invoices === 1 ? "invoice" : "invoices"}
+                </span>
+              </span>
+              <span className="shrink-0 text-[13px] tabular-nums text-[#1c1c1c]">{usd(group.total)}</span>
+            </button>
+            {expanded ? (
+              <ul className="mb-2 ml-6 space-y-1.5">
+                {group.lines.map((line) => (
+                  <li
+                    key={`${line.invoice_number}-${line.line_index}-${line.type}`}
+                    className="flex items-baseline justify-between gap-3 text-[12px]"
+                  >
+                    <span className="min-w-0 text-[#6f6c66]">
+                      {line.date}
+                      {" · "}
+                      {line.bill_id ? (
+                        <a
+                          href={billDocumentUrl(line.bill_id)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-[#1c1c1c] underline decoration-[#d5d1c8] underline-offset-2 hover:decoration-[#1c1c1c]"
+                        >
+                          {line.invoice_number}
+                        </a>
+                      ) : (
+                        line.invoice_number
+                      )}
+                    </span>
+                    <span className="shrink-0 tabular-nums text-[#1c1c1c]">{usd(line.amount)}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+function groupEvidence(items: EvidenceItem[]) {
+  const byName = new Map<string, EvidenceItem[]>();
+  for (const item of items) {
+    const list = byName.get(item.description) ?? [];
+    list.push(item);
+    byName.set(item.description, list);
+  }
+  return [...byName.entries()]
+    .map(([name, lines]) => ({
+      name,
+      invoices: new Set(lines.map((line) => line.invoice_number)).size,
+      total: lines.reduce((sum, line) => sum + line.amount, 0),
+      lines: [...lines].sort((a, b) => a.date.localeCompare(b.date) || a.invoice_number.localeCompare(b.invoice_number)),
+    }))
+    .sort((a, b) => b.total - a.total || a.name.localeCompare(b.name));
 }
 
 function reasons(detail: ClaimDetail) {
