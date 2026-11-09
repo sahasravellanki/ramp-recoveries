@@ -1,0 +1,339 @@
+{
+  "buyer": {
+    "name": "Sunbird Cafe Group",
+    "attn": "Accounts Payable",
+    "address_line1": "1820 Shattuck Ave",
+    "address_line2": "Berkeley, CA 94709"
+  },
+  "tariff_window": {
+    "start": "2025-02-04",
+    "end": "2026-02-20"
+  },
+  "amounts_are_pre_sales_tax": true,
+  "suppliers": {
+    "Northwind Packaging Co.": {
+      "vendor_id": "ven_2c00c154e5422775",
+      "refundable_claim_total": 2172.76,
+      "credits_already_received": 500.0,
+      "net_claim_total": 1672.76,
+      "non_refundable_total": 0.0,
+      "basis": "explicit_surcharge",
+      "explicit_surcharge_total": 2172.76,
+      "embedded_price_increase_total": 0.0,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 21,
+      "invoices_affected": [
+        {
+          "invoice_number": "NWP-202504-010",
+          "issued_at": "2025-04-10",
+          "refundable_amount": 172.63,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "NWP-202505-011",
+          "issued_at": "2025-05-10",
+          "refundable_amount": 136.47,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "NWP-202506-012",
+          "issued_at": "2025-06-10",
+          "refundable_amount": 171.05,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "NWP-202507-013",
+          "issued_at": "2025-07-10",
+          "refundable_amount": 119.38,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "NWP-202508-014",
+          "issued_at": "2025-08-10",
+          "refundable_amount": 247.59,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "NWP-202509-015",
+          "issued_at": "2025-09-10",
+          "refundable_amount": 155.38,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "NWP-202510-016",
+          "issued_at": "2025-10-10",
+          "refundable_amount": 203.84,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "NWP-202511-017",
+          "issued_at": "2025-11-10",
+          "refundable_amount": 596.41,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "NWP-202512-018",
+          "issued_at": "2025-12-10",
+          "refundable_amount": 165.03,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "NWP-202601-019",
+          "issued_at": "2026-01-10",
+          "refundable_amount": 96.61,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "NWP-202602-020",
+          "issued_at": "2026-02-10",
+          "refundable_amount": 108.37,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        }
+      ],
+      "contract": {
+        "title": "Supply Agreement",
+        "effective_date": "2023-09-01",
+        "has_tariff_clause": true,
+        "tariff_clause_section": "7. Duties, Tariffs and Surcharges",
+        "document_url": "data/contracts/northwind-packaging-supply-agreement.pdf"
+      },
+      "notes": "Explicit 'Tariff Surcharge (12%)' line Apr 2025 to Feb 2026. Refundable IEEPA. Contract section 7 requires credit if duties are refunded. $500 credit memo already issued Mar 2026."
+    },
+    "Harbor & Pine Coffee Equipment": {
+      "vendor_id": "ven_8f4488933181a528",
+      "refundable_claim_total": 709.04,
+      "credits_already_received": 0.0,
+      "net_claim_total": 709.04,
+      "non_refundable_total": 0.0,
+      "basis": "embedded_price_increase",
+      "explicit_surcharge_total": 0.0,
+      "embedded_price_increase_total": 709.04,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 11,
+      "invoices_affected": [
+        {
+          "invoice_number": "HPC-202503-005",
+          "issued_at": "2025-03-15",
+          "refundable_amount": 150.56,
+          "non_refundable_amount": 0.0,
+          "basis": "embedded_price_increase"
+        },
+        {
+          "invoice_number": "HPC-202505-006",
+          "issued_at": "2025-05-15",
+          "refundable_amount": 73.92,
+          "non_refundable_amount": 0.0,
+          "basis": "embedded_price_increase"
+        },
+        {
+          "invoice_number": "HPC-202507-007",
+          "issued_at": "2025-07-15",
+          "refundable_amount": 83.44,
+          "non_refundable_amount": 0.0,
+          "basis": "embedded_price_increase"
+        },
+        {
+          "invoice_number": "HPC-202509-008",
+          "issued_at": "2025-09-15",
+          "refundable_amount": 84.0,
+          "non_refundable_amount": 0.0,
+          "basis": "embedded_price_increase"
+        },
+        {
+          "invoice_number": "HPC-202511-009",
+          "issued_at": "2025-11-15",
+          "refundable_amount": 167.36,
+          "non_refundable_amount": 0.0,
+          "basis": "embedded_price_increase"
+        },
+        {
+          "invoice_number": "HPC-202601-010",
+          "issued_at": "2026-01-15",
+          "refundable_amount": 149.76,
+          "non_refundable_amount": 0.0,
+          "basis": "embedded_price_increase"
+        }
+      ],
+      "contract": {
+        "title": "Equipment and Service Agreement",
+        "effective_date": "2024-02-01",
+        "has_tariff_clause": true,
+        "tariff_clause_section": "6. Pricing; Import Duties",
+        "document_url": "data/contracts/harbor-and-pine-equipment-and-service-agreement.pdf"
+      },
+      "notes": "No surcharge line. Imported SKUs priced +16% Mar 2025 to Feb 2026, back to baseline Mar 2026. Claim equals the embedded increase. Contract section 6 is a pro rata pass-through clause."
+    },
+    "Altamesa Electronics Supply": {
+      "vendor_id": "ven_cd11abb151796ea3",
+      "refundable_claim_total": 1405.3,
+      "credits_already_received": 0.0,
+      "net_claim_total": 1405.3,
+      "non_refundable_total": 0.0,
+      "basis": "explicit_surcharge",
+      "explicit_surcharge_total": 1405.3,
+      "embedded_price_increase_total": 0.0,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 10,
+      "invoices_affected": [
+        {
+          "invoice_number": "ALT-202504-005",
+          "issued_at": "2025-04-12",
+          "refundable_amount": 169.6,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "ALT-202506-006",
+          "issued_at": "2025-06-12",
+          "refundable_amount": 48.6,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "ALT-202508-007",
+          "issued_at": "2025-08-12",
+          "refundable_amount": 268.6,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "ALT-202510-008",
+          "issued_at": "2025-10-12",
+          "refundable_amount": 200.2,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "ALT-202512-009",
+          "issued_at": "2025-12-12",
+          "refundable_amount": 316.9,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        },
+        {
+          "invoice_number": "ALT-202602-010",
+          "issued_at": "2026-02-12",
+          "refundable_amount": 401.4,
+          "non_refundable_amount": 0.0,
+          "basis": "explicit_surcharge"
+        }
+      ],
+      "contract": null,
+      "notes": "20% surcharge on products labeled 'Import Cost Recovery' (Mar to Aug 2025) then 'IEEPA Adj.' (Sep 2025 on). Refundable IEEPA. No contract on file."
+    },
+    "Kestrel Textiles": {
+      "vendor_id": "ven_477720b9f509a868",
+      "refundable_claim_total": 0.0,
+      "credits_already_received": 0.0,
+      "net_claim_total": 0.0,
+      "non_refundable_total": 386.77,
+      "basis": "none",
+      "explicit_surcharge_total": 0.0,
+      "embedded_price_increase_total": 0.0,
+      "decoy_fee_total": 0.0,
+      "invoice_count": 7,
+      "invoices_affected": [
+        {
+          "invoice_number": "KST-202507-005",
+          "issued_at": "2025-07-05",
+          "refundable_amount": 0.0,
+          "non_refundable_amount": 123.04,
+          "basis": "non_ieepa_tariff"
+        },
+        {
+          "invoice_number": "KST-202510-006",
+          "issued_at": "2025-10-05",
+          "refundable_amount": 0.0,
+          "non_refundable_amount": 123.22,
+          "basis": "non_ieepa_tariff"
+        },
+        {
+          "invoice_number": "KST-202601-007",
+          "issued_at": "2026-01-05",
+          "refundable_amount": 0.0,
+          "non_refundable_amount": 140.51,
+          "basis": "non_ieepa_tariff"
+        }
+      ],
+      "contract": {
+        "title": "Master Supply Agreement",
+        "effective_date": "2024-01-15",
+        "has_tariff_clause": false,
+        "tariff_clause_section": null,
+        "document_url": "data/contracts/kestrel-textiles-master-supply-agreement.pdf"
+      },
+      "notes": "'Section 301 adjustment' from May 2025. Section 301 tariffs were not struck down; not refundable. Contract has no tariff language."
+    },
+    "Brightline Office Supply": {
+      "vendor_id": "ven_be599f66c310d1ff",
+      "refundable_claim_total": 0.0,
+      "credits_already_received": 0.0,
+      "net_claim_total": 0.0,
+      "non_refundable_total": 0.0,
+      "basis": "none",
+      "explicit_surcharge_total": 0.0,
+      "embedded_price_increase_total": 0.0,
+      "decoy_fee_total": 136.5,
+      "invoice_count": 21,
+      "invoices_affected": [],
+      "contract": {
+        "title": "Office Supply Agreement",
+        "effective_date": "2022-06-01",
+        "has_tariff_clause": false,
+        "tariff_clause_section": null,
+        "document_url": "data/contracts/brightline-office-supply-agreement.pdf"
+      },
+      "notes": "Domestic control. Prices drift ~2%/yr. 'Fuel surcharge' is a decoy, not a tariff. Expected claim: $0."
+    },
+    "Pacific Freight Forwarding": {
+      "vendor_id": "ven_3610a006fa4ff3ac",
+      "refundable_claim_total": 0.0,
+      "credits_already_received": 0.0,
+      "net_claim_total": 0.0,
+      "non_refundable_total": 0.0,
+      "basis": "none",
+      "explicit_surcharge_total": 0.0,
+      "embedded_price_increase_total": 0.0,
+      "decoy_fee_total": 370.0,
+      "invoice_count": 2,
+      "invoices_affected": [],
+      "contract": null,
+      "notes": "Sunbird was importer of record for two shipments. 'Customs duty paid on entry' is owed back by CBP via the entry, not by this supplier. Expected supplier claim: $0."
+    }
+  },
+  "importer_of_record_cases": [
+    {
+      "invoice_number": "PFF-202504-001",
+      "vendor": "Pacific Freight Forwarding",
+      "issued_at": "2025-04-18",
+      "entry_number": "231-4471022-5",
+      "customs_duty_paid": 4312.4,
+      "note": "Sunbird was importer of record. Refund comes from CBP via the entry, not from the supplier. Exclude from supplier claims."
+    },
+    {
+      "invoice_number": "PFF-202510-002",
+      "vendor": "Pacific Freight Forwarding",
+      "issued_at": "2025-10-07",
+      "entry_number": "231-4518860-1",
+      "customs_duty_paid": 6874.15,
+      "note": "Sunbird was importer of record. Refund comes from CBP via the entry, not from the supplier. Exclude from supplier claims."
+    }
+  ],
+  "totals": {
+    "refundable_claim_total": 4287.1,
+    "net_claim_total_after_credits": 3787.1,
+    "non_refundable_total": 386.77,
+    "importer_of_record_duty_total": 11186.55
+  }
+}

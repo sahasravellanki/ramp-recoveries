@@ -1,0 +1,457 @@
+invoice_number,line_index,description,category,amount
+KST-202407-001,0,"Staff tee, embroidered logo",product,501.50
+KST-202407-001,1,"Canvas barista apron, charcoal",product,504.00
+KST-202407-001,2,Bar towel 16 x 19 in (dozen),product,629.00
+KST-202407-001,3,"Dad cap, embroidered logo",product,448.00
+KST-202407-001,4,Freight,freight,109.77
+KST-202407-001,5,Sales tax (10.25%),tax,213.46
+NWP-202407-001,0,"12 oz double-wall hot cup, kraft (case of 500)",product,615.00
+NWP-202407-001,1,Kraft takeout bag #4 (bundle of 500),product,267.75
+NWP-202407-001,2,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,211.25
+NWP-202407-001,3,"Corrugated cup sleeve, printed (case of 1000)",product,350.10
+NWP-202407-001,4,Freight - LTL ground,freight,137.69
+NWP-202407-001,5,Sales tax (10.25%),tax,148.02
+HPC-202407-001,0,"Steaming pitcher 20 oz, stainless (USA)",product,84.00
+HPC-202407-001,1,Calibrated tamper 58.4 mm (made in USA),product,190.00
+HPC-202407-001,2,"Precision shower screen, 200 micron (Italy)",product,194.00
+HPC-202407-001,3,"58 mm bottomless portafilter, walnut handle (Italy)",product,710.00
+HPC-202407-001,4,Shipping & handling,freight,75.56
+HPC-202407-001,5,Sales tax (10.25%),tax,120.75
+BOS-202407-001,0,"Gel pens, black (box of 12)",product,57.60
+BOS-202407-001,1,"Copy paper 20 lb, case of 10 reams",product,312.00
+BOS-202407-001,2,"Toner cartridge, black",product,158.00
+BOS-202407-001,3,Nitrile gloves M (case of 1000),product,58.00
+BOS-202407-001,4,"Surface cleaner, 1 gal",product,156.60
+BOS-202407-001,5,Fuel surcharge,other_fee,6.50
+BOS-202407-001,6,Sales tax (10.25%),tax,76.08
+NWP-202408-002,0,"Dispenser napkins, 1-ply (case of 6000)",product,132.30
+NWP-202408-002,1,"12 oz double-wall hot cup, kraft (case of 500)",product,246.00
+NWP-202408-002,2,Kraft takeout bag #4 (bundle of 500),product,357.00
+NWP-202408-002,3,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,380.25
+NWP-202408-002,4,Freight - LTL ground,freight,147.85
+NWP-202408-002,5,Sales tax (10.25%),tax,114.34
+ALT-202408-001,0,USB-C cable 2 m (pack of 10),product,155.00
+ALT-202408-001,1,"Thermal receipt printer, USB/Ethernet",product,1148.00
+ALT-202408-001,2,Ground shipping,freight,49.12
+ALT-202408-001,3,Sales tax (10.25%),tax,133.56
+BOS-202408-002,0,Nitrile gloves M (case of 1000),product,348.60
+BOS-202408-002,1,"Surface cleaner, 1 gal",product,174.30
+BOS-202408-002,2,"Toner cartridge, black",product,712.17
+BOS-202408-002,3,"Gel pens, black (box of 12)",product,38.48
+BOS-202408-002,4,"Copy paper 20 lb, case of 10 reams",product,364.63
+BOS-202408-002,5,Fuel surcharge,other_fee,6.50
+BOS-202408-002,6,Sales tax (10.25%),tax,167.91
+NWP-202409-003,0,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,84.50
+NWP-202409-003,1,"Dispenser napkins, 1-ply (case of 6000)",product,176.40
+NWP-202409-003,2,"16 oz double-wall hot cup, kraft (case of 500)",product,816.00
+NWP-202409-003,3,Freight - LTL ground,freight,157.29
+NWP-202409-003,4,Sales tax (10.25%),tax,110.38
+HPC-202409-002,0,Calibrated tamper 58.4 mm (made in USA),product,285.00
+HPC-202409-002,1,"58 mm bottomless portafilter, walnut handle (Italy)",product,568.00
+HPC-202409-002,2,"On-site espresso machine service, per hour",product,1000.00
+HPC-202409-002,3,Shipping & handling,freight,41.46
+HPC-202409-002,4,Sales tax (10.25%),tax,189.93
+BOS-202409-003,0,Nitrile gloves M (case of 1000),product,349.20
+BOS-202409-003,1,Receipt roll 3 1/8 in (case of 50),product,82.28
+BOS-202409-003,2,"Toner cartridge, black",product,475.62
+BOS-202409-003,3,"Gel pens, black (box of 12)",product,19.26
+BOS-202409-003,4,Fuel surcharge,other_fee,6.50
+BOS-202409-003,5,Sales tax (10.25%),tax,94.95
+KST-202410-002,0,"Canvas barista apron, charcoal",product,312.00
+KST-202410-002,1,"Dad cap, embroidered logo",product,291.20
+KST-202410-002,2,Freight,freight,88.43
+KST-202410-002,3,Sales tax (10.25%),tax,61.83
+NWP-202410-004,0,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,126.75
+NWP-202410-004,1,"16 oz double-wall hot cup, kraft (case of 500)",product,612.00
+NWP-202410-004,2,Paper straws 7.75 in (case of 2400),product,67.20
+NWP-202410-004,3,Freight - LTL ground,freight,144.92
+NWP-202410-004,4,Sales tax (10.25%),tax,82.61
+ALT-202410-002,0,"Thermal receipt printer, USB/Ethernet",product,820.00
+ALT-202410-002,1,"Cash drawer 16 in, 5 bill / 8 coin",product,672.00
+ALT-202410-002,2,Ground shipping,freight,58.36
+ALT-202410-002,3,Sales tax (10.25%),tax,152.93
+BOS-202410-004,0,"Gel pens, black (box of 12)",product,28.95
+BOS-202410-004,1,"Surface cleaner, 1 gal",product,104.94
+BOS-202410-004,2,"Toner cartridge, black",product,555.80
+BOS-202410-004,3,Fuel surcharge,other_fee,6.50
+BOS-202410-004,4,Sales tax (10.25%),tax,70.69
+NWP-202411-005,0,"Dispenser napkins, 1-ply (case of 6000)",product,88.20
+NWP-202411-005,1,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,338.00
+NWP-202411-005,2,"16 oz double-wall hot cup, kraft (case of 500)",product,204.00
+NWP-202411-005,3,"12 oz double-wall hot cup, kraft (case of 500)",product,430.50
+NWP-202411-005,4,Freight - LTL ground,freight,107.19
+NWP-202411-005,5,Sales tax (10.25%),tax,108.72
+HPC-202411-003,0,"58 mm bottomless portafilter, walnut handle (Italy)",product,710.00
+HPC-202411-003,1,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,180.00
+HPC-202411-003,2,"On-site espresso machine service, per hour",product,625.00
+HPC-202411-003,3,Calibrated tamper 58.4 mm (made in USA),product,475.00
+HPC-202411-003,4,Shipping & handling,freight,82.22
+HPC-202411-003,5,Sales tax (10.25%),tax,203.98
+BOS-202411-005,0,Receipt roll 3 1/8 in (case of 50),product,165.12
+BOS-202411-005,1,"Surface cleaner, 1 gal",product,157.68
+BOS-202411-005,2,"Toner cartridge, black",product,318.12
+BOS-202411-005,3,"Copy paper 20 lb, case of 10 reams",product,366.45
+BOS-202411-005,4,Fuel surcharge,other_fee,6.50
+BOS-202411-005,5,Sales tax (10.25%),tax,103.26
+NWP-202412-006,0,Kraft takeout bag #4 (bundle of 500),product,148.75
+NWP-202412-006,1,"12 oz double-wall hot cup, kraft (case of 500)",product,553.50
+NWP-202412-006,2,"Dispenser napkins, 1-ply (case of 6000)",product,264.60
+NWP-202412-006,3,Paper straws 7.75 in (case of 2400),product,403.20
+NWP-202412-006,4,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,169.00
+NWP-202412-006,5,Freight - LTL ground,freight,161.32
+NWP-202412-006,6,Sales tax (10.25%),tax,157.75
+ALT-202412-003,0,USB-C cable 2 m (pack of 10),product,124.00
+ALT-202412-003,1,"Thermal receipt printer, USB/Ethernet",product,328.00
+ALT-202412-003,2,Ground shipping,freight,38.02
+ALT-202412-003,3,Sales tax (10.25%),tax,46.33
+BOS-202412-006,0,Nitrile gloves M (case of 1000),product,116.98
+BOS-202412-006,1,"Surface cleaner, 1 gal",product,35.10
+BOS-202412-006,2,"Toner cartridge, black",product,716.94
+BOS-202412-006,3,Fuel surcharge,other_fee,6.50
+BOS-202412-006,4,Sales tax (10.25%),tax,89.07
+KST-202501-003,0,"Linen table runner, natural",product,448.00
+KST-202501-003,1,"Staff tee, embroidered logo",product,545.75
+KST-202501-003,2,"Canvas barista apron, charcoal",product,888.00
+KST-202501-003,3,"Dad cap, embroidered logo",product,246.40
+KST-202501-003,4,Freight,freight,77.77
+KST-202501-003,5,Sales tax (10.25%),tax,218.14
+NWP-202501-007,0,Paper straws 7.75 in (case of 2400),product,235.20
+NWP-202501-007,1,"Dispenser napkins, 1-ply (case of 6000)",product,88.20
+NWP-202501-007,2,Kraft takeout bag #4 (bundle of 500),product,208.25
+NWP-202501-007,3,Freight - LTL ground,freight,103.42
+NWP-202501-007,4,Sales tax (10.25%),tax,54.49
+HPC-202501-004,0,"64 mm flat burr set, titanium-coated (Italy)",product,1134.00
+HPC-202501-004,1,"On-site espresso machine service, per hour",product,1000.00
+HPC-202501-004,2,"Precision shower screen, 200 micron (Italy)",product,145.50
+HPC-202501-004,3,"58 mm bottomless portafilter, walnut handle (Italy)",product,852.00
+HPC-202501-004,4,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,180.00
+HPC-202501-004,5,Shipping & handling,freight,79.59
+HPC-202501-004,6,Sales tax (10.25%),tax,339.43
+BOS-202501-007,0,Receipt roll 3 1/8 in (case of 50),product,248.46
+BOS-202501-007,1,"Copy paper 20 lb, case of 10 reams",product,52.52
+BOS-202501-007,2,"Surface cleaner, 1 gal",product,35.16
+BOS-202501-007,3,Fuel surcharge,other_fee,6.50
+BOS-202501-007,4,Sales tax (10.25%),tax,34.45
+NWP-202502-008,0,"16 oz double-wall hot cup, kraft (case of 500)",product,816.00
+NWP-202502-008,1,"Corrugated cup sleeve, printed (case of 1000)",product,311.20
+NWP-202502-008,2,Paper straws 7.75 in (case of 2400),product,403.20
+NWP-202502-008,3,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,338.00
+NWP-202502-008,4,"Dispenser napkins, 1-ply (case of 6000)",product,396.90
+NWP-202502-008,5,Freight - LTL ground,freight,100.06
+NWP-202502-008,6,Sales tax (10.25%),tax,232.19
+ALT-202502-004,0,"Thermal receipt printer, USB/Ethernet",product,328.00
+ALT-202502-004,1,Replacement 24 V power supply,product,220.00
+ALT-202502-004,2,Ground shipping,freight,35.79
+ALT-202502-004,3,Sales tax (10.25%),tax,56.17
+BOS-202502-008,0,Receipt roll 3 1/8 in (case of 50),product,331.84
+BOS-202502-008,1,"Surface cleaner, 1 gal",product,176.00
+BOS-202502-008,2,"Copy paper 20 lb, case of 10 reams",product,315.66
+BOS-202502-008,3,Nitrile gloves M (case of 1000),product,410.76
+BOS-202502-008,4,Fuel surcharge,other_fee,6.50
+BOS-202502-008,5,Sales tax (10.25%),tax,126.51
+NWP-202503-009,0,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,295.75
+NWP-202503-009,1,"Corrugated cup sleeve, printed (case of 1000)",product,427.90
+NWP-202503-009,2,Paper straws 7.75 in (case of 2400),product,134.40
+NWP-202503-009,3,"12 oz double-wall hot cup, kraft (case of 500)",product,184.50
+NWP-202503-009,4,Freight - LTL ground,freight,175.02
+NWP-202503-009,5,Sales tax (10.25%),tax,106.86
+HPC-202503-005,0,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,208.80
+HPC-202503-005,1,"Precision shower screen, 200 micron (Italy)",product,225.04
+HPC-202503-005,2,"On-site espresso machine service, per hour",product,1000.00
+HPC-202503-005,3,"64 mm flat burr set, titanium-coated (Italy)",product,657.72
+HPC-202503-005,4,"Steaming pitcher 20 oz, stainless (USA)",product,168.00
+HPC-202503-005,5,Shipping & handling,freight,45.92
+HPC-202503-005,6,Sales tax (10.25%),tax,231.60
+BOS-202503-009,0,"Toner cartridge, black",product,800.50
+BOS-202503-009,1,Nitrile gloves M (case of 1000),product,117.54
+BOS-202503-009,2,"Surface cleaner, 1 gal",product,123.41
+BOS-202503-009,3,"Gel pens, black (box of 12)",product,77.84
+BOS-202503-009,4,Receipt roll 3 1/8 in (case of 50),product,166.20
+BOS-202503-009,5,Fuel surcharge,other_fee,6.50
+BOS-202503-009,6,Sales tax (10.25%),tax,131.76
+KST-202504-004,0,"Staff tee, embroidered logo",product,368.75
+KST-202504-004,1,"Dad cap, embroidered logo",product,134.40
+KST-202504-004,2,Freight,freight,81.46
+KST-202504-004,3,Sales tax (10.25%),tax,51.57
+NWP-202504-010,0,"16 oz double-wall hot cup, kraft (case of 500)",product,408.00
+NWP-202504-010,1,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,169.00
+NWP-202504-010,2,Kraft takeout bag #4 (bundle of 500),product,297.50
+NWP-202504-010,3,Paper straws 7.75 in (case of 2400),product,369.60
+NWP-202504-010,4,"Corrugated cup sleeve, printed (case of 1000)",product,194.50
+NWP-202504-010,5,Tariff Surcharge (12%),tariff_ieepa,172.63
+NWP-202504-010,6,Freight - LTL ground,freight,114.67
+NWP-202504-010,7,Sales tax (10.25%),tax,147.46
+ALT-202504-005,0,"Cash drawer 16 in, 5 bill / 8 coin",product,560.00
+ALT-202504-005,1,"Thermal receipt printer, USB/Ethernet",product,164.00
+ALT-202504-005,2,USB-C cable 2 m (pack of 10),product,124.00
+ALT-202504-005,3,Import Cost Recovery,tariff_ieepa,169.60
+ALT-202504-005,4,Ground shipping,freight,31.98
+ALT-202504-005,5,Sales tax (10.25%),tax,86.92
+PFF-202504-001,0,"Ocean freight, 20 ft container, Shanghai to Oakland (B/L PFF-SH-88213)",freight,2850.00
+PFF-202504-001,1,"Customs duty paid on entry - Entry No. 231-4471022-5 (IEEPA, China origin), importer of record: Sunbird Cafe Group",customs_duty_paid_by_buyer,4312.40
+PFF-202504-001,2,Customs brokerage fee,other_fee,185.00
+BOS-202504-010,0,"Gel pens, black (box of 12)",product,87.66
+BOS-202504-010,1,Receipt roll 3 1/8 in (case of 50),product,291.34
+BOS-202504-010,2,Nitrile gloves M (case of 1000),product,235.48
+BOS-202504-010,3,Fuel surcharge,other_fee,6.50
+BOS-202504-010,4,Sales tax (10.25%),tax,62.98
+NWP-202505-011,0,"12 oz double-wall hot cup, kraft (case of 500)",product,369.00
+NWP-202505-011,1,"Dispenser napkins, 1-ply (case of 6000)",product,441.00
+NWP-202505-011,2,Kraft takeout bag #4 (bundle of 500),product,327.25
+NWP-202505-011,3,Tariff Surcharge (12%),tariff_ieepa,136.47
+NWP-202505-011,4,Freight - LTL ground,freight,168.42
+NWP-202505-011,5,Sales tax (10.25%),tax,116.57
+HPC-202505-006,0,"58 mm bottomless portafilter, walnut handle (Italy)",product,494.16
+HPC-202505-006,1,"On-site espresso machine service, per hour",product,250.00
+HPC-202505-006,2,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,41.76
+HPC-202505-006,3,Calibrated tamper 58.4 mm (made in USA),product,285.00
+HPC-202505-006,4,"Steaming pitcher 20 oz, stainless (USA)",product,168.00
+HPC-202505-006,5,Shipping & handling,freight,41.91
+HPC-202505-006,6,Sales tax (10.25%),tax,126.99
+BOS-202505-011,0,Receipt roll 3 1/8 in (case of 50),product,166.72
+BOS-202505-011,1,"Surface cleaner, 1 gal",product,70.76
+BOS-202505-011,2,"Copy paper 20 lb, case of 10 reams",product,528.70
+BOS-202505-011,3,"Gel pens, black (box of 12)",product,9.76
+BOS-202505-011,4,"Toner cartridge, black",product,401.60
+BOS-202505-011,5,Fuel surcharge,other_fee,6.50
+BOS-202505-011,6,Sales tax (10.25%),tax,120.70
+NWP-202506-012,0,"Dispenser napkins, 1-ply (case of 6000)",product,132.30
+NWP-202506-012,1,Kraft takeout bag #4 (bundle of 500),product,357.00
+NWP-202506-012,2,"16 oz double-wall hot cup, kraft (case of 500)",product,136.00
+NWP-202506-012,3,"12 oz double-wall hot cup, kraft (case of 500)",product,430.50
+NWP-202506-012,4,Paper straws 7.75 in (case of 2400),product,369.60
+NWP-202506-012,5,Tariff Surcharge (12%),tariff_ieepa,171.05
+NWP-202506-012,6,Freight - LTL ground,freight,168.67
+NWP-202506-012,7,Sales tax (10.25%),tax,146.10
+ALT-202506-006,0,USB-C cable 2 m (pack of 10),product,155.00
+ALT-202506-006,1,"2D barcode scanner, wired",product,88.00
+ALT-202506-006,2,Import Cost Recovery,tariff_ieepa,48.60
+ALT-202506-006,3,Ground shipping,freight,58.44
+ALT-202506-006,4,Sales tax (10.25%),tax,24.91
+BOS-202506-012,0,Receipt roll 3 1/8 in (case of 50),product,83.50
+BOS-202506-012,1,"Copy paper 20 lb, case of 10 reams",product,105.90
+BOS-202506-012,2,Nitrile gloves M (case of 1000),product,295.30
+BOS-202506-012,3,"Gel pens, black (box of 12)",product,29.34
+BOS-202506-012,4,Fuel surcharge,other_fee,6.50
+BOS-202506-012,5,Sales tax (10.25%),tax,52.69
+KST-202507-005,0,"Staff tee, embroidered logo",product,88.50
+KST-202507-005,1,"Canvas barista apron, charcoal",product,624.00
+KST-202507-005,2,"Linen table runner, natural",product,928.00
+KST-202507-005,3,Section 301 adjustment,tariff_other,123.04
+KST-202507-005,4,Freight,freight,105.87
+KST-202507-005,5,Sales tax (10.25%),tax,168.15
+NWP-202507-013,0,"12 oz double-wall hot cup, kraft (case of 500)",product,307.50
+NWP-202507-013,1,"Dispenser napkins, 1-ply (case of 6000)",product,220.50
+NWP-202507-013,2,"Corrugated cup sleeve, printed (case of 1000)",product,466.80
+NWP-202507-013,3,Tariff Surcharge (12%),tariff_ieepa,119.38
+NWP-202507-013,4,Freight - LTL ground,freight,105.70
+NWP-202507-013,5,Sales tax (10.25%),tax,101.97
+HPC-202507-007,0,"64 mm flat burr set, titanium-coated (Italy)",product,219.24
+HPC-202507-007,1,"58 mm bottomless portafilter, walnut handle (Italy)",product,329.44
+HPC-202507-007,2,"Precision shower screen, 200 micron (Italy)",product,56.26
+HPC-202507-007,3,Calibrated tamper 58.4 mm (made in USA),product,190.00
+HPC-202507-007,4,Shipping & handling,freight,81.58
+HPC-202507-007,5,Sales tax (10.25%),tax,81.48
+BOS-202507-013,0,Receipt roll 3 1/8 in (case of 50),product,167.28
+BOS-202507-013,1,"Gel pens, black (box of 12)",product,97.90
+BOS-202507-013,2,Nitrile gloves M (case of 1000),product,177.48
+BOS-202507-013,3,"Surface cleaner, 1 gal",product,159.75
+BOS-202507-013,4,"Toner cartridge, black",product,483.48
+BOS-202507-013,5,Fuel surcharge,other_fee,6.50
+BOS-202507-013,6,Sales tax (10.25%),tax,111.30
+NWP-202508-014,0,"12 oz double-wall hot cup, kraft (case of 500)",product,615.00
+NWP-202508-014,1,Paper straws 7.75 in (case of 2400),product,134.40
+NWP-202508-014,2,"Dispenser napkins, 1-ply (case of 6000)",product,485.10
+NWP-202508-014,3,"16 oz double-wall hot cup, kraft (case of 500)",product,680.00
+NWP-202508-014,4,Kraft takeout bag #4 (bundle of 500),product,148.75
+NWP-202508-014,5,Tariff Surcharge (12%),tariff_ieepa,247.59
+NWP-202508-014,6,Freight - LTL ground,freight,95.35
+NWP-202508-014,7,Sales tax (10.25%),tax,211.48
+ALT-202508-007,0,"Thermal receipt printer, USB/Ethernet",product,328.00
+ALT-202508-007,1,USB-C cable 2 m (pack of 10),product,31.00
+ALT-202508-007,2,"2D barcode scanner, wired",product,88.00
+ALT-202508-007,3,"Cash drawer 16 in, 5 bill / 8 coin",product,896.00
+ALT-202508-007,4,Import Cost Recovery,tariff_ieepa,268.60
+ALT-202508-007,5,Ground shipping,freight,25.28
+ALT-202508-007,6,Sales tax (10.25%),tax,137.66
+BOS-202508-014,0,"Surface cleaner, 1 gal",product,88.90
+BOS-202508-014,1,"Toner cartridge, black",product,645.68
+BOS-202508-014,2,"Copy paper 20 lb, case of 10 reams",product,425.04
+BOS-202508-014,3,"Gel pens, black (box of 12)",product,19.62
+BOS-202508-014,4,Nitrile gloves M (case of 1000),product,592.60
+BOS-202508-014,5,Fuel surcharge,other_fee,6.50
+BOS-202508-014,6,Sales tax (10.25%),tax,181.61
+NWP-202509-015,0,"Dispenser napkins, 1-ply (case of 6000)",product,264.60
+NWP-202509-015,1,"Corrugated cup sleeve, printed (case of 1000)",product,389.00
+NWP-202509-015,2,Kraft takeout bag #4 (bundle of 500),product,238.00
+NWP-202509-015,3,Paper straws 7.75 in (case of 2400),product,403.20
+NWP-202509-015,4,Tariff Surcharge (12%),tariff_ieepa,155.38
+NWP-202509-015,5,Freight - LTL ground,freight,161.47
+NWP-202509-015,6,Sales tax (10.25%),tax,132.72
+HPC-202509-008,0,Calibrated tamper 58.4 mm (made in USA),product,380.00
+HPC-202509-008,1,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,167.04
+HPC-202509-008,2,"58 mm bottomless portafilter, walnut handle (Italy)",product,329.44
+HPC-202509-008,3,"Precision shower screen, 200 micron (Italy)",product,112.52
+HPC-202509-008,4,Shipping & handling,freight,80.89
+HPC-202509-008,5,Sales tax (10.25%),tax,101.37
+BOS-202509-015,0,Receipt roll 3 1/8 in (case of 50),product,293.72
+BOS-202509-015,1,"Gel pens, black (box of 12)",product,68.74
+BOS-202509-015,2,"Toner cartridge, black",product,485.10
+BOS-202509-015,3,"Surface cleaner, 1 gal",product,89.05
+BOS-202509-015,4,Nitrile gloves M (case of 1000),product,118.72
+BOS-202509-015,5,Fuel surcharge,other_fee,6.50
+BOS-202509-015,6,Sales tax (10.25%),tax,108.17
+KST-202510-006,0,Bar towel 16 x 19 in (dozen),product,388.50
+KST-202510-006,1,"Dad cap, embroidered logo",product,134.40
+KST-202510-006,2,"Staff tee, embroidered logo",product,472.00
+KST-202510-006,3,"Canvas barista apron, charcoal",product,648.00
+KST-202510-006,4,Section 301 adjustment,tariff_other,123.22
+KST-202510-006,5,Freight,freight,52.05
+KST-202510-006,6,Sales tax (10.25%),tax,168.40
+PFF-202510-002,0,"Ocean freight, 20 ft container, Shanghai to Oakland (B/L PFF-SH-91077)",freight,3120.00
+PFF-202510-002,1,"Customs duty paid on entry - Entry No. 231-4518860-1 (IEEPA, China origin), importer of record: Sunbird Cafe Group",customs_duty_paid_by_buyer,6874.15
+PFF-202510-002,2,Customs brokerage fee,other_fee,185.00
+NWP-202510-016,0,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,295.75
+NWP-202510-016,1,"16 oz double-wall hot cup, kraft (case of 500)",product,340.00
+NWP-202510-016,2,Kraft takeout bag #4 (bundle of 500),product,208.25
+NWP-202510-016,3,"Dispenser napkins, 1-ply (case of 6000)",product,485.10
+NWP-202510-016,4,Paper straws 7.75 in (case of 2400),product,369.60
+NWP-202510-016,5,Tariff Surcharge (12%),tariff_ieepa,203.84
+NWP-202510-016,6,Freight - LTL ground,freight,95.97
+NWP-202510-016,7,Sales tax (10.25%),tax,174.12
+ALT-202510-008,0,"Cash drawer 16 in, 5 bill / 8 coin",product,784.00
+ALT-202510-008,1,USB-C cable 2 m (pack of 10),product,217.00
+ALT-202510-008,2,IEEPA Adj.,tariff_ieepa,200.20
+ALT-202510-008,3,Ground shipping,freight,28.60
+ALT-202510-008,4,Sales tax (10.25%),tax,102.60
+BOS-202510-016,0,Receipt roll 3 1/8 in (case of 50),product,252.18
+BOS-202510-016,1,"Surface cleaner, 1 gal",product,17.84
+BOS-202510-016,2,"Gel pens, black (box of 12)",product,39.36
+BOS-202510-016,3,Fuel surcharge,other_fee,6.50
+BOS-202510-016,4,Sales tax (10.25%),tax,31.71
+NWP-202511-017,0,"8 oz holiday hot cup, red snowflake (case of 500)",product,232.00
+NWP-202511-017,1,"12 oz holiday hot cup, red snowflake (case of 500)",product,258.00
+NWP-202511-017,2,"16 oz holiday hot cup, red snowflake (case of 500)",product,355.00
+NWP-202511-017,3,"20 oz holiday hot cup, red snowflake (case of 500)",product,76.25
+NWP-202511-017,4,"Sip lid, white, fits 8 oz (case of 1000)",product,156.00
+NWP-202511-017,5,"Sip lid, white, fits 12/16 oz (case of 1000)",product,253.50
+NWP-202511-017,6,"Sip lid, white, fits 20 oz (case of 1000)",product,223.75
+NWP-202511-017,7,"Holiday cup sleeve, green print (case of 1000)",product,164.00
+NWP-202511-017,8,"12 oz cold cup, clear PET (case of 1000)",product,264.00
+NWP-202511-017,9,"16 oz cold cup, clear PET (case of 1000)",product,193.00
+NWP-202511-017,10,"24 oz cold cup, clear PET (case of 600)",product,474.00
+NWP-202511-017,11,"Flat cold lid, clear (case of 1000)",product,187.50
+NWP-202511-017,12,"Dome cold lid, clear (case of 1000)",product,200.00
+NWP-202511-017,13,Kraft takeout bag #2 (bundle of 500),product,24.50
+NWP-202511-017,14,Kraft takeout bag #4 (bundle of 500),product,148.75
+NWP-202511-017,15,Kraft takeout bag #8 (bundle of 250),product,124.00
+NWP-202511-017,16,"Pastry box 6 x 6 x 3, kraft (case of 200)",product,184.00
+NWP-202511-017,17,"Pastry box 9 x 9 x 4, kraft (case of 100)",product,260.00
+NWP-202511-017,18,Bakery tissue 12 x 12 (case of 10000),product,132.00
+NWP-202511-017,19,"Dispenser napkins, 1-ply (case of 6000)",product,176.40
+NWP-202511-017,20,"Holiday beverage napkins, printed (case of 3000)",product,98.00
+NWP-202511-017,21,Paper straws 7.75 in (case of 2400),product,168.00
+NWP-202511-017,22,Wood stir sticks 7 in (case of 10000),product,135.00
+NWP-202511-017,23,"Corrugated cup sleeve, printed (case of 1000)",product,155.60
+NWP-202511-017,24,"4-cup carrier tray, molded fiber (case of 300)",product,126.00
+NWP-202511-017,25,"Gift card sleeve, foil stamped (case of 1000)",product,122.00
+NWP-202511-017,26,Printed packing tape 2 in (case of 36),product,54.00
+NWP-202511-017,27,Round seal labels 2 in (roll of 1000),product,24.80
+NWP-202511-017,28,Tariff Surcharge (12%),tariff_ieepa,596.41
+NWP-202511-017,29,Freight - LTL ground,freight,133.98
+NWP-202511-017,30,Sales tax (10.25%),tax,509.43
+HPC-202511-009,0,"Steaming pitcher 20 oz, stainless (USA)",product,168.00
+HPC-202511-009,1,"58 mm bottomless portafilter, walnut handle (Italy)",product,988.32
+HPC-202511-009,2,"Precision shower screen, 200 micron (Italy)",product,225.04
+HPC-202511-009,3,Shipping & handling,freight,53.68
+HPC-202511-009,4,Sales tax (10.25%),tax,141.59
+BOS-202511-017,0,Nitrile gloves M (case of 1000),product,297.75
+BOS-202511-017,1,"Copy paper 20 lb, case of 10 reams",product,213.56
+BOS-202511-017,2,"Gel pens, black (box of 12)",product,49.30
+BOS-202511-017,3,Fuel surcharge,other_fee,6.50
+BOS-202511-017,4,Sales tax (10.25%),tax,57.46
+NWP-202512-018,0,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,464.75
+NWP-202512-018,1,Kraft takeout bag #4 (bundle of 500),product,357.00
+NWP-202512-018,2,"12 oz double-wall hot cup, kraft (case of 500)",product,553.50
+NWP-202512-018,3,Tariff Surcharge (12%),tariff_ieepa,165.03
+NWP-202512-018,4,Freight - LTL ground,freight,106.91
+NWP-202512-018,5,Sales tax (10.25%),tax,140.96
+ALT-202512-009,0,"2D barcode scanner, wired",product,352.00
+ALT-202512-009,1,10.1 in POS display tablet,product,1095.00
+ALT-202512-009,2,Replacement 24 V power supply,product,137.50
+ALT-202512-009,3,IEEPA Adj.,tariff_ieepa,316.90
+ALT-202512-009,4,Ground shipping,freight,49.58
+ALT-202512-009,5,Sales tax (10.25%),tax,162.41
+BOS-202512-018,0,"Copy paper 20 lb, case of 10 reams",product,160.44
+BOS-202512-018,1,"Gel pens, black (box of 12)",product,59.22
+BOS-202512-018,2,Nitrile gloves M (case of 1000),product,59.65
+BOS-202512-018,3,Receipt roll 3 1/8 in (case of 50),product,84.32
+BOS-202512-018,4,"Toner cartridge, black",product,324.96
+BOS-202512-018,5,Fuel surcharge,other_fee,6.50
+BOS-202512-018,6,Sales tax (10.25%),tax,70.58
+KST-202601-007,0,Bar towel 16 x 19 in (dozen),product,592.00
+KST-202601-007,1,"Staff tee, embroidered logo",product,531.00
+KST-202601-007,2,"Canvas barista apron, charcoal",product,504.00
+KST-202601-007,3,"Dad cap, embroidered logo",product,246.40
+KST-202601-007,4,Section 301 adjustment,tariff_other,140.51
+KST-202601-007,5,Freight,freight,78.66
+KST-202601-007,6,Sales tax (10.25%),tax,192.02
+NWP-202601-019,0,Paper straws 7.75 in (case of 2400),product,67.20
+NWP-202601-019,1,"16 oz double-wall hot cup, kraft (case of 500)",product,204.00
+NWP-202601-019,2,"Corrugated cup sleeve, printed (case of 1000)",product,233.40
+NWP-202601-019,3,Kraft takeout bag #4 (bundle of 500),product,89.25
+NWP-202601-019,4,"Sip-through lid, black, fits 12/16 oz (case of 1000)",product,211.25
+NWP-202601-019,5,Tariff Surcharge (12%),tariff_ieepa,96.61
+NWP-202601-019,6,Freight - LTL ground,freight,173.89
+NWP-202601-019,7,Sales tax (10.25%),tax,82.52
+HPC-202601-010,0,"64 mm flat burr set, titanium-coated (Italy)",product,876.96
+HPC-202601-010,1,"Steaming pitcher 20 oz, stainless (USA)",product,168.00
+HPC-202601-010,2,"Group head gasket 8.5 mm, pack of 10 (Italy)",product,208.80
+HPC-202601-010,3,Calibrated tamper 58.4 mm (made in USA),product,190.00
+HPC-202601-010,4,Shipping & handling,freight,73.09
+HPC-202601-010,5,Sales tax (10.25%),tax,147.99
+BOS-202601-019,0,Nitrile gloves M (case of 1000),product,179.22
+BOS-202601-019,1,"Copy paper 20 lb, case of 10 reams",product,374.92
+BOS-202601-019,2,"Gel pens, black (box of 12)",product,98.90
+BOS-202601-019,3,Fuel surcharge,other_fee,6.50
+BOS-202601-019,4,Sales tax (10.25%),tax,66.94
+NWP-202602-020,0,"Corrugated cup sleeve, printed (case of 1000)",product,311.20
+NWP-202602-020,1,"Dispenser napkins, 1-ply (case of 6000)",product,264.60
+NWP-202602-020,2,Kraft takeout bag #4 (bundle of 500),product,327.25
+NWP-202602-020,3,Tariff Surcharge (12%),tariff_ieepa,108.37
+NWP-202602-020,4,Freight - LTL ground,freight,89.23
+NWP-202602-020,5,Sales tax (10.25%),tax,92.56
+ALT-202602-010,0,Replacement 24 V power supply,product,110.00
+ALT-202602-010,1,"2D barcode scanner, wired",product,616.00
+ALT-202602-010,2,USB-C cable 2 m (pack of 10),product,186.00
+ALT-202602-010,3,10.1 in POS display tablet,product,1095.00
+ALT-202602-010,4,IEEPA Adj.,tariff_ieepa,401.40
+ALT-202602-010,5,Ground shipping,freight,18.37
+ALT-202602-010,6,Sales tax (10.25%),tax,205.72
+BOS-202602-020,0,"Gel pens, black (box of 12)",product,69.37
+BOS-202602-020,1,Receipt roll 3 1/8 in (case of 50),product,84.60
+BOS-202602-020,2,Nitrile gloves M (case of 1000),product,598.40
+BOS-202602-020,3,"Toner cartridge, black",product,326.04
+BOS-202602-020,4,Fuel surcharge,other_fee,6.50
+BOS-202602-020,5,Sales tax (10.25%),tax,110.54
+NWP-202603-021,0,Kraft takeout bag #4 (bundle of 500),product,119.00
+NWP-202603-021,1,"12 oz double-wall hot cup, kraft (case of 500)",product,492.00
+NWP-202603-021,2,"Dispenser napkins, 1-ply (case of 6000)",product,396.90
+NWP-202603-021,3,"16 oz double-wall hot cup, kraft (case of 500)",product,612.00
+NWP-202603-021,4,Paper straws 7.75 in (case of 2400),product,403.20
+NWP-202603-021,5,Freight - LTL ground,freight,115.61
+NWP-202603-021,6,Sales tax (10.25%),tax,207.37
+HPC-202603-011,0,"Steaming pitcher 20 oz, stainless (USA)",product,28.00
+HPC-202603-011,1,"Precision shower screen, 200 micron (Italy)",product,194.00
+HPC-202603-011,2,"On-site espresso machine service, per hour",product,750.00
+HPC-202603-011,3,"58 mm bottomless portafilter, walnut handle (Italy)",product,142.00
+HPC-202603-011,4,Calibrated tamper 58.4 mm (made in USA),product,190.00
+HPC-202603-011,5,Shipping & handling,freight,37.66
+HPC-202603-011,6,Sales tax (10.25%),tax,133.66
+BOS-202603-021,0,"Toner cartridge, black",product,81.63
+BOS-202603-021,1,"Gel pens, black (box of 12)",product,9.92
+BOS-202603-021,2,Receipt roll 3 1/8 in (case of 50),product,254.22
+BOS-202603-021,3,"Copy paper 20 lb, case of 10 reams",product,537.30
+BOS-202603-021,4,Fuel surcharge,other_fee,6.50
+BOS-202603-021,5,Sales tax (10.25%),tax,90.51
+NWP-CM-202603-001,0,Credit - partial refund of tariff surcharges billed Apr 2025 to Feb 2026,tariff_ieepa,-500.00

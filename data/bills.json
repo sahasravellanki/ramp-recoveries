@@ -1,0 +1,5010 @@
+[
+  {
+    "id": "bill_81ae5e2ad40a50a3",
+    "vendor": {
+      "id": "ven_477720b9f509a868",
+      "name": "Kestrel Textiles"
+    },
+    "invoice_number": "KST-202407-001",
+    "issued_at": "2024-07-05",
+    "due_at": "2024-08-04",
+    "paid_at": "2024-07-30",
+    "amount": 2405.73,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "KST-TEE",
+        "description": "Staff tee, embroidered logo",
+        "quantity": 34.0,
+        "unit_price": 14.75,
+        "amount": 501.5
+      },
+      {
+        "line_index": 1,
+        "sku": "KST-APR",
+        "description": "Canvas barista apron, charcoal",
+        "quantity": 21.0,
+        "unit_price": 24.0,
+        "amount": 504.0
+      },
+      {
+        "line_index": 2,
+        "sku": "KST-TWL",
+        "description": "Bar towel 16 x 19 in (dozen)",
+        "quantity": 34.0,
+        "unit_price": 18.5,
+        "amount": 629.0
+      },
+      {
+        "line_index": 3,
+        "sku": "KST-CAP",
+        "description": "Dad cap, embroidered logo",
+        "quantity": 40.0,
+        "unit_price": 11.2,
+        "amount": 448.0
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Freight",
+        "quantity": 1.0,
+        "unit_price": 109.77,
+        "amount": 109.77
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 213.46,
+        "amount": 213.46
+      }
+    ],
+    "document_url": "data/invoices/KST-202407-001.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_7f17caa623e09003",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202407-001",
+    "issued_at": "2024-07-10",
+    "due_at": "2024-08-09",
+    "paid_at": "2024-08-09",
+    "amount": 1729.81,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-CUP12",
+        "description": "12 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 10.0,
+        "unit_price": 61.5,
+        "amount": 615.0
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 9.0,
+        "unit_price": 29.75,
+        "amount": 267.75
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-LID16",
+        "description": "Sip-through lid, black, fits 12/16 oz (case of 1000)",
+        "quantity": 5.0,
+        "unit_price": 42.25,
+        "amount": 211.25
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-SLV",
+        "description": "Corrugated cup sleeve, printed (case of 1000)",
+        "quantity": 9.0,
+        "unit_price": 38.9,
+        "amount": 350.1
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 137.69,
+        "amount": 137.69
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 148.02,
+        "amount": 148.02
+      }
+    ],
+    "document_url": "data/invoices/NWP-202407-001.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_a0476cde8488d5dd",
+    "vendor": {
+      "id": "ven_8f4488933181a528",
+      "name": "Harbor & Pine Coffee Equipment"
+    },
+    "invoice_number": "HPC-202407-001",
+    "issued_at": "2024-07-15",
+    "due_at": "2024-08-29",
+    "paid_at": "2024-08-28",
+    "amount": 1374.31,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "HP-PITCH",
+        "description": "Steaming pitcher 20 oz, stainless (USA)",
+        "quantity": 3.0,
+        "unit_price": 28.0,
+        "amount": 84.0
+      },
+      {
+        "line_index": 1,
+        "sku": "HP-TAMP",
+        "description": "Calibrated tamper 58.4 mm (made in USA)",
+        "quantity": 2.0,
+        "unit_price": 95.0,
+        "amount": 190.0
+      },
+      {
+        "line_index": 2,
+        "sku": "HP-SHWR",
+        "description": "Precision shower screen, 200 micron (Italy)",
+        "quantity": 4.0,
+        "unit_price": 48.5,
+        "amount": 194.0
+      },
+      {
+        "line_index": 3,
+        "sku": "HP-PF58",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "quantity": 5.0,
+        "unit_price": 142.0,
+        "amount": 710.0
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Shipping & handling",
+        "quantity": 1.0,
+        "unit_price": 75.56,
+        "amount": 75.56
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 120.75,
+        "amount": 120.75
+      }
+    ],
+    "document_url": "data/invoices/HPC-202407-001.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_e9e6a01062fd24b4",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202407-001",
+    "issued_at": "2024-07-20",
+    "due_at": "2024-08-19",
+    "paid_at": "2024-08-19",
+    "amount": 824.78,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 6.0,
+        "unit_price": 9.6,
+        "amount": 57.6
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-PPR",
+        "description": "Copy paper 20 lb, case of 10 reams",
+        "quantity": 6.0,
+        "unit_price": 52.0,
+        "amount": 312.0
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 2.0,
+        "unit_price": 79.0,
+        "amount": 158.0
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 1.0,
+        "unit_price": 58.0,
+        "amount": 58.0
+      },
+      {
+        "line_index": 4,
+        "sku": "BOS-CLN",
+        "description": "Surface cleaner, 1 gal",
+        "quantity": 9.0,
+        "unit_price": 17.4,
+        "amount": 156.6
+      },
+      {
+        "line_index": 5,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 76.08,
+        "amount": 76.08
+      }
+    ],
+    "document_url": "data/invoices/BOS-202407-001.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_c3a4c63622a79e6f",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202408-002",
+    "issued_at": "2024-08-10",
+    "due_at": "2024-09-09",
+    "paid_at": "2024-09-09",
+    "amount": 1377.74,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 3.0,
+        "unit_price": 44.1,
+        "amount": 132.3
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-CUP12",
+        "description": "12 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 4.0,
+        "unit_price": 61.5,
+        "amount": 246.0
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 12.0,
+        "unit_price": 29.75,
+        "amount": 357.0
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-LID16",
+        "description": "Sip-through lid, black, fits 12/16 oz (case of 1000)",
+        "quantity": 9.0,
+        "unit_price": 42.25,
+        "amount": 380.25
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 147.85,
+        "amount": 147.85
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 114.34,
+        "amount": 114.34
+      }
+    ],
+    "document_url": "data/invoices/NWP-202408-002.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_49a8b0c344185262",
+    "vendor": {
+      "id": "ven_cd11abb151796ea3",
+      "name": "Altamesa Electronics Supply"
+    },
+    "invoice_number": "ALT-202408-001",
+    "issued_at": "2024-08-12",
+    "due_at": "2024-09-11",
+    "paid_at": "2024-09-07",
+    "amount": 1485.68,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "ALT-CBL",
+        "description": "USB-C cable 2 m (pack of 10)",
+        "quantity": 5.0,
+        "unit_price": 31.0,
+        "amount": 155.0
+      },
+      {
+        "line_index": 1,
+        "sku": "ALT-PRN",
+        "description": "Thermal receipt printer, USB/Ethernet",
+        "quantity": 7.0,
+        "unit_price": 164.0,
+        "amount": 1148.0
+      },
+      {
+        "line_index": 2,
+        "sku": "SHIP",
+        "description": "Ground shipping",
+        "quantity": 1.0,
+        "unit_price": 49.12,
+        "amount": 49.12
+      },
+      {
+        "line_index": 3,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 133.56,
+        "amount": 133.56
+      }
+    ],
+    "document_url": "data/invoices/ALT-202408-001.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_27193b24e9ce8961",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202408-002",
+    "issued_at": "2024-08-20",
+    "due_at": "2024-09-19",
+    "paid_at": "2024-09-16",
+    "amount": 1812.59,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 6.0,
+        "unit_price": 58.1,
+        "amount": 348.6
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-CLN",
+        "description": "Surface cleaner, 1 gal",
+        "quantity": 10.0,
+        "unit_price": 17.43,
+        "amount": 174.3
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 9.0,
+        "unit_price": 79.13,
+        "amount": 712.17
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 4.0,
+        "unit_price": 9.62,
+        "amount": 38.48
+      },
+      {
+        "line_index": 4,
+        "sku": "BOS-PPR",
+        "description": "Copy paper 20 lb, case of 10 reams",
+        "quantity": 7.0,
+        "unit_price": 52.09,
+        "amount": 364.63
+      },
+      {
+        "line_index": 5,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 167.91,
+        "amount": 167.91
+      }
+    ],
+    "document_url": "data/invoices/BOS-202408-002.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_29558009389382b8",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202409-003",
+    "issued_at": "2024-09-10",
+    "due_at": "2024-10-10",
+    "paid_at": "2024-10-09",
+    "amount": 1344.57,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-LID16",
+        "description": "Sip-through lid, black, fits 12/16 oz (case of 1000)",
+        "quantity": 2.0,
+        "unit_price": 42.25,
+        "amount": 84.5
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 4.0,
+        "unit_price": 44.1,
+        "amount": 176.4
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-CUP16",
+        "description": "16 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 12.0,
+        "unit_price": 68.0,
+        "amount": 816.0
+      },
+      {
+        "line_index": 3,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 157.29,
+        "amount": 157.29
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 110.38,
+        "amount": 110.38
+      }
+    ],
+    "document_url": "data/invoices/NWP-202409-003.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_bba2da3ea50dfd93",
+    "vendor": {
+      "id": "ven_8f4488933181a528",
+      "name": "Harbor & Pine Coffee Equipment"
+    },
+    "invoice_number": "HPC-202409-002",
+    "issued_at": "2024-09-15",
+    "due_at": "2024-10-30",
+    "paid_at": "2024-10-29",
+    "amount": 2084.39,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "HP-TAMP",
+        "description": "Calibrated tamper 58.4 mm (made in USA)",
+        "quantity": 3.0,
+        "unit_price": 95.0,
+        "amount": 285.0
+      },
+      {
+        "line_index": 1,
+        "sku": "HP-PF58",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "quantity": 4.0,
+        "unit_price": 142.0,
+        "amount": 568.0
+      },
+      {
+        "line_index": 2,
+        "sku": "HP-SVC",
+        "description": "On-site espresso machine service, per hour",
+        "quantity": 8.0,
+        "unit_price": 125.0,
+        "amount": 1000.0
+      },
+      {
+        "line_index": 3,
+        "sku": "FREIGHT",
+        "description": "Shipping & handling",
+        "quantity": 1.0,
+        "unit_price": 41.46,
+        "amount": 41.46
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 189.93,
+        "amount": 189.93
+      }
+    ],
+    "document_url": "data/invoices/HPC-202409-002.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_810fe77eb0c8febe",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202409-003",
+    "issued_at": "2024-09-20",
+    "due_at": "2024-10-20",
+    "paid_at": "2024-10-17",
+    "amount": 1027.81,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 6.0,
+        "unit_price": 58.2,
+        "amount": 349.2
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 2.0,
+        "unit_price": 41.14,
+        "amount": 82.28
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 6.0,
+        "unit_price": 79.27,
+        "amount": 475.62
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 2.0,
+        "unit_price": 9.63,
+        "amount": 19.26
+      },
+      {
+        "line_index": 4,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 94.95,
+        "amount": 94.95
+      }
+    ],
+    "document_url": "data/invoices/BOS-202409-003.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_b49ff0f54243f3b3",
+    "vendor": {
+      "id": "ven_477720b9f509a868",
+      "name": "Kestrel Textiles"
+    },
+    "invoice_number": "KST-202410-002",
+    "issued_at": "2024-10-05",
+    "due_at": "2024-11-04",
+    "paid_at": "2024-10-31",
+    "amount": 753.46,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "KST-APR",
+        "description": "Canvas barista apron, charcoal",
+        "quantity": 13.0,
+        "unit_price": 24.0,
+        "amount": 312.0
+      },
+      {
+        "line_index": 1,
+        "sku": "KST-CAP",
+        "description": "Dad cap, embroidered logo",
+        "quantity": 26.0,
+        "unit_price": 11.2,
+        "amount": 291.2
+      },
+      {
+        "line_index": 2,
+        "sku": "FREIGHT",
+        "description": "Freight",
+        "quantity": 1.0,
+        "unit_price": 88.43,
+        "amount": 88.43
+      },
+      {
+        "line_index": 3,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 61.83,
+        "amount": 61.83
+      }
+    ],
+    "document_url": "data/invoices/KST-202410-002.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_2a1972216ed4c028",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202410-004",
+    "issued_at": "2024-10-10",
+    "due_at": "2024-11-09",
+    "paid_at": "2024-11-06",
+    "amount": 1033.48,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-LID16",
+        "description": "Sip-through lid, black, fits 12/16 oz (case of 1000)",
+        "quantity": 3.0,
+        "unit_price": 42.25,
+        "amount": 126.75
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-CUP16",
+        "description": "16 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 9.0,
+        "unit_price": 68.0,
+        "amount": 612.0
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-STRAW",
+        "description": "Paper straws 7.75 in (case of 2400)",
+        "quantity": 2.0,
+        "unit_price": 33.6,
+        "amount": 67.2
+      },
+      {
+        "line_index": 3,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 144.92,
+        "amount": 144.92
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 82.61,
+        "amount": 82.61
+      }
+    ],
+    "document_url": "data/invoices/NWP-202410-004.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_6ac561bdfdd1e792",
+    "vendor": {
+      "id": "ven_cd11abb151796ea3",
+      "name": "Altamesa Electronics Supply"
+    },
+    "invoice_number": "ALT-202410-002",
+    "issued_at": "2024-10-12",
+    "due_at": "2024-11-11",
+    "paid_at": "2024-11-09",
+    "amount": 1703.29,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "ALT-PRN",
+        "description": "Thermal receipt printer, USB/Ethernet",
+        "quantity": 5.0,
+        "unit_price": 164.0,
+        "amount": 820.0
+      },
+      {
+        "line_index": 1,
+        "sku": "ALT-CASH",
+        "description": "Cash drawer 16 in, 5 bill / 8 coin",
+        "quantity": 6.0,
+        "unit_price": 112.0,
+        "amount": 672.0
+      },
+      {
+        "line_index": 2,
+        "sku": "SHIP",
+        "description": "Ground shipping",
+        "quantity": 1.0,
+        "unit_price": 58.36,
+        "amount": 58.36
+      },
+      {
+        "line_index": 3,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 152.93,
+        "amount": 152.93
+      }
+    ],
+    "document_url": "data/invoices/ALT-202410-002.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_6b82e61d196f6a3f",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202410-004",
+    "issued_at": "2024-10-20",
+    "due_at": "2024-11-19",
+    "paid_at": "2024-11-19",
+    "amount": 766.88,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 3.0,
+        "unit_price": 9.65,
+        "amount": 28.95
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-CLN",
+        "description": "Surface cleaner, 1 gal",
+        "quantity": 6.0,
+        "unit_price": 17.49,
+        "amount": 104.94
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 7.0,
+        "unit_price": 79.4,
+        "amount": 555.8
+      },
+      {
+        "line_index": 3,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 70.69,
+        "amount": 70.69
+      }
+    ],
+    "document_url": "data/invoices/BOS-202410-004.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_8d53ef94d88ae1fd",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202411-005",
+    "issued_at": "2024-11-10",
+    "due_at": "2024-12-10",
+    "paid_at": "2024-12-05",
+    "amount": 1276.61,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 2.0,
+        "unit_price": 44.1,
+        "amount": 88.2
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-LID16",
+        "description": "Sip-through lid, black, fits 12/16 oz (case of 1000)",
+        "quantity": 8.0,
+        "unit_price": 42.25,
+        "amount": 338.0
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-CUP16",
+        "description": "16 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 3.0,
+        "unit_price": 68.0,
+        "amount": 204.0
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-CUP12",
+        "description": "12 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 7.0,
+        "unit_price": 61.5,
+        "amount": 430.5
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 107.19,
+        "amount": 107.19
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 108.72,
+        "amount": 108.72
+      }
+    ],
+    "document_url": "data/invoices/NWP-202411-005.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_1c045bb3038a3f8f",
+    "vendor": {
+      "id": "ven_8f4488933181a528",
+      "name": "Harbor & Pine Coffee Equipment"
+    },
+    "invoice_number": "HPC-202411-003",
+    "issued_at": "2024-11-15",
+    "due_at": "2024-12-30",
+    "paid_at": "2024-12-29",
+    "amount": 2276.2,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "HP-PF58",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "quantity": 5.0,
+        "unit_price": 142.0,
+        "amount": 710.0
+      },
+      {
+        "line_index": 1,
+        "sku": "HP-GSK",
+        "description": "Group head gasket 8.5 mm, pack of 10 (Italy)",
+        "quantity": 5.0,
+        "unit_price": 36.0,
+        "amount": 180.0
+      },
+      {
+        "line_index": 2,
+        "sku": "HP-SVC",
+        "description": "On-site espresso machine service, per hour",
+        "quantity": 5.0,
+        "unit_price": 125.0,
+        "amount": 625.0
+      },
+      {
+        "line_index": 3,
+        "sku": "HP-TAMP",
+        "description": "Calibrated tamper 58.4 mm (made in USA)",
+        "quantity": 5.0,
+        "unit_price": 95.0,
+        "amount": 475.0
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Shipping & handling",
+        "quantity": 1.0,
+        "unit_price": 82.22,
+        "amount": 82.22
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 203.98,
+        "amount": 203.98
+      }
+    ],
+    "document_url": "data/invoices/HPC-202411-003.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_e1bc5a2342e0f262",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202411-005",
+    "issued_at": "2024-11-20",
+    "due_at": "2024-12-20",
+    "paid_at": "2024-12-15",
+    "amount": 1117.13,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 4.0,
+        "unit_price": 41.28,
+        "amount": 165.12
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-CLN",
+        "description": "Surface cleaner, 1 gal",
+        "quantity": 9.0,
+        "unit_price": 17.52,
+        "amount": 157.68
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 4.0,
+        "unit_price": 79.53,
+        "amount": 318.12
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-PPR",
+        "description": "Copy paper 20 lb, case of 10 reams",
+        "quantity": 7.0,
+        "unit_price": 52.35,
+        "amount": 366.45
+      },
+      {
+        "line_index": 4,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 103.26,
+        "amount": 103.26
+      }
+    ],
+    "document_url": "data/invoices/BOS-202411-005.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_f5a6d8ac1e9b8ce3",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202412-006",
+    "issued_at": "2024-12-10",
+    "due_at": "2025-01-09",
+    "paid_at": "2025-01-07",
+    "amount": 1858.12,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 5.0,
+        "unit_price": 29.75,
+        "amount": 148.75
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-CUP12",
+        "description": "12 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 9.0,
+        "unit_price": 61.5,
+        "amount": 553.5
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 6.0,
+        "unit_price": 44.1,
+        "amount": 264.6
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-STRAW",
+        "description": "Paper straws 7.75 in (case of 2400)",
+        "quantity": 12.0,
+        "unit_price": 33.6,
+        "amount": 403.2
+      },
+      {
+        "line_index": 4,
+        "sku": "NWP-LID16",
+        "description": "Sip-through lid, black, fits 12/16 oz (case of 1000)",
+        "quantity": 4.0,
+        "unit_price": 42.25,
+        "amount": 169.0
+      },
+      {
+        "line_index": 5,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 161.32,
+        "amount": 161.32
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 157.75,
+        "amount": 157.75
+      }
+    ],
+    "document_url": "data/invoices/NWP-202412-006.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_77495ddcc5e0b0f5",
+    "vendor": {
+      "id": "ven_cd11abb151796ea3",
+      "name": "Altamesa Electronics Supply"
+    },
+    "invoice_number": "ALT-202412-003",
+    "issued_at": "2024-12-12",
+    "due_at": "2025-01-11",
+    "paid_at": "2025-01-08",
+    "amount": 536.35,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "ALT-CBL",
+        "description": "USB-C cable 2 m (pack of 10)",
+        "quantity": 4.0,
+        "unit_price": 31.0,
+        "amount": 124.0
+      },
+      {
+        "line_index": 1,
+        "sku": "ALT-PRN",
+        "description": "Thermal receipt printer, USB/Ethernet",
+        "quantity": 2.0,
+        "unit_price": 164.0,
+        "amount": 328.0
+      },
+      {
+        "line_index": 2,
+        "sku": "SHIP",
+        "description": "Ground shipping",
+        "quantity": 1.0,
+        "unit_price": 38.02,
+        "amount": 38.02
+      },
+      {
+        "line_index": 3,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 46.33,
+        "amount": 46.33
+      }
+    ],
+    "document_url": "data/invoices/ALT-202412-003.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_9f1ac15e72300341",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202412-006",
+    "issued_at": "2024-12-20",
+    "due_at": "2025-01-19",
+    "paid_at": "2025-01-19",
+    "amount": 964.59,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 2.0,
+        "unit_price": 58.49,
+        "amount": 116.98
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-CLN",
+        "description": "Surface cleaner, 1 gal",
+        "quantity": 2.0,
+        "unit_price": 17.55,
+        "amount": 35.1
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 9.0,
+        "unit_price": 79.66,
+        "amount": 716.94
+      },
+      {
+        "line_index": 3,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 89.07,
+        "amount": 89.07
+      }
+    ],
+    "document_url": "data/invoices/BOS-202412-006.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_f191d116f65c2d3a",
+    "vendor": {
+      "id": "ven_477720b9f509a868",
+      "name": "Kestrel Textiles"
+    },
+    "invoice_number": "KST-202501-003",
+    "issued_at": "2025-01-05",
+    "due_at": "2025-02-04",
+    "paid_at": "2025-02-03",
+    "amount": 2424.06,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "KST-TBL",
+        "description": "Linen table runner, natural",
+        "quantity": 14.0,
+        "unit_price": 32.0,
+        "amount": 448.0
+      },
+      {
+        "line_index": 1,
+        "sku": "KST-TEE",
+        "description": "Staff tee, embroidered logo",
+        "quantity": 37.0,
+        "unit_price": 14.75,
+        "amount": 545.75
+      },
+      {
+        "line_index": 2,
+        "sku": "KST-APR",
+        "description": "Canvas barista apron, charcoal",
+        "quantity": 37.0,
+        "unit_price": 24.0,
+        "amount": 888.0
+      },
+      {
+        "line_index": 3,
+        "sku": "KST-CAP",
+        "description": "Dad cap, embroidered logo",
+        "quantity": 22.0,
+        "unit_price": 11.2,
+        "amount": 246.4
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Freight",
+        "quantity": 1.0,
+        "unit_price": 77.77,
+        "amount": 77.77
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 218.14,
+        "amount": 218.14
+      }
+    ],
+    "document_url": "data/invoices/KST-202501-003.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_3808b48445622bb0",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202501-007",
+    "issued_at": "2025-01-10",
+    "due_at": "2025-02-09",
+    "paid_at": "2025-02-08",
+    "amount": 689.56,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-STRAW",
+        "description": "Paper straws 7.75 in (case of 2400)",
+        "quantity": 7.0,
+        "unit_price": 33.6,
+        "amount": 235.2
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 2.0,
+        "unit_price": 44.1,
+        "amount": 88.2
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 7.0,
+        "unit_price": 29.75,
+        "amount": 208.25
+      },
+      {
+        "line_index": 3,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 103.42,
+        "amount": 103.42
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 54.49,
+        "amount": 54.49
+      }
+    ],
+    "document_url": "data/invoices/NWP-202501-007.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_71cae8270e60e79d",
+    "vendor": {
+      "id": "ven_8f4488933181a528",
+      "name": "Harbor & Pine Coffee Equipment"
+    },
+    "invoice_number": "HPC-202501-004",
+    "issued_at": "2025-01-15",
+    "due_at": "2025-03-01",
+    "paid_at": "2025-02-24",
+    "amount": 3730.52,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "HP-BURR64",
+        "description": "64 mm flat burr set, titanium-coated (Italy)",
+        "quantity": 6.0,
+        "unit_price": 189.0,
+        "amount": 1134.0
+      },
+      {
+        "line_index": 1,
+        "sku": "HP-SVC",
+        "description": "On-site espresso machine service, per hour",
+        "quantity": 8.0,
+        "unit_price": 125.0,
+        "amount": 1000.0
+      },
+      {
+        "line_index": 2,
+        "sku": "HP-SHWR",
+        "description": "Precision shower screen, 200 micron (Italy)",
+        "quantity": 3.0,
+        "unit_price": 48.5,
+        "amount": 145.5
+      },
+      {
+        "line_index": 3,
+        "sku": "HP-PF58",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "quantity": 6.0,
+        "unit_price": 142.0,
+        "amount": 852.0
+      },
+      {
+        "line_index": 4,
+        "sku": "HP-GSK",
+        "description": "Group head gasket 8.5 mm, pack of 10 (Italy)",
+        "quantity": 5.0,
+        "unit_price": 36.0,
+        "amount": 180.0
+      },
+      {
+        "line_index": 5,
+        "sku": "FREIGHT",
+        "description": "Shipping & handling",
+        "quantity": 1.0,
+        "unit_price": 79.59,
+        "amount": 79.59
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 339.43,
+        "amount": 339.43
+      }
+    ],
+    "document_url": "data/invoices/HPC-202501-004.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_9812002de6e592e1",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202501-007",
+    "issued_at": "2025-01-20",
+    "due_at": "2025-02-19",
+    "paid_at": "2025-02-16",
+    "amount": 377.09,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 6.0,
+        "unit_price": 41.41,
+        "amount": 248.46
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-PPR",
+        "description": "Copy paper 20 lb, case of 10 reams",
+        "quantity": 1.0,
+        "unit_price": 52.52,
+        "amount": 52.52
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-CLN",
+        "description": "Surface cleaner, 1 gal",
+        "quantity": 2.0,
+        "unit_price": 17.58,
+        "amount": 35.16
+      },
+      {
+        "line_index": 3,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 34.45,
+        "amount": 34.45
+      }
+    ],
+    "document_url": "data/invoices/BOS-202501-007.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_3d66fa490b8f74c5",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202502-008",
+    "issued_at": "2025-02-10",
+    "due_at": "2025-03-12",
+    "paid_at": "2025-03-08",
+    "amount": 2597.55,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-CUP16",
+        "description": "16 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 12.0,
+        "unit_price": 68.0,
+        "amount": 816.0
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-SLV",
+        "description": "Corrugated cup sleeve, printed (case of 1000)",
+        "quantity": 8.0,
+        "unit_price": 38.9,
+        "amount": 311.2
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-STRAW",
+        "description": "Paper straws 7.75 in (case of 2400)",
+        "quantity": 12.0,
+        "unit_price": 33.6,
+        "amount": 403.2
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-LID16",
+        "description": "Sip-through lid, black, fits 12/16 oz (case of 1000)",
+        "quantity": 8.0,
+        "unit_price": 42.25,
+        "amount": 338.0
+      },
+      {
+        "line_index": 4,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 9.0,
+        "unit_price": 44.1,
+        "amount": 396.9
+      },
+      {
+        "line_index": 5,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 100.06,
+        "amount": 100.06
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 232.19,
+        "amount": 232.19
+      }
+    ],
+    "document_url": "data/invoices/NWP-202502-008.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_4b8d8e72fde67589",
+    "vendor": {
+      "id": "ven_cd11abb151796ea3",
+      "name": "Altamesa Electronics Supply"
+    },
+    "invoice_number": "ALT-202502-004",
+    "issued_at": "2025-02-12",
+    "due_at": "2025-03-14",
+    "paid_at": "2025-03-14",
+    "amount": 639.96,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "ALT-PRN",
+        "description": "Thermal receipt printer, USB/Ethernet",
+        "quantity": 2.0,
+        "unit_price": 164.0,
+        "amount": 328.0
+      },
+      {
+        "line_index": 1,
+        "sku": "ALT-PSU",
+        "description": "Replacement 24 V power supply",
+        "quantity": 8.0,
+        "unit_price": 27.5,
+        "amount": 220.0
+      },
+      {
+        "line_index": 2,
+        "sku": "SHIP",
+        "description": "Ground shipping",
+        "quantity": 1.0,
+        "unit_price": 35.79,
+        "amount": 35.79
+      },
+      {
+        "line_index": 3,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 56.17,
+        "amount": 56.17
+      }
+    ],
+    "document_url": "data/invoices/ALT-202502-004.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_ee626d0e95ed3eda",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202502-008",
+    "issued_at": "2025-02-20",
+    "due_at": "2025-03-22",
+    "paid_at": "2025-03-21",
+    "amount": 1367.27,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 8.0,
+        "unit_price": 41.48,
+        "amount": 331.84
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-CLN",
+        "description": "Surface cleaner, 1 gal",
+        "quantity": 10.0,
+        "unit_price": 17.6,
+        "amount": 176.0
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-PPR",
+        "description": "Copy paper 20 lb, case of 10 reams",
+        "quantity": 6.0,
+        "unit_price": 52.61,
+        "amount": 315.66
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 7.0,
+        "unit_price": 58.68,
+        "amount": 410.76
+      },
+      {
+        "line_index": 4,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 126.51,
+        "amount": 126.51
+      }
+    ],
+    "document_url": "data/invoices/BOS-202502-008.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_60f36e282d5c8e1b",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202503-009",
+    "issued_at": "2025-03-10",
+    "due_at": "2025-04-09",
+    "paid_at": "2025-04-05",
+    "amount": 1324.43,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-LID16",
+        "description": "Sip-through lid, black, fits 12/16 oz (case of 1000)",
+        "quantity": 7.0,
+        "unit_price": 42.25,
+        "amount": 295.75
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-SLV",
+        "description": "Corrugated cup sleeve, printed (case of 1000)",
+        "quantity": 11.0,
+        "unit_price": 38.9,
+        "amount": 427.9
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-STRAW",
+        "description": "Paper straws 7.75 in (case of 2400)",
+        "quantity": 4.0,
+        "unit_price": 33.6,
+        "amount": 134.4
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-CUP12",
+        "description": "12 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 3.0,
+        "unit_price": 61.5,
+        "amount": 184.5
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 175.02,
+        "amount": 175.02
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 106.86,
+        "amount": 106.86
+      }
+    ],
+    "document_url": "data/invoices/NWP-202503-009.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_df352858dc7cec2a",
+    "vendor": {
+      "id": "ven_8f4488933181a528",
+      "name": "Harbor & Pine Coffee Equipment"
+    },
+    "invoice_number": "HPC-202503-005",
+    "issued_at": "2025-03-15",
+    "due_at": "2025-04-29",
+    "paid_at": "2025-04-27",
+    "amount": 2537.08,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "HP-GSK",
+        "description": "Group head gasket 8.5 mm, pack of 10 (Italy)",
+        "quantity": 5.0,
+        "unit_price": 41.76,
+        "amount": 208.8
+      },
+      {
+        "line_index": 1,
+        "sku": "HP-SHWR",
+        "description": "Precision shower screen, 200 micron (Italy)",
+        "quantity": 4.0,
+        "unit_price": 56.26,
+        "amount": 225.04
+      },
+      {
+        "line_index": 2,
+        "sku": "HP-SVC",
+        "description": "On-site espresso machine service, per hour",
+        "quantity": 8.0,
+        "unit_price": 125.0,
+        "amount": 1000.0
+      },
+      {
+        "line_index": 3,
+        "sku": "HP-BURR64",
+        "description": "64 mm flat burr set, titanium-coated (Italy)",
+        "quantity": 3.0,
+        "unit_price": 219.24,
+        "amount": 657.72
+      },
+      {
+        "line_index": 4,
+        "sku": "HP-PITCH",
+        "description": "Steaming pitcher 20 oz, stainless (USA)",
+        "quantity": 6.0,
+        "unit_price": 28.0,
+        "amount": 168.0
+      },
+      {
+        "line_index": 5,
+        "sku": "FREIGHT",
+        "description": "Shipping & handling",
+        "quantity": 1.0,
+        "unit_price": 45.92,
+        "amount": 45.92
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 231.6,
+        "amount": 231.6
+      }
+    ],
+    "document_url": "data/invoices/HPC-202503-005.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_36a8aaf221b85528",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202503-009",
+    "issued_at": "2025-03-20",
+    "due_at": "2025-04-19",
+    "paid_at": "2025-04-14",
+    "amount": 1423.75,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 10.0,
+        "unit_price": 80.05,
+        "amount": 800.5
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 2.0,
+        "unit_price": 58.77,
+        "amount": 117.54
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-CLN",
+        "description": "Surface cleaner, 1 gal",
+        "quantity": 7.0,
+        "unit_price": 17.63,
+        "amount": 123.41
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 8.0,
+        "unit_price": 9.73,
+        "amount": 77.84
+      },
+      {
+        "line_index": 4,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 4.0,
+        "unit_price": 41.55,
+        "amount": 166.2
+      },
+      {
+        "line_index": 5,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 131.76,
+        "amount": 131.76
+      }
+    ],
+    "document_url": "data/invoices/BOS-202503-009.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_2378fa74a1174018",
+    "vendor": {
+      "id": "ven_477720b9f509a868",
+      "name": "Kestrel Textiles"
+    },
+    "invoice_number": "KST-202504-004",
+    "issued_at": "2025-04-05",
+    "due_at": "2025-05-05",
+    "paid_at": "2025-05-04",
+    "amount": 636.18,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "KST-TEE",
+        "description": "Staff tee, embroidered logo",
+        "quantity": 25.0,
+        "unit_price": 14.75,
+        "amount": 368.75
+      },
+      {
+        "line_index": 1,
+        "sku": "KST-CAP",
+        "description": "Dad cap, embroidered logo",
+        "quantity": 12.0,
+        "unit_price": 11.2,
+        "amount": 134.4
+      },
+      {
+        "line_index": 2,
+        "sku": "FREIGHT",
+        "description": "Freight",
+        "quantity": 1.0,
+        "unit_price": 81.46,
+        "amount": 81.46
+      },
+      {
+        "line_index": 3,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 51.57,
+        "amount": 51.57
+      }
+    ],
+    "document_url": "data/invoices/KST-202504-004.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_e3d0dc2b6f783f22",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202504-010",
+    "issued_at": "2025-04-10",
+    "due_at": "2025-05-10",
+    "paid_at": "2025-05-06",
+    "amount": 1873.36,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-CUP16",
+        "description": "16 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 6.0,
+        "unit_price": 68.0,
+        "amount": 408.0
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-LID16",
+        "description": "Sip-through lid, black, fits 12/16 oz (case of 1000)",
+        "quantity": 4.0,
+        "unit_price": 42.25,
+        "amount": 169.0
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 10.0,
+        "unit_price": 29.75,
+        "amount": 297.5
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-STRAW",
+        "description": "Paper straws 7.75 in (case of 2400)",
+        "quantity": 11.0,
+        "unit_price": 33.6,
+        "amount": 369.6
+      },
+      {
+        "line_index": 4,
+        "sku": "NWP-SLV",
+        "description": "Corrugated cup sleeve, printed (case of 1000)",
+        "quantity": 5.0,
+        "unit_price": 38.9,
+        "amount": 194.5
+      },
+      {
+        "line_index": 5,
+        "sku": "SURCHG",
+        "description": "Tariff Surcharge (12%)",
+        "quantity": 1.0,
+        "unit_price": 172.63,
+        "amount": 172.63
+      },
+      {
+        "line_index": 6,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 114.67,
+        "amount": 114.67
+      },
+      {
+        "line_index": 7,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 147.46,
+        "amount": 147.46
+      }
+    ],
+    "document_url": "data/invoices/NWP-202504-010.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_0f3398877e834573",
+    "vendor": {
+      "id": "ven_cd11abb151796ea3",
+      "name": "Altamesa Electronics Supply"
+    },
+    "invoice_number": "ALT-202504-005",
+    "issued_at": "2025-04-12",
+    "due_at": "2025-05-12",
+    "paid_at": "2025-05-07",
+    "amount": 1136.5,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "ALT-CASH",
+        "description": "Cash drawer 16 in, 5 bill / 8 coin",
+        "quantity": 5.0,
+        "unit_price": 112.0,
+        "amount": 560.0
+      },
+      {
+        "line_index": 1,
+        "sku": "ALT-PRN",
+        "description": "Thermal receipt printer, USB/Ethernet",
+        "quantity": 1.0,
+        "unit_price": 164.0,
+        "amount": 164.0
+      },
+      {
+        "line_index": 2,
+        "sku": "ALT-CBL",
+        "description": "USB-C cable 2 m (pack of 10)",
+        "quantity": 4.0,
+        "unit_price": 31.0,
+        "amount": 124.0
+      },
+      {
+        "line_index": 3,
+        "sku": "ADJ",
+        "description": "Import Cost Recovery",
+        "quantity": 1.0,
+        "unit_price": 169.6,
+        "amount": 169.6
+      },
+      {
+        "line_index": 4,
+        "sku": "SHIP",
+        "description": "Ground shipping",
+        "quantity": 1.0,
+        "unit_price": 31.98,
+        "amount": 31.98
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 86.92,
+        "amount": 86.92
+      }
+    ],
+    "document_url": "data/invoices/ALT-202504-005.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_8097b3b6d18b8264",
+    "vendor": {
+      "id": "ven_3610a006fa4ff3ac",
+      "name": "Pacific Freight Forwarding"
+    },
+    "invoice_number": "PFF-202504-001",
+    "issued_at": "2025-04-18",
+    "due_at": "2025-05-03",
+    "paid_at": "2025-05-02",
+    "amount": 7347.4,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "OFRT",
+        "description": "Ocean freight, 20 ft container, Shanghai to Oakland (B/L PFF-SH-88213)",
+        "quantity": 1.0,
+        "unit_price": 2850.0,
+        "amount": 2850.0
+      },
+      {
+        "line_index": 1,
+        "sku": "DUTY",
+        "description": "Customs duty paid on entry - Entry No. 231-4471022-5 (IEEPA, China origin), importer of record: Sunbird Cafe Group",
+        "quantity": 1.0,
+        "unit_price": 4312.4,
+        "amount": 4312.4
+      },
+      {
+        "line_index": 2,
+        "sku": "BRKG",
+        "description": "Customs brokerage fee",
+        "quantity": 1.0,
+        "unit_price": 185.0,
+        "amount": 185.0
+      }
+    ],
+    "document_url": "data/invoices/PFF-202504-001.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_a7f5ee2c995d55d1",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202504-010",
+    "issued_at": "2025-04-20",
+    "due_at": "2025-05-20",
+    "paid_at": "2025-05-20",
+    "amount": 683.96,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 9.0,
+        "unit_price": 9.74,
+        "amount": 87.66
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 7.0,
+        "unit_price": 41.62,
+        "amount": 291.34
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 4.0,
+        "unit_price": 58.87,
+        "amount": 235.48
+      },
+      {
+        "line_index": 3,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 62.98,
+        "amount": 62.98
+      }
+    ],
+    "document_url": "data/invoices/BOS-202504-010.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_197468607bcc2e00",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202505-011",
+    "issued_at": "2025-05-10",
+    "due_at": "2025-06-09",
+    "paid_at": "2025-06-07",
+    "amount": 1558.71,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-CUP12",
+        "description": "12 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 6.0,
+        "unit_price": 61.5,
+        "amount": 369.0
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 10.0,
+        "unit_price": 44.1,
+        "amount": 441.0
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 11.0,
+        "unit_price": 29.75,
+        "amount": 327.25
+      },
+      {
+        "line_index": 3,
+        "sku": "SURCHG",
+        "description": "Tariff Surcharge (12%)",
+        "quantity": 1.0,
+        "unit_price": 136.47,
+        "amount": 136.47
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 168.42,
+        "amount": 168.42
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 116.57,
+        "amount": 116.57
+      }
+    ],
+    "document_url": "data/invoices/NWP-202505-011.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_9918b7febe804568",
+    "vendor": {
+      "id": "ven_8f4488933181a528",
+      "name": "Harbor & Pine Coffee Equipment"
+    },
+    "invoice_number": "HPC-202505-006",
+    "issued_at": "2025-05-15",
+    "due_at": "2025-06-29",
+    "paid_at": "2025-06-27",
+    "amount": 1407.82,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "HP-PF58",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "quantity": 3.0,
+        "unit_price": 164.72,
+        "amount": 494.16
+      },
+      {
+        "line_index": 1,
+        "sku": "HP-SVC",
+        "description": "On-site espresso machine service, per hour",
+        "quantity": 2.0,
+        "unit_price": 125.0,
+        "amount": 250.0
+      },
+      {
+        "line_index": 2,
+        "sku": "HP-GSK",
+        "description": "Group head gasket 8.5 mm, pack of 10 (Italy)",
+        "quantity": 1.0,
+        "unit_price": 41.76,
+        "amount": 41.76
+      },
+      {
+        "line_index": 3,
+        "sku": "HP-TAMP",
+        "description": "Calibrated tamper 58.4 mm (made in USA)",
+        "quantity": 3.0,
+        "unit_price": 95.0,
+        "amount": 285.0
+      },
+      {
+        "line_index": 4,
+        "sku": "HP-PITCH",
+        "description": "Steaming pitcher 20 oz, stainless (USA)",
+        "quantity": 6.0,
+        "unit_price": 28.0,
+        "amount": 168.0
+      },
+      {
+        "line_index": 5,
+        "sku": "FREIGHT",
+        "description": "Shipping & handling",
+        "quantity": 1.0,
+        "unit_price": 41.91,
+        "amount": 41.91
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 126.99,
+        "amount": 126.99
+      }
+    ],
+    "document_url": "data/invoices/HPC-202505-006.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_0253c4aa6c87f2d9",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202505-011",
+    "issued_at": "2025-05-20",
+    "due_at": "2025-06-19",
+    "paid_at": "2025-06-18",
+    "amount": 1304.74,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 4.0,
+        "unit_price": 41.68,
+        "amount": 166.72
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-CLN",
+        "description": "Surface cleaner, 1 gal",
+        "quantity": 4.0,
+        "unit_price": 17.69,
+        "amount": 70.76
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-PPR",
+        "description": "Copy paper 20 lb, case of 10 reams",
+        "quantity": 10.0,
+        "unit_price": 52.87,
+        "amount": 528.7
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 1.0,
+        "unit_price": 9.76,
+        "amount": 9.76
+      },
+      {
+        "line_index": 4,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 5.0,
+        "unit_price": 80.32,
+        "amount": 401.6
+      },
+      {
+        "line_index": 5,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 120.7,
+        "amount": 120.7
+      }
+    ],
+    "document_url": "data/invoices/BOS-202505-011.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_5dd550e672943e7a",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202506-012",
+    "issued_at": "2025-06-10",
+    "due_at": "2025-07-10",
+    "paid_at": "2025-07-10",
+    "amount": 1911.22,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 3.0,
+        "unit_price": 44.1,
+        "amount": 132.3
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 12.0,
+        "unit_price": 29.75,
+        "amount": 357.0
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-CUP16",
+        "description": "16 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 2.0,
+        "unit_price": 68.0,
+        "amount": 136.0
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-CUP12",
+        "description": "12 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 7.0,
+        "unit_price": 61.5,
+        "amount": 430.5
+      },
+      {
+        "line_index": 4,
+        "sku": "NWP-STRAW",
+        "description": "Paper straws 7.75 in (case of 2400)",
+        "quantity": 11.0,
+        "unit_price": 33.6,
+        "amount": 369.6
+      },
+      {
+        "line_index": 5,
+        "sku": "SURCHG",
+        "description": "Tariff Surcharge (12%)",
+        "quantity": 1.0,
+        "unit_price": 171.05,
+        "amount": 171.05
+      },
+      {
+        "line_index": 6,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 168.67,
+        "amount": 168.67
+      },
+      {
+        "line_index": 7,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 146.1,
+        "amount": 146.1
+      }
+    ],
+    "document_url": "data/invoices/NWP-202506-012.pdf",
+    "document_is_scanned_image": true,
+    "page_count": 1
+  },
+  {
+    "id": "bill_328f7fb3f022dfb2",
+    "vendor": {
+      "id": "ven_cd11abb151796ea3",
+      "name": "Altamesa Electronics Supply"
+    },
+    "invoice_number": "ALT-202506-006",
+    "issued_at": "2025-06-12",
+    "due_at": "2025-07-12",
+    "paid_at": "2025-07-08",
+    "amount": 374.95,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "ALT-CBL",
+        "description": "USB-C cable 2 m (pack of 10)",
+        "quantity": 5.0,
+        "unit_price": 31.0,
+        "amount": 155.0
+      },
+      {
+        "line_index": 1,
+        "sku": "ALT-SCN",
+        "description": "2D barcode scanner, wired",
+        "quantity": 1.0,
+        "unit_price": 88.0,
+        "amount": 88.0
+      },
+      {
+        "line_index": 2,
+        "sku": "ADJ",
+        "description": "Import Cost Recovery",
+        "quantity": 1.0,
+        "unit_price": 48.6,
+        "amount": 48.6
+      },
+      {
+        "line_index": 3,
+        "sku": "SHIP",
+        "description": "Ground shipping",
+        "quantity": 1.0,
+        "unit_price": 58.44,
+        "amount": 58.44
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 24.91,
+        "amount": 24.91
+      }
+    ],
+    "document_url": "data/invoices/ALT-202506-006.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_2f205205576822cc",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202506-012",
+    "issued_at": "2025-06-20",
+    "due_at": "2025-07-20",
+    "paid_at": "2025-07-19",
+    "amount": 573.23,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 2.0,
+        "unit_price": 41.75,
+        "amount": 83.5
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-PPR",
+        "description": "Copy paper 20 lb, case of 10 reams",
+        "quantity": 2.0,
+        "unit_price": 52.95,
+        "amount": 105.9
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 5.0,
+        "unit_price": 59.06,
+        "amount": 295.3
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 3.0,
+        "unit_price": 9.78,
+        "amount": 29.34
+      },
+      {
+        "line_index": 4,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 52.69,
+        "amount": 52.69
+      }
+    ],
+    "document_url": "data/invoices/BOS-202506-012.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_0d1db1b9b362a343",
+    "vendor": {
+      "id": "ven_477720b9f509a868",
+      "name": "Kestrel Textiles"
+    },
+    "invoice_number": "KST-202507-005",
+    "issued_at": "2025-07-05",
+    "due_at": "2025-08-04",
+    "paid_at": "2025-08-04",
+    "amount": 2037.56,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "KST-TEE",
+        "description": "Staff tee, embroidered logo",
+        "quantity": 6.0,
+        "unit_price": 14.75,
+        "amount": 88.5
+      },
+      {
+        "line_index": 1,
+        "sku": "KST-APR",
+        "description": "Canvas barista apron, charcoal",
+        "quantity": 26.0,
+        "unit_price": 24.0,
+        "amount": 624.0
+      },
+      {
+        "line_index": 2,
+        "sku": "KST-TBL",
+        "description": "Linen table runner, natural",
+        "quantity": 29.0,
+        "unit_price": 32.0,
+        "amount": 928.0
+      },
+      {
+        "line_index": 3,
+        "sku": "S301",
+        "description": "Section 301 adjustment",
+        "quantity": 1.0,
+        "unit_price": 123.04,
+        "amount": 123.04
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Freight",
+        "quantity": 1.0,
+        "unit_price": 105.87,
+        "amount": 105.87
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 168.15,
+        "amount": 168.15
+      }
+    ],
+    "document_url": "data/invoices/KST-202507-005.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_e1f9cd06f1374596",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202507-013",
+    "issued_at": "2025-07-10",
+    "due_at": "2025-08-09",
+    "paid_at": "2025-08-09",
+    "amount": 1321.85,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-CUP12",
+        "description": "12 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 5.0,
+        "unit_price": 61.5,
+        "amount": 307.5
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 5.0,
+        "unit_price": 44.1,
+        "amount": 220.5
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-SLV",
+        "description": "Corrugated cup sleeve, printed (case of 1000)",
+        "quantity": 12.0,
+        "unit_price": 38.9,
+        "amount": 466.8
+      },
+      {
+        "line_index": 3,
+        "sku": "SURCHG",
+        "description": "Tariff Surcharge (12%)",
+        "quantity": 1.0,
+        "unit_price": 119.38,
+        "amount": 119.38
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 105.7,
+        "amount": 105.7
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 101.97,
+        "amount": 101.97
+      }
+    ],
+    "document_url": "data/invoices/NWP-202507-013.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_f6facbdb4f911396",
+    "vendor": {
+      "id": "ven_8f4488933181a528",
+      "name": "Harbor & Pine Coffee Equipment"
+    },
+    "invoice_number": "HPC-202507-007",
+    "issued_at": "2025-07-15",
+    "due_at": "2025-08-29",
+    "paid_at": "2025-08-25",
+    "amount": 958.0,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "HP-BURR64",
+        "description": "64 mm flat burr set, titanium-coated (Italy)",
+        "quantity": 1.0,
+        "unit_price": 219.24,
+        "amount": 219.24
+      },
+      {
+        "line_index": 1,
+        "sku": "HP-PF58",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "quantity": 2.0,
+        "unit_price": 164.72,
+        "amount": 329.44
+      },
+      {
+        "line_index": 2,
+        "sku": "HP-SHWR",
+        "description": "Precision shower screen, 200 micron (Italy)",
+        "quantity": 1.0,
+        "unit_price": 56.26,
+        "amount": 56.26
+      },
+      {
+        "line_index": 3,
+        "sku": "HP-TAMP",
+        "description": "Calibrated tamper 58.4 mm (made in USA)",
+        "quantity": 2.0,
+        "unit_price": 95.0,
+        "amount": 190.0
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Shipping & handling",
+        "quantity": 1.0,
+        "unit_price": 81.58,
+        "amount": 81.58
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 81.48,
+        "amount": 81.48
+      }
+    ],
+    "document_url": "data/invoices/HPC-202507-007.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_e3fd12eef1bd0446",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202507-013",
+    "issued_at": "2025-07-20",
+    "due_at": "2025-08-19",
+    "paid_at": "2025-08-14",
+    "amount": 1203.69,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 4.0,
+        "unit_price": 41.82,
+        "amount": 167.28
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 10.0,
+        "unit_price": 9.79,
+        "amount": 97.9
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 3.0,
+        "unit_price": 59.16,
+        "amount": 177.48
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-CLN",
+        "description": "Surface cleaner, 1 gal",
+        "quantity": 9.0,
+        "unit_price": 17.75,
+        "amount": 159.75
+      },
+      {
+        "line_index": 4,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 6.0,
+        "unit_price": 80.58,
+        "amount": 483.48
+      },
+      {
+        "line_index": 5,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 111.3,
+        "amount": 111.3
+      }
+    ],
+    "document_url": "data/invoices/BOS-202507-013.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_f720b17dfe895155",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202508-014",
+    "issued_at": "2025-08-10",
+    "due_at": "2025-09-09",
+    "paid_at": "2025-09-07",
+    "amount": 2617.67,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-CUP12",
+        "description": "12 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 10.0,
+        "unit_price": 61.5,
+        "amount": 615.0
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-STRAW",
+        "description": "Paper straws 7.75 in (case of 2400)",
+        "quantity": 4.0,
+        "unit_price": 33.6,
+        "amount": 134.4
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 11.0,
+        "unit_price": 44.1,
+        "amount": 485.1
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-CUP16",
+        "description": "16 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 10.0,
+        "unit_price": 68.0,
+        "amount": 680.0
+      },
+      {
+        "line_index": 4,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 5.0,
+        "unit_price": 29.75,
+        "amount": 148.75
+      },
+      {
+        "line_index": 5,
+        "sku": "SURCHG",
+        "description": "Tariff Surcharge (12%)",
+        "quantity": 1.0,
+        "unit_price": 247.59,
+        "amount": 247.59
+      },
+      {
+        "line_index": 6,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 95.35,
+        "amount": 95.35
+      },
+      {
+        "line_index": 7,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 211.48,
+        "amount": 211.48
+      }
+    ],
+    "document_url": "data/invoices/NWP-202508-014.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_4db10b536cf4a674",
+    "vendor": {
+      "id": "ven_cd11abb151796ea3",
+      "name": "Altamesa Electronics Supply"
+    },
+    "invoice_number": "ALT-202508-007",
+    "issued_at": "2025-08-12",
+    "due_at": "2025-09-11",
+    "paid_at": "2025-09-10",
+    "amount": 1774.54,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "ALT-PRN",
+        "description": "Thermal receipt printer, USB/Ethernet",
+        "quantity": 2.0,
+        "unit_price": 164.0,
+        "amount": 328.0
+      },
+      {
+        "line_index": 1,
+        "sku": "ALT-CBL",
+        "description": "USB-C cable 2 m (pack of 10)",
+        "quantity": 1.0,
+        "unit_price": 31.0,
+        "amount": 31.0
+      },
+      {
+        "line_index": 2,
+        "sku": "ALT-SCN",
+        "description": "2D barcode scanner, wired",
+        "quantity": 1.0,
+        "unit_price": 88.0,
+        "amount": 88.0
+      },
+      {
+        "line_index": 3,
+        "sku": "ALT-CASH",
+        "description": "Cash drawer 16 in, 5 bill / 8 coin",
+        "quantity": 8.0,
+        "unit_price": 112.0,
+        "amount": 896.0
+      },
+      {
+        "line_index": 4,
+        "sku": "ADJ",
+        "description": "Import Cost Recovery",
+        "quantity": 1.0,
+        "unit_price": 268.6,
+        "amount": 268.6
+      },
+      {
+        "line_index": 5,
+        "sku": "SHIP",
+        "description": "Ground shipping",
+        "quantity": 1.0,
+        "unit_price": 25.28,
+        "amount": 25.28
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 137.66,
+        "amount": 137.66
+      }
+    ],
+    "document_url": "data/invoices/ALT-202508-007.pdf",
+    "document_is_scanned_image": true,
+    "page_count": 1
+  },
+  {
+    "id": "bill_20f7c07ca66eb2cb",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202508-014",
+    "issued_at": "2025-08-20",
+    "due_at": "2025-09-19",
+    "paid_at": "2025-09-17",
+    "amount": 1959.95,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-CLN",
+        "description": "Surface cleaner, 1 gal",
+        "quantity": 5.0,
+        "unit_price": 17.78,
+        "amount": 88.9
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 8.0,
+        "unit_price": 80.71,
+        "amount": 645.68
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-PPR",
+        "description": "Copy paper 20 lb, case of 10 reams",
+        "quantity": 8.0,
+        "unit_price": 53.13,
+        "amount": 425.04
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 2.0,
+        "unit_price": 9.81,
+        "amount": 19.62
+      },
+      {
+        "line_index": 4,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 10.0,
+        "unit_price": 59.26,
+        "amount": 592.6
+      },
+      {
+        "line_index": 5,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 181.61,
+        "amount": 181.61
+      }
+    ],
+    "document_url": "data/invoices/BOS-202508-014.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_f205038edc220906",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202509-015",
+    "issued_at": "2025-09-10",
+    "due_at": "2025-10-10",
+    "paid_at": "2025-10-07",
+    "amount": 1744.37,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 6.0,
+        "unit_price": 44.1,
+        "amount": 264.6
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-SLV",
+        "description": "Corrugated cup sleeve, printed (case of 1000)",
+        "quantity": 10.0,
+        "unit_price": 38.9,
+        "amount": 389.0
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 8.0,
+        "unit_price": 29.75,
+        "amount": 238.0
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-STRAW",
+        "description": "Paper straws 7.75 in (case of 2400)",
+        "quantity": 12.0,
+        "unit_price": 33.6,
+        "amount": 403.2
+      },
+      {
+        "line_index": 4,
+        "sku": "SURCHG",
+        "description": "Tariff Surcharge (12%)",
+        "quantity": 1.0,
+        "unit_price": 155.38,
+        "amount": 155.38
+      },
+      {
+        "line_index": 5,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 161.47,
+        "amount": 161.47
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 132.72,
+        "amount": 132.72
+      }
+    ],
+    "document_url": "data/invoices/NWP-202509-015.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_01037847352b4ffc",
+    "vendor": {
+      "id": "ven_8f4488933181a528",
+      "name": "Harbor & Pine Coffee Equipment"
+    },
+    "invoice_number": "HPC-202509-008",
+    "issued_at": "2025-09-15",
+    "due_at": "2025-10-30",
+    "paid_at": "2025-10-26",
+    "amount": 1171.26,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "HP-TAMP",
+        "description": "Calibrated tamper 58.4 mm (made in USA)",
+        "quantity": 4.0,
+        "unit_price": 95.0,
+        "amount": 380.0
+      },
+      {
+        "line_index": 1,
+        "sku": "HP-GSK",
+        "description": "Group head gasket 8.5 mm, pack of 10 (Italy)",
+        "quantity": 4.0,
+        "unit_price": 41.76,
+        "amount": 167.04
+      },
+      {
+        "line_index": 2,
+        "sku": "HP-PF58",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "quantity": 2.0,
+        "unit_price": 164.72,
+        "amount": 329.44
+      },
+      {
+        "line_index": 3,
+        "sku": "HP-SHWR",
+        "description": "Precision shower screen, 200 micron (Italy)",
+        "quantity": 2.0,
+        "unit_price": 56.26,
+        "amount": 112.52
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Shipping & handling",
+        "quantity": 1.0,
+        "unit_price": 80.89,
+        "amount": 80.89
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 101.37,
+        "amount": 101.37
+      }
+    ],
+    "document_url": "data/invoices/HPC-202509-008.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_b1fe99e6bc10fdc1",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202509-015",
+    "issued_at": "2025-09-20",
+    "due_at": "2025-10-20",
+    "paid_at": "2025-10-17",
+    "amount": 1170.0,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 7.0,
+        "unit_price": 41.96,
+        "amount": 293.72
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 7.0,
+        "unit_price": 9.82,
+        "amount": 68.74
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 6.0,
+        "unit_price": 80.85,
+        "amount": 485.1
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-CLN",
+        "description": "Surface cleaner, 1 gal",
+        "quantity": 5.0,
+        "unit_price": 17.81,
+        "amount": 89.05
+      },
+      {
+        "line_index": 4,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 2.0,
+        "unit_price": 59.36,
+        "amount": 118.72
+      },
+      {
+        "line_index": 5,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 108.17,
+        "amount": 108.17
+      }
+    ],
+    "document_url": "data/invoices/BOS-202509-015.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_f0cd5f38c7f86f39",
+    "vendor": {
+      "id": "ven_477720b9f509a868",
+      "name": "Kestrel Textiles"
+    },
+    "invoice_number": "KST-202510-006",
+    "issued_at": "2025-10-05",
+    "due_at": "2025-11-04",
+    "paid_at": "2025-11-04",
+    "amount": 1986.57,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "KST-TWL",
+        "description": "Bar towel 16 x 19 in (dozen)",
+        "quantity": 21.0,
+        "unit_price": 18.5,
+        "amount": 388.5
+      },
+      {
+        "line_index": 1,
+        "sku": "KST-CAP",
+        "description": "Dad cap, embroidered logo",
+        "quantity": 12.0,
+        "unit_price": 11.2,
+        "amount": 134.4
+      },
+      {
+        "line_index": 2,
+        "sku": "KST-TEE",
+        "description": "Staff tee, embroidered logo",
+        "quantity": 32.0,
+        "unit_price": 14.75,
+        "amount": 472.0
+      },
+      {
+        "line_index": 3,
+        "sku": "KST-APR",
+        "description": "Canvas barista apron, charcoal",
+        "quantity": 27.0,
+        "unit_price": 24.0,
+        "amount": 648.0
+      },
+      {
+        "line_index": 4,
+        "sku": "S301",
+        "description": "Section 301 adjustment",
+        "quantity": 1.0,
+        "unit_price": 123.22,
+        "amount": 123.22
+      },
+      {
+        "line_index": 5,
+        "sku": "FREIGHT",
+        "description": "Freight",
+        "quantity": 1.0,
+        "unit_price": 52.05,
+        "amount": 52.05
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 168.4,
+        "amount": 168.4
+      }
+    ],
+    "document_url": "data/invoices/KST-202510-006.pdf",
+    "document_is_scanned_image": true,
+    "page_count": 1
+  },
+  {
+    "id": "bill_ce5ab5260358e4d7",
+    "vendor": {
+      "id": "ven_3610a006fa4ff3ac",
+      "name": "Pacific Freight Forwarding"
+    },
+    "invoice_number": "PFF-202510-002",
+    "issued_at": "2025-10-07",
+    "due_at": "2025-10-22",
+    "paid_at": "2025-10-22",
+    "amount": 10179.15,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "OFRT",
+        "description": "Ocean freight, 20 ft container, Shanghai to Oakland (B/L PFF-SH-91077)",
+        "quantity": 1.0,
+        "unit_price": 3120.0,
+        "amount": 3120.0
+      },
+      {
+        "line_index": 1,
+        "sku": "DUTY",
+        "description": "Customs duty paid on entry - Entry No. 231-4518860-1 (IEEPA, China origin), importer of record: Sunbird Cafe Group",
+        "quantity": 1.0,
+        "unit_price": 6874.15,
+        "amount": 6874.15
+      },
+      {
+        "line_index": 2,
+        "sku": "BRKG",
+        "description": "Customs brokerage fee",
+        "quantity": 1.0,
+        "unit_price": 185.0,
+        "amount": 185.0
+      }
+    ],
+    "document_url": "data/invoices/PFF-202510-002.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_46258d829e45c392",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202510-016",
+    "issued_at": "2025-10-10",
+    "due_at": "2025-11-09",
+    "paid_at": "2025-11-05",
+    "amount": 2172.63,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-LID16",
+        "description": "Sip-through lid, black, fits 12/16 oz (case of 1000)",
+        "quantity": 7.0,
+        "unit_price": 42.25,
+        "amount": 295.75
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-CUP16",
+        "description": "16 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 5.0,
+        "unit_price": 68.0,
+        "amount": 340.0
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 7.0,
+        "unit_price": 29.75,
+        "amount": 208.25
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 11.0,
+        "unit_price": 44.1,
+        "amount": 485.1
+      },
+      {
+        "line_index": 4,
+        "sku": "NWP-STRAW",
+        "description": "Paper straws 7.75 in (case of 2400)",
+        "quantity": 11.0,
+        "unit_price": 33.6,
+        "amount": 369.6
+      },
+      {
+        "line_index": 5,
+        "sku": "SURCHG",
+        "description": "Tariff Surcharge (12%)",
+        "quantity": 1.0,
+        "unit_price": 203.84,
+        "amount": 203.84
+      },
+      {
+        "line_index": 6,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 95.97,
+        "amount": 95.97
+      },
+      {
+        "line_index": 7,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 174.12,
+        "amount": 174.12
+      }
+    ],
+    "document_url": "data/invoices/NWP-202510-016.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_e90b3782855dd739",
+    "vendor": {
+      "id": "ven_cd11abb151796ea3",
+      "name": "Altamesa Electronics Supply"
+    },
+    "invoice_number": "ALT-202510-008",
+    "issued_at": "2025-10-12",
+    "due_at": "2025-11-11",
+    "paid_at": "2025-11-09",
+    "amount": 1332.4,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "ALT-CASH",
+        "description": "Cash drawer 16 in, 5 bill / 8 coin",
+        "quantity": 7.0,
+        "unit_price": 112.0,
+        "amount": 784.0
+      },
+      {
+        "line_index": 1,
+        "sku": "ALT-CBL",
+        "description": "USB-C cable 2 m (pack of 10)",
+        "quantity": 7.0,
+        "unit_price": 31.0,
+        "amount": 217.0
+      },
+      {
+        "line_index": 2,
+        "sku": "ADJ",
+        "description": "IEEPA Adj.",
+        "quantity": 1.0,
+        "unit_price": 200.2,
+        "amount": 200.2
+      },
+      {
+        "line_index": 3,
+        "sku": "SHIP",
+        "description": "Ground shipping",
+        "quantity": 1.0,
+        "unit_price": 28.6,
+        "amount": 28.6
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 102.6,
+        "amount": 102.6
+      }
+    ],
+    "document_url": "data/invoices/ALT-202510-008.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_723afad8ec9878bd",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202510-016",
+    "issued_at": "2025-10-20",
+    "due_at": "2025-11-19",
+    "paid_at": "2025-11-15",
+    "amount": 347.59,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 6.0,
+        "unit_price": 42.03,
+        "amount": 252.18
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-CLN",
+        "description": "Surface cleaner, 1 gal",
+        "quantity": 1.0,
+        "unit_price": 17.84,
+        "amount": 17.84
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 4.0,
+        "unit_price": 9.84,
+        "amount": 39.36
+      },
+      {
+        "line_index": 3,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 31.71,
+        "amount": 31.71
+      }
+    ],
+    "document_url": "data/invoices/BOS-202510-016.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_71e503362585c201",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202511-017",
+    "issued_at": "2025-11-10",
+    "due_at": "2025-12-10",
+    "paid_at": "2025-12-09",
+    "amount": 6209.87,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-HCUP08",
+        "description": "8 oz holiday hot cup, red snowflake (case of 500)",
+        "quantity": 4.0,
+        "unit_price": 58.0,
+        "amount": 232.0
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-HCUP12",
+        "description": "12 oz holiday hot cup, red snowflake (case of 500)",
+        "quantity": 4.0,
+        "unit_price": 64.5,
+        "amount": 258.0
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-HCUP16",
+        "description": "16 oz holiday hot cup, red snowflake (case of 500)",
+        "quantity": 5.0,
+        "unit_price": 71.0,
+        "amount": 355.0
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-HCUP20",
+        "description": "20 oz holiday hot cup, red snowflake (case of 500)",
+        "quantity": 1.0,
+        "unit_price": 76.25,
+        "amount": 76.25
+      },
+      {
+        "line_index": 4,
+        "sku": "NWP-HLID08",
+        "description": "Sip lid, white, fits 8 oz (case of 1000)",
+        "quantity": 4.0,
+        "unit_price": 39.0,
+        "amount": 156.0
+      },
+      {
+        "line_index": 5,
+        "sku": "NWP-HLID16",
+        "description": "Sip lid, white, fits 12/16 oz (case of 1000)",
+        "quantity": 6.0,
+        "unit_price": 42.25,
+        "amount": 253.5
+      },
+      {
+        "line_index": 6,
+        "sku": "NWP-HLID20",
+        "description": "Sip lid, white, fits 20 oz (case of 1000)",
+        "quantity": 5.0,
+        "unit_price": 44.75,
+        "amount": 223.75
+      },
+      {
+        "line_index": 7,
+        "sku": "NWP-HSLV",
+        "description": "Holiday cup sleeve, green print (case of 1000)",
+        "quantity": 4.0,
+        "unit_price": 41.0,
+        "amount": 164.0
+      },
+      {
+        "line_index": 8,
+        "sku": "NWP-CCUP12",
+        "description": "12 oz cold cup, clear PET (case of 1000)",
+        "quantity": 3.0,
+        "unit_price": 88.0,
+        "amount": 264.0
+      },
+      {
+        "line_index": 9,
+        "sku": "NWP-CCUP16",
+        "description": "16 oz cold cup, clear PET (case of 1000)",
+        "quantity": 2.0,
+        "unit_price": 96.5,
+        "amount": 193.0
+      },
+      {
+        "line_index": 10,
+        "sku": "NWP-CCUP24",
+        "description": "24 oz cold cup, clear PET (case of 600)",
+        "quantity": 6.0,
+        "unit_price": 79.0,
+        "amount": 474.0
+      },
+      {
+        "line_index": 11,
+        "sku": "NWP-CLIDF",
+        "description": "Flat cold lid, clear (case of 1000)",
+        "quantity": 5.0,
+        "unit_price": 37.5,
+        "amount": 187.5
+      },
+      {
+        "line_index": 12,
+        "sku": "NWP-CLIDD",
+        "description": "Dome cold lid, clear (case of 1000)",
+        "quantity": 5.0,
+        "unit_price": 40.0,
+        "amount": 200.0
+      },
+      {
+        "line_index": 13,
+        "sku": "NWP-BAG2",
+        "description": "Kraft takeout bag #2 (bundle of 500)",
+        "quantity": 1.0,
+        "unit_price": 24.5,
+        "amount": 24.5
+      },
+      {
+        "line_index": 14,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 5.0,
+        "unit_price": 29.75,
+        "amount": 148.75
+      },
+      {
+        "line_index": 15,
+        "sku": "NWP-BAG8",
+        "description": "Kraft takeout bag #8 (bundle of 250)",
+        "quantity": 4.0,
+        "unit_price": 31.0,
+        "amount": 124.0
+      },
+      {
+        "line_index": 16,
+        "sku": "NWP-BOX6",
+        "description": "Pastry box 6 x 6 x 3, kraft (case of 200)",
+        "quantity": 4.0,
+        "unit_price": 46.0,
+        "amount": 184.0
+      },
+      {
+        "line_index": 17,
+        "sku": "NWP-BOX9",
+        "description": "Pastry box 9 x 9 x 4, kraft (case of 100)",
+        "quantity": 5.0,
+        "unit_price": 52.0,
+        "amount": 260.0
+      },
+      {
+        "line_index": 18,
+        "sku": "NWP-TIS",
+        "description": "Bakery tissue 12 x 12 (case of 10000)",
+        "quantity": 4.0,
+        "unit_price": 33.0,
+        "amount": 132.0
+      },
+      {
+        "line_index": 19,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 4.0,
+        "unit_price": 44.1,
+        "amount": 176.4
+      },
+      {
+        "line_index": 20,
+        "sku": "NWP-NAPH",
+        "description": "Holiday beverage napkins, printed (case of 3000)",
+        "quantity": 2.0,
+        "unit_price": 49.0,
+        "amount": 98.0
+      },
+      {
+        "line_index": 21,
+        "sku": "NWP-STRAW",
+        "description": "Paper straws 7.75 in (case of 2400)",
+        "quantity": 5.0,
+        "unit_price": 33.6,
+        "amount": 168.0
+      },
+      {
+        "line_index": 22,
+        "sku": "NWP-STIR",
+        "description": "Wood stir sticks 7 in (case of 10000)",
+        "quantity": 5.0,
+        "unit_price": 27.0,
+        "amount": 135.0
+      },
+      {
+        "line_index": 23,
+        "sku": "NWP-SLV",
+        "description": "Corrugated cup sleeve, printed (case of 1000)",
+        "quantity": 4.0,
+        "unit_price": 38.9,
+        "amount": 155.6
+      },
+      {
+        "line_index": 24,
+        "sku": "NWP-TRAY",
+        "description": "4-cup carrier tray, molded fiber (case of 300)",
+        "quantity": 3.0,
+        "unit_price": 42.0,
+        "amount": 126.0
+      },
+      {
+        "line_index": 25,
+        "sku": "NWP-GIFT",
+        "description": "Gift card sleeve, foil stamped (case of 1000)",
+        "quantity": 2.0,
+        "unit_price": 61.0,
+        "amount": 122.0
+      },
+      {
+        "line_index": 26,
+        "sku": "NWP-TAPE",
+        "description": "Printed packing tape 2 in (case of 36)",
+        "quantity": 1.0,
+        "unit_price": 54.0,
+        "amount": 54.0
+      },
+      {
+        "line_index": 27,
+        "sku": "NWP-LABEL",
+        "description": "Round seal labels 2 in (roll of 1000)",
+        "quantity": 2.0,
+        "unit_price": 12.4,
+        "amount": 24.8
+      },
+      {
+        "line_index": 28,
+        "sku": "SURCHG",
+        "description": "Tariff Surcharge (12%)",
+        "quantity": 1.0,
+        "unit_price": 596.41,
+        "amount": 596.41
+      },
+      {
+        "line_index": 29,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 133.98,
+        "amount": 133.98
+      },
+      {
+        "line_index": 30,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 509.43,
+        "amount": 509.43
+      }
+    ],
+    "document_url": "data/invoices/NWP-202511-017.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 2
+  },
+  {
+    "id": "bill_a8314b5053d5f810",
+    "vendor": {
+      "id": "ven_8f4488933181a528",
+      "name": "Harbor & Pine Coffee Equipment"
+    },
+    "invoice_number": "HPC-202511-009",
+    "issued_at": "2025-11-15",
+    "due_at": "2025-12-30",
+    "paid_at": "2025-12-29",
+    "amount": 1576.63,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "HP-PITCH",
+        "description": "Steaming pitcher 20 oz, stainless (USA)",
+        "quantity": 6.0,
+        "unit_price": 28.0,
+        "amount": 168.0
+      },
+      {
+        "line_index": 1,
+        "sku": "HP-PF58",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "quantity": 6.0,
+        "unit_price": 164.72,
+        "amount": 988.32
+      },
+      {
+        "line_index": 2,
+        "sku": "HP-SHWR",
+        "description": "Precision shower screen, 200 micron (Italy)",
+        "quantity": 4.0,
+        "unit_price": 56.26,
+        "amount": 225.04
+      },
+      {
+        "line_index": 3,
+        "sku": "FREIGHT",
+        "description": "Shipping & handling",
+        "quantity": 1.0,
+        "unit_price": 53.68,
+        "amount": 53.68
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 141.59,
+        "amount": 141.59
+      }
+    ],
+    "document_url": "data/invoices/HPC-202511-009.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_52300440fbbd3206",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202511-017",
+    "issued_at": "2025-11-20",
+    "due_at": "2025-12-20",
+    "paid_at": "2025-12-18",
+    "amount": 624.57,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 5.0,
+        "unit_price": 59.55,
+        "amount": 297.75
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-PPR",
+        "description": "Copy paper 20 lb, case of 10 reams",
+        "quantity": 4.0,
+        "unit_price": 53.39,
+        "amount": 213.56
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 5.0,
+        "unit_price": 9.86,
+        "amount": 49.3
+      },
+      {
+        "line_index": 3,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 57.46,
+        "amount": 57.46
+      }
+    ],
+    "document_url": "data/invoices/BOS-202511-017.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_a2c5e4cbcdf30554",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202512-018",
+    "issued_at": "2025-12-10",
+    "due_at": "2026-01-09",
+    "paid_at": "2026-01-07",
+    "amount": 1788.15,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-LID16",
+        "description": "Sip-through lid, black, fits 12/16 oz (case of 1000)",
+        "quantity": 11.0,
+        "unit_price": 42.25,
+        "amount": 464.75
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 12.0,
+        "unit_price": 29.75,
+        "amount": 357.0
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-CUP12",
+        "description": "12 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 9.0,
+        "unit_price": 61.5,
+        "amount": 553.5
+      },
+      {
+        "line_index": 3,
+        "sku": "SURCHG",
+        "description": "Tariff Surcharge (12%)",
+        "quantity": 1.0,
+        "unit_price": 165.03,
+        "amount": 165.03
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 106.91,
+        "amount": 106.91
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 140.96,
+        "amount": 140.96
+      }
+    ],
+    "document_url": "data/invoices/NWP-202512-018.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_7102ddb5d8acc412",
+    "vendor": {
+      "id": "ven_cd11abb151796ea3",
+      "name": "Altamesa Electronics Supply"
+    },
+    "invoice_number": "ALT-202512-009",
+    "issued_at": "2025-12-12",
+    "due_at": "2026-01-11",
+    "paid_at": "2026-01-09",
+    "amount": 2113.39,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "ALT-SCN",
+        "description": "2D barcode scanner, wired",
+        "quantity": 4.0,
+        "unit_price": 88.0,
+        "amount": 352.0
+      },
+      {
+        "line_index": 1,
+        "sku": "ALT-POS10",
+        "description": "10.1 in POS display tablet",
+        "quantity": 5.0,
+        "unit_price": 219.0,
+        "amount": 1095.0
+      },
+      {
+        "line_index": 2,
+        "sku": "ALT-PSU",
+        "description": "Replacement 24 V power supply",
+        "quantity": 5.0,
+        "unit_price": 27.5,
+        "amount": 137.5
+      },
+      {
+        "line_index": 3,
+        "sku": "ADJ",
+        "description": "IEEPA Adj.",
+        "quantity": 1.0,
+        "unit_price": 316.9,
+        "amount": 316.9
+      },
+      {
+        "line_index": 4,
+        "sku": "SHIP",
+        "description": "Ground shipping",
+        "quantity": 1.0,
+        "unit_price": 49.58,
+        "amount": 49.58
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 162.41,
+        "amount": 162.41
+      }
+    ],
+    "document_url": "data/invoices/ALT-202512-009.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_ad9bfccd735548a5",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202512-018",
+    "issued_at": "2025-12-20",
+    "due_at": "2026-01-19",
+    "paid_at": "2026-01-18",
+    "amount": 765.67,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-PPR",
+        "description": "Copy paper 20 lb, case of 10 reams",
+        "quantity": 3.0,
+        "unit_price": 53.48,
+        "amount": 160.44
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 6.0,
+        "unit_price": 9.87,
+        "amount": 59.22
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 1.0,
+        "unit_price": 59.65,
+        "amount": 59.65
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 2.0,
+        "unit_price": 42.16,
+        "amount": 84.32
+      },
+      {
+        "line_index": 4,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 4.0,
+        "unit_price": 81.24,
+        "amount": 324.96
+      },
+      {
+        "line_index": 5,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 70.58,
+        "amount": 70.58
+      }
+    ],
+    "document_url": "data/invoices/BOS-202512-018.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_d1069a787af3a106",
+    "vendor": {
+      "id": "ven_477720b9f509a868",
+      "name": "Kestrel Textiles"
+    },
+    "invoice_number": "KST-202601-007",
+    "issued_at": "2026-01-05",
+    "due_at": "2026-02-04",
+    "paid_at": "2026-01-31",
+    "amount": 2284.59,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "KST-TWL",
+        "description": "Bar towel 16 x 19 in (dozen)",
+        "quantity": 32.0,
+        "unit_price": 18.5,
+        "amount": 592.0
+      },
+      {
+        "line_index": 1,
+        "sku": "KST-TEE",
+        "description": "Staff tee, embroidered logo",
+        "quantity": 36.0,
+        "unit_price": 14.75,
+        "amount": 531.0
+      },
+      {
+        "line_index": 2,
+        "sku": "KST-APR",
+        "description": "Canvas barista apron, charcoal",
+        "quantity": 21.0,
+        "unit_price": 24.0,
+        "amount": 504.0
+      },
+      {
+        "line_index": 3,
+        "sku": "KST-CAP",
+        "description": "Dad cap, embroidered logo",
+        "quantity": 22.0,
+        "unit_price": 11.2,
+        "amount": 246.4
+      },
+      {
+        "line_index": 4,
+        "sku": "S301",
+        "description": "Section 301 adjustment",
+        "quantity": 1.0,
+        "unit_price": 140.51,
+        "amount": 140.51
+      },
+      {
+        "line_index": 5,
+        "sku": "FREIGHT",
+        "description": "Freight",
+        "quantity": 1.0,
+        "unit_price": 78.66,
+        "amount": 78.66
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 192.02,
+        "amount": 192.02
+      }
+    ],
+    "document_url": "data/invoices/KST-202601-007.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_2c7a2d9b2c69d992",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202601-019",
+    "issued_at": "2026-01-10",
+    "due_at": "2026-02-09",
+    "paid_at": "2026-02-05",
+    "amount": 1158.12,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-STRAW",
+        "description": "Paper straws 7.75 in (case of 2400)",
+        "quantity": 2.0,
+        "unit_price": 33.6,
+        "amount": 67.2
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-CUP16",
+        "description": "16 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 3.0,
+        "unit_price": 68.0,
+        "amount": 204.0
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-SLV",
+        "description": "Corrugated cup sleeve, printed (case of 1000)",
+        "quantity": 6.0,
+        "unit_price": 38.9,
+        "amount": 233.4
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 3.0,
+        "unit_price": 29.75,
+        "amount": 89.25
+      },
+      {
+        "line_index": 4,
+        "sku": "NWP-LID16",
+        "description": "Sip-through lid, black, fits 12/16 oz (case of 1000)",
+        "quantity": 5.0,
+        "unit_price": 42.25,
+        "amount": 211.25
+      },
+      {
+        "line_index": 5,
+        "sku": "SURCHG",
+        "description": "Tariff Surcharge (12%)",
+        "quantity": 1.0,
+        "unit_price": 96.61,
+        "amount": 96.61
+      },
+      {
+        "line_index": 6,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 173.89,
+        "amount": 173.89
+      },
+      {
+        "line_index": 7,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 82.52,
+        "amount": 82.52
+      }
+    ],
+    "document_url": "data/invoices/NWP-202601-019.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_163cd5c418e7d897",
+    "vendor": {
+      "id": "ven_8f4488933181a528",
+      "name": "Harbor & Pine Coffee Equipment"
+    },
+    "invoice_number": "HPC-202601-010",
+    "issued_at": "2026-01-15",
+    "due_at": "2026-03-01",
+    "paid_at": "2026-02-24",
+    "amount": 1664.84,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "HP-BURR64",
+        "description": "64 mm flat burr set, titanium-coated (Italy)",
+        "quantity": 4.0,
+        "unit_price": 219.24,
+        "amount": 876.96
+      },
+      {
+        "line_index": 1,
+        "sku": "HP-PITCH",
+        "description": "Steaming pitcher 20 oz, stainless (USA)",
+        "quantity": 6.0,
+        "unit_price": 28.0,
+        "amount": 168.0
+      },
+      {
+        "line_index": 2,
+        "sku": "HP-GSK",
+        "description": "Group head gasket 8.5 mm, pack of 10 (Italy)",
+        "quantity": 5.0,
+        "unit_price": 41.76,
+        "amount": 208.8
+      },
+      {
+        "line_index": 3,
+        "sku": "HP-TAMP",
+        "description": "Calibrated tamper 58.4 mm (made in USA)",
+        "quantity": 2.0,
+        "unit_price": 95.0,
+        "amount": 190.0
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Shipping & handling",
+        "quantity": 1.0,
+        "unit_price": 73.09,
+        "amount": 73.09
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 147.99,
+        "amount": 147.99
+      }
+    ],
+    "document_url": "data/invoices/HPC-202601-010.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_228499f2a2ce8c59",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202601-019",
+    "issued_at": "2026-01-20",
+    "due_at": "2026-02-19",
+    "paid_at": "2026-02-16",
+    "amount": 726.48,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 3.0,
+        "unit_price": 59.74,
+        "amount": 179.22
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-PPR",
+        "description": "Copy paper 20 lb, case of 10 reams",
+        "quantity": 7.0,
+        "unit_price": 53.56,
+        "amount": 374.92
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 10.0,
+        "unit_price": 9.89,
+        "amount": 98.9
+      },
+      {
+        "line_index": 3,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 4,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 66.94,
+        "amount": 66.94
+      }
+    ],
+    "document_url": "data/invoices/BOS-202601-019.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_a1d6f825b21e0801",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202602-020",
+    "issued_at": "2026-02-10",
+    "due_at": "2026-03-12",
+    "paid_at": "2026-03-12",
+    "amount": 1193.21,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-SLV",
+        "description": "Corrugated cup sleeve, printed (case of 1000)",
+        "quantity": 8.0,
+        "unit_price": 38.9,
+        "amount": 311.2
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 6.0,
+        "unit_price": 44.1,
+        "amount": 264.6
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 11.0,
+        "unit_price": 29.75,
+        "amount": 327.25
+      },
+      {
+        "line_index": 3,
+        "sku": "SURCHG",
+        "description": "Tariff Surcharge (12%)",
+        "quantity": 1.0,
+        "unit_price": 108.37,
+        "amount": 108.37
+      },
+      {
+        "line_index": 4,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 89.23,
+        "amount": 89.23
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 92.56,
+        "amount": 92.56
+      }
+    ],
+    "document_url": "data/invoices/NWP-202602-020.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_6febf8eebdca7689",
+    "vendor": {
+      "id": "ven_cd11abb151796ea3",
+      "name": "Altamesa Electronics Supply"
+    },
+    "invoice_number": "ALT-202602-010",
+    "issued_at": "2026-02-12",
+    "due_at": "2026-03-14",
+    "paid_at": "2026-03-10",
+    "amount": 2632.49,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "ALT-PSU",
+        "description": "Replacement 24 V power supply",
+        "quantity": 4.0,
+        "unit_price": 27.5,
+        "amount": 110.0
+      },
+      {
+        "line_index": 1,
+        "sku": "ALT-SCN",
+        "description": "2D barcode scanner, wired",
+        "quantity": 7.0,
+        "unit_price": 88.0,
+        "amount": 616.0
+      },
+      {
+        "line_index": 2,
+        "sku": "ALT-CBL",
+        "description": "USB-C cable 2 m (pack of 10)",
+        "quantity": 6.0,
+        "unit_price": 31.0,
+        "amount": 186.0
+      },
+      {
+        "line_index": 3,
+        "sku": "ALT-POS10",
+        "description": "10.1 in POS display tablet",
+        "quantity": 5.0,
+        "unit_price": 219.0,
+        "amount": 1095.0
+      },
+      {
+        "line_index": 4,
+        "sku": "ADJ",
+        "description": "IEEPA Adj.",
+        "quantity": 1.0,
+        "unit_price": 401.4,
+        "amount": 401.4
+      },
+      {
+        "line_index": 5,
+        "sku": "SHIP",
+        "description": "Ground shipping",
+        "quantity": 1.0,
+        "unit_price": 18.37,
+        "amount": 18.37
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 205.72,
+        "amount": 205.72
+      }
+    ],
+    "document_url": "data/invoices/ALT-202602-010.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_4a74efe368d32731",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202602-020",
+    "issued_at": "2026-02-20",
+    "due_at": "2026-03-22",
+    "paid_at": "2026-03-21",
+    "amount": 1195.45,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 7.0,
+        "unit_price": 9.91,
+        "amount": 69.37
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 2.0,
+        "unit_price": 42.3,
+        "amount": 84.6
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-GLV",
+        "description": "Nitrile gloves M (case of 1000)",
+        "quantity": 10.0,
+        "unit_price": 59.84,
+        "amount": 598.4
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 4.0,
+        "unit_price": 81.51,
+        "amount": 326.04
+      },
+      {
+        "line_index": 4,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 110.54,
+        "amount": 110.54
+      }
+    ],
+    "document_url": "data/invoices/BOS-202602-020.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_50bef4acb1953150",
+    "vendor": {
+      "id": "ven_2c00c154e5422775",
+      "name": "Northwind Packaging Co."
+    },
+    "invoice_number": "NWP-202603-021",
+    "issued_at": "2026-03-10",
+    "due_at": "2026-04-09",
+    "paid_at": "2026-04-06",
+    "amount": 2346.08,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "NWP-BAG4",
+        "description": "Kraft takeout bag #4 (bundle of 500)",
+        "quantity": 4.0,
+        "unit_price": 29.75,
+        "amount": 119.0
+      },
+      {
+        "line_index": 1,
+        "sku": "NWP-CUP12",
+        "description": "12 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 8.0,
+        "unit_price": 61.5,
+        "amount": 492.0
+      },
+      {
+        "line_index": 2,
+        "sku": "NWP-NAP",
+        "description": "Dispenser napkins, 1-ply (case of 6000)",
+        "quantity": 9.0,
+        "unit_price": 44.1,
+        "amount": 396.9
+      },
+      {
+        "line_index": 3,
+        "sku": "NWP-CUP16",
+        "description": "16 oz double-wall hot cup, kraft (case of 500)",
+        "quantity": 9.0,
+        "unit_price": 68.0,
+        "amount": 612.0
+      },
+      {
+        "line_index": 4,
+        "sku": "NWP-STRAW",
+        "description": "Paper straws 7.75 in (case of 2400)",
+        "quantity": 12.0,
+        "unit_price": 33.6,
+        "amount": 403.2
+      },
+      {
+        "line_index": 5,
+        "sku": "FREIGHT",
+        "description": "Freight - LTL ground",
+        "quantity": 1.0,
+        "unit_price": 115.61,
+        "amount": 115.61
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 207.37,
+        "amount": 207.37
+      }
+    ],
+    "document_url": "data/invoices/NWP-202603-021.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_9e472751f1e542cc",
+    "vendor": {
+      "id": "ven_8f4488933181a528",
+      "name": "Harbor & Pine Coffee Equipment"
+    },
+    "invoice_number": "HPC-202603-011",
+    "issued_at": "2026-03-15",
+    "due_at": "2026-04-29",
+    "paid_at": "2026-04-25",
+    "amount": 1475.32,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "HP-PITCH",
+        "description": "Steaming pitcher 20 oz, stainless (USA)",
+        "quantity": 1.0,
+        "unit_price": 28.0,
+        "amount": 28.0
+      },
+      {
+        "line_index": 1,
+        "sku": "HP-SHWR",
+        "description": "Precision shower screen, 200 micron (Italy)",
+        "quantity": 4.0,
+        "unit_price": 48.5,
+        "amount": 194.0
+      },
+      {
+        "line_index": 2,
+        "sku": "HP-SVC",
+        "description": "On-site espresso machine service, per hour",
+        "quantity": 6.0,
+        "unit_price": 125.0,
+        "amount": 750.0
+      },
+      {
+        "line_index": 3,
+        "sku": "HP-PF58",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "quantity": 1.0,
+        "unit_price": 142.0,
+        "amount": 142.0
+      },
+      {
+        "line_index": 4,
+        "sku": "HP-TAMP",
+        "description": "Calibrated tamper 58.4 mm (made in USA)",
+        "quantity": 2.0,
+        "unit_price": 95.0,
+        "amount": 190.0
+      },
+      {
+        "line_index": 5,
+        "sku": "FREIGHT",
+        "description": "Shipping & handling",
+        "quantity": 1.0,
+        "unit_price": 37.66,
+        "amount": 37.66
+      },
+      {
+        "line_index": 6,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 133.66,
+        "amount": 133.66
+      }
+    ],
+    "document_url": "data/invoices/HPC-202603-011.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  },
+  {
+    "id": "bill_895d1e1c73de03a2",
+    "vendor": {
+      "id": "ven_be599f66c310d1ff",
+      "name": "Brightline Office Supply"
+    },
+    "invoice_number": "BOS-202603-021",
+    "issued_at": "2026-03-20",
+    "due_at": "2026-04-19",
+    "paid_at": "2026-04-18",
+    "amount": 980.08,
+    "currency": "USD",
+    "status": "PAID",
+    "line_items": [
+      {
+        "line_index": 0,
+        "sku": "BOS-TNR",
+        "description": "Toner cartridge, black",
+        "quantity": 1.0,
+        "unit_price": 81.63,
+        "amount": 81.63
+      },
+      {
+        "line_index": 1,
+        "sku": "BOS-PEN",
+        "description": "Gel pens, black (box of 12)",
+        "quantity": 1.0,
+        "unit_price": 9.92,
+        "amount": 9.92
+      },
+      {
+        "line_index": 2,
+        "sku": "BOS-REC",
+        "description": "Receipt roll 3 1/8 in (case of 50)",
+        "quantity": 6.0,
+        "unit_price": 42.37,
+        "amount": 254.22
+      },
+      {
+        "line_index": 3,
+        "sku": "BOS-PPR",
+        "description": "Copy paper 20 lb, case of 10 reams",
+        "quantity": 10.0,
+        "unit_price": 53.73,
+        "amount": 537.3
+      },
+      {
+        "line_index": 4,
+        "sku": "FUEL",
+        "description": "Fuel surcharge",
+        "quantity": 1.0,
+        "unit_price": 6.5,
+        "amount": 6.5
+      },
+      {
+        "line_index": 5,
+        "sku": "TAX",
+        "description": "Sales tax (10.25%)",
+        "quantity": 1.0,
+        "unit_price": 90.51,
+        "amount": 90.51
+      }
+    ],
+    "document_url": "data/invoices/BOS-202603-021.pdf",
+    "document_is_scanned_image": false,
+    "page_count": 1
+  }
+]
