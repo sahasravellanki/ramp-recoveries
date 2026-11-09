@@ -935,22 +935,46 @@ def f2(d: Decimal) -> float:
     return float(money(d))
 
 
+# Same allowance the pipeline applies in prices.py. Keep the two in step.
+# The cap is the espresso-equipment IEEPA rate from pipeline/exposure.py.
+# Only Harbor & Pine has an embedded increase, and every inflated SKU is one of those parts.
+PRICE_GROWTH = Decimal("0.03")
+PRICE_THRESHOLD = Decimal("0.05")
+EMBEDDED_IEEPA_RATE = Decimal("0.20")
+
+
+def conservative_price_claim(line: Line, issued: date) -> Decimal:
+    """Excess over baseline grown at 3%/yr, only past a 5% band, capped at the tariff rate."""
+    if line.baseline_unit_price is None or not (TARIFF_WINDOW_START <= issued <= TARIFF_WINDOW_END):
+        return Decimal("0")
+    years = Decimal((issued - TARIFF_WINDOW_START).days) / Decimal(365)
+    expected = line.baseline_unit_price * (1 + PRICE_GROWTH) ** years
+    if line.unit_price <= expected * (1 + PRICE_THRESHOLD):
+        return Decimal("0")
+    excess = line.unit_price - expected
+    capped = min(excess, line.baseline_unit_price * EMBEDDED_IEEPA_RATE)
+    return money(capped * line.qty)
+
+
 def build_ground_truth(gen: Generator, contracts_meta: dict[str, dict]) -> dict:
     suppliers: dict[str, dict] = {}
     for s in SUPPLIERS.values():
         invs = [i for i in gen.invoices if i.supplier is s]
         explicit_ieepa = Decimal("0")
         embedded = Decimal("0")
+        conservative = Decimal("0")
         non_refundable = Decimal("0")
         decoy_fees = Decimal("0")
         affected: list[dict] = []
         for inv in invs:
             inv_ieepa = sum((l.amount for l in inv.lines if l.category == TARIFF_IEEPA), Decimal("0"))
             inv_embedded = sum((l.embedded_tariff for l in inv.lines), Decimal("0"))
+            inv_conservative = sum((conservative_price_claim(l, inv.issued) for l in inv.lines), Decimal("0"))
             inv_other = sum((l.amount for l in inv.lines if l.category == TARIFF_OTHER), Decimal("0"))
             inv_fees = sum((l.amount for l in inv.lines if l.category == OTHER_FEE), Decimal("0"))
             explicit_ieepa += inv_ieepa
             embedded += inv_embedded
+            conservative += inv_conservative
             non_refundable += inv_other
             decoy_fees += inv_fees
             if inv_ieepa or inv_embedded or inv_other:
@@ -958,13 +982,16 @@ def build_ground_truth(gen: Generator, contracts_meta: dict[str, dict]) -> dict:
                     {
                         "invoice_number": inv.number,
                         "issued_at": inv.issued.isoformat(),
-                        "refundable_amount": f2(inv_ieepa + inv_embedded),
+                        "refundable_amount": f2(inv_ieepa + inv_conservative),
+                        "raw_price_increase": f2(inv_embedded),
+                        "conservative_claim": f2(inv_conservative),
                         "non_refundable_amount": f2(inv_other),
                         "basis": "explicit_surcharge" if inv_ieepa else ("embedded_price_increase" if inv_embedded else "non_ieepa_tariff"),
                     }
                 )
         credits = sum((-m.total for m in gen.credit_memos if m.supplier is s), Decimal("0"))
-        refundable = explicit_ieepa + embedded
+        # The expected claim uses the conservative price number. Raw is context only.
+        refundable = explicit_ieepa + conservative
         basis = "explicit_surcharge" if explicit_ieepa else ("embedded_price_increase" if embedded else "none")
         contract = contracts_meta.get(s.key)
         suppliers[s.name] = {
@@ -975,6 +1002,8 @@ def build_ground_truth(gen: Generator, contracts_meta: dict[str, dict]) -> dict:
             "non_refundable_total": f2(non_refundable),
             "basis": basis,
             "explicit_surcharge_total": f2(explicit_ieepa),
+            "raw_price_increase": f2(embedded),
+            "conservative_claim": f2(conservative),
             "embedded_price_increase_total": f2(embedded),
             "decoy_fee_total": f2(decoy_fees),
             "invoice_count": len(invs),
@@ -1001,14 +1030,22 @@ def build_ground_truth(gen: Generator, contracts_meta: dict[str, dict]) -> dict:
 
     totals = {
         "refundable_claim_total": f2(sum(Decimal(str(v["refundable_claim_total"])) for v in suppliers.values())),
+        "raw_price_increase": f2(sum(Decimal(str(v["raw_price_increase"])) for v in suppliers.values())),
+        "conservative_claim": f2(sum(Decimal(str(v["conservative_claim"])) for v in suppliers.values())),
         "net_claim_total_after_credits": f2(sum(Decimal(str(v["net_claim_total"])) for v in suppliers.values())),
         "non_refundable_total": f2(sum(Decimal(str(v["non_refundable_total"])) for v in suppliers.values())),
         "importer_of_record_duty_total": f2(sum(Decimal(str(c["customs_duty_paid"])) for c in ior_cases)),
+        "price_claim_method": {
+            "expected_claim": "explicit IEEPA surcharges plus conservative_claim",
+            "raw_price_increase": "full unit-price jump over the pre-window price",
+            "conservative_claim": "excess over baseline grown 3%/yr, flagged only above 5%, capped at the 20% espresso-equipment IEEPA rate",
+        },
     }
     return {
         "buyer": BUYER,
         "tariff_window": {"start": TARIFF_WINDOW_START.isoformat(), "end": TARIFF_WINDOW_END.isoformat()},
         "amounts_are_pre_sales_tax": True,
+        "price_claim_note": "refundable_claim_total uses conservative_claim for embedded price increases. raw_price_increase is the uncapped jump, reported for context.",
         "suppliers": suppliers,
         "importer_of_record_cases": ior_cases,
         "totals": totals,
@@ -1017,7 +1054,7 @@ def build_ground_truth(gen: Generator, contracts_meta: dict[str, dict]) -> dict:
 
 SUPPLIER_NOTES = {
     "northwind": "Explicit 'Tariff Surcharge (12%)' line Apr 2025 to Feb 2026. Refundable IEEPA. Contract section 7 requires credit if duties are refunded. $500 credit memo already issued Mar 2026.",
-    "harborpine": "No surcharge line. Imported SKUs priced +16% Mar 2025 to Feb 2026, back to baseline Mar 2026. Claim equals the embedded increase. Contract section 6 is a pro rata pass-through clause.",
+    "harborpine": "No surcharge line. Imported SKUs priced +16% Mar 2025 to Feb 2026, back to baseline Mar 2026. raw_price_increase is the full 16% jump. The expected claim is conservative_claim: excess over a 3%/yr allowance, flagged only above 5%, capped at 20%. Contract section 6 is a pro rata pass-through clause.",
     "altamesa": "20% surcharge on products labeled 'Import Cost Recovery' (Mar to Aug 2025) then 'IEEPA Adj.' (Sep 2025 on). Refundable IEEPA. No contract on file.",
     "kestrel": "'Section 301 adjustment' from May 2025. Section 301 tariffs were not struck down; not refundable. Contract has no tariff language.",
     "brightline": "Domestic control. Prices drift ~2%/yr. 'Fuel surcharge' is a decoy, not a tariff. Expected claim: $0.",
@@ -1153,16 +1190,18 @@ def main():
     print(f"  scanned (image-only) PDFs: {scanned_count}  multi-page: {', '.join(multi_page) or 'none'}")
     print(f"  tariff window: {gt['tariff_window']['start']} to {gt['tariff_window']['end']}")
     print()
-    print(f"  {'Supplier':34} {'Bills':>5} {'Refundable':>12} {'Credits':>9} {'Net claim':>12} {'Non-refund.':>12}  Basis")
+    print(f"  {'Supplier':34} {'Bills':>5} {'Expected':>12} {'Raw price':>12} {'Conserv.':>12} {'Credits':>9} {'Net claim':>12}  Basis")
     for name, v in gt["suppliers"].items():
         print(
-            f"  {name:34} {v['invoice_count']:>5} {v['refundable_claim_total']:>12,.2f} {v['credits_already_received']:>9,.2f} "
-            f"{v['net_claim_total']:>12,.2f} {v['non_refundable_total']:>12,.2f}  {v['basis']}"
+            f"  {name:34} {v['invoice_count']:>5} {v['refundable_claim_total']:>12,.2f} {v['raw_price_increase']:>12,.2f} "
+            f"{v['conservative_claim']:>12,.2f} {v['credits_already_received']:>9,.2f} {v['net_claim_total']:>12,.2f}  {v['basis']}"
         )
     print()
     t = gt["totals"]
-    print(f"  refundable from suppliers: ${t['refundable_claim_total']:,.2f}")
-    print(f"  net after credits:         ${t['net_claim_total_after_credits']:,.2f}")
+    print(f"  expected claim (conservative): ${t['refundable_claim_total']:,.2f}")
+    print(f"  raw price increase:            ${t['raw_price_increase']:,.2f}")
+    print(f"  conservative price claim:      ${t['conservative_claim']:,.2f}")
+    print(f"  net after credits:             ${t['net_claim_total_after_credits']:,.2f}")
     print(f"  non-refundable (Sec. 301): ${t['non_refundable_total']:,.2f}")
     print(f"  importer-of-record duty:   ${t['importer_of_record_duty_total']:,.2f} across {len(gt['importer_of_record_cases'])} entries (CBP, not supplier)")
     print()

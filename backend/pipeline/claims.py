@@ -5,21 +5,21 @@ inside the window, plus capped price excess, minus vendor credits already on
 the account. Section 301 and other non-IEEPA tariffs are tracked, not claimed.
 Importer-of-record duty is excluded; it belongs to CBP.
 
-Strength:
-- High: an explicit IEEPA surcharge and a contract clause that pays it back.
-- Medium: an explicit surcharge with no clause, or a price jump that reverted
-  and a clause that passes the refund through.
-- Low: a price jump with nothing else behind it.
-- Tracked: non-refundable tariff lines only. Nothing to bill the supplier for.
+Strength, applied in order:
+- High: a refund or pass-through clause, plus either an explicit IEEPA surcharge
+  or a price increase that reverted after the tariff window.
+- Medium: an explicit IEEPA surcharge, or a reverted price increase, with no clause.
+- Low: the only evidence is a price increase that did not revert, or that could
+  not be checked against a later invoice.
+- Tracked: nothing refundable, but non-refundable tariff lines worth watching.
 """
 
 from __future__ import annotations
 
 from decimal import Decimal
-
-from .config import WINDOW_END, WINDOW_START
 from typing import Literal
 
+from .config import WINDOW_END, WINDOW_START
 from .models import (
     Bill,
     ClaimStrength,
@@ -148,9 +148,10 @@ def _claim(name, vendor, items, prices, contract) -> VendorClaim:
 def _strength(gross, non_refundable, explicit, reverted, clause) -> ClaimStrength | None:
     if gross <= 0:
         return ClaimStrength.tracked if non_refundable > 0 else None
-    if explicit and clause:
+    # A clause plus either kind of corroborated pass-through is the strong case.
+    if clause and (explicit or reverted):
         return ClaimStrength.high
-    if explicit or (reverted and clause):
+    if explicit or reverted:
         return ClaimStrength.medium
     return ClaimStrength.low
 

@@ -324,8 +324,19 @@ class Usage(BaseModel):
     calls: dict[str, int] = Field(default_factory=dict)
     input_tokens: dict[str, int] = Field(default_factory=dict)
     output_tokens: dict[str, int] = Field(default_factory=dict)
+    cache_read_tokens: dict[str, int] = Field(default_factory=dict)
+    cache_write_tokens: dict[str, int] = Field(default_factory=dict)
 
-    def add(self, model: str, input_tokens: int = 0, output_tokens: int = 0) -> None:
+    def add(
+        self,
+        model: str,
+        input_tokens: int = 0,
+        output_tokens: int = 0,
+        cache_read_tokens: int = 0,
+        cache_write_tokens: int = 0,
+    ) -> None:
         self.calls[model] = self.calls.get(model, 0) + 1
         self.input_tokens[model] = self.input_tokens.get(model, 0) + input_tokens
         self.output_tokens[model] = self.output_tokens.get(model, 0) + output_tokens
+        self.cache_read_tokens[model] = self.cache_read_tokens.get(model, 0) + cache_read_tokens
+        self.cache_write_tokens[model] = self.cache_write_tokens.get(model, 0) + cache_write_tokens

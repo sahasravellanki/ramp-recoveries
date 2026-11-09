@@ -47,10 +47,13 @@ def call_tool(
             tool_choice={"type": "tool", "name": tool_name},
             messages=messages,
         )
+        spent = response.usage
         usage.add(
             model,
-            input_tokens=response.usage.input_tokens,
-            output_tokens=response.usage.output_tokens,
+            input_tokens=spent.input_tokens or 0,
+            output_tokens=spent.output_tokens or 0,
+            cache_read_tokens=getattr(spent, "cache_read_input_tokens", 0) or 0,
+            cache_write_tokens=getattr(spent, "cache_creation_input_tokens", 0) or 0,
         )
         payload = _tool_input(response, tool_name)
         try:

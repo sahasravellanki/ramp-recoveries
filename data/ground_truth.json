@@ -10,6 +10,7 @@
     "end": "2026-02-20"
   },
   "amounts_are_pre_sales_tax": true,
+  "price_claim_note": "refundable_claim_total uses conservative_claim for embedded price increases. raw_price_increase is the uncapped jump, reported for context.",
   "suppliers": {
     "Northwind Packaging Co.": {
       "vendor_id": "ven_2c00c154e5422775",
@@ -19,6 +20,8 @@
       "non_refundable_total": 0.0,
       "basis": "explicit_surcharge",
       "explicit_surcharge_total": 4606.4,
+      "raw_price_increase": 0.0,
+      "conservative_claim": 0.0,
       "embedded_price_increase_total": 0.0,
       "decoy_fee_total": 0.0,
       "invoice_count": 21,
@@ -27,6 +30,8 @@
           "invoice_number": "NWP-202504-010",
           "issued_at": "2025-04-10",
           "refundable_amount": 475.06,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -34,6 +39,8 @@
           "invoice_number": "NWP-202505-011",
           "issued_at": "2025-05-10",
           "refundable_amount": 372.0,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -41,6 +48,8 @@
           "invoice_number": "NWP-202506-012",
           "issued_at": "2025-06-10",
           "refundable_amount": 376.35,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -48,6 +57,8 @@
           "invoice_number": "NWP-202507-013",
           "issued_at": "2025-07-10",
           "refundable_amount": 256.64,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -55,6 +66,8 @@
           "invoice_number": "NWP-202508-014",
           "issued_at": "2025-08-10",
           "refundable_amount": 334.11,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -62,6 +75,8 @@
           "invoice_number": "NWP-202509-015",
           "issued_at": "2025-09-10",
           "refundable_amount": 293.05,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -69,6 +84,8 @@
           "invoice_number": "NWP-202510-016",
           "issued_at": "2025-10-10",
           "refundable_amount": 413.02,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -76,6 +93,8 @@
           "invoice_number": "NWP-202511-017",
           "issued_at": "2025-11-10",
           "refundable_amount": 963.49,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -83,6 +102,8 @@
           "invoice_number": "NWP-202512-018",
           "issued_at": "2025-12-10",
           "refundable_amount": 297.6,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -90,6 +111,8 @@
           "invoice_number": "NWP-202601-019",
           "issued_at": "2026-01-10",
           "refundable_amount": 249.79,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -97,6 +120,8 @@
           "invoice_number": "NWP-202602-020",
           "issued_at": "2026-02-10",
           "refundable_amount": 575.29,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         }
@@ -112,12 +137,14 @@
     },
     "Harbor & Pine Coffee Equipment": {
       "vendor_id": "ven_8f4488933181a528",
-      "refundable_claim_total": 7804.64,
+      "refundable_claim_total": 6957.56,
       "credits_already_received": 0.0,
-      "net_claim_total": 7804.64,
+      "net_claim_total": 6957.56,
       "non_refundable_total": 0.0,
       "basis": "embedded_price_increase",
       "explicit_surcharge_total": 0.0,
+      "raw_price_increase": 7804.64,
+      "conservative_claim": 6957.56,
       "embedded_price_increase_total": 7804.64,
       "decoy_fee_total": 0.0,
       "invoice_count": 11,
@@ -125,42 +152,54 @@
         {
           "invoice_number": "HPC-202503-005",
           "issued_at": "2025-03-15",
-          "refundable_amount": 666.24,
+          "refundable_amount": 653.07,
+          "raw_price_increase": 666.24,
+          "conservative_claim": 653.07,
           "non_refundable_amount": 0.0,
           "basis": "embedded_price_increase"
         },
         {
           "invoice_number": "HPC-202505-006",
           "issued_at": "2025-05-15",
-          "refundable_amount": 1751.04,
+          "refundable_amount": 1662.05,
+          "raw_price_increase": 1751.04,
+          "conservative_claim": 1662.05,
           "non_refundable_amount": 0.0,
           "basis": "embedded_price_increase"
         },
         {
           "invoice_number": "HPC-202507-007",
           "issued_at": "2025-07-15",
-          "refundable_amount": 1034.4,
+          "refundable_amount": 949.55,
+          "raw_price_increase": 1034.4,
+          "conservative_claim": 949.55,
           "non_refundable_amount": 0.0,
           "basis": "embedded_price_increase"
         },
         {
           "invoice_number": "HPC-202509-008",
           "issued_at": "2025-09-15",
-          "refundable_amount": 885.92,
+          "refundable_amount": 785.01,
+          "raw_price_increase": 885.92,
+          "conservative_claim": 785.01,
           "non_refundable_amount": 0.0,
           "basis": "embedded_price_increase"
         },
         {
           "invoice_number": "HPC-202511-009",
           "issued_at": "2025-11-15",
-          "refundable_amount": 1730.4,
+          "refundable_amount": 1478.78,
+          "raw_price_increase": 1730.4,
+          "conservative_claim": 1478.78,
           "non_refundable_amount": 0.0,
           "basis": "embedded_price_increase"
         },
         {
           "invoice_number": "HPC-202601-010",
           "issued_at": "2026-01-15",
-          "refundable_amount": 1736.64,
+          "refundable_amount": 1429.1,
+          "raw_price_increase": 1736.64,
+          "conservative_claim": 1429.1,
           "non_refundable_amount": 0.0,
           "basis": "embedded_price_increase"
         }
@@ -172,7 +211,7 @@
         "tariff_clause_section": "6. Pricing; Import Duties",
         "document_url": "data/contracts/harbor-and-pine-equipment-and-service-agreement.pdf"
       },
-      "notes": "No surcharge line. Imported SKUs priced +16% Mar 2025 to Feb 2026, back to baseline Mar 2026. Claim equals the embedded increase. Contract section 6 is a pro rata pass-through clause."
+      "notes": "No surcharge line. Imported SKUs priced +16% Mar 2025 to Feb 2026, back to baseline Mar 2026. raw_price_increase is the full 16% jump. The expected claim is conservative_claim: excess over a 3%/yr allowance, flagged only above 5%, capped at 20%. Contract section 6 is a pro rata pass-through clause."
     },
     "Altamesa Electronics Supply": {
       "vendor_id": "ven_cd11abb151796ea3",
@@ -182,6 +221,8 @@
       "non_refundable_total": 0.0,
       "basis": "explicit_surcharge",
       "explicit_surcharge_total": 3841.3,
+      "raw_price_increase": 0.0,
+      "conservative_claim": 0.0,
       "embedded_price_increase_total": 0.0,
       "decoy_fee_total": 0.0,
       "invoice_count": 10,
@@ -190,6 +231,8 @@
           "invoice_number": "ALT-202504-005",
           "issued_at": "2025-04-12",
           "refundable_amount": 472.6,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -197,6 +240,8 @@
           "invoice_number": "ALT-202506-006",
           "issued_at": "2025-06-12",
           "refundable_amount": 792.3,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -204,6 +249,8 @@
           "invoice_number": "ALT-202508-007",
           "issued_at": "2025-08-12",
           "refundable_amount": 625.5,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -211,6 +258,8 @@
           "invoice_number": "ALT-202510-008",
           "issued_at": "2025-10-12",
           "refundable_amount": 1039.4,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -218,6 +267,8 @@
           "invoice_number": "ALT-202512-009",
           "issued_at": "2025-12-12",
           "refundable_amount": 354.5,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         },
@@ -225,6 +276,8 @@
           "invoice_number": "ALT-202602-010",
           "issued_at": "2026-02-12",
           "refundable_amount": 557.0,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 0.0,
           "basis": "explicit_surcharge"
         }
@@ -240,6 +293,8 @@
       "non_refundable_total": 248.41,
       "basis": "none",
       "explicit_surcharge_total": 0.0,
+      "raw_price_increase": 0.0,
+      "conservative_claim": 0.0,
       "embedded_price_increase_total": 0.0,
       "decoy_fee_total": 0.0,
       "invoice_count": 7,
@@ -248,6 +303,8 @@
           "invoice_number": "KST-202507-005",
           "issued_at": "2025-07-05",
           "refundable_amount": 0.0,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 100.56,
           "basis": "non_ieepa_tariff"
         },
@@ -255,6 +312,8 @@
           "invoice_number": "KST-202510-006",
           "issued_at": "2025-10-05",
           "refundable_amount": 0.0,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 62.12,
           "basis": "non_ieepa_tariff"
         },
@@ -262,6 +321,8 @@
           "invoice_number": "KST-202601-007",
           "issued_at": "2026-01-05",
           "refundable_amount": 0.0,
+          "raw_price_increase": 0.0,
+          "conservative_claim": 0.0,
           "non_refundable_amount": 85.73,
           "basis": "non_ieepa_tariff"
         }
@@ -283,6 +344,8 @@
       "non_refundable_total": 0.0,
       "basis": "none",
       "explicit_surcharge_total": 0.0,
+      "raw_price_increase": 0.0,
+      "conservative_claim": 0.0,
       "embedded_price_increase_total": 0.0,
       "decoy_fee_total": 136.5,
       "invoice_count": 21,
@@ -304,6 +367,8 @@
       "non_refundable_total": 0.0,
       "basis": "none",
       "explicit_surcharge_total": 0.0,
+      "raw_price_increase": 0.0,
+      "conservative_claim": 0.0,
       "embedded_price_increase_total": 0.0,
       "decoy_fee_total": 370.0,
       "invoice_count": 2,
@@ -331,9 +396,16 @@
     }
   ],
   "totals": {
-    "refundable_claim_total": 16252.34,
-    "net_claim_total_after_credits": 15752.34,
+    "refundable_claim_total": 15405.26,
+    "raw_price_increase": 7804.64,
+    "conservative_claim": 6957.56,
+    "net_claim_total_after_credits": 14905.26,
     "non_refundable_total": 248.41,
-    "importer_of_record_duty_total": 2597.55
+    "importer_of_record_duty_total": 2597.55,
+    "price_claim_method": {
+      "expected_claim": "explicit IEEPA surcharges plus conservative_claim",
+      "raw_price_increase": "full unit-price jump over the pre-window price",
+      "conservative_claim": "excess over baseline grown 3%/yr, flagged only above 5%, capped at the 20% espresso-equipment IEEPA rate"
+    }
   }
 }
