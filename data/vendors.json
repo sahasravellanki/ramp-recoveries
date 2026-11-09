@@ -12,7 +12,7 @@
     "payment_terms": "NET_30",
     "primary_country_of_origin": "CN",
     "bill_count": 21,
-    "total_paid": 39127.11,
+    "total_paid": 79173.63,
     "first_bill_at": "2024-07-10",
     "last_bill_at": "2026-03-10",
     "contract": {
@@ -36,7 +36,7 @@
     "payment_terms": "NET_45",
     "primary_country_of_origin": "IT",
     "bill_count": 11,
-    "total_paid": 20256.37,
+    "total_paid": 134905.92,
     "first_bill_at": "2024-07-15",
     "last_bill_at": "2026-03-15",
     "contract": {
@@ -60,7 +60,7 @@
     "payment_terms": "NET_30",
     "primary_country_of_origin": "CN",
     "bill_count": 10,
-    "total_paid": 13729.55,
+    "total_paid": 41659.09,
     "first_bill_at": "2024-08-12",
     "last_bill_at": "2026-02-12",
     "contract": null
@@ -78,7 +78,7 @@
     "payment_terms": "NET_30",
     "primary_country_of_origin": "CN",
     "bill_count": 7,
-    "total_paid": 12528.15,
+    "total_paid": 10922.51,
     "first_bill_at": "2024-07-05",
     "last_bill_at": "2026-01-05",
     "contract": {
@@ -102,7 +102,7 @@
     "payment_terms": "NET_30",
     "primary_country_of_origin": "US",
     "bill_count": 21,
-    "total_paid": 21217.3,
+    "total_paid": 25124.78,
     "first_bill_at": "2024-07-20",
     "last_bill_at": "2026-03-20",
     "contract": {
@@ -126,7 +126,7 @@
     "payment_terms": "NET_15",
     "primary_country_of_origin": "US",
     "bill_count": 2,
-    "total_paid": 17526.55,
+    "total_paid": 8937.55,
     "first_bill_at": "2025-04-18",
     "last_bill_at": "2025-10-07",
     "contract": null
