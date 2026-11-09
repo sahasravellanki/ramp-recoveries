@@ -64,6 +64,17 @@ npm run dev
 
 The frontend runs on http://localhost:4817 and expects the backend on http://127.0.0.1:8471.
 
+## Pipeline
+
+The tariff pass-through pipeline lives in `backend/pipeline`. With `DEMO_MODE=1` (the default when no API key is set) it labels lines with keyword rules and drafts letters from a template, so it runs with no network access.
+
+```bash
+cd backend
+python -m pipeline.run
+```
+
+It reads `data/bills.json`, prints a claim per vendor, drafts the letters (nothing is sent), and compares the totals to `data/ground_truth.json`.
+
 ## Status
 
-Scaffold only. Pipeline, API, data generator, and UI are not yet implemented.
+Sample data and the pipeline are in place. The API and the UI are not built yet.
