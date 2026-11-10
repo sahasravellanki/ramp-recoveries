@@ -28,8 +28,7 @@ _SYSTEM = f"""Write a short business letter from the facts JSON and nothing else
 Rules:
 - Use only numbers, dates, invoice numbers, and clause text that appear in the JSON. Do not invent any.
 - Put the vendor address and the date at the top. Put the request at the end.
-- Ask whether the supplier was the importer of record.
-- Cite the invoice numbers.
+- Cite the invoice numbers. Do not ask whether the supplier was the importer of record.
 - Quote contract_clause_text only when it is present, and quote it exactly.
 - Mention credits_already_received when it is above zero, including the memo numbers.
 - The request is soft, in this spirit: "If you've received a refund for these duties, we'd appreciate a credit for our share." Ask for a vendor credit of exactly refundable_total. No legal threats, no demands, no mention of lawyers or liability.
@@ -113,8 +112,6 @@ def _template(facts: LetterFacts, today: date) -> str:
             f"Between {facts.window_start:%B %-d, %Y} and {facts.window_end:%B %-d, %Y}, some of those costs "
             f"showed up on your invoices to us."
         ),
-        "",
-        "Were you the importer of record on these shipments?",
         "",
         f"The invoices are {invoices}.",
     ]

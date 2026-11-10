@@ -1,4 +1,4 @@
-import type { SkuHistory } from "@/lib/recoveries";
+import { formatDate, type SkuHistory } from "@/lib/recoveries";
 
 const PERIOD = {
   before: "#8a8680",
@@ -8,11 +8,7 @@ const PERIOD = {
 
 export function PriceChart({ sku }: { sku: SkuHistory }) {
   if (sku.points.length === 0) return null;
-  const values = [
-    ...sku.points.map((point) => point.unit_price),
-    sku.expected_price,
-    sku.benchmark_price ?? sku.expected_price,
-  ];
+  const values = [...sku.points.map((point) => point.unit_price), sku.expected_price];
   const min = Math.min(...values);
   const max = Math.max(...values);
   const span = max - min || 1;
@@ -33,7 +29,6 @@ export function PriceChart({ sku }: { sku: SkuHistory }) {
     .map((point, index) => `${index === 0 ? "M" : "L"} ${xOf(index).toFixed(1)} ${yOf(point.unit_price).toFixed(1)}`)
     .join(" ");
   const expectedY = yOf(sku.expected_price);
-  const benchmarkY = sku.benchmark_price == null ? null : yOf(sku.benchmark_price);
   const ticks = [min, max];
 
   return (
@@ -63,19 +58,11 @@ export function PriceChart({ sku }: { sku: SkuHistory }) {
         {sku.points.map((point, index) => (
           <circle key={`${point.invoice_number}-${index}`} cx={xOf(index)} cy={yOf(point.unit_price)} r="3.5" fill={PERIOD[point.period]} />
         ))}
-        {benchmarkY != null ? (
-          <g>
-            <text x={width - right} y={14} textAnchor="end" fontSize="11" fill="#3b6fd8">
-              Benchmark (mock)
-            </text>
-            <path d={`M ${width - right - 5} ${benchmarkY} l 5 -4 l 5 4 l -5 4 z`} fill="#3b6fd8" />
-          </g>
-        ) : null}
         <text x={xOf(0)} y={height - 6} fontSize="10" className="fill-[#8a8680]">
-          {sku.points[0]?.date.slice(0, 7)}
+          {formatDate(sku.points[0]?.date)}
         </text>
         <text x={xOf(sku.points.length - 1)} y={height - 6} textAnchor="end" fontSize="10" className="fill-[#8a8680]">
-          {sku.points[sku.points.length - 1]?.date.slice(0, 7)}
+          {formatDate(sku.points[sku.points.length - 1]?.date)}
         </text>
       </svg>
       <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-[#6f6c66]">
@@ -85,10 +72,6 @@ export function PriceChart({ sku }: { sku: SkuHistory }) {
         <span className="inline-flex items-center gap-1.5">
           <span className="inline-block w-4 border-t border-dashed border-[#8a8680]" />
           After the control group
-        </span>
-        <span className="inline-flex items-center gap-1.5">
-          <span className="inline-block size-2 rotate-45 bg-[#3b6fd8]" />
-          Benchmark (mock)
         </span>
       </div>
     </figure>

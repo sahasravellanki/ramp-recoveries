@@ -8,7 +8,7 @@ import { DataTable, Money, StatusChip, VendorCell, type Column } from "@/compone
 import { EmptyState } from "@/components/ramp/empty-state";
 import { PageHeader } from "@/components/ramp/page-header";
 import { SearchToolbar } from "@/components/ramp/search-toolbar";
-import { getBills, initials, usd, type BillSummary } from "@/lib/recoveries";
+import { formatDate, getBills, initials, usd, type BillSummary } from "@/lib/recoveries";
 
 export default function BillsPage() {
   const [bills, setBills] = useState<BillSummary[] | null>(null);
@@ -55,7 +55,7 @@ export default function BillsPage() {
     {
       key: "due",
       header: "Due",
-      render: (bill) => <span className="text-[14px] text-[#1c1c1c]">{bill.due_at ?? "—"}</span>,
+      render: (bill) => <span className="text-[14px] text-[#1c1c1c]">{bill.due_at ? formatDate(bill.due_at) : "—"}</span>,
     },
     {
       key: "status",

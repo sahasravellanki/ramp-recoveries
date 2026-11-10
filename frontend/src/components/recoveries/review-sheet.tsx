@@ -15,6 +15,7 @@ import {
   getClaim,
   saveLetter,
   simulateAgree,
+  formatDate,
   updateImportShare,
   usd,
   type ClaimDetail,
@@ -49,14 +50,12 @@ export function ReviewSheet({
   const [saved, setSaved] = useState("");
   const [saving, setSaving] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [showAllCharts, setShowAllCharts] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     if (!open || !vendorId) return;
     let cancelled = false;
     setDetail(null);
-    setShowAllCharts(false);
     getClaim(vendorId)
       .then((next) => {
         if (cancelled) return;
@@ -153,8 +152,8 @@ export function ReviewSheet({
     [detail, onRefundable],
   );
 
-  const tier1 = detail?.evidence.filter((item) => tierOf(item.labeled_by) === 1).length ?? 0;
-  const tier2 = detail?.evidence.filter((item) => tierOf(item.labeled_by) === 2).length ?? 0;
+  const readCount =
+    detail?.evidence.filter((item) => item.type !== "vendor_credit" && tierOf(item.labeled_by) != null).length ?? 0;
   const drafted = detail?.status === "Drafted";
 
   return (
@@ -214,8 +213,6 @@ export function ReviewSheet({
                       low={detail.claim_low}
                       expected={detail.claim_expected}
                       high={detail.claim_high}
-                      showAll={showAllCharts}
-                      onShowAll={() => setShowAllCharts(true)}
                     />
                   </>
                 ) : null}
@@ -250,9 +247,9 @@ export function ReviewSheet({
                 </section>
               ) : null}
 
-              <p className="text-[12px] text-[#8a8680]">
-                {tier1} lines labeled by tier 1 · {tier2} lines labeled by tier 2
-              </p>
+              {readCount > 0 ? (
+                <p className="text-[12px] text-[#8a8680]">Read {readCount} invoice lines</p>
+              ) : null}
 
               {detail.letter ? (
                 <section>
@@ -294,6 +291,10 @@ export function ReviewSheet({
   );
 }
 
+function passedChecks(sku: SkuHistory) {
+  return (sku.tests ?? []).filter((test) => testStatus(test) === "pass").length;
+}
+
 function PriceCharts({
   skus,
   raw,
@@ -301,8 +302,6 @@ function PriceCharts({
   low,
   expected,
   high,
-  showAll,
-  onShowAll,
 }: {
   skus: SkuHistory[];
   raw: number;
@@ -310,37 +309,66 @@ function PriceCharts({
   low?: number | null;
   expected?: number | null;
   high?: number | null;
-  showAll: boolean;
-  onShowAll: () => void;
 }) {
-  const ranked = [...skus].sort((a, b) => b.conservative_increase - a.conservative_increase);
-  const visible = showAll ? ranked : ranked.slice(0, 3);
+  const ranked = useMemo(
+    () => [...skus].sort((a, b) => b.conservative_increase - a.conservative_increase || a.sku.localeCompare(b.sku)),
+    [skus],
+  );
+  const first = ranked[0]?.sku ?? null;
+  const [open, setOpen] = useState<Set<string>>(() => new Set(first ? [first] : []));
+  useEffect(() => {
+    setOpen(new Set(first ? [first] : []));
+  }, [first, skus]);
   const ranged = low != null && expected != null && high != null && (expected ?? 0) > 0;
   const needsReview = skus.some((sku) => sku.tests?.some((test) => test.id === "control" && testStatus(test) === "needs_review"));
   return (
-    <div className="mt-3 space-y-3">
-      <p className="text-[13px] text-[#3f3f3f]">
+    <div className="mt-3 space-y-1">
+      <p className="mb-2 text-[13px] text-[#3f3f3f]">
         {needsReview && !ranged
           ? "Not claimed. There is no control group, so this price increase needs review."
           : ranged
             ? `Low ${usd(low ?? 0)} (half the pass-through) · Expected ${usd(expected ?? 0)} · High ${usd(high ?? 0)} (raw increase). We claim the expected amount.`
             : `Raw increase ${usd(raw)} · We claim ${usd(claimed)}`}
       </p>
-      {visible.map((sku) => (
-        <div key={sku.sku}>
-          <PriceChart sku={sku} />
-          <PriceChecklist sku={sku} />
-        </div>
-      ))}
-      {!showAll && ranked.length > 3 ? (
-        <button
-          type="button"
-          onClick={onShowAll}
-          className="text-[13px] text-[#1c1c1c] underline decoration-[#d5d1c8] underline-offset-2"
-        >
-          Show all {ranked.length}
-        </button>
-      ) : null}
+      {ranked.map((sku) => {
+        const expanded = open.has(sku.sku);
+        const passed = passedChecks(sku);
+        return (
+          <div key={sku.sku} className="border-t border-[#f1efe9]">
+            <button
+              type="button"
+              onClick={() =>
+                setOpen((current) => {
+                  const next = new Set(current);
+                  if (next.has(sku.sku)) next.delete(sku.sku);
+                  else next.add(sku.sku);
+                  return next;
+                })
+              }
+              className="flex w-full items-center gap-2 py-2.5 text-left"
+              aria-expanded={expanded}
+            >
+              {expanded ? (
+                <ChevronDown className="size-4 shrink-0 text-[#8a8680]" />
+              ) : (
+                <ChevronRight className="size-4 shrink-0 text-[#8a8680]" />
+              )}
+              <span className="min-w-0 flex-1 truncate text-[13px] text-[#1c1c1c]">
+                {sku.description}
+                {" · "}
+                passed {passed} {passed === 1 ? "check" : "checks"}
+              </span>
+              <span className="shrink-0 text-[13px] tabular-nums text-[#1c1c1c]">· {usd(sku.conservative_increase)}</span>
+            </button>
+            {expanded ? (
+              <div className="pb-3 pl-6">
+                <PriceChart sku={sku} />
+                <PriceChecklist sku={sku} />
+              </div>
+            ) : null}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -381,7 +409,7 @@ function EvidenceGroups({ items }: { items: EvidenceItem[] }) {
                     className="flex items-baseline justify-between gap-3 text-[12px]"
                   >
                     <span className="min-w-0 text-[#6f6c66]">
-                      {line.date}
+                      {formatDate(line.date)}
                       {" · "}
                       {line.bill_id ? (
                         <a
@@ -496,16 +524,24 @@ function testStatus(test: PriceTest) {
   return test.status ?? (test.passed ? "pass" : "fail");
 }
 
+const ORIGIN: Record<string, string> = {
+  IT: "Imported from Italy",
+  CN: "Imported from China",
+  VN: "Imported from Vietnam",
+  US: "Made in the United States",
+};
+
+function originLine(sku: SkuHistory) {
+  if (sku.origin_inferred) return "Origin inferred";
+  if (!sku.country) return "Origin not stated";
+  return ORIGIN[sku.country] ?? sku.country;
+}
+
 function PriceChecklist({ sku }: { sku: SkuHistory }) {
   if (!sku.tests?.length) return null;
-  const origin = sku.origin_inferred ? "Origin inferred" : sku.country || "Origin not stated";
-  const hts = sku.hts_chapter ? `HTS ch. ${sku.hts_chapter}` : null;
   return (
     <div className="mt-2 mb-1">
-      <p className="text-[12px] text-[#6f6c66]">
-        {origin}
-        {hts ? ` · ${hts}` : ""}
-      </p>
+      <p className="text-[12px] text-[#6f6c66]">{originLine(sku)}</p>
       <ul className="mt-1 space-y-1">
         {sku.tests.map((test) => {
           const status = testStatus(test);

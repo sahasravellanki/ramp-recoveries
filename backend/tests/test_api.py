@@ -109,7 +109,7 @@ def test_scan_totals_match_ground_truth(client: TestClient):
         assert absent not in by_name
     letter = harbor["letter"]["body"]
     assert letter.startswith("Harbor & Pine Coffee Equipment")
-    assert "Were you the importer of record on these shipments?" in letter
+    assert "importer of record" not in letter.lower()
     assert "If you've received a refund for these duties, we'd appreciate a credit for our share" in letter
     assert letter.rstrip().endswith("Accounts Payable, Sunbird Cafe Group")
     assert "belongs with us" not in letter

@@ -57,7 +57,7 @@ _UPCOMING = [
         "bill_upcoming_northwind",
         "NWP-202604-022",
         date(2026, 4, 10),
-        date(2026, 5, 10),
+        date(2026, 12, 10),
         [
             ("NWP-CUP16", "16oz compostable cold cup", Decimal("40"), Decimal("68.00")),
             ("NWP-LID16", "Flat lid for 16oz cup", Decimal("24"), Decimal("42.50")),
@@ -69,7 +69,7 @@ _UPCOMING = [
         "bill_upcoming_harbor",
         "HPC-202605-012",
         date(2026, 5, 15),
-        date(2026, 6, 29),
+        date(2026, 12, 29),
         [
             ("HP-TAMP", "Espresso tamper, 58mm", Decimal("8"), Decimal("220.00")),
             ("HP-PITCH", "Milk pitcher, 20oz", Decimal("10"), Decimal("145.00")),
@@ -81,7 +81,7 @@ _UPCOMING = [
         "bill_upcoming_altamesa",
         "ALT-202604-011",
         date(2026, 4, 12),
-        date(2026, 5, 12),
+        date(2026, 12, 12),
         [
             ("ALT-HUB", "USB-C hub", Decimal("10"), Decimal("86.00")),
             ("ALT-CBL", "Display cable, 2m", Decimal("20"), Decimal("24.00")),
@@ -92,7 +92,7 @@ _UPCOMING = [
         "bill_upcoming_kestrel",
         "KST-202604-008",
         date(2026, 4, 20),
-        date(2026, 5, 20),
+        date(2026, 12, 20),
         [
             ("KST-NAP", "Cocktail napkin, kraft", Decimal("12"), Decimal("18.00")),
         ],
@@ -370,6 +370,16 @@ def seed_database(session: Session, data_dir: Path) -> None:
             session.add(_line(bill_id, line))
 
 
+def _align_upcoming_due(session: Session) -> None:
+    """Upcoming bills are due in December 2026. Keeps an already-seeded database in step."""
+    for bill in session.exec(select(Bill).where(Bill.status == "UNPAID")).all():
+        day = bill.due_at.day if bill.due_at else 15
+        due = date(2026, 12, min(day, 31))
+        if bill.due_at != due:
+            bill.due_at = due
+            session.add(bill)
+
+
 def _line(bill_id: str, line: dict) -> BillLine:
     return BillLine(
         bill_id=bill_id,
@@ -400,6 +410,8 @@ def create_app(database_url: str | None = None) -> FastAPI:
             if session.exec(select(Vendor)).first() is None:
                 seed_database(session, settings.resolved_data_dir())
                 session.commit()
+            _align_upcoming_due(session)
+            session.commit()
         _seed_saved_scan(engine)
         yield
 

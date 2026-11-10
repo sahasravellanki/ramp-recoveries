@@ -6,7 +6,7 @@ import { SecondaryButton } from "@/components/ramp/buttons";
 import { DataTable, StatusChip, VendorCell, type Column } from "@/components/ramp/data-table";
 import { EmptyState } from "@/components/ramp/empty-state";
 import { PageHeader } from "@/components/ramp/page-header";
-import { contractDocumentUrl, getContracts, initials, type ContractRow } from "@/lib/recoveries";
+import { contractDocumentUrl, formatDate, getContracts, initials, type ContractRow } from "@/lib/recoveries";
 
 export default function ContractsPage() {
   const [rows, setRows] = useState<ContractRow[] | null>(null);
@@ -36,7 +36,9 @@ export default function ContractsPage() {
     {
       key: "date",
       header: "Effective",
-      render: (row) => <span className="text-[14px] text-[#1c1c1c]">{row.effective_date ?? "—"}</span>,
+      render: (row) => (
+        <span className="text-[14px] text-[#1c1c1c]">{row.effective_date ? formatDate(row.effective_date) : "—"}</span>
+      ),
     },
     {
       key: "clause",

@@ -270,6 +270,30 @@ export function getBill(billId: string) {
   return read<BillDetail>(`/api/bills/${billId}`);
 }
 
+const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+export function formatDate(value: string | null | undefined): string {
+  if (!value) return "";
+  const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(value);
+  if (!match) return value;
+  const month = MONTHS[Number(match[2]) - 1];
+  if (!month) return value;
+  return `${month} ${Number(match[3])}, ${match[1]}`;
+}
+
 export function usd(value: number) {
   return value.toLocaleString("en-US", { style: "currency", currency: "USD" });
 }

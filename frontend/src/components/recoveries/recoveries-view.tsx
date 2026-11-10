@@ -22,6 +22,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import {
+  formatDate,
   getRecoveries,
   getScan,
   initials,
@@ -316,7 +317,7 @@ export function RecoveriesView() {
               <li key={item.invoice_number} className="border-b border-[#f1efe9] pb-3">
                 <p className="text-[14px] font-medium text-[#1c1c1c]">{item.vendor}</p>
                 <p className="mt-0.5 text-[13px] text-[#6f6c66]">
-                  {item.invoice_number} · {item.issued_at}
+                  {item.invoice_number} · {formatDate(item.issued_at)}
                 </p>
                 <p className="mt-1 text-[14px] tabular-nums">{usd(item.amount)}</p>
                 <p className="mt-1 text-[12px] text-[#6f6c66]">{item.note}</p>

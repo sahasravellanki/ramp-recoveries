@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import { StatusChip } from "@/components/ramp/data-table";
 import { PageHeader } from "@/components/ramp/page-header";
 import { SecondaryButton } from "@/components/ramp/buttons";
-import { billDocumentUrl, getBill, usd, type BillDetail } from "@/lib/recoveries";
+import { billDocumentUrl, formatDate, getBill, usd, type BillDetail } from "@/lib/recoveries";
 
 export function BillView({ id }: { id: string }) {
   const [bill, setBill] = useState<BillDetail | null>(null);
@@ -71,8 +71,8 @@ export function BillView({ id }: { id: string }) {
 
       <div className="mt-6 flex flex-wrap items-center gap-3 text-[13px] text-[#6f6c66]">
         <StatusChip label={covered ? "Covered" : bill.status === "UNPAID" ? "Unpaid" : bill.status} tone={covered ? "green" : "yellow"} />
-        <span>Issued {bill.issued_at}</span>
-        {bill.due_at ? <span>Due {bill.due_at}</span> : null}
+        <span>Issued {formatDate(bill.issued_at)}</span>
+        {bill.due_at ? <span>Due {formatDate(bill.due_at)}</span> : null}
       </div>
 
       {credits.length > 0 ? (
