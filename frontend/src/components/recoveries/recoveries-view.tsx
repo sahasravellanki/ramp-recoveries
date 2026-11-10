@@ -148,6 +148,7 @@ export function RecoveriesView() {
   }
 
   const claims = summary?.claims ?? [];
+  const needsReview = claims.filter((claim) => claim.status === "Needs review").length;
   const counts = {
     all: claims.length,
     review: claims.filter((claim) => claim.status === "Drafted" || claim.status === "Found" || claim.status === "Needs review").length,
@@ -239,7 +240,7 @@ export function RecoveriesView() {
             <div className="grid w-full grid-cols-2 gap-3 min-[1100px]:grid-cols-4">
               <Stat label="Refundable" value={usd(summary.net_refundable)} />
               <Stat label="Not refundable" value={usd(summary.non_refundable)} />
-              <Stat label="Needs review" value={String(counts.review)} />
+              <Stat label="Needs review" value={String(needsReview)} />
               <Stat label="Credits received" value={usd(summary.credits_already_received)} />
             </div>
 

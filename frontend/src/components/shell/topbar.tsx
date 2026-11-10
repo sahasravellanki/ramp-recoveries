@@ -20,7 +20,7 @@ export function TopBar({ onMenu }: { onMenu?: () => void }) {
     try {
       await resetDemo();
       window.dispatchEvent(new Event("demo-reset"));
-      toast.success("Scan results, letter edits, and credits are cleared.");
+      toast.success("Reset. Recoveries is back where it started.");
     } catch {
       toast.error("Couldn't reset. Is the API running?");
     }

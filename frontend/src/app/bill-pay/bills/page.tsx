@@ -15,12 +15,25 @@ export default function BillsPage() {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    getBills("UNPAID")
-      .then(setBills)
-      .catch((error: Error) => {
-        setBills([]);
-        toast.error(error.message);
-      });
+    let cancelled = false;
+    function load() {
+      getBills("UNPAID")
+        .then((next) => {
+          if (!cancelled) setBills(next);
+        })
+        .catch((error: Error) => {
+          if (cancelled) return;
+          setBills([]);
+          toast.error(error.message);
+        });
+    }
+    load();
+    const onReset = () => load();
+    window.addEventListener("demo-reset", onReset);
+    return () => {
+      cancelled = true;
+      window.removeEventListener("demo-reset", onReset);
+    };
   }, []);
 
   const visible = (bills ?? []).filter((bill) => {

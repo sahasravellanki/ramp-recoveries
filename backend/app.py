@@ -692,6 +692,7 @@ def create_app(database_url: str | None = None) -> FastAPI:
             cleared = _reset(session)
             session.commit()
         app.state.pipeline_cache.clear()
+        _seed_saved_scan(engine)
         return {"ok": True, "cleared": cleared}
 
     return app

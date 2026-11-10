@@ -19,7 +19,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="h-full bg-white font-sans text-[#1c1c1c]">
         <AppShell>{children}</AppShell>
-        <Toaster position="bottom-right" />
+        <Toaster position="top-left" offset={{ top: "76px", left: "248px" }} />
       </body>
     </html>
   );

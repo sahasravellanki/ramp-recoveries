@@ -223,6 +223,44 @@ export type BillDetail = BillSummary & {
   document_url: string | null;
 };
 
+export type VendorSummary = {
+  id: string;
+  name: string;
+  contact_email: string | null;
+  bill_count: number;
+  total_paid: number;
+  recovery: {
+    refundable: number;
+    strength: string | null;
+    status: string;
+    subtitle: string | null;
+    bill_count: number;
+  } | null;
+};
+
+export type ContractRow = {
+  vendor_id: string;
+  vendor_name: string;
+  title: string | null;
+  effective_date: string | null;
+  has_tariff_clause: boolean;
+  section: string | null;
+  summary: string | null;
+  document_url: string;
+};
+
+export function getVendors() {
+  return read<VendorSummary[]>("/api/vendors");
+}
+
+export function getContracts() {
+  return read<ContractRow[]>("/api/contracts");
+}
+
+export function contractDocumentUrl(vendorId: string) {
+  return `${API_URL}/api/contracts/${vendorId}/document`;
+}
+
 export function getBills(status?: string) {
   const query = status ? `?status=${encodeURIComponent(status)}` : "";
   return read<BillSummary[]>(`/api/bills${query}`);

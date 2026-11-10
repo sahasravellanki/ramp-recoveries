@@ -71,7 +71,7 @@ export function Money({ amount }: { amount: string }) {
   );
 }
 
-export function RowActions({ onReview }: { onReview?: () => void }) {
+export function RowActions({ onReview, onOpen }: { onReview?: () => void; onOpen?: () => void }) {
   return (
     <div className="flex items-center justify-end gap-2">
       <SecondaryButton className="h-8 px-3" onClick={onReview}>
@@ -85,8 +85,15 @@ export function RowActions({ onReview }: { onReview?: () => void }) {
           <MoreHorizontal className="size-4" />
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem>Open</DropdownMenuItem>
-          <DropdownMenuItem>Copy link</DropdownMenuItem>
+          <DropdownMenuItem onClick={onOpen ?? onReview}>Open</DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() => {
+              const url = window.location.href;
+              void navigator.clipboard?.writeText(url);
+            }}
+          >
+            Copy link
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
