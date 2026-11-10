@@ -68,10 +68,20 @@ export default function VendorsPage() {
       header: "Recovery",
       render: (vendor) =>
         vendor.recovery ? (
-          <StatusChip
-            label={vendor.recovery.status}
-            tone={vendor.recovery.status === "Needs review" ? "yellow" : vendor.recovery.status === "Credited" ? "green" : "blue"}
-          />
+          <span className="inline-flex items-center gap-1.5 text-[14px] text-[#1c1c1c]">
+            <span className="tabular-nums">{usd(vendor.recovery.refundable)}</span>
+            <span className="text-[#8a8680]">·</span>
+            <StatusChip
+              label={vendor.recovery.status}
+              tone={
+                vendor.recovery.status === "Needs review"
+                  ? "yellow"
+                  : vendor.recovery.status === "Credited"
+                    ? "green"
+                    : "blue"
+              }
+            />
+          </span>
         ) : (
           <span className="text-[13px] text-[#8a8680]">No claim</span>
         ),
@@ -121,10 +131,10 @@ export default function VendorsPage() {
           onChange={setQuery}
           actions={
             <>
-              <IconButton aria-label="Columns">
+              <IconButton aria-label="Columns" onClick={() => toast("Column picker isn't part of this prototype.")}>
                 <Table2 className="size-4" />
               </IconButton>
-              <IconButton aria-label="Download">
+              <IconButton aria-label="Download" onClick={() => toast("Download isn't part of this prototype.")}>
                 <Download className="size-4" />
               </IconButton>
             </>

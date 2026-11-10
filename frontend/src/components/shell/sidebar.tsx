@@ -56,7 +56,14 @@ export function Sidebar({
         ) : null}
       </div>
       {collapsed ? null : (
-        <p className="px-4 pt-1 pb-2 text-[12px] text-[#9c978f]">Prototype</p>
+        <div className="px-4 pt-1 pb-2">
+          <p className="text-[12px] text-[#9c978f]">Prototype</p>
+          <p className="mt-1 text-[11px] leading-4 text-[#9c978f]">
+            Hackathon project.
+            <br />
+            Not affiliated with Ramp.
+          </p>
+        </div>
       )}
 
       <nav className="flex-1 overflow-y-auto px-2 pb-3">

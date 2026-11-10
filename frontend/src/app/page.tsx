@@ -34,22 +34,26 @@ const SAMPLE_TASKS: HomeTask[] = [
   },
 ];
 
+function localGreeting(now = new Date()) {
+  const hour = now.getHours();
+  if (hour < 12) return "Good morning";
+  if (hour < 17) return "Good afternoon";
+  return "Good evening";
+}
+
 function sampleFeed(): HomeFeed {
-  const hour = Number(
-    new Intl.DateTimeFormat("en-US", {
-      timeZone: "America/Los_Angeles",
-      hour: "numeric",
-      hourCycle: "h23",
-    }).format(new Date()),
-  );
-  const greeting = hour < 12 ? "Good morning" : hour < 17 ? "Good afternoon" : "Good evening";
-  return { greeting, prompt: "What can Ramp help you with?", tasks: SAMPLE_TASKS };
+  return { greeting: localGreeting(), prompt: "What can Ramp help you with?", tasks: SAMPLE_TASKS };
 }
 
 export default function HomePage() {
   const [feed, setFeed] = useState<HomeFeed | null>(null);
   const [error, setError] = useState(false);
   const [draft, setDraft] = useState("");
+  const [greeting, setGreeting] = useState<string | null>(null);
+
+  useEffect(() => {
+    setGreeting(localGreeting());
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -76,12 +80,12 @@ export default function HomePage() {
     };
   }, []);
 
-  const greeting = feed ? `${feed.greeting}, ${DEMO_USER.firstName}` : null;
+  const heading = greeting ? `${greeting}, ${DEMO_USER.firstName}` : null;
 
   return (
     <div className="px-8 pt-2 pb-12">
       <h1 className="text-[32px] font-normal tracking-[-0.02em] text-[#1c1c1c]">
-        {greeting ?? <span className="inline-block h-8 w-72 animate-pulse rounded bg-[#f4f3f1]" />}
+        {heading ?? <span className="inline-block h-8 w-72 animate-pulse rounded bg-[#f4f3f1]" />}
       </h1>
 
       <form

@@ -118,8 +118,8 @@ export function DataTable<T>({
   }
 
   return (
-    <div>
-      <table className="w-full border-collapse text-left">
+    <div className="overflow-x-auto">
+      <table className="w-full min-w-[640px] border-collapse text-left">
         <thead>
           <tr className="border-b border-[#eeeae4]">
             {columns.map((column) => (

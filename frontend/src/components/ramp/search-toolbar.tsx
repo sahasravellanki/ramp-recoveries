@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { IconButton } from "@/components/ramp/buttons";
 import { ListFilter, Search } from "lucide-react";
@@ -25,7 +26,7 @@ export function SearchToolbar({
           className="h-9 rounded-full border-[#e3e1db] bg-white pr-3 pl-9 text-[13.5px] shadow-none placeholder:text-[#9a968f] focus-visible:ring-0"
         />
       </div>
-      <IconButton aria-label="Filter">
+      <IconButton aria-label="Filter" onClick={() => toast("Filters aren't part of this prototype.")}>
         <ListFilter className="size-4" />
       </IconButton>
       {actions ? <div className="ml-auto flex items-center gap-1.5">{actions}</div> : null}
