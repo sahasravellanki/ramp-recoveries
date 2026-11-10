@@ -1,0 +1,56 @@
+[
+  {
+    "vendor_name": "Northwind Packaging Co.",
+    "status": "draft",
+    "requires_approval": true,
+    "body": "Northwind Packaging Co.\n4410 Industrial Pkwy\nTacoma, WA 98421\n\nApril 15, 2026\n\nDear Northwind Packaging,\n\nWe are writing regarding tariff surcharges billed on invoices NWP-202504-010, NWP-202505-011, NWP-202506-012, NWP-202507-013, NWP-202508-014, NWP-202509-015, NWP-202510-016, NWP-202511-017, NWP-202512-018, NWP-202601-019, and NWP-202602-020, covering the period from February 4, 2025, through February 20, 2026.\n\nCould you please confirm whether you were the importer of record for these shipments?\n\nOur contract includes the following provision in Clause 7:\n\n\"Supplier may add a tariff surcharge to invoices to recover customs duties actually paid by Supplier on Products sold to Buyer. Any such surcharge shall be stated as a separate line item and shall not exceed the duty actually incurred. If any duty underlying a surcharge is subsequently refunded, remitted, reduced or otherwise recovered by Supplier, whether by administrative action, protest, litigation or otherwise, Supplier shall credit Buyer the corresponding surcharge amounts within sixty (60) days of Supplier's receipt of such refund. Credits shall be issued as vendor credits applied against Buyer's open or future invoices, or at Buyer's election, by payment.\"\n\nWe have already received credit memo NWP-CM-202603-001 on March 6, 2026, for $500.00, which we appreciate.\n\nIf you have received a refund for these duties, we would appreciate a credit for our share. We are requesting a vendor credit of $4,106.40.\n\nAccounts Payable, Sunbird Cafe Group",
+    "word_count": 219,
+    "model": "claude-sonnet-4-5",
+    "flagged_language": []
+  },
+  {
+    "vendor_name": "Harbor & Pine Coffee Equipment",
+    "status": "draft",
+    "requires_approval": true,
+    "body": "Harbor & Pine Coffee Equipment\n212 Pier Street, Suite 4\nOakland, CA 94607\n\nFebruary 4, 2025\n\nDear Harbor & Pine Coffee Equipment,\n\nWe are writing regarding invoices HPC-202505-006, HPC-202507-007, HPC-202509-008, HPC-202511-009, and HPC-202601-010, covering the period from February 4, 2025 through February 20, 2026.\n\nCould you please confirm whether you were the importer of record for the products on these invoices?\n\nOur contract contains the following provision in clause 6: \"Prices for imported Products are inclusive of customs duties, tariffs and similar import charges borne by Supplier. Supplier shall give Buyer thirty (30) days notice of any price change attributable to a change in such charges. In the event any duty, tariff or similar charge paid by Supplier with respect to Products sold to Buyer is refunded to Supplier by any governmental authority, Supplier shall pass through to Buyer a pro rata share of such refund attributable to Products purchased by Buyer during the period the charge was in effect, net of Supplier's reasonable documented costs of recovery, within ninety (90) days of receipt.\"\n\nIf you have received a refund for these duties from any governmental authority, we would appreciate a credit for our share. Based on our records, we believe a vendor credit of $3,665.16 would be appropriate.\n\nThank you for your attention to this matter.\n\nAccounts Payable, Sunbird Cafe Group",
+    "word_count": 221,
+    "model": "claude-sonnet-4-5",
+    "flagged_language": []
+  },
+  {
+    "vendor_name": "Altamesa Electronics Supply",
+    "status": "draft",
+    "requires_approval": true,
+    "body": "9000 Mesa Verde Rd, Bldg C\nChandler, AZ 85226\n\nFebruary 4, 2025\n\nDear Altamesa Electronics Supply,\n\nWe are writing regarding import duties that may have been paid on shipments covered by invoices ALT-202504-005, ALT-202506-006, ALT-202508-007, ALT-202510-008, ALT-202512-009, and ALT-202602-010, spanning the period from February 4, 2025, to February 20, 2026.\n\nWe understand that certain import duties on these shipments may have been refunded or are eligible for refund. Could you please confirm whether you were the importer of record for these transactions?\n\nIf you have received a refund for these duties, we would appreciate a credit for our share. We are requesting a vendor credit in the amount of $3,841.30.\n\nPlease let us know if you need any additional information from us to process this request. We appreciate your attention to this matter.\n\nSincerely,\n\nAccounts Payable, Sunbird Cafe Group",
+    "word_count": 140,
+    "model": "claude-sonnet-4-5",
+    "flagged_language": []
+  },
+  {
+    "vendor_name": "Lumen Sourcing Co.",
+    "status": "draft",
+    "requires_approval": true,
+    "body": "88 Battery Street\nSan Francisco, CA 94111\n\nFebruary 4, 2025\n\nDear Lumen Sourcing Co.,\n\nWe are writing regarding invoices LUM-202506-002, LUM-202509-003, and LUM-202512-004 covering the period from February 4, 2025 through February 20, 2026.\n\nWe understand that import duties may have been refunded on certain shipments covered by these invoices. To help us reconcile our records, could you please confirm whether you were the importer of record for these transactions?\n\nIf you have received a refund for these duties, we would appreciate a credit for our share. We are requesting a vendor credit in the amount of $1,005.00.\n\nPlease let us know if you need any additional information from us to process this request.\n\nThank you for your attention to this matter.\n\nAccounts Payable, Sunbird Cafe Group",
+    "word_count": 128,
+    "model": "claude-sonnet-4-5",
+    "flagged_language": []
+  },
+  {
+    "vendor_name": "Mekong Tabletop",
+    "status": "draft",
+    "requires_approval": true,
+    "body": "Mekong Tabletop\n501 International Blvd\nOakland, CA 94606\n\nFebruary 4, 2025\n\nDear Mekong Tabletop,\n\nWe are writing regarding import duties paid on invoices MKT-202509-004 and MKT-202512-005.\n\nWe understand that duties may have been refunded on these shipments. Could you please confirm whether you were the importer of record for these transactions?\n\nIf you've received a refund for these duties, we'd appreciate a credit for our share. We would be grateful if you could issue a vendor credit in the amount of $32.00.\n\nThank you for your attention to this matter.\n\nAccounts Payable, Sunbird Cafe Group",
+    "word_count": 95,
+    "model": "claude-sonnet-4-5",
+    "flagged_language": []
+  },
+  {
+    "vendor_name": "Guesswork Goods",
+    "status": "draft",
+    "requires_approval": true,
+    "body": "Guesswork Goods\n77 Broadway\nOakland, CA 94607\n\nFebruary 4, 2025\n\nDear Guesswork Goods,\n\nWe are writing regarding invoices GWG-202505-003 and GWG-202510-004 covering the period from February 4, 2025 to February 20, 2026.\n\nWe understand that certain import duties may have been refunded on these shipments. To help us reconcile our records, could you please confirm whether you were the importer of record for these transactions?\n\nIf you have received a refund for these duties, we would appreciate a credit for our share in the amount of $40.00.\n\nPlease let us know if you need any additional information from us.\n\nThank you for your attention to this matter.\n\nAccounts Payable, Sunbird Cafe Group",
+    "word_count": 112,
+    "model": "claude-sonnet-4-5",
+    "flagged_language": []
+  }
+]

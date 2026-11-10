@@ -24,6 +24,13 @@ import {
 } from "@/lib/recoveries";
 import { StrengthChip, StatusDot } from "@/components/recoveries/chips";
 
+function tierOf(labeledBy: string): 1 | 2 | null {
+  const value = labeledBy.toLowerCase();
+  if (value.endsWith("tier1") || value.includes("haiku")) return 1;
+  if (value.endsWith("tier2") || value.includes("sonnet")) return 2;
+  return null;
+}
+
 export function ReviewSheet({
   vendorId,
   open,
@@ -146,8 +153,8 @@ export function ReviewSheet({
     [detail, onRefundable],
   );
 
-  const tier1 = detail?.evidence.filter((item) => item.labeled_by.endsWith("tier1")).length ?? 0;
-  const tier2 = detail?.evidence.filter((item) => item.labeled_by.endsWith("tier2")).length ?? 0;
+  const tier1 = detail?.evidence.filter((item) => tierOf(item.labeled_by) === 1).length ?? 0;
+  const tier2 = detail?.evidence.filter((item) => tierOf(item.labeled_by) === 2).length ?? 0;
   const drafted = detail?.status === "Drafted";
 
   return (

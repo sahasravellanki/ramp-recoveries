@@ -11,7 +11,7 @@ Everything in the app shell is a static mockup except Recoveries, which fully wo
 - AI reads and labels; plain code does all dollar math.
 - Every flagged dollar links to an invoice number and line.
 - Nothing is sent without human approval.
-- `DEMO_MODE=1` (or no API key) uses keyword rules and template letters so the demo never breaks.
+- `DEMO_MODE=1` uses keyword rules and template letters. With no key, the app opens on the saved model run.
 
 ## Repo layout
 
@@ -53,7 +53,9 @@ cp .env.example .env
 uvicorn app:app --reload --port 8471
 ```
 
-On startup the API loads `data/` into `recoveries.db` when that database is empty, including one unpaid upcoming bill for each vendor that has a claim. `POST /api/recoveries/scan` runs the pipeline in the background. The first scan does the work; a replay uses the cached result and still walks the progress steps. `DEMO_MODE=1` (or no API key) keeps labeling on the keyword rules.
+Ships with saved results from a real model run. Add ANTHROPIC_API_KEY to backend/.env to re-run live.
+
+On startup the API loads `data/` into `recoveries.db` when that database is empty, including one unpaid upcoming bill for each vendor that has a claim. With no API key it also loads `data/live_results/`, so Recoveries opens on that model run. `POST /api/recoveries/scan` re-runs the models only when a key is set. `DEMO_MODE=1` keeps labeling on the keyword rules.
 
 ```bash
 cd backend
@@ -69,7 +71,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-The frontend runs on http://localhost:4817 and expects the backend at `NEXT_PUBLIC_API_URL` (http://localhost:8471). The shell matches the Ramp app: Home loads its task feed from `GET /api/home`, and the avatar menu resets the demo. Bill Pay → Recoveries is at `/bill-pay/recoveries`.
+The frontend runs on http://localhost:4817 and expects the backend at `NEXT_PUBLIC_API_URL` (http://localhost:8471). The shell matches the Ramp app: Home loads its task feed from `GET /api/home`, and the avatar menu clears scan results. Bill Pay → Recoveries is at `/bill-pay/recoveries`.
 
 ## Tariff table
 
@@ -97,7 +99,7 @@ A price increase counts only when the origin had an IEEPA tariff on the invoice 
 
 ## Pipeline
 
-The tariff pass-through pipeline lives in `backend/pipeline`. With `DEMO_MODE=1` (the default when no API key is set) it labels lines with keyword rules and drafts letters from a template, so it runs with no network access.
+The tariff pass-through pipeline lives in `backend/pipeline`. `DEMO_MODE=1` labels lines with keyword rules and drafts letters from a template, so that path runs with no network access. With no key, the API serves `data/live_results/` instead of those rules.
 
 ```bash
 cd backend
@@ -105,7 +107,7 @@ python -m pipeline.run
 python -m pipeline.eval
 ```
 
-`pipeline.run` reads `data/bills.json`, prints a claim per vendor, drafts the letters (nothing is sent), and checks demo totals against `data/ground_truth.json`. `pipeline.eval` prints precision and recall for flagged lines and flagged price items, the false-positive dollars on each trap, and the dollar error per vendor. Demo mode misses the three wording traps on purpose. A real-model run happens only when `ANTHROPIC_API_KEY` is set.
+`pipeline.run` reads `data/bills.json`, prints a claim per vendor, drafts the letters (nothing is sent), and checks totals against `data/ground_truth.json`. `pipeline.eval` prints precision and recall for flagged lines and flagged price items, the false-positive dollars on each trap, and the dollar error per vendor. Keyword rules miss the three wording traps on purpose. A real-model run happens only when `ANTHROPIC_API_KEY` is set and `DEMO_MODE` is unset; that run writes `data/eval_results.md` and `data/live_results/`.
 
 ## Status
 

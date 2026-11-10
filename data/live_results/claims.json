@@ -1,0 +1,1134 @@
+[
+  {
+    "vendor_id": "ven_2c00c154e5422775",
+    "vendor_name": "Northwind Packaging Co.",
+    "contact_email": "ar@northwindpackaging.example",
+    "address_lines": [
+      "4410 Industrial Pkwy",
+      "Tacoma, WA 98421"
+    ],
+    "strength": "High",
+    "refundable_total": "4106.40",
+    "gross_refundable": "4606.40",
+    "ieepa_surcharge_total": "4606.40",
+    "price_excess_total": "0.00",
+    "credits_applied": "500.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": true,
+    "price_jump_reverted": null,
+    "contract_mentions_tariffs": true,
+    "contract_refund_clause": true,
+    "clause_number": "7",
+    "clause_text": "Supplier may add a tariff surcharge to invoices to recover customs duties actually paid by Supplier on Products sold to Buyer. Any such surcharge shall be stated as a separate line item and shall not exceed the duty actually incurred. If any duty underlying a surcharge is subsequently refunded, remitted, reduced or otherwise recovered by Supplier, whether by administrative action, protest, litigation or otherwise, Supplier shall credit Buyer the corresponding surcharge amounts within sixty (60) days of Supplier's receipt of such refund. Credits shall be issued as vendor credits applied against Buyer's open or future invoices, or at Buyer's election, by payment.",
+    "evidence": [
+      {
+        "invoice_number": "NWP-202504-010",
+        "line_index": 6,
+        "date": "2025-04-10",
+        "description": "Tariff Surcharge (12%)",
+        "amount": "475.06",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "NWP-202505-011",
+        "line_index": 4,
+        "date": "2025-05-10",
+        "description": "Tariff Surcharge (12%)",
+        "amount": "372.00",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "NWP-202506-012",
+        "line_index": 5,
+        "date": "2025-06-10",
+        "description": "Tariff Surcharge (12%)",
+        "amount": "376.35",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "NWP-202507-013",
+        "line_index": 4,
+        "date": "2025-07-10",
+        "description": "Tariff Surcharge (12%)",
+        "amount": "256.64",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "NWP-202508-014",
+        "line_index": 4,
+        "date": "2025-08-10",
+        "description": "Tariff Surcharge (12%)",
+        "amount": "334.11",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "NWP-202509-015",
+        "line_index": 4,
+        "date": "2025-09-10",
+        "description": "Tariff Surcharge (12%)",
+        "amount": "293.05",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "NWP-202510-016",
+        "line_index": 6,
+        "date": "2025-10-10",
+        "description": "Tariff Surcharge (12%)",
+        "amount": "413.02",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "NWP-202511-017",
+        "line_index": 28,
+        "date": "2025-11-10",
+        "description": "Tariff Surcharge (12%)",
+        "amount": "963.49",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "NWP-202512-018",
+        "line_index": 5,
+        "date": "2025-12-10",
+        "description": "Tariff Surcharge (12%)",
+        "amount": "297.60",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "NWP-202601-019",
+        "line_index": 5,
+        "date": "2026-01-10",
+        "description": "Tariff Surcharge (12%)",
+        "amount": "249.79",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "NWP-202602-020",
+        "line_index": 6,
+        "date": "2026-02-10",
+        "description": "Tariff Surcharge (12%)",
+        "amount": "575.29",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "NWP-CM-202603-001",
+        "line_index": 0,
+        "date": "2026-03-06",
+        "description": "Goodwill credit toward IEEPA tariff surcharges pending Supplier's duty refund. Apply to next open invoice.",
+        "amount": "-500.00",
+        "type": "vendor_credit",
+        "labeled_by": "bill_pay"
+      }
+    ],
+    "evidence_tier": "documented",
+    "tier_reasons": [
+      "An invoice line or supplier notice names a tariff, a duty, or IEEPA.",
+      "The contract also allows a duty pass-through or a shared refund."
+    ],
+    "claim_low": null,
+    "claim_expected": null,
+    "claim_high": null,
+    "origin_inferred_only": false,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_8f4488933181a528",
+    "vendor_name": "Harbor & Pine Coffee Equipment",
+    "contact_email": "billing@harborandpine.example",
+    "address_lines": [
+      "212 Pier Street, Suite 4",
+      "Oakland, CA 94607"
+    ],
+    "strength": "High",
+    "refundable_total": "3665.16",
+    "gross_refundable": "3665.16",
+    "ieepa_surcharge_total": "0.00",
+    "price_excess_total": "3665.16",
+    "credits_applied": "0.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": false,
+    "price_jump_reverted": true,
+    "contract_mentions_tariffs": true,
+    "contract_refund_clause": true,
+    "clause_number": "6",
+    "clause_text": "Prices for imported Products are inclusive of customs duties, tariffs and similar import charges borne by Supplier. Supplier shall give Buyer thirty (30) days notice of any price change attributable to a change in such charges. In the event any duty, tariff or similar charge paid by Supplier with respect to Products sold to Buyer is refunded to Supplier by any governmental authority, Supplier shall pass through to Buyer a pro rata share of such refund attributable to Products purchased by Buyer during the period the charge was in effect, net of Supplier's reasonable documented costs of recovery, within ninety (90) days of receipt.",
+    "evidence": [
+      {
+        "invoice_number": "HPC-202505-006",
+        "line_index": 0,
+        "date": "2025-05-15",
+        "description": "E61 group head assembly, chrome (Italy)",
+        "amount": "200.00",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202505-006",
+        "line_index": 1,
+        "date": "2025-05-15",
+        "description": "Rotary vane pump 100 L/h with motor (Italy)",
+        "amount": "122.00",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202505-006",
+        "line_index": 2,
+        "date": "2025-05-15",
+        "description": "64 mm flat burr set, titanium-coated (Italy)",
+        "amount": "194.00",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202505-006",
+        "line_index": 3,
+        "date": "2025-05-15",
+        "description": "Steam boiler heating element 2.8 kW (Italy)",
+        "amount": "110.60",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202505-006",
+        "line_index": 4,
+        "date": "2025-05-15",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "amount": "95.40",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202505-006",
+        "line_index": 5,
+        "date": "2025-05-15",
+        "description": "Volumetric flow meter kit, 2-group (Italy)",
+        "amount": "92.40",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202505-006",
+        "line_index": 6,
+        "date": "2025-05-15",
+        "description": "Precision shower screen, 200 micron (Italy)",
+        "amount": "35.60",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202505-006",
+        "line_index": 7,
+        "date": "2025-05-15",
+        "description": "Group head gasket 8.5 mm, pack of 10 (Italy)",
+        "amount": "10.88",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202507-007",
+        "line_index": 0,
+        "date": "2025-07-15",
+        "description": "E61 group head assembly, chrome (Italy)",
+        "amount": "250.00",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202507-007",
+        "line_index": 1,
+        "date": "2025-07-15",
+        "description": "Rotary vane pump 100 L/h with motor (Italy)",
+        "amount": "73.20",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202507-007",
+        "line_index": 2,
+        "date": "2025-07-15",
+        "description": "64 mm flat burr set, titanium-coated (Italy)",
+        "amount": "174.60",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202507-007",
+        "line_index": 3,
+        "date": "2025-07-15",
+        "description": "Steam boiler heating element 2.8 kW (Italy)",
+        "amount": "126.40",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202507-007",
+        "line_index": 4,
+        "date": "2025-07-15",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "amount": "116.60",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202507-007",
+        "line_index": 5,
+        "date": "2025-07-15",
+        "description": "Volumetric flow meter kit, 2-group (Italy)",
+        "amount": "84.00",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202507-007",
+        "line_index": 6,
+        "date": "2025-07-15",
+        "description": "Precision shower screen, 200 micron (Italy)",
+        "amount": "39.16",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202507-007",
+        "line_index": 7,
+        "date": "2025-07-15",
+        "description": "Group head gasket 8.5 mm, pack of 10 (Italy)",
+        "amount": "8.16",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202509-008",
+        "line_index": 0,
+        "date": "2025-09-15",
+        "description": "E61 group head assembly, chrome (Italy)",
+        "amount": "200.00",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202509-008",
+        "line_index": 1,
+        "date": "2025-09-15",
+        "description": "Rotary vane pump 100 L/h with motor (Italy)",
+        "amount": "97.60",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202509-008",
+        "line_index": 2,
+        "date": "2025-09-15",
+        "description": "64 mm flat burr set, titanium-coated (Italy)",
+        "amount": "77.60",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202509-008",
+        "line_index": 3,
+        "date": "2025-09-15",
+        "description": "Steam boiler heating element 2.8 kW (Italy)",
+        "amount": "126.40",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202509-008",
+        "line_index": 4,
+        "date": "2025-09-15",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "amount": "63.60",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202509-008",
+        "line_index": 5,
+        "date": "2025-09-15",
+        "description": "Volumetric flow meter kit, 2-group (Italy)",
+        "amount": "50.40",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202509-008",
+        "line_index": 6,
+        "date": "2025-09-15",
+        "description": "Precision shower screen, 200 micron (Italy)",
+        "amount": "21.36",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202509-008",
+        "line_index": 7,
+        "date": "2025-09-15",
+        "description": "Group head gasket 8.5 mm, pack of 10 (Italy)",
+        "amount": "32.64",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202511-009",
+        "line_index": 0,
+        "date": "2025-11-15",
+        "description": "E61 group head assembly, chrome (Italy)",
+        "amount": "100.00",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202511-009",
+        "line_index": 1,
+        "date": "2025-11-15",
+        "description": "Rotary vane pump 100 L/h with motor (Italy)",
+        "amount": "97.60",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202511-009",
+        "line_index": 2,
+        "date": "2025-11-15",
+        "description": "64 mm flat burr set, titanium-coated (Italy)",
+        "amount": "116.40",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202511-009",
+        "line_index": 3,
+        "date": "2025-11-15",
+        "description": "Steam boiler heating element 2.8 kW (Italy)",
+        "amount": "63.20",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202511-009",
+        "line_index": 4,
+        "date": "2025-11-15",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "amount": "127.20",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202511-009",
+        "line_index": 5,
+        "date": "2025-11-15",
+        "description": "Volumetric flow meter kit, 2-group (Italy)",
+        "amount": "33.60",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202511-009",
+        "line_index": 6,
+        "date": "2025-11-15",
+        "description": "Precision shower screen, 200 micron (Italy)",
+        "amount": "14.24",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202511-009",
+        "line_index": 7,
+        "date": "2025-11-15",
+        "description": "Group head gasket 8.5 mm, pack of 10 (Italy)",
+        "amount": "29.92",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202601-010",
+        "line_index": 0,
+        "date": "2026-01-15",
+        "description": "E61 group head assembly, chrome (Italy)",
+        "amount": "50.00",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202601-010",
+        "line_index": 1,
+        "date": "2026-01-15",
+        "description": "Rotary vane pump 100 L/h with motor (Italy)",
+        "amount": "122.00",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202601-010",
+        "line_index": 2,
+        "date": "2026-01-15",
+        "description": "64 mm flat burr set, titanium-coated (Italy)",
+        "amount": "232.80",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202601-010",
+        "line_index": 3,
+        "date": "2026-01-15",
+        "description": "Steam boiler heating element 2.8 kW (Italy)",
+        "amount": "63.20",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202601-010",
+        "line_index": 4,
+        "date": "2026-01-15",
+        "description": "58 mm bottomless portafilter, walnut handle (Italy)",
+        "amount": "95.40",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202601-010",
+        "line_index": 5,
+        "date": "2026-01-15",
+        "description": "Volumetric flow meter kit, 2-group (Italy)",
+        "amount": "58.80",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202601-010",
+        "line_index": 6,
+        "date": "2026-01-15",
+        "description": "Precision shower screen, 200 micron (Italy)",
+        "amount": "39.16",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "HPC-202601-010",
+        "line_index": 7,
+        "date": "2026-01-15",
+        "description": "Group head gasket 8.5 mm, pack of 10 (Italy)",
+        "amount": "19.04",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      }
+    ],
+    "evidence_tier": "contract_price",
+    "tier_reasons": [
+      "The contract allows a duty pass-through or a shared refund.",
+      "A price increase passed every required test."
+    ],
+    "claim_low": "1832.58",
+    "claim_expected": "3665.16",
+    "claim_high": "4581.45",
+    "origin_inferred_only": false,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_cd11abb151796ea3",
+    "vendor_name": "Altamesa Electronics Supply",
+    "contact_email": "accounts@altamesa-electronics.example",
+    "address_lines": [
+      "9000 Mesa Verde Rd, Bldg C",
+      "Chandler, AZ 85226"
+    ],
+    "strength": "Medium",
+    "refundable_total": "3841.30",
+    "gross_refundable": "3841.30",
+    "ieepa_surcharge_total": "3841.30",
+    "price_excess_total": "0.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": true,
+    "price_jump_reverted": null,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [
+      {
+        "invoice_number": "ALT-202504-005",
+        "line_index": 3,
+        "date": "2025-04-12",
+        "description": "Import Cost Recovery",
+        "amount": "472.60",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "ALT-202506-006",
+        "line_index": 5,
+        "date": "2025-06-12",
+        "description": "Import Cost Recovery",
+        "amount": "792.30",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "ALT-202508-007",
+        "line_index": 4,
+        "date": "2025-08-12",
+        "description": "Import Cost Recovery",
+        "amount": "625.50",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "ALT-202510-008",
+        "line_index": 5,
+        "date": "2025-10-12",
+        "description": "IEEPA Adj.",
+        "amount": "1039.40",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "ALT-202512-009",
+        "line_index": 4,
+        "date": "2025-12-12",
+        "description": "IEEPA Adj.",
+        "amount": "354.50",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "ALT-202602-010",
+        "line_index": 3,
+        "date": "2026-02-12",
+        "description": "IEEPA Adj.",
+        "amount": "557.00",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-haiku-4-5"
+      }
+    ],
+    "evidence_tier": "documented",
+    "tier_reasons": [
+      "An invoice line or supplier notice names a tariff, a duty, or IEEPA."
+    ],
+    "claim_low": null,
+    "claim_expected": null,
+    "claim_high": null,
+    "origin_inferred_only": false,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_477720b9f509a868",
+    "vendor_name": "Kestrel Textiles",
+    "contact_email": "invoices@kestreltextiles.example",
+    "address_lines": [
+      "77 Loom Street",
+      "Fall River, MA 02721"
+    ],
+    "strength": "Tracked",
+    "refundable_total": "0.00",
+    "gross_refundable": "0.00",
+    "ieepa_surcharge_total": "0.00",
+    "price_excess_total": "0.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "248.41",
+    "explicit_surcharge": false,
+    "price_jump_reverted": null,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [
+      {
+        "invoice_number": "KST-202507-005",
+        "line_index": 4,
+        "date": "2025-07-05",
+        "description": "Section 301 adjustment",
+        "amount": "100.56",
+        "type": "tariff_other",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "KST-202510-006",
+        "line_index": 3,
+        "date": "2025-10-05",
+        "description": "Section 301 adjustment",
+        "amount": "62.12",
+        "type": "tariff_other",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "KST-202601-007",
+        "line_index": 3,
+        "date": "2026-01-05",
+        "description": "Section 301 adjustment",
+        "amount": "85.73",
+        "type": "tariff_other",
+        "labeled_by": "claude-haiku-4-5"
+      }
+    ],
+    "evidence_tier": null,
+    "tier_reasons": [],
+    "claim_low": null,
+    "claim_expected": null,
+    "claim_high": null,
+    "origin_inferred_only": false,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_be599f66c310d1ff",
+    "vendor_name": "Brightline Office Supply",
+    "contact_email": "ar@brightlineoffice.example",
+    "address_lines": [
+      "1500 Harbor Bay Pkwy",
+      "Alameda, CA 94502"
+    ],
+    "strength": null,
+    "refundable_total": "0.00",
+    "gross_refundable": "0.00",
+    "ieepa_surcharge_total": "0.00",
+    "price_excess_total": "0.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": false,
+    "price_jump_reverted": null,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [],
+    "evidence_tier": null,
+    "tier_reasons": [],
+    "claim_low": null,
+    "claim_expected": null,
+    "claim_high": null,
+    "origin_inferred_only": false,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_3610a006fa4ff3ac",
+    "vendor_name": "Pacific Freight Forwarding",
+    "contact_email": "ar@pacificfreightfwd.example",
+    "address_lines": [
+      "601 Maritime Street",
+      "Oakland, CA 94607"
+    ],
+    "strength": null,
+    "refundable_total": "0.00",
+    "gross_refundable": "0.00",
+    "ieepa_surcharge_total": "0.00",
+    "price_excess_total": "0.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": false,
+    "price_jump_reverted": null,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [],
+    "evidence_tier": null,
+    "tier_reasons": [],
+    "claim_low": null,
+    "claim_expected": null,
+    "claim_high": null,
+    "origin_inferred_only": false,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_fbbcb703c45caeea",
+    "vendor_name": "Lumen Sourcing Co.",
+    "contact_email": "ap@lumensourcing.example",
+    "address_lines": [
+      "88 Battery Street",
+      "San Francisco, CA 94111"
+    ],
+    "strength": "Medium",
+    "refundable_total": "1005.00",
+    "gross_refundable": "1005.00",
+    "ieepa_surcharge_total": "1005.00",
+    "price_excess_total": "0.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": true,
+    "price_jump_reverted": null,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [
+      {
+        "invoice_number": "LUM-202506-002",
+        "line_index": 1,
+        "date": "2025-06-15",
+        "description": "Q3 landed cost adjustment",
+        "amount": "420.00",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-sonnet-4-5"
+      },
+      {
+        "invoice_number": "LUM-202509-003",
+        "line_index": 1,
+        "date": "2025-09-15",
+        "description": "Supplier cost pass-through",
+        "amount": "310.00",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-sonnet-4-5"
+      },
+      {
+        "invoice_number": "LUM-202512-004",
+        "line_index": 1,
+        "date": "2025-12-15",
+        "description": "Global sourcing fee",
+        "amount": "275.00",
+        "type": "tariff_ieepa_surcharge",
+        "labeled_by": "claude-sonnet-4-5"
+      }
+    ],
+    "evidence_tier": "documented",
+    "tier_reasons": [
+      "An invoice line or supplier notice names a tariff, a duty, or IEEPA."
+    ],
+    "claim_low": null,
+    "claim_expected": null,
+    "claim_high": null,
+    "origin_inferred_only": false,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_1173d4c35ffc5caa",
+    "vendor_name": "Mill & Alloy",
+    "contact_email": "billing@millandalloy.example",
+    "address_lines": [
+      "410 Foundry Road",
+      "Fontana, CA 92335"
+    ],
+    "strength": "Tracked",
+    "refundable_total": "0.00",
+    "gross_refundable": "0.00",
+    "ieepa_surcharge_total": "0.00",
+    "price_excess_total": "0.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "640.00",
+    "explicit_surcharge": false,
+    "price_jump_reverted": null,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [
+      {
+        "invoice_number": "MLA-202506-001",
+        "line_index": 1,
+        "date": "2025-06-01",
+        "description": "Section 232 steel and aluminum surcharge",
+        "amount": "640.00",
+        "type": "tariff_other",
+        "labeled_by": "claude-haiku-4-5"
+      }
+    ],
+    "evidence_tier": null,
+    "tier_reasons": [],
+    "claim_low": null,
+    "claim_expected": null,
+    "claim_high": null,
+    "origin_inferred_only": false,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_4e36f0458e442294",
+    "vendor_name": "Early Rise Paper",
+    "contact_email": "ar@earlyrisepaper.example",
+    "address_lines": [
+      "12 Canal Street",
+      "Stockton, CA 95202"
+    ],
+    "strength": null,
+    "refundable_total": "0.00",
+    "gross_refundable": "0.00",
+    "ieepa_surcharge_total": "0.00",
+    "price_excess_total": "0.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": false,
+    "price_jump_reverted": null,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [],
+    "evidence_tier": null,
+    "tier_reasons": [],
+    "claim_low": null,
+    "claim_expected": null,
+    "claim_high": null,
+    "origin_inferred_only": false,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_893210896f142b3b",
+    "vendor_name": "Homestead Kiln",
+    "contact_email": "accounts@homesteadkiln.example",
+    "address_lines": [
+      "640 Clay Avenue",
+      "Fresno, CA 93706"
+    ],
+    "strength": null,
+    "refundable_total": "0.00",
+    "gross_refundable": "0.00",
+    "ieepa_surcharge_total": "0.00",
+    "price_excess_total": "0.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": false,
+    "price_jump_reverted": null,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [],
+    "evidence_tier": null,
+    "tier_reasons": [],
+    "claim_low": null,
+    "claim_expected": null,
+    "claim_high": null,
+    "origin_inferred_only": false,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_dabd8aa47a209b4c",
+    "vendor_name": "Level Pantry",
+    "contact_email": "ap@levelpantry.example",
+    "address_lines": [
+      "220 Market Street",
+      "Oakland, CA 94607"
+    ],
+    "strength": null,
+    "refundable_total": "0.00",
+    "gross_refundable": "0.00",
+    "ieepa_surcharge_total": "0.00",
+    "price_excess_total": "0.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": false,
+    "price_jump_reverted": null,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [],
+    "evidence_tier": null,
+    "tier_reasons": [],
+    "claim_low": null,
+    "claim_expected": null,
+    "claim_high": null,
+    "origin_inferred_only": false,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_7151bd103bd3ef24",
+    "vendor_name": "Calendar Imports",
+    "contact_email": "billing@calendarimports.example",
+    "address_lines": [
+      "9 Wharf Lane",
+      "Alameda, CA 94501"
+    ],
+    "strength": null,
+    "refundable_total": "0.00",
+    "gross_refundable": "0.00",
+    "ieepa_surcharge_total": "0.00",
+    "price_excess_total": "0.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": false,
+    "price_jump_reverted": null,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [],
+    "evidence_tier": null,
+    "tier_reasons": [],
+    "claim_low": null,
+    "claim_expected": null,
+    "claim_high": null,
+    "origin_inferred_only": false,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_0412534c8dfa3e66",
+    "vendor_name": "Mekong Tabletop",
+    "contact_email": "ar@mekongtabletop.example",
+    "address_lines": [
+      "501 International Blvd",
+      "Oakland, CA 94606"
+    ],
+    "strength": "Low",
+    "refundable_total": "32.00",
+    "gross_refundable": "32.00",
+    "ieepa_surcharge_total": "0.00",
+    "price_excess_total": "32.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": false,
+    "price_jump_reverted": true,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [
+      {
+        "invoice_number": "MKT-202509-004",
+        "line_index": 0,
+        "date": "2025-09-01",
+        "description": "Stoneware cup (Vietnam)",
+        "amount": "16.00",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "MKT-202512-005",
+        "line_index": 0,
+        "date": "2025-12-01",
+        "description": "Stoneware cup (Vietnam)",
+        "amount": "16.00",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      }
+    ],
+    "evidence_tier": "price_only",
+    "tier_reasons": [
+      "No invoice line or contract names the tariff.",
+      "The price increase passed every required test, so the claim rests on the price alone."
+    ],
+    "claim_low": "16.00",
+    "claim_expected": "32.00",
+    "claim_high": "32.00",
+    "origin_inferred_only": false,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_7f17caa623e09003",
+    "vendor_name": "Guesswork Goods",
+    "contact_email": "ap@guessworkgoods.example",
+    "address_lines": [
+      "77 Broadway",
+      "Oakland, CA 94607"
+    ],
+    "strength": "Low",
+    "refundable_total": "40.00",
+    "gross_refundable": "40.00",
+    "ieepa_surcharge_total": "0.00",
+    "price_excess_total": "40.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": false,
+    "price_jump_reverted": true,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [
+      {
+        "invoice_number": "GWG-202505-003",
+        "line_index": 0,
+        "date": "2025-05-20",
+        "description": "Espresso group head, origin not printed",
+        "amount": "20.00",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      },
+      {
+        "invoice_number": "GWG-202510-004",
+        "line_index": 0,
+        "date": "2025-10-20",
+        "description": "Espresso group head, origin not printed",
+        "amount": "20.00",
+        "type": "price_excess",
+        "labeled_by": "claude-haiku-4-5"
+      }
+    ],
+    "evidence_tier": "price_only",
+    "tier_reasons": [
+      "No invoice line or contract names the tariff.",
+      "The price increase passed every required test, so the claim rests on the price alone.",
+      "Country of origin was inferred, not printed on the invoice, so strength is capped at Low."
+    ],
+    "claim_low": "20.00",
+    "claim_expected": "40.00",
+    "claim_high": "40.00",
+    "origin_inferred_only": true,
+    "needs_review": false
+  },
+  {
+    "vendor_id": "ven_ad4265714e5c0c18",
+    "vendor_name": "Clearpour Glass",
+    "contact_email": "ap@clearpourglass.example",
+    "address_lines": [
+      "14 Vine Street",
+      "Napa, CA 94559"
+    ],
+    "strength": null,
+    "refundable_total": "0.00",
+    "gross_refundable": "0.00",
+    "ieepa_surcharge_total": "0.00",
+    "price_excess_total": "0.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": false,
+    "price_jump_reverted": null,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [],
+    "evidence_tier": null,
+    "tier_reasons": [
+      "The price increase lines up with an IEEPA rate increase, but there is no control group to compare it with.",
+      "It needs a person to review it, so nothing is claimed yet."
+    ],
+    "claim_low": null,
+    "claim_expected": null,
+    "claim_high": null,
+    "origin_inferred_only": false,
+    "needs_review": true
+  },
+  {
+    "vendor_id": "ven_9274e8eb0e7641a2",
+    "vendor_name": "Orchard Copper",
+    "contact_email": "billing@orchardcopper.example",
+    "address_lines": [
+      "300 River Street",
+      "Santa Rosa, CA 95401"
+    ],
+    "strength": null,
+    "refundable_total": "0.00",
+    "gross_refundable": "0.00",
+    "ieepa_surcharge_total": "0.00",
+    "price_excess_total": "0.00",
+    "credits_applied": "0.00",
+    "non_refundable_total": "0.00",
+    "explicit_surcharge": false,
+    "price_jump_reverted": null,
+    "contract_mentions_tariffs": false,
+    "contract_refund_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "evidence": [],
+    "evidence_tier": null,
+    "tier_reasons": [
+      "The price increase lines up with an IEEPA rate increase, but there is no control group to compare it with.",
+      "It needs a person to review it, so nothing is claimed yet."
+    ],
+    "claim_low": null,
+    "claim_expected": null,
+    "claim_high": null,
+    "origin_inferred_only": false,
+    "needs_review": true
+  }
+]

@@ -1,0 +1,6500 @@
+[
+  {
+    "invoice_number": "KST-202407-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Embroidered staff tee is merchandise being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202407-001",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towels are goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202407-001",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Embroidered dad cap is merchandise being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202407-001",
+    "line_index": 3,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight is shipping cost.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202407-001",
+    "line_index": 4,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax is identified as tax.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202407-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Printed corrugated cup sleeve - packaging product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202407-001",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip-through lid - packaging product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202407-001",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bag - packaging product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202407-001",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Double-wall hot cup - packaging product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202407-001",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws - packaging product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202407-001",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins - packaging product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202407-001",
+    "line_index": 6,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground freight shipping charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202407-001",
+    "line_index": 7,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at 10.25% rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202407-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part of espresso machine from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202407-001",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part of espresso machine from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202407-001",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part of espresso machine from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202407-001",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part of espresso machine from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202407-001",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part of espresso machine from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202407-001",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part of espresso machine from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202407-001",
+    "line_index": 6,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part of espresso machine from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202407-001",
+    "line_index": 7,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part of espresso machine from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202407-001",
+    "line_index": 8,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Accessory for espresso machine, made in USA",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202407-001",
+    "line_index": 9,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Accessory for espresso machine, made in USA",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202407-001",
+    "line_index": 10,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Service labor fee, not goods or tariffs",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202407-001",
+    "line_index": 11,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping and handling charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202407-001",
+    "line_index": 12,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at specified rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202407-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gel pens are goods for resale/use.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202407-001",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copy paper is goods for resale/use.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202407-001",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Nitrile gloves are goods for resale/use.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202407-001",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Surface cleaner is goods for resale/use.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202407-001",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Receipt rolls are goods for resale/use.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202407-001",
+    "line_index": 5,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a transportation-related fee, not tariff.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202407-001",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at specified rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202408-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins are goods being sold to the buyer.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202408-001",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towels are goods being sold to the buyer.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202408-001",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Explicitly labeled as freight.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202408-001",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Explicitly labeled as sales tax.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202408-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Group head gasket - goods themselves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202408-001",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Tamper - goods themselves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202408-001",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight shipping",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202408-001",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202408-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "12 oz hot cup product line item",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202408-001",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft napkin product line item",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202408-001",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight charge line",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202408-001",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at 10.25%",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202408-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins are goods themselves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202408-002",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip-through lids are product merchandise",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202408-002",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Double-wall hot cups are goods themselves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202408-002",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bags are product merchandise",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202408-002",
+    "line_index": 4,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground freight shipping charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202408-002",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax rate clearly identified",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202408-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "POS display tablet is the good itself.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202408-001",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "USB-C cables are product goods being sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202408-001",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Barcode scanner is the merchandise.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202408-001",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cash drawer is product equipment.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202408-001",
+    "line_index": 4,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ground shipping is freight service.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202408-001",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax explicitly stated in description.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202408-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gel pens are office supplies/goods themselves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202408-002",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Receipt rolls are office supplies/goods themselves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202408-002",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Toner cartridge is office supplies/goods themselves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202408-002",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Surface cleaner is office supplies/goods themselves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202408-002",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copy paper is office supplies/goods themselves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202408-002",
+    "line_index": 5,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a non-tariff fee.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202408-002",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax on purchases.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202409-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Stoneware mug product line item",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202409-001",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Glass carafe product line item",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202409-001",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight shipping charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202409-001",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at 10.25% rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202409-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Stoneware cup merchandise from Vietnam.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202409-001",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towel merchandise made in USA.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202409-001",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight shipping line item.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202409-001",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax percentage labeled.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202409-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws - goods themselves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202409-003",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins - goods themselves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202409-003",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Corrugated cup sleeve - goods themselves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202409-003",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip-through lid - goods themselves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202409-003",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bag - goods themselves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202409-003",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground freight shipping",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202409-003",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated percentage",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202409-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "E61 group head assembly, imported from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202409-002",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Rotary vane pump with motor, imported from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202409-002",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "64 mm flat burr set, imported from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202409-002",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Steam boiler heating element, imported from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202409-002",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bottomless portafilter, imported from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202409-002",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Volumetric flow meter kit, imported from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202409-002",
+    "line_index": 6,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Precision shower screen, imported from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202409-002",
+    "line_index": 7,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Group head gasket pack, imported from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202409-002",
+    "line_index": 8,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Calibrated tamper, made in USA",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202409-002",
+    "line_index": 9,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Steaming pitcher, made in USA",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202409-002",
+    "line_index": 10,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "On-site service labor, not a product or tariff",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202409-002",
+    "line_index": 11,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping and handling charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202409-002",
+    "line_index": 12,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax applied to invoice",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202409-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copy paper is office supply goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202409-003",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Toner cartridge is office supply goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202409-003",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Receipt roll is office supply goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202409-003",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Nitrile gloves are office supply goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202409-003",
+    "line_index": 4,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a non-tariff fee",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202409-003",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202409-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Espresso group head - tangible good product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202409-001",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Calibrated tamper - tangible good product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202409-001",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Line explicitly labeled as freight",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202409-001",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Line explicitly labeled as sales tax",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202410-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Glass carafe product from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202410-001",
+    "line_index": 1,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight line item",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202410-001",
+    "line_index": 2,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at 10.25%",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202410-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Canvas barista apron is merchandise.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202410-002",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Embroidered staff tee is merchandise.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202410-002",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Linen table runner is merchandise.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202410-002",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Embroidered dad cap is merchandise.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202410-002",
+    "line_index": 4,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Explicitly labeled freight.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202410-002",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax explicitly stated.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202410-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Product line: 12 oz hot cups, kraft material",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202410-002",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Product line: kraft napkins, made in USA",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202410-002",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight charge for shipping",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202410-002",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at 10.25% rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202410-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins, packaged goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202410-004",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Hot cups, packaged goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202410-004",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bags, packaged goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202410-004",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cup sleeves, packaged goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202410-004",
+    "line_index": 4,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground freight shipping charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202410-004",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at 10.25%",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202410-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Power supply component, clearly a product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202410-002",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "POS display tablet, clearly a product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202410-002",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Barcode scanner component, clearly a product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202410-002",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "USB-C cables, clearly a product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202410-002",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cash drawer component, clearly a product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202410-002",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ground shipping explicitly stated.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202410-002",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax explicitly stated with percentage.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202410-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Receipt rolls are office supplies goods.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202410-004",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gel pens are office supplies goods.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202410-004",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Nitrile gloves are office supplies goods.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202410-004",
+    "line_index": 3,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a non-tariff fee.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202410-004",
+    "line_index": 4,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated percentage rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202411-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins are goods being sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202411-002",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towels are goods being sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202411-002",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight is shipping/handling cost.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202411-002",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ORC-202411-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copper saucepan is the good itself.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ORC-202411-001",
+    "line_index": 1,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight is shipping cost.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ORC-202411-001",
+    "line_index": 2,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax is clearly identified as tax.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202411-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Group head gasket - physical goods from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202411-002",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Tamper - physical goods made in USA",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202411-002",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping/freight line item",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202411-002",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax explicitly stated",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LUM-202411-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "12 oz hot cups are goods being sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LUM-202411-001",
+    "line_index": 1,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Line explicitly labeled as freight/shipping.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LUM-202411-001",
+    "line_index": 2,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Line is sales tax at specified rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202411-005",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins - consumable packaging product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202411-005",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Hot cup - consumable packaging product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202411-005",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip-through lid - consumable packaging product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202411-005",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bag - consumable packaging product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202411-005",
+    "line_index": 4,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground shipping charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202411-005",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at 10.25% rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202411-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Hot cups are the goods themselves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202411-003",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft napkins are the goods themselves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202411-003",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight line item for shipping costs.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202411-003",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax clearly labeled with percentage.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202411-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, no tariff language",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202411-003",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, no tariff language",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202411-003",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, no tariff language",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202411-003",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, no tariff language",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202411-003",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, no tariff language",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202411-003",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, no tariff language",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202411-003",
+    "line_index": 6,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, no tariff language",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202411-003",
+    "line_index": 7,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, no tariff language",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202411-003",
+    "line_index": 8,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, no tariff language",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202411-003",
+    "line_index": 9,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, no tariff language",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202411-003",
+    "line_index": 10,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Service labor, not a product or tariff",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202411-003",
+    "line_index": 11,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping & handling explicitly stated",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202411-003",
+    "line_index": 12,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax explicitly stated",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202411-005",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copy paper is office supply product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202411-005",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Surface cleaner is office supply product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202411-005",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Toner cartridge is office supply product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202411-005",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Nitrile gloves are office supply product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202411-005",
+    "line_index": 4,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a non-tariff fee",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202411-005",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax clearly marked",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202412-006",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bags are merchandise goods.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202412-006",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Napkins are merchandise goods.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202412-006",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Hot cups are merchandise goods.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202412-006",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Lids are merchandise goods.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202412-006",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Hot cups are merchandise goods.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202412-006",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cup sleeves are merchandise goods.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202412-006",
+    "line_index": 6,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground freight shipping charge.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202412-006",
+    "line_index": 7,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax is explicitly labeled.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202412-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Thermal receipt printer - goods for resale.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202412-003",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cash drawer - goods for resale.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202412-003",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "USB-C cables - goods for resale.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202412-003",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "POS display tablet - goods for resale.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202412-003",
+    "line_index": 4,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ground shipping - transportation charge.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202412-003",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at standard rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202412-006",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product: copy paper",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202412-006",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product: receipt rolls",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202412-006",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product: toner cartridge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202412-006",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product: nitrile gloves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202412-006",
+    "line_index": 4,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a non-tariff fee",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202412-006",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax clearly labeled",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202501-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Staff tee with embroidered logo is merchandise.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202501-003",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Canvas barista apron is merchandise.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202501-003",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dad cap with embroidered logo is merchandise.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202501-003",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Linen table runner is merchandise.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202501-003",
+    "line_index": 4,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight line item for shipping.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202501-003",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax clearly labeled.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202501-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Glass carafe product from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202501-002",
+    "line_index": 1,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight line item",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202501-002",
+    "line_index": 2,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202501-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins are goods being sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202501-003",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towel is a product good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202501-003",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight is shipping cost.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202501-003",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax line item.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202501-007",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bags are goods sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202501-007",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Corrugated cup sleeves are goods sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202501-007",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Double-wall hot cups are goods sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202501-007",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins are goods sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202501-007",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws are goods sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202501-007",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground freight charge.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202501-007",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax labeled explicitly.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202501-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Stoneware mug, domestic product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202501-002",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Glass carafe, domestic product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202501-002",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight line item",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202501-002",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at 10.25%",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202501-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Group head assembly component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202501-004",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Rotary vane pump component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202501-004",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Burr set component for coffee grinder",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202501-004",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Heating element component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202501-004",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Portafilter component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202501-004",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Flow meter kit component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202501-004",
+    "line_index": 6,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Shower screen component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202501-004",
+    "line_index": 7,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gasket replacement parts for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202501-004",
+    "line_index": 8,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Calibrated tamper tool for espresso preparation",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202501-004",
+    "line_index": 9,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Steaming pitcher tool for espresso service",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202501-004",
+    "line_index": 10,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "On-site service labor fee, not a product or tariff",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202501-004",
+    "line_index": 11,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping and handling charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202501-004",
+    "line_index": 12,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202501-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Stoneware cup goods from Vietnam",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202501-002",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towel product made in USA",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202501-002",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping and freight line",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202501-002",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202501-007",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Nitrile gloves are goods/supplies being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202501-007",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copy paper is goods/supplies being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202501-007",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Surface cleaner is goods/supplies being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202501-007",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Receipt rolls are goods/supplies being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202501-007",
+    "line_index": 4,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a logistics fee, not tariff or tax.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202501-007",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated percentage rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202501-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Espresso group head is merchandise being sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202501-002",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Calibrated tamper is merchandise being sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202501-002",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight is a shipping charge.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202501-002",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax as explicitly labeled.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202502-008",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins - physical goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202502-008",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws - physical goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202502-008",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Hot cups - physical goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202502-008",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip-through lids - physical goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202502-008",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cup sleeves - physical goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202502-008",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground freight charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202502-008",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax explicitly labeled",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202502-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "USB-C cable pack; standard goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202502-004",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Thermal receipt printer; equipment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202502-004",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "2D barcode scanner; equipment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202502-004",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Power supply; replacement part",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202502-004",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "POS display tablet; equipment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202502-004",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ground shipping",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202502-004",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax stated",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202502-008",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Receipt paper; office supply product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202502-008",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Toner cartridge; office supply product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202502-008",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Surface cleaner; office supply product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202502-008",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copy paper; office supply product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202502-008",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gel pens; office supply product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202502-008",
+    "line_index": 5,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge; not tariff or freight.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202502-008",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax explicitly stated.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202503-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Group head gasket inventory item from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202503-003",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Tamper made in USA; core product line item",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202503-003",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping and freight charge labeled explicitly",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202503-003",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax charge at 10.25% rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202503-009",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Corrugated cup sleeve, printed goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202503-009",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip-through lid, black plastic goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202503-009",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "16 oz double-wall hot cup, kraft goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202503-009",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins, 1-ply goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202503-009",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws, goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202503-009",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground freight shipping",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202503-009",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at 10.25%",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202503-005",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part for espresso machine equipment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202503-005",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part for espresso machine equipment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202503-005",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part for espresso machine equipment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202503-005",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part for espresso machine equipment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202503-005",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part for espresso machine equipment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202503-005",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part for espresso machine equipment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202503-005",
+    "line_index": 6,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part for espresso machine equipment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202503-005",
+    "line_index": 7,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part for espresso machine equipment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202503-005",
+    "line_index": 8,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part for espresso machine equipment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202503-005",
+    "line_index": 9,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Component part for espresso machine equipment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202503-005",
+    "line_index": 10,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Service labor, not a physical product or tariff",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202503-005",
+    "line_index": 11,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping and handling charges",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202503-005",
+    "line_index": 12,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax line item",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202503-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins are merchandise goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202503-004",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towels are merchandise goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202503-004",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Line explicitly labeled as Freight.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202503-004",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Line explicitly labeled as Sales tax.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202503-009",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copy paper is the goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202503-009",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Toner cartridge is the goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202503-009",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Nitrile gloves are the goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202503-009",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Surface cleaner is the goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202503-009",
+    "line_index": 4,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a non-tariff fee.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202503-009",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at 10.25% rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ORC-202504-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copper saucepan is merchandise being sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ORC-202504-002",
+    "line_index": 1,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Explicitly labeled as freight.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ORC-202504-002",
+    "line_index": 2,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Explicitly labeled as sales tax with percentage.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202504-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Canvas apron is a tangible good being sold",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202504-004",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Staff tee shirt is a tangible good being sold",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202504-004",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight line item for shipping charges",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202504-004",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax clearly labeled with percentage rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202504-010",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bag\u2014tangible good for resale.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202504-010",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Double-wall hot cup\u2014tangible product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202504-010",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip-through lid\u2014component of packaging product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202504-010",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins\u2014consumable product for resale.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202504-010",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws\u2014consumable product for resale.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202504-010",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Corrugated cup sleeve\u2014packaging component product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202504-010",
+    "line_index": 6,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Explicitly labeled 'Tariff Surcharge'\u2014IEEPA pass-through.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202504-010",
+    "line_index": 7,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight LTL ground shipping charge.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202504-010",
+    "line_index": 8,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202504-005",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Replacement power supply is merchandise.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202504-005",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Barcode scanner is merchandise.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202504-005",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Thermal printer is merchandise.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202504-005",
+    "line_index": 3,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Import Cost Recovery is a duty pass-through surcharge.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202504-005",
+    "line_index": 4,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ground shipping is freight cost.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202504-005",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax line item.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "PFF-202504-001",
+    "line_index": 0,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ocean freight shipping charge for container transport.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "PFF-202504-001",
+    "line_index": 1,
+    "category": "customs_duty_paid_by_buyer",
+    "decision": "confident",
+    "reason": "Buyer is importer of record; duty paid at entry by forwarder.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "PFF-202504-001",
+    "line_index": 2,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Customs brokerage fee is not a tariff surcharge.",
+    "labeled_by": "claude-sonnet-4-5",
+    "escalated": true
+  },
+  {
+    "invoice_number": "BOS-202504-010",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Receipt roll - consumable office supply product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202504-010",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Toner cartridge - consumable office supply product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202504-010",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Nitrile gloves - consumable office supply product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202504-010",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gel pens - consumable office supply product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202504-010",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Surface cleaner - consumable office supply product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202504-010",
+    "line_index": 5,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge - operational fee, not tariff-related",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202504-010",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax - percentage-based tax on purchase",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202505-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Physical goods - disposable hot cups",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202505-004",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Physical goods - kraft napkins made in USA",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202505-004",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight line item",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ERP-202505-004",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at 10.25%",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202505-011",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws - goods themselves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202505-011",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Hot cups - goods themselves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202505-011",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Hot cups - goods themselves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202505-011",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Lids - goods themselves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202505-011",
+    "line_index": 4,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Tariff surcharge explicitly stated, likely IEEPA pass-through",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202505-011",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ground freight shipping charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202505-011",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at standard rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202505-006",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Group head assembly component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202505-006",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Rotary pump component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202505-006",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Burr set component for coffee grinder",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202505-006",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Heating element component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202505-006",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Portafilter component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202505-006",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Flow meter kit component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202505-006",
+    "line_index": 6,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Shower screen component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202505-006",
+    "line_index": 7,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gasket replacement pack for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202505-006",
+    "line_index": 8,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Tamper tool accessory for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202505-006",
+    "line_index": 9,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Steaming pitcher accessory for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202505-006",
+    "line_index": 10,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "On-site service labor charge, not a tariff",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202505-006",
+    "line_index": 11,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping and handling charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202505-006",
+    "line_index": 12,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202505-011",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product; copy paper.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202505-011",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product; gel pens.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202505-011",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product; toner cartridge.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202505-011",
+    "line_index": 3,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge; non-tariff fee.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202505-011",
+    "line_index": 4,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax labeled explicitly with percentage.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202505-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Glass carafe is the merchandise itself.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202505-003",
+    "line_index": 1,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Line labeled as Freight.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202505-003",
+    "line_index": 2,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Line is sales tax at stated rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202505-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Espresso group head is a physical good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202505-003",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Calibrated tamper is a physical good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202505-003",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight is shipping cost",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202505-003",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at standard rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202505-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Stoneware mug product line item",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202505-003",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Glass carafe product line item",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202505-003",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Explicit freight charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202505-003",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax line clearly labeled",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202506-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Stoneware cup - imported good from Vietnam",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202506-003",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towel - product made in USA",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202506-003",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight - shipping cost",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202506-003",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax - stated as 10.25% rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MLA-202506-001",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Physical goods: hot-rolled steel sheet.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MLA-202506-001",
+    "line_index": 1,
+    "category": "tariff_other",
+    "decision": "confident",
+    "reason": "Section 232 steel tariff is not IEEPA-struck. Not refundable.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MLA-202506-001",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping cost labeled as freight.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MLA-202506-001",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202506-012",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "12 oz hot cups - goods being purchased",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202506-012",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "16 oz hot cups - goods being purchased",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202506-012",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bags - goods being purchased",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202506-012",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws - goods being purchased",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202506-012",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip-through lids - goods being purchased",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202506-012",
+    "line_index": 5,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Explicitly labeled tariff surcharge pass-through",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202506-012",
+    "line_index": 6,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ground freight shipping charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202506-012",
+    "line_index": 7,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202506-006",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Thermal receipt printer is a product good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202506-006",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Replacement power supply is a product good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202506-006",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "POS display tablet is a product good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202506-006",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Barcode scanner is a product good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202506-006",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cash drawer is a product good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202506-006",
+    "line_index": 5,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Import Cost Recovery is IEEPA tariff pass-through",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202506-006",
+    "line_index": 6,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ground shipping is freight",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202506-006",
+    "line_index": 7,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LUM-202506-002",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Physical goods - hot cups.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LUM-202506-002",
+    "line_index": 1,
+    "category": "tariff_ieepa",
+    "decision": "needs_review",
+    "reason": "Landed cost adjustment can be a duty pass-through surcharge.",
+    "labeled_by": "claude-sonnet-4-5",
+    "escalated": true
+  },
+  {
+    "invoice_number": "LUM-202506-002",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping and freight charges.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LUM-202506-002",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202506-012",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Surface cleaner is office supply product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202506-012",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Toner cartridge is office supply product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202506-012",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copy paper is office supply product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202506-012",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Nitrile gloves are office supply product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202506-012",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Receipt rolls are office supply product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202506-012",
+    "line_index": 5,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is transportation-related fee, not tariff.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202506-012",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Stated as sales tax percentage.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202507-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Group head gasket inventory item from Italy",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202507-004",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Tamper tool component, domestic product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202507-004",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping/freight charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CIM-202507-004",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at standard rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202507-005",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Canvas barista apron is merchandise being sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202507-005",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Embroidered staff tee is merchandise being sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202507-005",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towel dozen is merchandise being sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202507-005",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Linen table runner is merchandise being sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202507-005",
+    "line_index": 4,
+    "category": "tariff_other",
+    "decision": "confident",
+    "reason": "Section 301 tariff is not refundable.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202507-005",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight line for shipping costs.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202507-005",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202507-013",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "12 oz hot cup - goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202507-013",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip-through lid - product component",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202507-013",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "16 oz hot cup - goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202507-013",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Corrugated cup sleeve - product component",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202507-013",
+    "line_index": 4,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Explicitly labeled Tariff Surcharge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202507-013",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground shipping",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202507-013",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202507-007",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, physical good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202507-007",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, physical good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202507-007",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, physical good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202507-007",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, physical good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202507-007",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, physical good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202507-007",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, physical good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202507-007",
+    "line_index": 6,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, physical good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202507-007",
+    "line_index": 7,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, physical good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202507-007",
+    "line_index": 8,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, physical good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202507-007",
+    "line_index": 9,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, physical good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202507-007",
+    "line_index": 10,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Service labor, not a tariffable good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202507-007",
+    "line_index": 11,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping and handling charges.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202507-007",
+    "line_index": 12,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax charge.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202507-013",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gel pens are goods being purchased",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202507-013",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copy paper is goods being purchased",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202507-013",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Toner cartridge is goods being purchased",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202507-013",
+    "line_index": 3,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a non-tariff fee",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202507-013",
+    "line_index": 4,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202508-014",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Goods - 16 oz hot cups",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202508-014",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Goods - napkins",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202508-014",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Goods - kraft takeout bags",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202508-014",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Goods - paper straws",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202508-014",
+    "line_index": 4,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Explicitly labeled tariff surcharge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202508-014",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground freight shipping",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202508-014",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202508-007",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "POS display tablet is merchandise",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202508-007",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Power supply is merchandise",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202508-007",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "USB-C cables are merchandise",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202508-007",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Thermal receipt printer is merchandise",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202508-007",
+    "line_index": 4,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Import Cost Recovery is IEEPA tariff pass-through",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202508-007",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ground shipping is freight",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202508-007",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax is tax",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202508-014",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copy paper is a consumable product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202508-014",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Surface cleaner is a consumable product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202508-014",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Toner cartridge is a consumable product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202508-014",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gel pens are consumable products",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202508-014",
+    "line_index": 4,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a non-tariff fee",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202508-014",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at specified rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202509-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Stoneware cup from Vietnam - goods themselves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202509-004",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towel made in USA - goods themselves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202509-004",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Labeled as Freight - shipping cost.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202509-004",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Labeled as Sales tax - state/local sales tax.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202509-015",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Corrugated cup sleeve product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202509-015",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202509-015",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202509-015",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bag product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202509-015",
+    "line_index": 4,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Explicit tariff surcharge pass-through to buyer",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202509-015",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground shipping charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202509-015",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at standard rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ORC-202509-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copper saucepan is the physical good itself.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ORC-202509-003",
+    "line_index": 1,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight is shipping/transportation cost.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ORC-202509-003",
+    "line_index": 2,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax explicitly labeled as such.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202509-008",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Group head assembly component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202509-008",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Rotary pump component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202509-008",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Burr set component for coffee grinder",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202509-008",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Heating element component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202509-008",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Portafilter component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202509-008",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Flow meter kit component",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202509-008",
+    "line_index": 6,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Shower screen component for espresso machine",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202509-008",
+    "line_index": 7,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gasket replacement pack component",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202509-008",
+    "line_index": 8,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Calibrated tamper tool for espresso",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202509-008",
+    "line_index": 9,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Stainless steel steaming pitcher",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202509-008",
+    "line_index": 10,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Service labor fee, not a product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202509-008",
+    "line_index": 11,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping and handling charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202509-008",
+    "line_index": 12,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LUM-202509-003",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Goods being sold: 12 oz hot cups",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LUM-202509-003",
+    "line_index": 1,
+    "category": "tariff_ieepa",
+    "decision": "needs_review",
+    "reason": "Cost pass-through may be duty surcharge but wording ambiguous",
+    "labeled_by": "claude-sonnet-4-5",
+    "escalated": true
+  },
+  {
+    "invoice_number": "LUM-202509-003",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Explicitly labeled as freight",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LUM-202509-003",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate of 10.25%",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202509-015",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Nitrile gloves are goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202509-015",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Toner cartridge is office supply product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202509-015",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copy paper is office supply product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202509-015",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Receipt rolls are goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202509-015",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Surface cleaner is consumable product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202509-015",
+    "line_index": 5,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a carrier cost fee, not tariff.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202509-015",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax line item explicitly labeled as tax.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202509-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Glass carafe is a physical good being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202509-004",
+    "line_index": 1,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight is explicitly labeled as shipping cost.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202509-004",
+    "line_index": 2,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax is explicitly labeled as such.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202510-006",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Embroidered staff tee, a tangible good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202510-006",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Embroidered dad cap, a tangible good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202510-006",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Canvas barista apron, a tangible good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202510-006",
+    "line_index": 3,
+    "category": "tariff_other",
+    "decision": "confident",
+    "reason": "Section 301 tariff adjustment, not refundable",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202510-006",
+    "line_index": 4,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight charge for shipping",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202510-006",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at standard rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "PFF-202510-002",
+    "line_index": 0,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ocean freight shipping charge for container transport",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "PFF-202510-002",
+    "line_index": 1,
+    "category": "customs_duty_paid_by_buyer",
+    "decision": "confident",
+    "reason": "Buyer is importer of record; duty paid at entry by forwarder",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "PFF-202510-002",
+    "line_index": 2,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Customs brokerage fee is a service fee, not a tariff.",
+    "labeled_by": "claude-sonnet-4-5",
+    "escalated": true
+  },
+  {
+    "invoice_number": "NWP-202510-016",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "12 oz double-wall hot cup product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202510-016",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202510-016",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Corrugated cup sleeve product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202510-016",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "16 oz double-wall hot cup product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202510-016",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202510-016",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip-through lid product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202510-016",
+    "line_index": 6,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Explicit 'Tariff Surcharge' pass-through to buyer",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202510-016",
+    "line_index": 7,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight - LTL ground shipping",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202510-016",
+    "line_index": 8,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at 10.25%",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202510-008",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cash drawer hardware, goods being purchased",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202510-008",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Thermal receipt printer, goods being purchased",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202510-008",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "POS display tablet, goods being purchased",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202510-008",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "USB-C cables, goods being purchased",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202510-008",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Barcode scanner hardware, goods being purchased",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202510-008",
+    "line_index": 5,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Labeled as IEEPA Adj., struck-down tariff pass-through",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202510-008",
+    "line_index": 6,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ground shipping, freight service",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202510-008",
+    "line_index": 7,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202510-005",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins are goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202510-005",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towels are goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202510-005",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Line explicitly labeled as Freight.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LVP-202510-005",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Line explicitly labeled as sales tax.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202510-016",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gel pens are office supply goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202510-016",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Surface cleaner is a consumable product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202510-016",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Nitrile gloves are office supply goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202510-016",
+    "line_index": 3,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a logistics cost, not tariff",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202510-016",
+    "line_index": 4,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax charge at stated rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202510-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Espresso group head is the goods themselves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202510-004",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Calibrated tamper is the goods themselves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202510-004",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight line item explicitly labeled as freight.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202510-004",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax explicitly stated in line description.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Holiday hot cup, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Holiday hot cup, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Holiday hot cup, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Holiday hot cup, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip lid component, part of cup system",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip lid component, part of cup system",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 6,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip lid component, part of cup system",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 7,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Holiday cup sleeve, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 8,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cold cup, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 9,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cold cup, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 10,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cold cup, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 11,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cold lid component, part of cup system",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 12,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cold lid component, part of cup system",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 13,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bag, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 14,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bag, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 15,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bag, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 16,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Pastry box, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 17,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Pastry box, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 18,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bakery tissue, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 19,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 20,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Holiday beverage napkins, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 21,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 22,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Wood stir sticks, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 23,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cup sleeve, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 24,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cup carrier tray, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 25,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gift card sleeve, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 26,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Packing tape, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 27,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Seal labels, packaged goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 28,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Tariff Surcharge explicitly states tariff pass-through",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 29,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground freight shipping cost",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202511-017",
+    "line_index": 30,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at standard rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202511-009",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Group head assembly component for espresso machine.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202511-009",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Rotary vane pump component for espresso machine.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202511-009",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Burr set component for espresso grinder.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202511-009",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Heating element component for espresso machine.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202511-009",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Portafilter component for espresso machine.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202511-009",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Flow meter kit component for espresso machine.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202511-009",
+    "line_index": 6,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Shower screen component for espresso machine.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202511-009",
+    "line_index": 7,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gasket replacement component for espresso machine.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202511-009",
+    "line_index": 8,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Calibrated tamper tool for espresso preparation.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202511-009",
+    "line_index": 9,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Stainless steel pitcher for espresso machine use.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202511-009",
+    "line_index": 10,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Service labor fee, not a tangible product or tariff.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202511-009",
+    "line_index": 11,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping and handling charge.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202511-009",
+    "line_index": 12,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax calculation.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202511-017",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gel pens are goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202511-017",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copy paper is goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202511-017",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Receipt rolls are goods being purchased.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202511-017",
+    "line_index": 3,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a non-tariff fee.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202511-017",
+    "line_index": 4,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax explicitly labeled.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202511-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Stoneware mug product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202511-004",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Glass carafe product",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202511-004",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight shipping cost",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HMK-202511-004",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202512-005",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Stoneware cup imported from Vietnam is merchandise.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202512-005",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towel made in USA is product, not a tariff or fee.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202512-005",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight is shipping cost.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202512-005",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Line explicitly labeled as sales tax.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202512-018",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip-through lid product - goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202512-018",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "16 oz hot cup product - goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202512-018",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws product - goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202512-018",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins product - goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202512-018",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "12 oz hot cup product - goods for resale",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202512-018",
+    "line_index": 5,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Explicitly labeled Tariff Surcharge - IEEPA duty pass-through",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202512-018",
+    "line_index": 6,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground freight shipping charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202512-018",
+    "line_index": 7,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at 10.25% rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ORC-202512-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copper saucepan is the good itself.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ORC-202512-004",
+    "line_index": 1,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Line explicitly labeled as freight.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ORC-202512-004",
+    "line_index": 2,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Line explicitly labeled as sales tax.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202512-009",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Thermal receipt printer is a product/goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202512-009",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Power supply is a product component",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202512-009",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Barcode scanner is a product/goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202512-009",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "USB-C cables are product accessories",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202512-009",
+    "line_index": 4,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "IEEPA Adj. explicitly indicates IEEPA tariff adjustment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202512-009",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ground shipping is freight/shipping charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202512-009",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax line at stated percentage",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202512-005",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Glass carafe is the goods being sold.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202512-005",
+    "line_index": 1,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight is shipping/transportation cost.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "CPG-202512-005",
+    "line_index": 2,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax is a percentage tax on purchase.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LUM-202512-004",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Goods themselves\u201412 oz hot cups.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LUM-202512-004",
+    "line_index": 1,
+    "category": "tariff_ieepa",
+    "decision": "needs_review",
+    "reason": "Global sourcing fee may be duty pass-through despite not mentioning tariffs.",
+    "labeled_by": "claude-sonnet-4-5",
+    "escalated": true
+  },
+  {
+    "invoice_number": "LUM-202512-004",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight line item.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "LUM-202512-004",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax explicitly stated.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202512-018",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product - surface cleaner",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202512-018",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product - toner cartridge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202512-018",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product - copy paper",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202512-018",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product - receipt roll",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202512-018",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product - nitrile gloves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202512-018",
+    "line_index": 5,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a non-tariff fee",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202512-018",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202601-007",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Staff tee with embroidered logo is a good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202601-007",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towel is a good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202601-007",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Canvas barista apron is a good.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202601-007",
+    "line_index": 3,
+    "category": "tariff_other",
+    "decision": "confident",
+    "reason": "Section 301 adjustment is a non-refundable tariff.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202601-007",
+    "line_index": 4,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight is shipping charge.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "KST-202601-007",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202601-019",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Sip-through lid, clearly a product/good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202601-019",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins, clearly a product/good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202601-019",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "12 oz hot cup, clearly a product/good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202601-019",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws, clearly a product/good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202601-019",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "16 oz hot cup, clearly a product/good",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202601-019",
+    "line_index": 5,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Tariff Surcharge passes IEEPA duty to buyer",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202601-019",
+    "line_index": 6,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight - LTL ground shipping",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202601-019",
+    "line_index": 7,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax 10.25%",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202601-010",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, product goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202601-010",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, product goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202601-010",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, product goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202601-010",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, product goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202601-010",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, product goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202601-010",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, product goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202601-010",
+    "line_index": 6,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, product goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202601-010",
+    "line_index": 7,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, product goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202601-010",
+    "line_index": 8,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, product goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202601-010",
+    "line_index": 9,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Coffee equipment component, product goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202601-010",
+    "line_index": 10,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Service labor, not a product or tariff",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202601-010",
+    "line_index": 11,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping and handling charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202601-010",
+    "line_index": 12,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax stated explicitly",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202601-019",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product - surface cleaner",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202601-019",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product - receipt roll",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202601-019",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product - nitrile gloves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202601-019",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product - gel pens",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202601-019",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Office supply product - toner cartridge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202601-019",
+    "line_index": 5,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a shipping/transportation fee",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202601-019",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax explicitly labeled with percentage",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202602-020",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Paper straws - packaging goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202602-020",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Kraft takeout bags - packaging goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202602-020",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Double-wall hot cups - packaging goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202602-020",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Cup sleeves - packaging goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202602-020",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Dispenser napkins - packaging goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202602-020",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Double-wall hot cups - packaging goods",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202602-020",
+    "line_index": 6,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "Explicitly labeled 'Tariff Surcharge' - IEEPA pass-through",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202602-020",
+    "line_index": 7,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground freight - shipping charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202602-020",
+    "line_index": 8,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at standard rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202602-010",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Thermal receipt printer is merchandise being sold",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202602-010",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "USB-C cable pack is merchandise being sold",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202602-010",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "2D barcode scanner is merchandise being sold",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202602-010",
+    "line_index": 3,
+    "category": "tariff_ieepa",
+    "decision": "confident",
+    "reason": "IEEPA Adj. is explicitly an IEEPA tariff adjustment",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202602-010",
+    "line_index": 4,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Ground shipping is freight/shipping charge",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "ALT-202602-010",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax percentage clearly labeled",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202602-020",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Standard office supply product\u2014gel pens.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202602-020",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Standard office supply product\u2014nitrile gloves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202602-020",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Standard office supply product\u2014copy paper.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202602-020",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Standard office supply product\u2014receipt rolls.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202602-020",
+    "line_index": 4,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a logistics cost, not tariff.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202602-020",
+    "line_index": 5,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax clearly labeled with percentage rate.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202603-021",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Packaging product - cups",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202603-021",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Packaging product - lids",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202603-021",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Packaging product - straws",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202603-021",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Packaging product - cups",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202603-021",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Packaging product - cup sleeves",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202603-021",
+    "line_index": 5,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "LTL ground shipping",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "NWP-202603-021",
+    "line_index": 6,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax at stated rate",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202603-011",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Group head assembly component, product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202603-011",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Rotary vane pump component, product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202603-011",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Burr set component, product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202603-011",
+    "line_index": 3,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Heating element component, product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202603-011",
+    "line_index": 4,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Portafilter component, product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202603-011",
+    "line_index": 5,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Flow meter kit component, product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202603-011",
+    "line_index": 6,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Shower screen component, product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202603-011",
+    "line_index": 7,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gasket pack component, product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202603-011",
+    "line_index": 8,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Tamper tool, product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202603-011",
+    "line_index": 9,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Steaming pitcher, product.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202603-011",
+    "line_index": 10,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Service labor, not a tariff or duty.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202603-011",
+    "line_index": 11,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Shipping and handling.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "HPC-202603-011",
+    "line_index": 12,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax (10.25%).",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202603-006",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Stoneware cup is the good itself",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202603-006",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Bar towel is the good itself",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202603-006",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Freight is shipping cost",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "MKT-202603-006",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax labeled as such",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202603-021",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Gel pens are office supply goods.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202603-021",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Copy paper is office supply goods.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202603-021",
+    "line_index": 2,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Nitrile gloves are office supply goods.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202603-021",
+    "line_index": 3,
+    "category": "other_fee",
+    "decision": "confident",
+    "reason": "Fuel surcharge is a non-tariff fee.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "BOS-202603-021",
+    "line_index": 4,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax line clearly identified as tax.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202603-005",
+    "line_index": 0,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Espresso group head, goods themselves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202603-005",
+    "line_index": 1,
+    "category": "product",
+    "decision": "confident",
+    "reason": "Calibrated tamper, goods themselves.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202603-005",
+    "line_index": 2,
+    "category": "freight",
+    "decision": "confident",
+    "reason": "Explicitly labeled freight.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  },
+  {
+    "invoice_number": "GWG-202603-005",
+    "line_index": 3,
+    "category": "tax",
+    "decision": "confident",
+    "reason": "Sales tax labeled explicitly.",
+    "labeled_by": "claude-haiku-4-5",
+    "escalated": false
+  }
+]

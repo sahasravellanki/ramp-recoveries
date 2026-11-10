@@ -20,9 +20,9 @@ export function TopBar({ onMenu }: { onMenu?: () => void }) {
     try {
       await resetDemo();
       window.dispatchEvent(new Event("demo-reset"));
-      toast.success("Demo reset. Scan results, letter edits, and credits are cleared.");
+      toast.success("Scan results, letter edits, and credits are cleared.");
     } catch {
-      toast.error("Couldn't reset the demo. Is the API running?");
+      toast.error("Couldn't reset. Is the API running?");
     }
   }
 
@@ -62,7 +62,7 @@ export function TopBar({ onMenu }: { onMenu?: () => void }) {
             </DropdownMenuLabel>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={onReset}>Reset demo</DropdownMenuItem>
+          <DropdownMenuItem onClick={onReset}>Reset</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </header>

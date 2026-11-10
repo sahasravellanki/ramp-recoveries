@@ -25,6 +25,6 @@ export async function getHome(): Promise<HomeFeed> {
 export async function resetDemo(): Promise<void> {
   const response = await fetch(`${API_URL}/api/demo/reset`, { method: "POST" });
   if (!response.ok) {
-    throw new Error("The demo didn't reset.");
+    throw new Error("Couldn't reset.");
   }
 }

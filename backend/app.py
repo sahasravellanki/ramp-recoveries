@@ -30,6 +30,7 @@ from pipeline.ingest import check_math
 from pipeline.models import Bill as PBill
 from pipeline.models import Decision, LineItem, Vendor as PVendor, VendorCredit as PVendorCredit, VendorRef, money
 from pipeline.run import run_pipeline
+from pipeline.saved import load_saved_output, replay_saved
 from pipeline.sources import UploadSource
 
 LA = ZoneInfo("America/Los_Angeles")
@@ -399,6 +400,7 @@ def create_app(database_url: str | None = None) -> FastAPI:
             if session.exec(select(Vendor)).first() is None:
                 seed_database(session, settings.resolved_data_dir())
                 session.commit()
+        _seed_saved_scan(engine)
         yield
 
     app = FastAPI(title="Ramp Recoveries", lifespan=lifespan)
@@ -523,7 +525,10 @@ def create_app(database_url: str | None = None) -> FastAPI:
     @app.post("/api/recoveries/{vendor_id}/simulate-agree")
     def simulate_agree(vendor_id: str, session: SessionDep) -> dict:
         if not get_settings().use_demo:
-            raise HTTPException(status_code=403, detail="Supplier agreement is a demo action.")
+            raise HTTPException(
+                status_code=403,
+                detail="Record the supplier's reply before applying a credit.",
+            )
         claim = _claim_for(session, vendor_id)
         if claim.status == "Credited":
             raise HTTPException(status_code=409, detail="This claim is already credited.")
@@ -706,20 +711,56 @@ def _start_scan(app: FastAPI) -> dict:
         return {"scan_id": scan_id, "status": "running"}
 
 
+def _scan_source(settings) -> str:
+    if settings.anthropic_api_key.strip() and not settings.demo_mode:
+        return "live"
+    if replay_saved(settings):
+        return "saved"
+    return "rules"
+
+
+def _seed_saved_scan(engine) -> None:
+    """Open on the saved model run when there is no key and the database is empty of claims."""
+    if not replay_saved(get_settings()):
+        return
+    with Session(engine) as session:
+        if session.exec(select(Claim)).first() is not None:
+            return
+        bills, _vendors, _credits, _key = _pipeline_inputs(session)
+        output = load_saved_output()
+        review_count = _persist(session, output, bills)
+        scan = ScanRun(
+            id=uuid4().hex,
+            status="complete",
+            step=STEPS[-1],
+            step_index=len(STEPS),
+            needs_review_count=review_count,
+            usage_json=output.usage.model_dump_json(),
+            importer_json=json.dumps(_importer_payload(session, output.importer_cases)),
+            finished_at=_now(),
+        )
+        session.add(scan)
+        session.commit()
+
+
 def _execute_scan(app: FastAPI, scan_id: str) -> None:
     delay = float(os.environ.get("RECOVERIES_STEP_DELAY", "0.35"))
     try:
         _set_step(app, scan_id, 0)
         with Session(app.state.engine) as session:
             bills, vendors, credits, key = _pipeline_inputs(session)
+        settings = get_settings()
+        source = _scan_source(settings)
+        cache_key = (source, key)
         with app.state.cache_lock:
-            cached = key in app.state.pipeline_cache
+            cached = cache_key in app.state.pipeline_cache
             if not cached:
-                settings = get_settings()
-                app.state.pipeline_cache[key] = run_pipeline(
-                    settings, bills, vendors, credits, settings.resolved_data_dir()
-                )
-            output = app.state.pipeline_cache[key]
+                if source == "saved":
+                    produced = load_saved_output()
+                else:
+                    produced = run_pipeline(settings, bills, vendors, credits, settings.resolved_data_dir())
+                app.state.pipeline_cache[cache_key] = produced
+            output = app.state.pipeline_cache[cache_key]
         _mark_cached(app, scan_id, cached)
         for index in range(len(STEPS)):
             _set_step(app, scan_id, index)

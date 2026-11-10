@@ -1,0 +1,46 @@
+{
+  "Northwind Packaging Co.": {
+    "vendor_id": "ven_2c00c154e5422775",
+    "vendor_name": "Northwind Packaging Co.",
+    "document_url": "data/contracts/northwind-packaging-supply-agreement.pdf",
+    "mentions_tariffs": true,
+    "refund_or_credit_clause": true,
+    "clause_number": "7",
+    "clause_text": "Supplier may add a tariff surcharge to invoices to recover customs duties actually paid by Supplier on Products sold to Buyer. Any such surcharge shall be stated as a separate line item and shall not exceed the duty actually incurred. If any duty underlying a surcharge is subsequently refunded, remitted, reduced or otherwise recovered by Supplier, whether by administrative action, protest, litigation or otherwise, Supplier shall credit Buyer the corresponding surcharge amounts within sixty (60) days of Supplier's receipt of such refund. Credits shall be issued as vendor credits applied against Buyer's open or future invoices, or at Buyer's election, by payment.",
+    "summary": "The contract permits tariff surcharges but requires the supplier to credit the buyer within 60 days if any duty is refunded or recovered.",
+    "labeled_by": "claude-sonnet-4-5"
+  },
+  "Harbor & Pine Coffee Equipment": {
+    "vendor_id": "ven_8f4488933181a528",
+    "vendor_name": "Harbor & Pine Coffee Equipment",
+    "document_url": "data/contracts/harbor-and-pine-equipment-and-service-agreement.pdf",
+    "mentions_tariffs": true,
+    "refund_or_credit_clause": true,
+    "clause_number": "6",
+    "clause_text": "Prices for imported Products are inclusive of customs duties, tariffs and similar import charges borne by Supplier. Supplier shall give Buyer thirty (30) days notice of any price change attributable to a change in such charges. In the event any duty, tariff or similar charge paid by Supplier with respect to Products sold to Buyer is refunded to Supplier by any governmental authority, Supplier shall pass through to Buyer a pro rata share of such refund attributable to Products purchased by Buyer during the period the charge was in effect, net of Supplier's reasonable documented costs of recovery, within ninety (90) days of receipt.",
+    "summary": "The supplier must pass through to the buyer a pro rata share of any duty or tariff refund received from governmental authorities within ninety days, net of recovery costs.",
+    "labeled_by": "claude-sonnet-4-5"
+  },
+  "Kestrel Textiles": {
+    "vendor_id": "ven_477720b9f509a868",
+    "vendor_name": "Kestrel Textiles",
+    "document_url": "data/contracts/kestrel-textiles-master-supply-agreement.pdf",
+    "mentions_tariffs": false,
+    "refund_or_credit_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "summary": null,
+    "labeled_by": "claude-sonnet-4-5"
+  },
+  "Brightline Office Supply": {
+    "vendor_id": "ven_be599f66c310d1ff",
+    "vendor_name": "Brightline Office Supply",
+    "document_url": "data/contracts/brightline-office-supply-agreement.pdf",
+    "mentions_tariffs": false,
+    "refund_or_credit_clause": false,
+    "clause_number": null,
+    "clause_text": null,
+    "summary": null,
+    "labeled_by": "claude-sonnet-4-5"
+  }
+}

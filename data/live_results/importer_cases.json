@@ -1,0 +1,22 @@
+[
+  {
+    "invoice_number": "PFF-202504-001",
+    "line_index": 1,
+    "vendor_name": "Pacific Freight Forwarding",
+    "issued_at": "2025-04-18",
+    "description": "Customs duty paid on entry - Entry No. 231-4471022-5 (IEEPA, China origin), importer of record: Sunbird Cafe Group",
+    "amount": "1184.60",
+    "guidance": "You are the importer of record. Request this refund from CBP, not from the supplier.",
+    "labeled_by": "claude-haiku-4-5"
+  },
+  {
+    "invoice_number": "PFF-202510-002",
+    "line_index": 1,
+    "vendor_name": "Pacific Freight Forwarding",
+    "issued_at": "2025-10-07",
+    "description": "Customs duty paid on entry - Entry No. 231-4518860-1 (IEEPA, China origin), importer of record: Sunbird Cafe Group",
+    "amount": "1412.95",
+    "guidance": "You are the importer of record. Request this refund from CBP, not from the supplier.",
+    "labeled_by": "claude-haiku-4-5"
+  }
+]

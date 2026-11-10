@@ -1,0 +1,22 @@
+{
+  "calls": {
+    "claude-haiku-4-5": 115,
+    "claude-sonnet-4-5": 15
+  },
+  "input_tokens": {
+    "claude-haiku-4-5": 163200,
+    "claude-sonnet-4-5": 18539
+  },
+  "output_tokens": {
+    "claude-haiku-4-5": 40975,
+    "claude-sonnet-4-5": 2972
+  },
+  "cache_read_tokens": {
+    "claude-haiku-4-5": 0,
+    "claude-sonnet-4-5": 0
+  },
+  "cache_write_tokens": {
+    "claude-haiku-4-5": 0,
+    "claude-sonnet-4-5": 0
+  }
+}
