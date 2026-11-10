@@ -10,7 +10,7 @@
     "end": "2026-02-20"
   },
   "amounts_are_pre_sales_tax": true,
-  "price_claim_note": "refundable_claim_total is the full answer, including wording a keyword rule misses. demo_refundable_claim_total is what DEMO_MODE should recover. Price claims use the expected difference-in-differences amount. claim_low is half of that. claim_high is the raw jump.",
+  "price_claim_note": "refundable_claim_total is the full answer, including wording a keyword rule misses. demo_refundable_claim_total is what DEMO_MODE should recover. Price claims use the expected difference-in-differences amount, capped at the estimated tariff on import cost. A jump more than twice that cap is not claimed. claim_low is half of the capped amount. claim_high is the raw jump.",
   "suppliers": {
     "Northwind Packaging Co.": {
       "vendor_id": "ven_2c00c154e5422775",
@@ -629,7 +629,7 @@
     "non_refundable_total": 888.41,
     "importer_of_record_duty_total": 2597.55,
     "price_claim_method": {
-      "expected_claim": "explicit IEEPA lines plus the difference-in-differences price claim",
+      "expected_claim": "explicit IEEPA lines plus the difference-in-differences price claim, capped at the estimated tariff on import cost",
       "low": "half the difference-in-differences excess, a 50% pass-through",
       "high": "the raw unit-price jump over the pre-tariff price",
       "demo": "demo_refundable excludes surcharge lines whose wording the keyword rules miss"

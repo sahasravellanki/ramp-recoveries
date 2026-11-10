@@ -76,6 +76,9 @@ def test_scan_totals_match_ground_truth(client: TestClient):
     assert required and all(test["passed"] for test in required)
     harbor_timing = next(test for test in harbor["price_history"][0]["tests"] if test["id"] == "timing")
     assert "2025-04-05" in (harbor_timing.get("matched_action") or harbor_timing["detail"])
+    harbor_control = next(test for test in harbor["price_history"][0]["tests"] if test["id"] == "control")
+    assert "2-point" in harbor_control["name"]
+    assert "more than 2 points" in harbor_control["detail"]
     assert by_name["Mekong Tabletop"]["strength"] == "Low"
     mekong = client.get(f"/api/recoveries/{by_name['Mekong Tabletop']['vendor_id']}").json()
     mekong_timing = next(test for sku in mekong["price_history"] for test in sku["tests"] if test["id"] == "timing")
@@ -116,23 +119,29 @@ def test_scan_totals_match_ground_truth(client: TestClient):
     assert "Pacific Freight Forwarding" not in by_name
 
     original = harbor["refundable"]
-    lowered = client.put(
-        f"/api/recoveries/{by_name['Harbor & Pine Coffee Equipment']['vendor_id']}/import-cost-share",
-        json={"import_cost_share": 0.4},
-    )
-    assert lowered.status_code == 200, lowered.text
-    assert lowered.json()["refundable"] == pytest.approx(0, abs=0.01)
-    lowered_size = next(test for sku in lowered.json()["price_history"] for test in sku["tests"] if test["id"] == "size")
-    assert lowered_size["passed"] is False
+    vendor_url = f"/api/recoveries/{by_name['Harbor & Pine Coffee Equipment']['vendor_id']}/import-cost-share"
+
+    def _resize(share: float):
+        response = client.put(vendor_url, json={"import_cost_share": share})
+        assert response.status_code == 200, response.text
+        body = response.json()
+        size = next(test for sku in body["price_history"] for test in sku["tests"] if test["id"] == "size")
+        return body, size
+
+    lowered, lowered_size = _resize(0.4)
+    assert lowered["refundable"] == pytest.approx(original, abs=0.05)
+    assert lowered_size["passed"] is True
     assert "40%" in lowered_size["detail"]
-    restored = client.put(
-        f"/api/recoveries/{by_name['Harbor & Pine Coffee Equipment']['vendor_id']}/import-cost-share",
-        json={"import_cost_share": 0.6},
-    )
-    assert restored.status_code == 200, restored.text
-    assert restored.json()["refundable"] == pytest.approx(original, abs=0.05)
-    restored_size = next(test for sku in restored.json()["price_history"] for test in sku["tests"] if test["id"] == "size")
+    assert "Capped at the estimated tariff on import cost" in lowered_size["detail"]
+    raised, raised_size = _resize(0.8)
+    assert raised["refundable"] == pytest.approx(original, abs=0.05)
+    assert raised_size["passed"] is True
+    assert "80%" in raised_size["detail"]
+    assert "Capped at the estimated tariff on import cost" not in raised_size["detail"]
+    restored, restored_size = _resize(0.6)
+    assert restored["refundable"] == pytest.approx(original, abs=0.05)
     assert restored_size["passed"] is True
+    assert "Capped at the estimated tariff on import cost" not in restored_size["detail"]
 
     replay = _finish(client)
     assert replay["cached"] is True

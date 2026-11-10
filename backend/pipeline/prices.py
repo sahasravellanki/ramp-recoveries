@@ -4,16 +4,21 @@ A price increase counts only when every required test passes:
 
 - origin: the item is imported from a country with an IEEPA tariff on the invoice
 - timing: the jump starts 0 to 90 days after any IEEPA rate increase for that country
-- size: the per-unit jump is no larger than tariff rate times import cost
-- control: unaffected goods did not rise by a similar amount
+- size: the per-unit jump is at most twice the tariff on import cost
+- control: the item outpaces unaffected goods by more than 2 points
+
+The size cap is tariff rate times the import-cost share times the pre-tariff
+price. A jump above that cap is still claimed, up to the cap, and the checklist
+says so. A jump more than twice the cap fails, as a sign it is not tariff-driven.
 
 The control group is the same supplier's domestic or unaffected items. If that
 supplier has none, it is the same category from other suppliers. If no control
 exists, the test is Needs review and the item is not claimed.
 
 A price that falls back after February 20, 2026 is recorded and is not required.
-The claimed amount is the difference-in-differences excess. Low is half of that.
-High is the raw jump. The mock benchmark is stored and never enters a dollar.
+The claimed amount is the difference-in-differences excess, limited to the size
+cap. Low is half of that. High is the raw jump. The mock benchmark is stored
+and never enters a dollar.
 """
 
 from __future__ import annotations
@@ -47,15 +52,19 @@ from .tariffs import (
 
 # Ignore a move smaller than this when deciding that a jump started.
 _JUMP = Decimal("0.005")
-# A control group that rose within two points of the item is "a similar amount".
+# A control group within two points of the item did not leave a tariff-sized gap.
 _SIMILAR = Decimal("0.02")
 _TIMING_DAYS = 90
 _HALF = Decimal("0.5")
+_PENNY = Decimal("0.005")
 # A mock benchmark, deliberately not the baseline, and never used in the claim.
 BENCHMARK_FACTOR = Decimal("0.99")
 # Hours and freight are not a control for a goods price.
 _NOT_A_CONTROL = {"equipment_service", "freight_and_fees"}
-_SIZE_NAME = "Jump no larger than the tariff on import cost"
+_SIZE_NAME = "Jump within twice the tariff on import cost"
+_CAP_NOTE = "Capped at the estimated tariff on import cost."
+_CONTROL_NAME = "More than a 2-point gap versus unaffected goods"
+_GAP_RULE = "The item has to outpace the control group by more than 2 points."
 
 
 @dataclass
@@ -95,6 +104,7 @@ class _Assessment:
     max_jump: Decimal
     needs_review: bool
     matched_action: str | None
+    cap: Decimal | None
 
 
 def analyze(
@@ -195,7 +205,9 @@ def _findings(series: list[Observation], assessment: _Assessment) -> list[PriceF
             continue
         if ieepa_rate(row.country, row.issued) <= 0 or row.unit_price <= baseline:
             continue
-        low, expected, high, did_per, raw_per = _line_amounts(baseline, row.unit_price, control, row.quantity)
+        low, expected, high, claimed_per, raw_per = _line_amounts(
+            baseline, row.unit_price, control, row.quantity, assessment.cap
+        )
         if expected <= 0:
             continue
         out.append(
@@ -211,7 +223,7 @@ def _findings(series: list[Observation], assessment: _Assessment) -> list[PriceF
                 baseline=baseline,
                 expected=money(baseline * (1 + control)),
                 excess_per_unit=money(raw_per),
-                capped_per_unit=money(did_per),
+                capped_per_unit=money(claimed_per),
                 amount=expected,
                 category_id=row.category_id or "",
                 tariff_rate=rate or Decimal("0"),
@@ -305,7 +317,7 @@ def _assess(series: list[Observation], grouped: dict[tuple[str, str], list[Obser
             gap = item_pct - control
             control_status = "pass" if gap > _SIMILAR else "fail"
             movement = (
-                f"This item rose {_pct(item_pct)}. The comparison group rose {_pct(control)} in the same period. "
+                f"{_GAP_RULE} This item rose {_pct(item_pct)}. The comparison group rose {_pct(control)} in the same period. "
                 f"The difference is {gap * 100:.1f} points."
             )
             if control_match.source == "supplier":
@@ -349,7 +361,7 @@ def _assess(series: list[Observation], grouped: dict[tuple[str, str], list[Obser
         size,
         PriceTest(
             id="control",
-            name="Not matched by unaffected goods",
+            name=_CONTROL_NAME,
             passed=control_status == "pass",
             required=True,
             detail=control_detail,
@@ -364,10 +376,11 @@ def _assess(series: list[Observation], grouped: dict[tuple[str, str], list[Obser
             status="pass" if revert_ok else "fail",
         ),
     ]
+    cap = rate * share * baseline if baseline is not None and rate > 0 else None
     required_ok = all(test.status == "pass" for test in tests if test.required)
     others_ok = all(test.status == "pass" for test in tests if test.required and test.id != "control")
     needs_review = control_status == "needs_review" and others_ok
-    claimable = required_ok and claim_lines_exist(series, baseline, jump, control)
+    claimable = required_ok and claim_lines_exist(series, baseline, jump, control, cap)
     return _Assessment(
         tests=tests,
         rate=rate if rate > 0 else None,
@@ -379,6 +392,7 @@ def _assess(series: list[Observation], grouped: dict[tuple[str, str], list[Obser
         max_jump=biggest,
         needs_review=needs_review,
         matched_action=matched_action,
+        cap=cap if size.status == "pass" else None,
     )
 
 
@@ -393,34 +407,55 @@ def size_test(baseline: Decimal | None, rate: Decimal | None, biggest: Decimal, 
             status="fail",
         )
     cap = rate * share * baseline
-    ok = biggest <= cap + Decimal("0.005")
+    band = _size_band(biggest, cap)
     detail = (
         f"Largest per-unit jump is ${biggest:,.2f}. Assumes import cost is {_pct(share)} of price. "
         f"The cap is {rate * 100:.0f}% × {_pct(share)} × ${baseline:,.2f} = ${cap:,.2f}."
     )
+    if band == "capped":
+        detail += f" {_CAP_NOTE}"
+    elif band == "fail":
+        detail += " The jump is more than twice that cap, so it is not treated as tariff-driven."
+    ok = band != "fail"
     return PriceTest(id="size", name=_SIZE_NAME, passed=ok, required=True, detail=detail, status="pass" if ok else "fail")
 
 
-def claim_lines_exist(series, baseline, jump, control) -> bool:
+def _size_band(biggest: Decimal, cap: Decimal) -> str:
+    """within the cap, capped (claim the cap), or fail (more than twice the cap)."""
+    if biggest <= cap + _PENNY:
+        return "within"
+    if biggest <= cap * 2 + _PENNY:
+        return "capped"
+    return "fail"
+
+
+def claim_lines_exist(series, baseline, jump, control, cap: Decimal | None = None) -> bool:
     if baseline is None or jump is None or control is None:
         return False
     for row in series:
         if WINDOW_START <= row.issued <= WINDOW_END and row.issued >= jump and row.unit_price > baseline:
-            _, expected, _, _, _ = _line_amounts(baseline, row.unit_price, control, row.quantity)
+            _, expected, _, _, _ = _line_amounts(baseline, row.unit_price, control, row.quantity, cap)
             if expected > 0 and ieepa_rate(row.country, row.issued) > 0:
                 return True
     return False
 
 
-def _line_amounts(baseline: Decimal, unit: Decimal, control_pct: Decimal, qty: Decimal):
+def _line_amounts(
+    baseline: Decimal,
+    unit: Decimal,
+    control_pct: Decimal,
+    qty: Decimal,
+    cap: Decimal | None = None,
+):
     raw_per = unit - baseline
     did_per = raw_per - (control_pct * baseline)
     if did_per < 0:
         did_per = Decimal("0")
-    low = money(did_per * _HALF * qty)
-    expected = money(did_per * qty)
+    claimed_per = did_per if cap is None or did_per <= cap else cap
+    low = money(claimed_per * _HALF * qty)
+    expected = money(claimed_per * qty)
     high = money(raw_per * qty)
-    return low, expected, high, did_per, raw_per
+    return low, expected, high, claimed_per, raw_per
 
 
 def _baseline_price(series: list[Observation], tariff_on: date | None) -> Decimal | None:
@@ -575,7 +610,9 @@ def recalculate_share(
 ) -> dict:
     """Re-run the size test at a new import-cost share and rebuild the claim dollars.
 
-    Origin, timing, and control stay as they were. Only the size gate moves.
+    Origin, timing, and control stay as they were. The share moves the cap:
+    a jump above the cap is claimed up to the cap, and a jump more than twice
+    the cap drops out.
     """
     share = Decimal(share)
     math_rows = history.get("math") or []
@@ -626,7 +663,7 @@ def recalculate_share(
         ]
     elif tier is None and math_rows and not explicit:
         reasons = [
-            "At this import-cost share, the price increase is larger than the tariff on the import cost, so it is not claimed."
+            "At this import-cost share, the price increase is more than twice the estimated tariff on the import cost, so it is not claimed."
         ]
     reverted = all(reverted_known) if reverted_known else None
     strength = _strength(gross, non_refundable, tier, clause, reverted, inferred_only)
@@ -666,13 +703,14 @@ def _reprice_sku(row: dict, share: Decimal):
     if not any(test["id"] == "size" for test in tests):
         tests.append(fresh)
     required_ok = all(test["status"] == "pass" for test in tests if test.get("required"))
+    cap = rate * share * baseline if required_ok and baseline is not None and rate is not None and rate > 0 else None
     low = expected = high = Decimal("0")
     lines: list[dict] = []
     if required_ok and baseline is not None and control is not None:
         for line in row.get("lines") or []:
             qty = Decimal(str(line["quantity"]))
             unit = Decimal(str(line["unit_price"]))
-            lo, ex, hi, _, _ = _line_amounts(baseline, unit, control, qty)
+            lo, ex, hi, _, _ = _line_amounts(baseline, unit, control, qty, cap)
             if ex <= 0:
                 continue
             low += lo

@@ -623,8 +623,9 @@ class Generator:
     # -- 2. Harbor & Pine ------------------------------------------------------ #
     def harborpine(self):
         # Italy's IEEPA tariff starts April 5, 2025 at 10%. The jump starts May 15
-        # (40 days later) at 5%, inside the 6% cap (10% x 0.6). Domestic tools rise
-        # 1% over the same months, so the claim is the 4-point gap, not the raw 5%.
+        # (40 days later) at 5%. At a 60% import-cost share the cap is 6% of price,
+        # so the 5% jump is inside it. At 40% the cap is 4%, the jump is capped, and
+        # the claim stays the 4-point gap over domestic tools that rise 1%.
         s = SUPPLIERS["harborpine"]
         rng = self.supplier_rng["harborpine"]
         inflated_from, inflated_to = date(2025, 5, 15), date(2026, 2, 20)
@@ -1392,7 +1393,7 @@ def build_ground_truth(gen: Generator, contracts_meta: dict[str, dict]) -> dict:
         "non_refundable_total": f2(sum(Decimal(str(v["non_refundable_total"])) for v in suppliers.values())),
         "importer_of_record_duty_total": f2(sum(Decimal(str(c["customs_duty_paid"])) for c in ior_cases)),
         "price_claim_method": {
-            "expected_claim": "explicit IEEPA lines plus the difference-in-differences price claim",
+            "expected_claim": "explicit IEEPA lines plus the difference-in-differences price claim, capped at the estimated tariff on import cost",
             "low": "half the difference-in-differences excess, a 50% pass-through",
             "high": "the raw unit-price jump over the pre-tariff price",
             "demo": "demo_refundable excludes surcharge lines whose wording the keyword rules miss",
@@ -1402,7 +1403,7 @@ def build_ground_truth(gen: Generator, contracts_meta: dict[str, dict]) -> dict:
         "buyer": BUYER,
         "tariff_window": {"start": TARIFF_WINDOW_START.isoformat(), "end": TARIFF_WINDOW_END.isoformat()},
         "amounts_are_pre_sales_tax": True,
-        "price_claim_note": "refundable_claim_total is the full answer, including wording a keyword rule misses. demo_refundable_claim_total is what DEMO_MODE should recover. Price claims use the expected difference-in-differences amount. claim_low is half of that. claim_high is the raw jump.",
+        "price_claim_note": "refundable_claim_total is the full answer, including wording a keyword rule misses. demo_refundable_claim_total is what DEMO_MODE should recover. Price claims use the expected difference-in-differences amount, capped at the estimated tariff on import cost. A jump more than twice that cap is not claimed. claim_low is half of the capped amount. claim_high is the raw jump.",
         "suppliers": suppliers,
         "price_items": price_items,
         "cases": BENCHMARK_CASES,
